@@ -42,7 +42,7 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 .loading{text-align:center;padding:3rem;color:#888}
 .empty{text-align:center;padding:2rem;color:#888}
 .gate{position:fixed;inset:0;background:rgba(15,15,25,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem}
-.gate-box{background:#fff;border-radius:16px;padding:1.4rem 1.3rem 1.3rem;width:100%;max-width:400px;box-shadow:0 20px 50px rgba(0,0,0,.35);max-height:95vh;overflow-y:auto}
+.gate-box{background:#fff;border-radius:16px;padding:1.4rem 1.3rem 1.3rem;width:100%;max-width:400px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
 .gate-box h2{font-size:1.15rem;margin-bottom:.35rem}
 .gate-box p{font-size:.88rem;color:#555;margin-bottom:1rem;line-height:1.4}
 .gate-box label{display:block;font-size:.8rem;font-weight:600;margin:.55rem 0 .25rem}
@@ -50,22 +50,18 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 .gate-box button{width:100%;margin-top:1rem;padding:.85rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:800;font-size:1rem;cursor:pointer}
 .gate-box button:disabled{opacity:.6;cursor:wait}
 .gate-err{color:#c62828;font-size:.82rem;margin-top:.5rem;display:none}
-.gate-hint{font-size:.75rem;color:#888;margin-top:.35rem}
 </style>
 </head>
 <body class="locked">
 <div class="gate" id="gate">
   <div class="gate-box">
     <h2>Ingresá para ver departamentos</h2>
-    <p>Completá tus datos para acceder al listado. Todos los campos son obligatorios.</p>
+    <p>Completá tus datos para acceder al listado de alquileres. Email y teléfono son obligatorios.</p>
     <label for="gEmail">Email *</label>
     <input id="gEmail" type="email" placeholder="tunombre@email.com" required autocomplete="email"/>
     <label for="gPhone">Teléfono / WhatsApp *</label>
     <input id="gPhone" type="tel" placeholder="11 1234-5678" required autocomplete="tel"/>
-    <label for="gDir">Dirección *</label>
-    <input id="gDir" type="text" placeholder="Calle, número, barrio, ciudad" required autocomplete="street-address"/>
-    <div class="gate-hint">Ej: Av. Santa Fe 2500, Recoleta, CABA</div>
-    <div class="gate-err" id="gateErr">Completá email, teléfono y dirección.</div>
+    <div class="gate-err" id="gateErr">Completá email y teléfono válidos.</div>
     <button type="button" id="gateBtn">Ver departamentos</button>
   </div>
 </div>
@@ -121,33 +117,13 @@ if (localStorage.getItem('zp_lead_ok') === '1') {
   unlockSite();
 }
 
-function getGPS(){
-  return new Promise(function(resolve){
-    if (!navigator.geolocation) { resolve(null); return; }
-    navigator.geolocation.getCurrentPosition(
-      function(pos){
-        resolve({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-          precision_m: Math.round(pos.coords.accuracy || 0),
-          maps: 'https://maps.google.com/?q=' + pos.coords.latitude + ',' + pos.coords.longitude
-        });
-      },
-      function(){ resolve(null); },
-      { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
-    );
-  });
-}
-
 document.getElementById('gateBtn').onclick = function(){
   const email = (document.getElementById('gEmail').value || '').trim();
   const phone = (document.getElementById('gPhone').value || '').trim();
-  const direccion = (document.getElementById('gDir').value || '').trim();
   const err = document.getElementById('gateErr');
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneOk = phone.replace(/\D/g,'').length >= 8;
-  const dirOk = direccion.length >= 8;
-  if (!emailOk || !phoneOk || !dirOk) {
+  if (!emailOk || !phoneOk) {
     err.style.display = 'block';
     return;
   }
@@ -156,16 +132,14 @@ document.getElementById('gateBtn').onclick = function(){
   btn.disabled = true;
   btn.textContent = 'Ingresando...';
 
-  const base = {
+  const payload = {
     _subject: 'ZonaProp Premium · Nuevo contacto',
-    mensaje: 'Visitante completó datos para entrar al sitio',
+    mensaje: 'Visitante completó email y teléfono para entrar al sitio',
     email: email,
     telefono: phone,
-    direccion: direccion,
     pagina: location.href,
     cuando: new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }),
-    dispositivo: navigator.userAgent.slice(0, 200),
-    idioma: navigator.language || '',
+    dispositivo: navigator.userAgent.slice(0, 180),
     origen: document.referrer || 'Directo',
     _template: 'table',
     _captcha: 'false'
@@ -175,45 +149,14 @@ document.getElementById('gateBtn').onclick = function(){
     localStorage.setItem('zp_lead_ok', '1');
     localStorage.setItem('zp_lead_email', email);
     localStorage.setItem('zp_lead_phone', phone);
-    localStorage.setItem('zp_lead_dir', direccion);
     unlockSite();
   }
 
-  function send(extra){
-    const payload = Object.assign({}, base, extra || {});
-    return fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(function(){});
-  }
-
-  Promise.all([
-    fetch('https://ipapi.co/json/').then(function(r){ return r.json(); }).catch(function(){ return {}; }),
-    getGPS()
-  ]).then(function(results){
-    const geo = results[0] || {};
-    const gps = results[1];
-    const extra = {
-      ip: geo.ip || '',
-      ciudad_ip: geo.city || '',
-      region_ip: geo.region || '',
-      pais: geo.country_name || geo.country || '',
-      ubicacion_ip: [geo.city, geo.region, geo.country_name].filter(Boolean).join(', '),
-      isp: geo.org || ''
-    };
-    if (gps) {
-      extra.lat = gps.lat;
-      extra.lng = gps.lng;
-      extra.precision_metros = gps.precision_m;
-      extra.google_maps = gps.maps;
-    } else {
-      extra.gps = 'Usuario no compartió ubicación GPS';
-    }
-    return send(extra);
-  }).catch(function(){
-    return send({});
-  }).finally(finish);
+  fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function(){}).finally(finish);
 };
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
