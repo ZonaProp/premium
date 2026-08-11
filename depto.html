@@ -20,6 +20,14 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
 .price{font-size:1.55rem;font-weight:800;color:#ff5500}
 .h2{font-size:1.1rem;font-weight:700;margin:.25rem 0}
+.zona{font-size:.85rem;color:#666;margin-top:.15rem}
+.specs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.spec{background:#f3f3f3;border-radius:999px;padding:.4rem .75rem;font-size:.82rem;font-weight:600}
+.desc{margin-top:.9rem;font-size:.9rem;line-height:1.45;color:#444}
+.feats{margin-top:.9rem}
+.feats h3{font-size:.95rem;margin-bottom:.5rem}
+.feat-list{display:flex;flex-wrap:wrap;gap:.4rem}
+.feat{border:1px solid #e0e0e0;border-radius:8px;padding:.35rem .65rem;font-size:.8rem;background:#fafafa}
 .reserva{background:#fff;margin-top:8px;padding:1.2rem;border-top:3px solid #ff5500}
 .reserva h3{font-size:1rem;margin-bottom:.6rem}
 .reserva-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #eee}
@@ -56,6 +64,8 @@ if (!id) {
       document.title = d.title + ' · ZonaProp';
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
       const waText = encodeURIComponent('Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000');
+      const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
+      const feats = d.features || [];
       document.getElementById('content').innerHTML = `
         <div class="gallery">
           <img class="main" id="mainImg" src="${photos[0]||''}" alt="">
@@ -66,17 +76,15 @@ if (!id) {
         <div class="box">
           <div class="price">${d.price}</div>
           <div class="h2">${d.title}</div>
+          ${d.zona ? `<div class="zona">${d.zona}</div>` : ''}
+          <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
+          ${d.desc ? `<div class="desc">${d.desc}</div>` : ''}
+          ${feats.length ? `<div class="feats"><h3>Características</h3><div class="feat-list">${feats.map(f => `<span class="feat">${f}</span>`).join('')}</div></div>` : ''}
         </div>
         <div class="reserva">
           <h3>Reserva para asegurar el departamento</h3>
-          <div class="reserva-row">
-            <span>Seña / reserva</span>
-            <span class="reserva-monto">$ 50.000</span>
-          </div>
-          <div class="reserva-row">
-            <span>Se descuenta del primer mes</span>
-            <span>Sí</span>
-          </div>
+          <div class="reserva-row"><span>Seña / reserva</span><span class="reserva-monto">$ 50.000</span></div>
+          <div class="reserva-row"><span>Se descuenta del primer mes</span><span>Sí</span></div>
           <p class="reserva-note">Al pagar la reserva de $50.000 el departamento queda bloqueado a tu nombre. El monto se descuenta del alquiler.</p>
         </div>
         <div class="pago">

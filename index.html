@@ -44,7 +44,7 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 <div class="search">
   <div class="search-box">
     <div class="search-row">
-      <input id="q" type="search" placeholder="Zona o barrio"/>
+      <input id="q" type="search" placeholder="Zona o barrio (ej. Recoleta, Palermo)"/>
       <select id="precio">
         <option value="">Cualquier precio</option>
         <option value="0-300000">Hasta $300.000</option>
@@ -59,13 +59,10 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
       <button type="button" data-z="Recoleta">Recoleta</button>
       <button type="button" data-z="Palermo">Palermo</button>
       <button type="button" data-z="Belgrano">Belgrano</button>
-      <button type="button" data-z="Nuñez">Nuñez</button>
-      <button type="button" data-z="Avellaneda">Avellaneda</button>
-      <button type="button" data-z="Balvanera">Balvanera</button>
-      <button type="button" data-z="Villa Urquiza">Villa Urquiza</button>
-      <button type="button" data-z="San Cristóbal">San Cristóbal</button>
       <button type="button" data-z="Caballito">Caballito</button>
+      <button type="button" data-z="Balvanera">Balvanera</button>
       <button type="button" data-z="Flores">Flores</button>
+      <button type="button" data-z="Mar del Plata">Mar del Plata</button>
     </div>
   </div>
 </div>
@@ -75,76 +72,94 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 <script>
 const HOME_LIMIT = 20;
 let ALL = [];
-function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
-function cardHTML(d){
+let filtered = false;
+
+function parsePrice(p) {
+  if (!p) return 0;
+  const n = String(p).replace(/[^0-9]/g, '');
+  return n ? parseInt(n, 10) : 0;
+}
+
+function cardHTML(d) {
   return `<article class="card">
     <a href="depto.html?id=${d.id}">
-      <div class="card-img">${d.main?`<img src="${d.main}" alt="" loading="lazy">`:''}</div>
+      <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}</div>
       <div class="card-body">
         <div class="price">${d.price}</div>
         <h2>${d.title}</h2>
-        <div class="badge">${d.zona?d.zona+' · ':''}${(d.photos||[]).length} fotos</div>
+        <div class="badge">${(d.photos||[]).length} fotos</div>
       </div>
     </a>
     <div class="card-actions">
       <a class="btn-o" href="depto.html?id=${d.id}">Ver</a>
-      <a class="btn-g" href="https://wa.me/5491125692598?text=${encodeURIComponent('Hola! Quiero info de '+d.title)}">WhatsApp</a>
+      <a class="btn-g" href="https://wa.me/5491125692598?text=${encodeURIComponent('Hola! Quiero info de ' + d.title)}">WhatsApp</a>
     </div>
   </article>`;
 }
-function render(list,label){
-  const grid=document.getElementById('grid');
-  grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados. Probá otra zona o precio.</div>';
-  document.getElementById('meta').textContent=label;
-  document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
+
+function render(list, label) {
+  const grid = document.getElementById('grid');
+  if (!list.length) {
+    grid.innerHTML = '<div class="empty">No hay resultados. Probá otra zona o precio.</div>';
+  } else {
+    grid.innerHTML = list.map(cardHTML).join('');
+  }
+  document.getElementById('meta').textContent = label;
+  document.getElementById('footer').textContent = list.length + ' departamentos · ZonaProp Premium';
 }
-function applyFilters(){
-  const q=(document.getElementById('q').value||'').trim().toLowerCase();
-  const pr=document.getElementById('precio').value;
-  let list=ALL.slice();
-  if(q){
-    list=list.filter(d=>{
-      const t=(d.title||'').toLowerCase();
-      const z=(d.zona||'').toLowerCase();
-      return t.includes(q)||z.includes(q);
+
+function applyFilters() {
+  const q = (document.getElementById('q').value || '').trim().toLowerCase();
+  const pr = document.getElementById('precio').value;
+  let list = ALL.slice();
+
+  if (q) {
+    list = list.filter(d => (d.title || '').toLowerCase().includes(q));
+  }
+  if (pr) {
+    const [min, max] = pr.split('-').map(Number);
+    list = list.filter(d => {
+      const v = parsePrice(d.price);
+      return v >= min && v <= max;
     });
   }
-  if(pr){
-    const [min,max]=pr.split('-').map(Number);
-    list=list.filter(d=>{const v=parsePrice(d.price);return v>=min&&v<=max});
-  }
-  if(!q&&!pr){
-    // home: prefer priority zones first
-    const prio=ALL.filter(d=>d.zona);
-    const show=(prio.length?prio:ALL).slice(0,HOME_LIMIT);
-    render(show,'Mostrando 20 en zonas prioritarias · Buscá para ver más');
+
+  const searching = !!(q || pr);
+  filtered = searching;
+  if (!searching) {
+    render(ALL.slice(0, HOME_LIMIT), 'Mostrando 20 destacados · Usá la búsqueda para ver más');
   } else {
-    render(list,list.length+' resultado'+(list.length===1?'':'s')+(q?' para "'+q+'"':''));
+    render(list, list.length + ' resultado' + (list.length === 1 ? '' : 's') + (q ? ' para "' + q + '"' : ''));
   }
 }
-fetch('data.json').then(r=>r.json()).then(data=>{
-  ALL=data;
-  applyFilters();
-  document.getElementById('btnBuscar').onclick=applyFilters;
-  document.getElementById('btnLimpiar').onclick=()=>{
-    document.getElementById('q').value='';
-    document.getElementById('precio').value='';
-    document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
-    applyFilters();
-  };
-  document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')applyFilters()});
-  document.getElementById('precio').addEventListener('change',applyFilters);
-  document.querySelectorAll('#chips button').forEach(btn=>{
-    btn.onclick=()=>{
-      document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
-      btn.classList.add('on');
-      document.getElementById('q').value=btn.dataset.z;
+
+fetch('data.json')
+  .then(r => r.json())
+  .then(data => {
+    ALL = data;
+    render(ALL.slice(0, HOME_LIMIT), 'Mostrando 20 destacados · Usá la búsqueda para ver más');
+    document.getElementById('btnBuscar').onclick = applyFilters;
+    document.getElementById('btnLimpiar').onclick = () => {
+      document.getElementById('q').value = '';
+      document.getElementById('precio').value = '';
+      document.querySelectorAll('#chips button').forEach(b => b.classList.remove('on'));
       applyFilters();
     };
+    document.getElementById('q').addEventListener('keydown', e => { if (e.key === 'Enter') applyFilters(); });
+    document.getElementById('precio').addEventListener('change', applyFilters);
+    document.querySelectorAll('#chips button').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('#chips button').forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        document.getElementById('q').value = btn.dataset.z;
+        applyFilters();
+      };
+    });
+  })
+  .catch(e => {
+    document.getElementById('grid').innerHTML = '<div class="loading">Error cargando datos</div>';
+    console.error(e);
   });
-}).catch(e=>{
-  document.getElementById('grid').innerHTML='<div class="loading">Error cargando datos</div>';
-});
 </script>
 </body>
 </html>

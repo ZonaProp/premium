@@ -1,2 +1,2 @@
-Mayoría en: Recoleta, Palermo, Belgrano, Nuñez, Avellaneda, Balvanera, Villa Urquiza, San Cristóbal, Caballito, Flores.
-Total: 145 deptos.
+data.json con ambientes, m2, dormitorios, baños, características y descripción.
+Subí data.json + depto.html (+ index.html si querés).
