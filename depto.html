@@ -30,7 +30,6 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .pago h3{font-size:1rem;margin-bottom:.8rem}
 .pago-btns{display:flex;flex-direction:column;gap:10px}
 .btn-mp{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:#009ee3;font-size:.95rem}
-.btn-mp:active{opacity:.9}
 .btn-wa{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:#25d366;font-size:.95rem}
 .btn-sec{display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;font-weight:600;text-decoration:none;color:#1a1a2e;background:#eee;font-size:.9rem}
 footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
@@ -41,7 +40,6 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 <div class="header"><a href="index.html">←</a> <span>ZonaProp</span></div>
 <div id="content"><div class="loading">Cargando...</div></div>
 <script>
-const RESERVA = 50000;
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
 if (!id) {
@@ -58,7 +56,6 @@ if (!id) {
       document.title = d.title + ' · ZonaProp';
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
       const waText = encodeURIComponent('Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000');
-      const mpText = encodeURIComponent('Reserva depto ' + d.id + ' - ' + d.title);
       document.getElementById('content').innerHTML = `
         <div class="gallery">
           <img class="main" id="mainImg" src="${photos[0]||''}" alt="">
@@ -85,9 +82,9 @@ if (!id) {
         <div class="pago">
           <h3>Pagar reserva</h3>
           <div class="pago-btns">
-            <a class="btn-mp" href="https://www.mercadopago.com.ar/checkout/v1/redirect?preference_id=RESERVA50000" target="_blank" rel="noopener">Pagar $50.000 con Mercado Pago</a>
-            <a class="btn-wa" href="https://wa.me/5491153797355?text=${waText}">Reservar por WhatsApp</a>
-            <a class="btn-sec" href="https://wa.me/5491153797355?text=${waText}">Consultar antes de pagar</a>
+            <a class="btn-mp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar $50.000 con Mercado Pago</a>
+            <a class="btn-wa" href="https://wa.me/5491125692598?text=${waText}">Reservar por WhatsApp</a>
+            <a class="btn-sec" href="https://wa.me/5491125692598?text=${waText}">Consultar antes de pagar</a>
           </div>
         </div>
         <footer>ZonaProp Premium</footer>
