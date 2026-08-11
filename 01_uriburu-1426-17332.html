@@ -3,54 +3,97 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
-<title>Recoleta + Cochera + 3 Ambientes · ZonaProp</title>
+<title>Recoleta + Cochera + 3 Ambientes | Recoleta</title>
+<meta name="description" content="Departamento en Temporario en Recoleta"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f5;color:#222;line-height:1.4}
-.top{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.5rem;font-weight:700}
-.top a{color:#fff;text-decoration:none}
-.hero{position:relative;background:#111;aspect-ratio:4/3;max-height:420px;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover}
-.nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px;padding:0 12px}
-.nav button{background:rgba(0,0,0,.55);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer}
-.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff}
-.thumbs img{width:64px;height:48px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.7}
-.thumbs img.active{opacity:1;outline:2px solid #ff5500}
-.info{background:#fff;padding:1.2rem;margin-bottom:10px}
-.price{font-size:1.6rem;font-weight:800;color:#ff5500}
-.title{font-size:1.15rem;font-weight:700;margin:.3rem 0}
-.meta{color:#666;font-size:.9rem}
-.actions{display:flex;gap:10px;padding:0 1rem 1.2rem;background:#fff}
-.btn{flex:1;text-align:center;padding:.75rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;font-size:.95rem}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222}
+.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem}
+.header a{color:#fff;text-decoration:none;font-size:1.2rem}
+.gallery{position:relative;background:#111}
+.gallery img.main{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.g-nav button{background:rgba(0,0,0,.6);border:0;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;scrollbar-width:none}
+.thumbs img{width:70px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.65;flex-shrink:0}
+.thumbs img.on{opacity:1;outline:2px solid #ff5500}
+.box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
+.price{font-size:1.55rem;font-weight:800;color:#ff5500}
+.h2{font-size:1.1rem;font-weight:700;margin:.25rem 0}
+.loc{color:#666;font-size:.9rem}
+.btns{display:flex;gap:10px;padding:0 1.2rem 1.2rem;background:#fff}
+.btn{flex:1;text-align:center;padding:.7rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff}
 .btn-o{background:#ff5500}
 .btn-g{background:#25d366}
-.section{background:#fff;margin:10px 0;padding:1.2rem}
-.section h3{margin-bottom:.6rem;font-size:1rem}
-.desc{font-size:.95rem;color:#444}
-footer{text-align:center;padding:1.5rem;color:#888;font-size:.85rem}
+.sec{background:#fff;margin:8px 0;padding:1.1rem 1.2rem}
+.sec h3{font-size:1rem;margin-bottom:.5rem}
+.desc{font-size:.93rem;color:#444;line-height:1.5}
+footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:99;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:16px;padding:1.4rem;width:90%;max-width:360px}
+.modal-box h3{margin-bottom:.8rem}
+.modal-box input,.modal-box select{width:100%;padding:.55rem;margin-bottom:.6rem;border:1px solid #ddd;border-radius:8px}
+.modal-box .btn{display:block;margin-top:.4rem}
 </style>
 </head>
 <body>
-<div class="top"><a href="index.html">←</a> ZonaProp</div>
-<div class="hero" id="hero"><img id="mainImg" src="https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp" alt=""></div>
-<div class="nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
+<div class="header"><a href="index.html">←</a> <span>ZonaProp</span></div>
+<div class="gallery">
+<img class="main" id="mainImg" src="https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp" alt="">
+<div class="g-nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
+</div>
 <div class="thumbs" id="thumbs"></div>
-<div class="info">
+<div class="box">
 <div class="price">$ 800</div>
-<div class="title">Recoleta + Cochera + 3 Ambientes</div>
-<div class="meta">Uriburu 1426 · Recoleta</div>
+<div class="h2">Recoleta + Cochera + 3 Ambientes</div>
+<div class="loc">Uriburu 1426 · Recoleta</div>
 </div>
-<div class="actions">
-<a class="btn btn-o" href="#" onclick="document.getElementById('modal').style.display='block';return false">Reservar</a>
-<a class="btn btn-g" href="https://wa.me/54911XXXXXXXX">WhatsApp</a>
+<div class="btns">
+<a class="btn btn-o" href="#" onclick="document.getElementById('modal').classList.add('show');return false">Reservar</a>
+<a class="btn btn-g" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20del%20departamento%20Uriburu%201426">WhatsApp</a>
 </div>
-<div class="section"><h3>Descripción</h3><div class="desc">Departamento en Recoleta con cochera. 3 ambientes, luminoso, cerca de todo.</div></div>
-<footer>ZonaProp Premium</footer>
+<div class="sec"><h3>Descripción</h3><div class="desc">Excelente departamento de 3 ambientes ubicado en el corazón de Recoleta. Cochera incluida. Luminoso y con muy buena ubicación.</div></div>
+<footer>ZonaProp Premium · 100 departamentos</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('show')">
+<div class="modal-box">
+<h3>Reservar</h3>
+<input type="text" id="nombre" placeholder="Nombre">
+<input type="tel" id="tel" placeholder="Teléfono">
+<a class="btn btn-o" href="#" onclick="enviarReserva();return false">Confirmar por WhatsApp</a>
+<a class="btn btn-g" href="#" onclick="document.getElementById('modal').classList.remove('show');return false" style="background:#888;margin-top:6px">Cerrar</a>
+</div>
+</div>
+
 <script>
-var photos=["https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp"];
-var cur=0;
-function show(i){if(i<0)i=photos.length-1;if(i>=photos.length)i=0;cur=i;document.getElementById('mainImg').src=photos[i];document.querySelectorAll('.thumbs img').forEach((el,idx)=>el.classList.toggle('active',idx===i));}
-(function(){var t=document.getElementById('thumbs');photos.forEach((p,i)=>{var img=document.createElement('img');img.src=p;img.onclick=()=>show(i);if(i===0)img.classList.add('active');t.appendChild(img);});})();
+var photos = ["https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp"];
+var cur = 0;
+function show(i) {
+  if (i < 0) i = photos.length - 1;
+  if (i >= photos.length) i = 0;
+  cur = i;
+  document.getElementById('mainImg').src = photos[i];
+  document.querySelectorAll('#thumbs img').forEach(function(el, idx) {
+    el.classList.toggle('on', idx === i);
+  });
+}
+(function() {
+  var t = document.getElementById('thumbs');
+  photos.forEach(function(p, i) {
+    var img = document.createElement('img');
+    img.src = p;
+    img.onclick = function() { show(i); };
+    if (i === 0) img.classList.add('on');
+    t.appendChild(img);
+  });
+})();
+function enviarReserva() {
+  var n = document.getElementById('nombre').value || '';
+  var t = document.getElementById('tel').value || '';
+  var msg = 'Hola! Quiero reservar el Recoleta + Cochera + 3 Ambientes ($ 800). Nombre: ' + n + ' Tel: ' + t;
+  window.open('https://wa.me/5491153797355?text=' + encodeURIComponent(msg), '_blank');
+}
 </script>
 </body>
 </html>
