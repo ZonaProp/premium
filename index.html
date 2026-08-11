@@ -85,7 +85,7 @@ let ALL = [];
 let showAll = false;
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
 function cardHTML(d){
-  const specs=[d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
+  const specs=['Alquiler',d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
   return `<article class="card">
     <a href="depto.html?id=${d.id}">
       <div class="card-img">${d.main?`<img src="${d.main}" alt="" loading="lazy">`:''}</div>
