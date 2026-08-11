@@ -1,1 +1,75 @@
-<!DOCTYPE html><html lang="es-AR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>San Lorenzo 879</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:#f5f5f5}.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem}.box{background:#fff;margin:10px;padding:1.2rem;border-radius:12px}.price{font-size:1.5rem;font-weight:800;color:#ff5500}.btn{display:inline-block;padding:.6rem 1.2rem;background:#ff5500;color:#fff;text-decoration:none;border-radius:999px;margin-top:10px}</style></head><body><div class="header"><a href="index.html" style="color:#fff">← ZonaProp</a></div><div class="box"><div class="price">Consultar</div><h1>San Lorenzo 879</h1><p>Departamento en alquiler</p><a class="btn" href="https://wa.me/5491153797355">WhatsApp</a></div></body></html>
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
+<title>Enorme Monoambiente, A Pasos Del Monumento A La Bandera | Córdoba</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222}
+.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem}
+.header a{color:#fff;text-decoration:none;font-size:1.2rem}
+.gallery{position:relative;background:#111}
+.gallery img.main{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.g-nav button{background:rgba(0,0,0,.6);border:0;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;scrollbar-width:none}
+.thumbs img{width:70px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.65;flex-shrink:0}
+.thumbs img.on{opacity:1;outline:2px solid #ff5500}
+.box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
+.price{font-size:1.55rem;font-weight:800;color:#ff5500}
+.h2{font-size:1.1rem;font-weight:700;margin:.25rem 0}
+.loc{color:#666;font-size:.9rem}
+.btns{display:flex;gap:10px;padding:0 1.2rem 1.2rem;background:#fff}
+.btn{flex:1;text-align:center;padding:.7rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff}
+.btn-o{background:#ff5500}
+.btn-g{background:#25d366}
+.sec{background:#fff;margin:8px 0;padding:1.1rem 1.2rem}
+.sec h3{font-size:1rem;margin-bottom:.5rem}
+.desc{font-size:.93rem;color:#444;line-height:1.5}
+footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="header"><a href="index.html">←</a> <span>ZonaProp</span></div>
+<div class="gallery">
+<img class="main" id="mainImg" src="https://www.bullano.com.ar/files/08-2026/ad18441/zLFRJzmOVlNZ.webp" alt="">
+<div class="g-nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
+</div>
+<div class="thumbs" id="thumbs"></div>
+<div class="box">
+<div class="price">$ 50.000</div>
+<div class="h2">Enorme Monoambiente, A Pasos Del Monumento A La Bandera</div>
+<div class="loc">San Lorenzo 879</div>
+</div>
+<div class="btns">
+<a class="btn btn-o" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20del%20departamento%20San%20Lorenzo%20879">Reservar</a>
+<a class="btn btn-g" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20del%20departamento%20San%20Lorenzo%20879">WhatsApp</a>
+</div>
+<div class="sec"><h3>Descripción</h3><div class="desc">Departamento en Venta en Rosario con 1 dorm., 2 amb. y 42 m2 cubiertos— DUEÑO DIRECTO — Monoambiente del tamaño de 1 habitación. Hermoso y amplio.</div></div>
+<footer>ZonaProp Premium</footer>
+<script>
+var photos = ["https://www.bullano.com.ar/files/08-2026/ad18441/zLFRJzmOVlNZ.webp","https://www.bullano.com.ar/files/08-2026/ad18441/zLFRJzmOVlNZ.webp"];
+var cur = 0;
+function show(i) {
+  if (i < 0) i = photos.length - 1;
+  if (i >= photos.length) i = 0;
+  cur = i;
+  document.getElementById('mainImg').src = photos[i];
+  document.querySelectorAll('#thumbs img').forEach(function(el, idx) {
+    el.classList.toggle('on', idx === i);
+  });
+}
+(function() {
+  var t = document.getElementById('thumbs');
+  photos.forEach(function(p, i) {
+    var img = document.createElement('img');
+    img.src = p;
+    img.onclick = function() { show(i); };
+    if (i === 0) img.classList.add('on');
+    t.appendChild(img);
+  });
+})();
+</script>
+</body>
+</html>
