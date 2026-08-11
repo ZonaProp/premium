@@ -1,3 +1,2 @@
-ZonaProp Premium - 300 departamentos (10+ fotos c/u)
-Reemplazá data.json + index.html + depto.html en el repo premium.
-Ids 001-300.
+Mayoría en: Recoleta, Palermo, Belgrano, Nuñez, Avellaneda, Balvanera, Villa Urquiza, San Cristóbal, Caballito, Flores.
+Total: 145 deptos.
