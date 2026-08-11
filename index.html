@@ -88,21 +88,40 @@ let showAll = false;
   try {
     if (sessionStorage.getItem('zp_visit_ok')) return;
     sessionStorage.setItem('zp_visit_ok', '1');
-    const payload = {
+    const base = {
       _subject: 'ZonaProp Premium · Nueva visita',
       mensaje: 'Alguien entró al sitio ZonaProp Premium',
       pagina: location.href,
       cuando: new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }),
-      userAgent: navigator.userAgent.slice(0, 180),
+      dispositivo: navigator.userAgent.slice(0, 200),
       idioma: navigator.language || '',
+      pantalla: (screen.width || '') + 'x' + (screen.height || ''),
+      origen: document.referrer || 'Directo / sin referer',
+      telefono: 'No disponible (el navegador no lo comparte)',
       _template: 'table',
       _captcha: 'false'
     };
-    fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).catch(function(){});
+    function send(extra){
+      const payload = Object.assign({}, base, extra || {});
+      fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function(){});
+    }
+    fetch('https://ipapi.co/json/')
+      .then(function(r){ return r.json(); })
+      .then(function(geo){
+        send({
+          ip: geo.ip || '',
+          ciudad: geo.city || '',
+          region: geo.region || '',
+          pais: geo.country_name || geo.country || '',
+          ubicacion: [geo.city, geo.region, geo.country_name].filter(Boolean).join(', '),
+          isp: geo.org || ''
+        });
+      })
+      .catch(function(){ send({ ubicacion: 'No se pudo detectar' }); });
   } catch (e) {}
 })();
 
