@@ -12,8 +12,9 @@ header span{color:#ff5500}
 h1{text-align:center;padding:1.5rem 1rem .5rem;font-size:1.4rem;font-weight:800}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem;max-width:1140px;margin:0 auto;padding:0 1rem 2.5rem}
 .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;flex-direction:column}
-.card-link{text-decoration:none;color:inherit;flex:1}
+.card a{text-decoration:none;color:inherit;flex:1}
 .card-img{aspect-ratio:4/3;background:#eee;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
 .card-body{padding:.85rem 1rem .4rem}
 .price{font-size:1.2rem;font-weight:800;margin-bottom:.2rem;color:#ff5500}
 h2{font-size:.92rem;font-weight:700;line-height:1.3}
@@ -22,33 +23,40 @@ h2{font-size:.92rem;font-weight:700;line-height:1.3}
 .btn-o{background:#ff5500}
 .btn-g{background:#25d366}
 footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
+.loading{text-align:center;padding:3rem;color:#888}
 </style>
 </head>
 <body>
 <header><span>●</span> ZonaProp Premium</header>
 <h1>Departamentos en alquiler</h1>
-<div class="grid">
-<article class="card"><a href="01_uriburu-1426-17332.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 800</div><h2>Recoleta + Cochera + 3 Ambientes</h2></div></a><div class="card-actions"><a class="btn-o" href="01_uriburu-1426-17332.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="02_martinez-castro-1365-17686.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/06-2026/ad17686/XwESVWClnfVw.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 59.000</div><h2>Departamento En Venta En Parque Avellaneda</h2></div></a><div class="card-actions"><a class="btn-o" href="02_martinez-castro-1365-17686.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="03_paso-de-los-andes-78-18474.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18474/BCBRBCmlaJni.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 44.500</div><h2>Terra078 | Alojamiento Con Terraza Privada</h2></div></a><div class="card-actions"><a class="btn-o" href="03_paso-de-los-andes-78-18474.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="04_frias-208-18471.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18471/QqeIkbMxwSrp.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 950.000</div><h2>Depto 3 Ambientes A Cuadras De Subte B</h2></div></a><div class="card-actions"><a class="btn-o" href="04_frias-208-18471.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="05_alicia-moreau-de-justo-2847-18470.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18470/XHJvCrdtfsyh.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 630.000</div><h2>Dueo Directo Alquiler Depto. Caseros Centro</h2></div></a><div class="card-actions"><a class="btn-o" href="05_alicia-moreau-de-justo-2847-18470.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="06_av-congreso-2000-18469.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18469/rPyBTxnKPXsD.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 1.400.000</div><h2>Departamento Semipiso En Alquiler</h2></div></a><div class="card-actions"><a class="btn-o" href="06_av-congreso-2000-18469.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="07_duarte-quiros-640-18464.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18464/hnuAROFZvKsM.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 900.000</div><h2>Viv, Trabaja O Invert En Una U</h2></div></a><div class="card-actions"><a class="btn-o" href="07_duarte-quiros-640-18464.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="08_soler-3636-18463.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18463/dZAjzvvjeAMj.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 625.000</div><h2>Departamento en venta, Mar del</h2></div></a><div class="card-actions"><a class="btn-o" href="08_soler-3636-18463.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="09_combate-de-las-piedras-2119-18446.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18446/PhItpNucPzIz.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 75.000</div><h2>Departamento Dplex En Venta En</h2></div></a><div class="card-actions"><a class="btn-o" href="09_combate-de-las-piedras-2119-18446.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="10_cordoba-2263-18445.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18445/lcJQXGsRUhzk.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 990.000</div><h2>Departamento Semipiso En Alquiler</h2></div></a><div class="card-actions"><a class="btn-o" href="10_cordoba-2263-18445.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="11_sanabria-4750-18444.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18444/juQIGxqiioUw.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 185.000</div><h2>Dueo Directo</h2></div></a><div class="card-actions"><a class="btn-o" href="11_sanabria-4750-18444.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="12_alvear-1500-18443.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18443/XFxTLDlmpwTJ.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 100.000</div><h2>Vendo Depto Apto Credito En Ma</h2></div></a><div class="card-actions"><a class="btn-o" href="12_alvear-1500-18443.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="13_san-lorenzo-879-18441.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18441/zLFRJzmOVlNZ.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 50.000</div><h2>Enorme Monoambiente, A Pasos D</h2></div></a><div class="card-actions"><a class="btn-o" href="13_san-lorenzo-879-18441.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="14_de-lorenzi-180-18439.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18439/zPXDFMaQUgWL.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 2.000.000</div><h2>De Lorenzi 180</h2></div></a><div class="card-actions"><a class="btn-o" href="14_de-lorenzi-180-18439.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="15_guayaquil-726-18437.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18437/lSCUEaoAmPsU.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 450.000</div><h2>Alquiler Departamento 2 Ambien</h2></div></a><div class="card-actions"><a class="btn-o" href="15_guayaquil-726-18437.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="16_alvear-1350-18432.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18432/zGYbxmNZQkmn.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 100.000</div><h2>Vendo Depto En Sector Macrocen</h2></div></a><div class="card-actions"><a class="btn-o" href="16_alvear-1350-18432.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="17_peron-oeste-41-18431.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18431/lJYItBKEyyuo.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 100.000</div><h2>Vendo Depto De 1 Dr</h2></div></a><div class="card-actions"><a class="btn-o" href="17_peron-oeste-41-18431.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="18_rivadavia-3150-1o-3-18428.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18428/KvCXsHUVvmyr.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 89.900</div><h2>Departamento Venta 4 Ambientes</h2></div></a><div class="card-actions"><a class="btn-o" href="18_rivadavia-3150-1o-3-18428.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="19_necochea-1321-18427.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/08-2026/ad18427/RuNRHvgYwSPi.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 100.000</div><h2>A Estrenar Con Terraza Parrill</h2></div></a><div class="card-actions"><a class="btn-o" href="19_necochea-1321-18427.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-<article class="card"><a href="20_cordoba-2571-18425.html" class="card-link"><div class="card-img"><img src="https://www.bullano.com.ar/files/07-2026/ad18425/KoMWQuoUZBft.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="card-body"><div class="price">$ 700.000</div><h2>Amplio Depto. 1 Dormitorio Con</h2></div></a><div class="card-actions"><a class="btn-o" href="20_cordoba-2571-18425.html">Ver</a><a class="btn-g" href="https://wa.me/5491153797355">WhatsApp</a></div></article>
-</div>
-<footer>20 departamentos · ZonaProp Premium</footer>
+<div class="grid" id="grid"><div class="loading">Cargando departamentos...</div></div>
+<footer id="footer">ZonaProp Premium</footer>
+<script>
+fetch('data.json')
+  .then(r => r.json())
+  .then(data => {
+    const grid = document.getElementById('grid');
+    grid.innerHTML = data.map(d => `
+      <article class="card">
+        <a href="depto.html?id=${d.id}">
+          <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}</div>
+          <div class="card-body">
+            <div class="price">${d.price}</div>
+            <h2>${d.title}</h2>
+          </div>
+        </a>
+        <div class="card-actions">
+          <a class="btn-o" href="depto.html?id=${d.id}">Ver</a>
+          <a class="btn-g" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20del%20depto%20${encodeURIComponent(d.title)}">WhatsApp</a>
+        </div>
+      </article>
+    `).join('');
+    document.getElementById('footer').textContent = data.length + ' departamentos · ZonaProp Premium';
+  })
+  .catch(e => {
+    document.getElementById('grid').innerHTML = '<div class="loading">Error cargando datos</div>';
+    console.error(e);
+  });
+</script>
 </body>
 </html>
