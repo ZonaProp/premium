@@ -29,13 +29,18 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 <body>
 <header><span>●</span> ZonaProp Premium</header>
 <h1>Departamentos en alquiler</h1>
-<div class="grid" id="grid"><div class="loading">Cargando departamentos...</div></div>
+<div class="grid" id="grid"><div class="loading">Cargando 498 departamentos...</div></div>
 <footer id="footer">ZonaProp Premium</footer>
 <script>
-fetch('data.json')
-  .then(r => r.json())
-  .then(data => {
+const files = ['data1.json','data2.json','data3.json','data4.json','data5.json'];
+Promise.all(files.map(f => fetch(f).then(r => r.json()).catch(() => [])))
+  .then(parts => {
+    const data = parts.flat();
     const grid = document.getElementById('grid');
+    if (!data.length) {
+      grid.innerHTML = '<div class="loading">Error cargando datos</div>';
+      return;
+    }
     grid.innerHTML = data.map(d => `
       <article class="card">
         <a href="depto.html?id=${d.id}">
@@ -47,7 +52,7 @@ fetch('data.json')
         </a>
         <div class="card-actions">
           <a class="btn-o" href="depto.html?id=${d.id}">Ver</a>
-          <a class="btn-g" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20del%20depto%20${encodeURIComponent(d.title)}">WhatsApp</a>
+          <a class="btn-g" href="https://wa.me/5491153797355?text=Hola!%20Quiero%20info%20${encodeURIComponent(d.title)}">WhatsApp</a>
         </div>
       </article>
     `).join('');
