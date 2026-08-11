@@ -47,10 +47,9 @@ if (!id) {
       }
       document.title = d.title + ' · ZonaProp';
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
-      const main = photos[0] || '';
       document.getElementById('content').innerHTML = `
         <div class="gallery">
-          <img class="main" id="mainImg" src="${main}" alt="">
+          <img class="main" id="mainImg" src="${photos[0]||''}" alt="">
           <div class="counter" id="counter">1 / ${photos.length}</div>
           <div class="g-nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
         </div>
@@ -78,7 +77,6 @@ if (!id) {
     })
     .catch(e => {
       document.getElementById('content').innerHTML = '<div class="loading">Error cargando</div>';
-      console.error(e);
     });
 }
 function show(i) {

@@ -1,6 +1,5 @@
 [
   {
-    "id": "001",
     "title": "Recoleta + Cochera + 3 Ambientes",
     "price": "$ 800",
     "main": "https://www.bullano.com.ar/files/03-2026/ad17332/oUTXzKXzwcdQ.webp",
@@ -17,11 +16,11 @@
       "https://www.bullano.com.ar/files/03-2026/ad17332/JGLjKlFYQNha.webp",
       "https://www.bullano.com.ar/files/03-2026/ad17332/VRijmlVTByKA.webp",
       "https://www.bullano.com.ar/files/03-2026/ad17332/yzwcgUybmaVX.webp"
-    ]
+    ],
+    "id": "001"
   },
   {
-    "id": "002",
-    "title": "Departamento En Venta En Parque Avellaneda, Caba, ",
+    "title": "Departamento En Venta En Parque Avellaneda, Caba",
     "price": "$ 59.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad17686/XwESVWClnfVw.webp",
     "photos": [
@@ -36,10 +35,10 @@
       "https://www.bullano.com.ar/files/04-2026/ad17483/gewTkdsEMOcv.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17503/AulcdNhcQXgJ.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17537/pkRnnWruzXtH.webp"
-    ]
+    ],
+    "id": "002"
   },
   {
-    "id": "003",
     "title": "Terra078",
     "price": "$ 44.50030",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18474/BCBRBCmlaJni.webp",
@@ -56,11 +55,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18474/tQGXHVidSoIW.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18474/arVWUjZNtbZD.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18474/rutqqAstRcyy.webp"
-    ]
+    ],
+    "id": "003"
   },
   {
-    "id": "004",
-    "title": "Depto 3 Ambientes A Cuadras De Subte B Y Parque Ce",
+    "title": "Depto 3 Ambientes A Cuadras De Subte B Y Parque ",
     "price": "$ 950.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18471/QqeIkbMxwSrp.webp",
     "photos": [
@@ -76,11 +75,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18471/zBsQfmmZgRyP.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18471/uvcRBzeKjpQV.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18471/mqtvzROSkqxa.webp"
-    ]
+    ],
+    "id": "004"
   },
   {
-    "id": "005",
-    "title": "Dueo Directo Alquiler Depto. Caseros Centro - 7 Pi",
+    "title": "Dueo Directo Alquiler Depto. Caseros Centro - 7 ",
     "price": "$ 630.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18470/XHJvCrdtfsyh.webp",
     "photos": [
@@ -96,11 +95,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18470/pCeWgsxHouGd.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18470/QDIvuSmUKxHz.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18470/yMBLMhCKswZa.webp"
-    ]
+    ],
+    "id": "005"
   },
   {
-    "id": "006",
-    "title": "Departamento Semipiso En Alquiler En Belgrano, Cab",
+    "title": "Departamento Semipiso En Alquiler En Belgrano, C",
     "price": "$ 1.400.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18469/rPyBTxnKPXsD.webp",
     "photos": [
@@ -116,11 +115,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18469/XqfqtOnvMOCa.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18469/YNdkNgDzEyVa.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18469/wsmmymoLnKMb.webp"
-    ]
+    ],
+    "id": "006"
   },
   {
-    "id": "007",
-    "title": "Viv, Trabaja O Invert En Una Ubicacin Estratgica!",
+    "title": "Viv, Trabaja O Invert En Una Ubicacin Estratgica",
     "price": "$ 900.007",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18464/hnuAROFZvKsM.webp",
     "photos": [
@@ -136,10 +135,10 @@
       "https://www.bullano.com.ar/files/08-2023/ad10451/1692710644403.jpeg",
       "https://www.bullano.com.ar/files/08-2023/ad10502/1693254779615.jpeg",
       "https://www.bullano.com.ar/files/08-2023/ad10515/1693403241092.jpg"
-    ]
+    ],
+    "id": "007"
   },
   {
-    "id": "008",
     "title": "Departamento en venta, Mar del Plata",
     "price": "$ 625.005",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18463/dZAjzvvjeAMj.webp",
@@ -156,10 +155,10 @@
       "https://www.bullano.com.ar/files/08-2026/ad18463/lPmirigdKXOh.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18463/cCgHwtKrRCgP.webp",
       "https://www.bullano.com.ar/files/09-2023/ad10707/1695335329148.jpeg"
-    ]
+    ],
+    "id": "008"
   },
   {
-    "id": "009",
     "title": "Venta Monoambiente En Boedo",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18170/NwcZqIYjpnZA.webp",
@@ -176,11 +175,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18170/FzclgNrfEzCY.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18170/IFGghELaJLNF.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18170/RJkIapaPRmkU.webp"
-    ]
+    ],
+    "id": "009"
   },
   {
-    "id": "010",
-    "title": "Departamento En Venta En Balvanera, Caba, 3 Dormit",
+    "title": "Departamento En Venta En Balvanera, Caba, 3 Dorm",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18169/sCQNmjMZTYdS.webp",
     "photos": [
@@ -196,11 +195,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18169/eKkWeHAMiGiF.webp",
       "https://www.bullano.com.ar/files/10-2023/ad10863/1696987670956.jpg",
       "https://www.bullano.com.ar/files/10-2023/ad10882/1697339705302.jpg"
-    ]
+    ],
+    "id": "010"
   },
   {
-    "id": "011",
-    "title": "Departamento En Alquiler En Crdoba, 2 Dormitorios ",
+    "title": "Departamento En Alquiler En Crdoba, 2 Dormitorio",
     "price": "$650.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18165/MmtfzWdsgmla.webp",
     "photos": [
@@ -216,11 +215,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18165/RrFdtCgSvOTB.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18165/uLxYAinEpmqE.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18165/oAWNsxmqlGkH.webp"
-    ]
+    ],
+    "id": "011"
   },
   {
-    "id": "012",
-    "title": "Departamento En Alquiler En Caballito, Caba, 1 Amb",
+    "title": "Departamento En Alquiler En Caballito, Caba, 1 A",
     "price": "$690.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18162/EooRorbZxQTs.webp",
     "photos": [
@@ -235,11 +234,11 @@
       "https://www.bullano.com.ar/files/09-2022/ad7816/1664368073410.jpg",
       "https://www.bullano.com.ar/files/09-2022/ad7829/1664473933454.jpg",
       "https://www.bullano.com.ar/files/10-2022/ad7848/1664729678091.jpg"
-    ]
+    ],
+    "id": "012"
   },
   {
-    "id": "013",
-    "title": "Departamento En Alquiler En San Isidro, Buenos Air",
+    "title": "Departamento En Alquiler En San Isidro, Buenos A",
     "price": "$750.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18158/NMjlKeNymRyX.webp",
     "photos": [
@@ -255,11 +254,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18158/wgeYpfAjszdz.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18158/WORvKFzeTbjK.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18158/BrbQAPqRmYky.webp"
-    ]
+    ],
+    "id": "013"
   },
   {
-    "id": "014",
-    "title": "Departamento En Venta En Canasvieiras, Florianpoli",
+    "title": "Departamento En Venta En Canasvieiras, Florianpo",
     "price": "$ 5.950.023",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18153/YggKBzAcIdtx.webp",
     "photos": [
@@ -275,11 +274,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18153/tyUswZExzQBu.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18153/hpRUGgAshYSK.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18153/QZkMjCGWqCIm.webp"
-    ]
+    ],
+    "id": "014"
   },
   {
-    "id": "015",
-    "title": "Departamento En Venta En Santinho, Florianpolis, C",
+    "title": "Departamento En Venta En Santinho, Florianpolis,",
     "price": "$ 2.450.016.612",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18152/BQsuvOniskSq.webp",
     "photos": [
@@ -295,11 +294,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18152/vyOFiMMYriJX.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18152/tOnTqZfkJWEc.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18152/peSMaTWNbFxu.webp"
-    ]
+    ],
+    "id": "015"
   },
   {
-    "id": "016",
-    "title": "Departamento En Alquiler En Virreyes, San Fernando",
+    "title": "Departamento En Alquiler En Virreyes, San Fernan",
     "price": "$550.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18150/APuSHbabhgxo.webp",
     "photos": [
@@ -315,11 +314,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18150/HSrBTIVOVmeZ.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18150/oLRQhFBuUNms.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18150/hYROORTKfnjw.webp"
-    ]
+    ],
+    "id": "016"
   },
   {
-    "id": "017",
-    "title": "Departamento En Venta En Playa Varese, Mar Del Pla",
+    "title": "Departamento En Venta En Playa Varese, Mar Del P",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18145/CVHfvCaFYvRJ.webp",
     "photos": [
@@ -335,11 +334,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18145/azWofCcvoVZm.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18145/quVCIQYfzruw.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18145/VQhfDzFhUngl.webp"
-    ]
+    ],
+    "id": "017"
   },
   {
-    "id": "018",
-    "title": "Departamento Dplex En Venta En San Miguel De Tucum",
+    "title": "Departamento Dplex En Venta En San Miguel De Tuc",
     "price": "$ 75.000144",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18446/PhItpNucPzIz.webp",
     "photos": [
@@ -355,11 +354,11 @@
       "https://www.bullano.com.ar/files/03-2021/ad3549/av-mate-de-luna-1465940755.jpeg",
       "https://www.bullano.com.ar/files/05-2023/ad9615/1683515751592.jpg",
       "https://www.bullano.com.ar/files/09-2025/ad15510/1756739808269.jpg"
-    ]
+    ],
+    "id": "018"
   },
   {
-    "id": "019",
-    "title": "Departamento En Venta En Flores, Caba, 3 Ambientes",
+    "title": "Departamento En Venta En Flores, Caba, 3 Ambient",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18144/kswENihaAIkq.webp",
     "photos": [
@@ -375,11 +374,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18144/mJNbNOnVUxJp.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18144/XgsUVArpQvfd.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18144/FKEmuddmQsSe.webp"
-    ]
+    ],
+    "id": "019"
   },
   {
-    "id": "020",
-    "title": "Departamento En Alquiler En Villa Urquiza, Caba, 2",
+    "title": "Departamento En Alquiler En Villa Urquiza, Caba,",
     "price": "$600.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18142/cKCFoyriZWPr.webp",
     "photos": [
@@ -395,11 +394,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18142/XpqUnBXFfyYo.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18142/MMyeThopHBeq.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18142/cOgiKCOImMjB.webp"
-    ]
+    ],
+    "id": "020"
   },
   {
-    "id": "021",
-    "title": "Departamento En Alquiler En Rosario, Santa Fe, Mon",
+    "title": "Departamento En Alquiler En Rosario, Santa Fe, M",
     "price": "$250.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18138/snkQkTEOWABF.webp",
     "photos": [
@@ -414,11 +413,11 @@
       "https://www.bullano.com.ar/files/05-2022/ad6725/pellegrini-181738171.jpg",
       "https://www.bullano.com.ar/files/06-2022/ad6938/ituzaingo-1817261806.png",
       "https://www.bullano.com.ar/files/09-2022/ad7636/1662251185426.jpg"
-    ]
+    ],
+    "id": "021"
   },
   {
-    "id": "022",
-    "title": "Departamento En Alquiler En Balvanera, Caba, 1 Amb",
+    "title": "Departamento En Alquiler En Balvanera, Caba, 1 A",
     "price": "$480.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18130/MVtxJZSpktKi.webp",
     "photos": [
@@ -433,11 +432,11 @@
       "https://www.bullano.com.ar/files/12-2023/ad11286/1702660386387.jpeg",
       "https://www.bullano.com.ar/files/12-2023/ad11326/1703770899961.jpeg",
       "https://www.bullano.com.ar/files/04-2024/ad11348/1712853411949.jpg"
-    ]
+    ],
+    "id": "022"
   },
   {
-    "id": "023",
-    "title": "Departamento En Alquiler En Quilmes, Buenos Aires,",
+    "title": "Departamento En Alquiler En Quilmes, Buenos Aire",
     "price": "$800.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18127/cprslmfQTuJM.webp",
     "photos": [
@@ -453,11 +452,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18127/HAIvSxJqloFx.webp",
       "https://www.bullano.com.ar/files/07-2022/ad7278/1658155927600.jpg",
       "https://www.bullano.com.ar/files/08-2022/ad7308/1660919028773.jpg"
-    ]
+    ],
+    "id": "023"
   },
   {
-    "id": "024",
-    "title": "Semipiso 2 Ambientes Al Contrafrente - Luminoso Co",
+    "title": "Semipiso 2 Ambientes Al Contrafrente - Luminoso ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18109/BLENfUdqVJmq.webp",
     "photos": [
@@ -473,11 +472,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18109/OqidjagnmROC.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18109/mOiruIbWrkkP.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18109/FqjPxRaUjOKM.webp"
-    ]
+    ],
+    "id": "024"
   },
   {
-    "id": "025",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Do",
     "price": "$ 50.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18097/BtChYKkuBdbd.webp",
     "photos": [
@@ -491,11 +490,11 @@
       "https://www.bullano.com.ar/files/08-2022/ad7559/1661264477823.jpg",
       "https://www.bullano.com.ar/files/09-2022/ad7662/1662570942840.jpg",
       "https://www.bullano.com.ar/files/09-2022/ad7697/1663078055404.jpg"
-    ]
+    ],
+    "id": "025"
   },
   {
-    "id": "026",
-    "title": "Departamento En Venta En Almagro, Caba, 3 Ambiente",
+    "title": "Departamento En Venta En Almagro, Caba, 3 Ambien",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18078/SjAQsVOJXBcd.webp",
     "photos": [
@@ -511,11 +510,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18078/TawuBMIeMVHn.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18078/soPfloFovpKe.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18078/YBJEDvWUnNgK.webp"
-    ]
+    ],
+    "id": "026"
   },
   {
-    "id": "027",
-    "title": "Departamento En Venta En Villa Santa Cruz Del Lago",
+    "title": "Departamento En Venta En Villa Santa Cruz Del La",
     "price": "$ 18.750.025",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18061/PcOKOsMsSgga.webp",
     "photos": [
@@ -531,11 +530,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18061/ffpzpxoagxCO.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18061/pucECHmiqmSX.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18061/HVHcYrudonKX.webp"
-    ]
+    ],
+    "id": "027"
   },
   {
-    "id": "028",
-    "title": "Departamento Semipiso En Alquiler En Mar Del Plata",
+    "title": "Departamento Semipiso En Alquiler En Mar Del Pla",
     "price": "$ 990.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18445/lcJQXGsRUhzk.webp",
     "photos": [
@@ -551,11 +550,11 @@
       "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg",
       "https://www.bullano.com.ar/files/02-2021/ad3334/teodoro-plaza-1268302729.jpg",
       "https://www.bullano.com.ar/files/02-2021/ad3341/calle-1601580183.jpeg"
-    ]
+    ],
+    "id": "028"
   },
   {
-    "id": "029",
-    "title": "Departamento En Alquiler En Mar Del Plata, 3 Dormi",
+    "title": "Departamento En Alquiler En Mar Del Plata, 3 Dor",
     "price": "$ 825.012",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18054/QJEGNcbcbnzO.webp",
     "photos": [
@@ -571,11 +570,11 @@
       "https://www.bullano.com.ar/files/12-2025/ad16459/1764869289420.jpg",
       "https://www.bullano.com.ar/files/12-2025/ad16483/1765153556382.jpeg",
       "https://www.bullano.com.ar/files/12-2025/ad16561/tGKpIAYUHSfJ.webp"
-    ]
+    ],
+    "id": "029"
   },
   {
-    "id": "030",
-    "title": "Departamento En Alquiler En Merlo, Buenos Aires, 2",
+    "title": "Departamento En Alquiler En Merlo, Buenos Aires,",
     "price": "$450.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18044/TJjmVJYikvOC.webp",
     "photos": [
@@ -591,11 +590,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17937/UuFnWftytDNK.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17966/VCilAcwfzGEM.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18033/QdkXjsoxLLHX.webp"
-    ]
+    ],
+    "id": "030"
   },
   {
-    "id": "031",
-    "title": "Departamento En Alquiler En Padua, Merlo, 1 Ambien",
+    "title": "Departamento En Alquiler En Padua, Merlo, 1 Ambi",
     "price": "$350.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18042/NGUKWOyFYWal.webp",
     "photos": [
@@ -611,11 +610,11 @@
       "https://www.bullano.com.ar/files/11-2025/ad16204/1762878549542.jpeg",
       "https://www.bullano.com.ar/files/11-2025/ad16261/1763333523240.jpg",
       "https://www.bullano.com.ar/files/11-2025/ad16277/1763405254948.jpg"
-    ]
+    ],
+    "id": "031"
   },
   {
-    "id": "032",
-    "title": "Departamento En Venta En Retiro, Caba, Monoambient",
+    "title": "Departamento En Venta En Retiro, Caba, Monoambie",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18041/qLDirvEVudzf.webp",
     "photos": [
@@ -631,11 +630,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18041/hNbTRtlfEiKA.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18041/vuMCVOhqHIiG.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18041/MBhOKuZzQapw.webp"
-    ]
+    ],
+    "id": "032"
   },
   {
-    "id": "033",
-    "title": "Venta Departamento Con Balcn Y Cochera En Caballit",
+    "title": "Venta Departamento Con Balcn Y Cochera En Caball",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18038/XuAazzNsXPBz.webp",
     "photos": [
@@ -651,11 +650,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18038/gUywcwZcZBEK.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18038/DMqWAPiBmMtJ.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18038/agWelwegqUjS.webp"
-    ]
+    ],
+    "id": "033"
   },
   {
-    "id": "034",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18037/AjegGnVuGsND.webp",
     "photos": [
@@ -671,10 +670,10 @@
       "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
       "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg",
       "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg"
-    ]
+    ],
+    "id": "034"
   },
   {
-    "id": "035",
     "title": "Venta Departamento Con Balcn En Caballito",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/06-2026/ad18035/SAVqkSVTeUKt.webp",
@@ -691,11 +690,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad18035/wiMXQjNuRgoo.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18035/xbptLqMEGmIr.webp",
       "https://www.bullano.com.ar/files/06-2026/ad18035/EdbVtJBnMzxm.webp"
-    ]
+    ],
+    "id": "035"
   },
   {
-    "id": "036",
-    "title": "Departamento En Venta En Santinho, Florianpolis, 2",
+    "title": "Departamento En Venta En Santinho, Florianpolis,",
     "price": "$ 3.150.018",
     "main": "https://www.bullano.com.ar/files/05-2026/ad18028/LHllnMgedjuB.webp",
     "photos": [
@@ -711,11 +710,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad18028/WAirCBfomtCP.webp",
       "https://www.bullano.com.ar/files/05-2026/ad18028/yJLaoPvfzrWZ.webp",
       "https://www.bullano.com.ar/files/05-2026/ad18028/OewjzEMSibwN.webp"
-    ]
+    ],
+    "id": "036"
   },
   {
-    "id": "037",
-    "title": "Departamento En Venta En Playa Ingleses, Florianpo",
+    "title": "Departamento En Venta En Playa Ingleses, Florian",
     "price": "$ 2.150.021",
     "main": "https://www.bullano.com.ar/files/05-2026/ad18027/zMJSjweXGnyq.webp",
     "photos": [
@@ -731,10 +730,10 @@
       "https://www.bullano.com.ar/files/05-2026/ad18027/vnUvernGNrBW.webp",
       "https://www.bullano.com.ar/files/05-2026/ad18027/jWUCCSlILUnU.webp",
       "https://www.bullano.com.ar/files/05-2026/ad18027/jsehNkQHQIoa.webp"
-    ]
+    ],
+    "id": "037"
   },
   {
-    "id": "038",
     "title": "Dueo Directo",
     "price": "$ 185.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18444/juQIGxqiioUw.webp",
@@ -751,11 +750,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18444/YoQbEvwWWJME.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18444/bVcdKNDfhgVw.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18444/lXlXirNKBpwu.webp"
-    ]
+    ],
+    "id": "038"
   },
   {
-    "id": "039",
-    "title": "Departamento En Venta En Playa Ingleses, Florianpo",
+    "title": "Departamento En Venta En Playa Ingleses, Florian",
     "price": "$ 65.000.055",
     "main": "https://www.bullano.com.ar/files/05-2026/ad18019/pJICWebHQCLx.webp",
     "photos": [
@@ -770,11 +769,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad18019/AFDRndUFjraV.webp",
       "https://www.bullano.com.ar/files/05-2026/ad18019/cGeyWiNlHmnt.webp",
       "https://www.bullano.com.ar/files/07-2022/ad7135/1656888987623.jpeg"
-    ]
+    ],
+    "id": "039"
   },
   {
-    "id": "040",
-    "title": "Departamento En Venta En Flores, Caba, 3 Ambientes",
+    "title": "Departamento En Venta En Flores, Caba, 3 Ambient",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17992/oWrRwQRtKkiR.webp",
     "photos": [
@@ -790,11 +789,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17992/bIVBcQnHMcSU.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17992/rcvhHPuGKsqt.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17992/IIFWbUaMbziZ.webp"
-    ]
+    ],
+    "id": "040"
   },
   {
-    "id": "041",
-    "title": "Departamento Dplex En Venta En Terrazas De San Lor",
+    "title": "Departamento Dplex En Venta En Terrazas De San L",
     "price": "$ 150.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17986/EjSOhfmzccdM.webp",
     "photos": [
@@ -808,11 +807,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17986/znIFfyAmlwFn.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17986/tSxjhsGCyZTf.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17986/JJOYQGYIeOkS.webp"
-    ]
+    ],
+    "id": "041"
   },
   {
-    "id": "042",
-    "title": "Departamento En Venta En Salta, Con 1 Dormitorio Y",
+    "title": "Departamento En Venta En Salta, Con 1 Dormitorio",
     "price": "$ 680000065",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17982/HlyUFyVuEBCG.webp",
     "photos": [
@@ -828,11 +827,11 @@
       "https://www.bullano.com.ar/files/04-2024/ad12075/1712269920243.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17746/cYXBqgLGzvYu.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17766/GuhYVPyshlnd.jpg"
-    ]
+    ],
+    "id": "042"
   },
   {
-    "id": "043",
-    "title": "Departamento En Venta En Villa Real, Caba, Con 3 D",
+    "title": "Departamento En Venta En Villa Real, Caba, Con 3",
     "price": "$ 3.625.017",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17959/mznIfqeSXlxC.jpg",
     "photos": [
@@ -848,11 +847,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17959/JTylJYzgKCVG.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17959/wkVSQaCZmEkb.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17959/QLeBODXQKpfV.jpg"
-    ]
+    ],
+    "id": "043"
   },
   {
-    "id": "044",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con Pa",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17956/MRsdhUTQPQQe.webp",
     "photos": [
@@ -866,11 +865,11 @@
       "https://www.bullano.com.ar/files/02-2025/ad11651/1739880226795.jpg",
       "https://www.bullano.com.ar/files/02-2024/ad11654/1707445579201.jpg",
       "https://www.bullano.com.ar/files/02-2024/ad11708/1708091874913.jpg"
-    ]
+    ],
+    "id": "044"
   },
   {
-    "id": "045",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Do",
     "price": "$ 50.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17954/YDYWMCOgIWof.webp",
     "photos": [
@@ -885,11 +884,11 @@
       "https://www.bullano.com.ar/files/04-2025/ad14612/1745253702803.jpg",
       "https://www.bullano.com.ar/files/05-2025/ad14745/1747067456313.jpeg",
       "https://www.bullano.com.ar/files/05-2025/ad14757/1747319488692.jpeg"
-    ]
+    ],
+    "id": "045"
   },
   {
-    "id": "046",
-    "title": "Departamento En Alquiler En Lomas Del Mirador, Bue",
+    "title": "Departamento En Alquiler En Lomas Del Mirador, B",
     "price": "$600.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17933/raVBQKQhQUxZ.webp",
     "photos": [
@@ -905,11 +904,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17933/cFZpvTCnxtZQ.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17933/GWRDSAzAIfeB.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17933/hRVkwFBreito.webp"
-    ]
+    ],
+    "id": "046"
   },
   {
-    "id": "047",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
     "price": "$ 50.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17932/bDxPbYbogKro.webp",
     "photos": [
@@ -925,11 +924,11 @@
       "https://www.bullano.com.ar/files/06-2023/ad10013/1687784129982.jpeg",
       "https://www.bullano.com.ar/files/06-2023/ad10017/1687792911743.jpeg",
       "https://www.bullano.com.ar/files/06-2023/ad10030/1687879770203.jpg"
-    ]
+    ],
+    "id": "047"
   },
   {
-    "id": "048",
-    "title": "Departamento En Venta En Salta, Con 2 Dormitorios ",
+    "title": "Departamento En Venta En Salta, Con 2 Dormitorio",
     "price": "$1.234",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17930/rgXHSSauwZhd.webp",
     "photos": [
@@ -945,10 +944,10 @@
       "https://www.bullano.com.ar/files/03-2024/ad11837/1709348090676.jpg",
       "https://www.bullano.com.ar/files/04-2024/ad12075/1712269920243.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17746/cYXBqgLGzvYu.webp"
-    ]
+    ],
+    "id": "048"
   },
   {
-    "id": "049",
     "title": "Vendo Depto Apto Credito En Macrocentro",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18443/XFxTLDlmpwTJ.webp",
@@ -965,11 +964,11 @@
       "https://www.bullano.com.ar/files/06-2021/ad4469/estanislao-del-360928396.jpg",
       "https://www.bullano.com.ar/files/07-2021/ad4543/duarte-quiros-1235288575.jpg",
       "https://www.bullano.com.ar/files/07-2021/ad4566/las-orquideas-1789439569.jpg"
-    ]
+    ],
+    "id": "049"
   },
   {
-    "id": "050",
-    "title": "Departamento En Alquiler En San Nicols, Caba, 5 Am",
+    "title": "Departamento En Alquiler En San Nicols, Caba, 5 ",
     "price": "$1.000.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17924/oKOivWiaVRlc.webp",
     "photos": [
@@ -985,11 +984,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17924/kLbOnZEVixUZ.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17924/mVqdbzkMEnTX.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17924/rUoqOtaLcuqH.webp"
-    ]
+    ],
+    "id": "050"
   },
   {
-    "id": "051",
-    "title": "Departamento En Venta En Terminal Vieja, Mar Del P",
+    "title": "Departamento En Venta En Terminal Vieja, Mar Del",
     "price": "$ 1.375.007",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17910/YDTQejHDeXIk.webp",
     "photos": [
@@ -1005,11 +1004,11 @@
       "https://www.bullano.com.ar/files/06-2022/ad6948/sacconi-244808390.jpg",
       "https://www.bullano.com.ar/files/06-2022/ad7076/1656256722325.jpeg",
       "https://www.bullano.com.ar/files/06-2022/ad7097/1656462536867.jpg"
-    ]
+    ],
+    "id": "051"
   },
   {
-    "id": "052",
-    "title": "Departamento En Venta En Zona Playa Coln, Mar Del ",
+    "title": "Departamento En Venta En Zona Playa Coln, Mar De",
     "price": "$ 1.737.509",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17909/XedPjulHCEKZ.webp",
     "photos": [
@@ -1025,11 +1024,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17909/FiFHegUsuDZE.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17909/sgsiBvQtQlUY.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17909/qQuLVUEsUXBn.webp"
-    ]
+    ],
+    "id": "052"
   },
   {
-    "id": "053",
-    "title": "Departamento En Venta En Mar Del Plata, 1 Dormitor",
+    "title": "Departamento En Venta En Mar Del Plata, 1 Dormit",
     "price": "$ 950.006",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17906/RwJWGhwFFars.webp",
     "photos": [
@@ -1045,11 +1044,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17906/QUJKHcPvSLRC.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17906/NxTsygKZtJyJ.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17906/libZFuehyGJJ.webp"
-    ]
+    ],
+    "id": "053"
   },
   {
-    "id": "054",
-    "title": "Departamento En Venta En Belgrano, Caba, 2 Ambient",
+    "title": "Departamento En Venta En Belgrano, Caba, 2 Ambie",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17877/xejIzjlnnUPX.webp",
     "photos": [
@@ -1065,11 +1064,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17877/aRtxzSKTVwng.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17877/HGcDUdGbFDPy.webp",
       "https://www.bullano.com.ar/files/02-2022/ad6149/listing-602795149.jpg"
-    ]
+    ],
+    "id": "054"
   },
   {
-    "id": "055",
-    "title": "Departamento En Alquiler En San Nicols, Caba, 3 Am",
+    "title": "Departamento En Alquiler En San Nicols, Caba, 3 ",
     "price": "$990.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17876/FyquyhEUlzbe.webp",
     "photos": [
@@ -1085,11 +1084,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17876/rEtOTrBagJol.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17876/HyJytXZxpXnl.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17876/hxOOeSoJadtQ.webp"
-    ]
+    ],
+    "id": "055"
   },
   {
-    "id": "056",
-    "title": "Departamento En Venta En Caballito, Caba, 2 Ambien",
+    "title": "Departamento En Venta En Caballito, Caba, 2 Ambi",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17873/sNMetIeNvhuQ.webp",
     "photos": [
@@ -1105,11 +1104,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17873/NANfmfKuSAZn.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17873/aesfrrEcPIGr.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17873/BzcDjmsOjwMm.webp"
-    ]
+    ],
+    "id": "056"
   },
   {
-    "id": "057",
-    "title": "Departamento En Venta En Olivos, Vicente Lpez, 3 A",
+    "title": "Departamento En Venta En Olivos, Vicente Lpez, 3",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17843/pbwSCYaZteDf.webp",
     "photos": [
@@ -1125,11 +1124,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17843/eIlNdkKrbvbd.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17843/BHhjVNOYlGSa.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17843/znuSMSsotzGQ.webp"
-    ]
+    ],
+    "id": "057"
   },
   {
-    "id": "058",
-    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, Con",
+    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, C",
     "price": "$750.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17841/FuMCgoRQgsuu.webp",
     "photos": [
@@ -1145,11 +1144,11 @@
       "https://www.bullano.com.ar/files/02-2024/ad11807/1709130437304.webp",
       "https://www.bullano.com.ar/files/02-2024/ad11808/1709133505583.jpg",
       "https://www.bullano.com.ar/files/02-2024/ad11809/1709134054224.jpg"
-    ]
+    ],
+    "id": "058"
   },
   {
-    "id": "059",
-    "title": "Enorme Monoambiente, A Pasos Del Monumento A La Ba",
+    "title": "Enorme Monoambiente, A Pasos Del Monumento A La ",
     "price": "$ 50.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18441/zLFRJzmOVlNZ.webp",
     "photos": [
@@ -1165,11 +1164,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18441/twZEXZxMCYHX.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18441/ovrsjOSKqMXc.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18441/KIgJJPogYmRx.webp"
-    ]
+    ],
+    "id": "059"
   },
   {
-    "id": "060",
-    "title": "Departamento En Venta En Salta Capital, 3 Ambiente",
+    "title": "Departamento En Venta En Salta Capital, 3 Ambien",
     "price": "$ 28500053",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17795/DBjVysOlCstO.jpg",
     "photos": [
@@ -1184,11 +1183,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17746/cYXBqgLGzvYu.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17766/GuhYVPyshlnd.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17930/rgXHSSauwZhd.webp"
-    ]
+    ],
+    "id": "060"
   },
   {
-    "id": "061",
-    "title": "Departamento En Venta En Plottier, Neuqun, 1 Dormi",
+    "title": "Departamento En Venta En Plottier, Neuqun, 1 Dor",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17774/EQSPOhBlKbUl.webp",
     "photos": [
@@ -1204,11 +1203,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17774/NuQFCuJVpLwK.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17774/kEvUqshOGeIo.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17774/yZDquENciGZR.webp"
-    ]
+    ],
+    "id": "061"
   },
   {
-    "id": "062",
-    "title": "Departamento En Venta En Maip, Mendoza, Con 2 Dorm",
+    "title": "Departamento En Venta En Maip, Mendoza, Con 2 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17773/VBhDXdnPEoHr.webp",
     "photos": [
@@ -1224,11 +1223,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17773/KpVmIUcAImWB.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17773/pIPRLRsHLBHT.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17773/lhqjSARqXvsr.webp"
-    ]
+    ],
+    "id": "062"
   },
   {
-    "id": "063",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 2 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 50.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17767/KjJzyRvMxTnN.webp",
     "photos": [
@@ -1244,11 +1243,11 @@
       "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg",
       "https://www.bullano.com.ar/files/04-2021/ad3678/maria-olguin-1175276237.jpg",
       "https://www.bullano.com.ar/files/04-2021/ad3679/buenos-aires-227622849.jpg"
-    ]
+    ],
+    "id": "063"
   },
   {
-    "id": "064",
-    "title": "Departamento En Venta En Salta, Salta, Con 2 Dormi",
+    "title": "Departamento En Venta En Salta, Salta, Con 2 Dor",
     "price": "$ 680000065",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17766/GuhYVPyshlnd.jpg",
     "photos": [
@@ -1264,11 +1263,11 @@
       "https://www.bullano.com.ar/files/03-2024/ad11837/1709348090676.jpg",
       "https://www.bullano.com.ar/files/04-2024/ad12075/1712269920243.jpg",
       "https://www.bullano.com.ar/files/05-2026/ad17746/cYXBqgLGzvYu.webp"
-    ]
+    ],
+    "id": "064"
   },
   {
-    "id": "065",
-    "title": "Departamento En Venta En Mar Del Plata, A Pasos De",
+    "title": "Departamento En Venta En Mar Del Plata, A Pasos ",
     "price": "$ 1.175.006",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17756/NrqoiDvFaexI.webp",
     "photos": [
@@ -1284,11 +1283,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17756/BvCxDxSflKNB.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17756/zMhMTYqcLapt.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17756/RgEPrgITjRFu.webp"
-    ]
+    ],
+    "id": "065"
   },
   {
-    "id": "066",
-    "title": "Departamento En Venta En Mar Del Plata, 3 Ambiente",
+    "title": "Departamento En Venta En Mar Del Plata, 3 Ambien",
     "price": "$ 1.175.015",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17753/vRlVFTTYQncE.webp",
     "photos": [
@@ -1304,11 +1303,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17753/zLjuDVKiLajh.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17753/MaFmjiDNUzrD.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17753/eeoFianDgzgM.webp"
-    ]
+    ],
+    "id": "066"
   },
   {
-    "id": "067",
-    "title": "Departamento En Venta En Zona Gemes, Mar Del Plata",
+    "title": "Departamento En Venta En Zona Gemes, Mar Del Pla",
     "price": "$ 1.375.011",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17751/DIQdsnrutmBL.webp",
     "photos": [
@@ -1324,11 +1323,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17751/PFnHDwdKfaml.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17751/UfBDAHnwQdqx.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17751/SoNZaXBDJXKO.webp"
-    ]
+    ],
+    "id": "067"
   },
   {
-    "id": "068",
-    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, 1 D",
+    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, 1",
     "price": "$700.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17715/UyOlgiEFkAjV.webp",
     "photos": [
@@ -1344,10 +1343,10 @@
       "https://www.bullano.com.ar/files/05-2026/ad17715/YyGqJMkmZEdA.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17715/SMMZSzYjbVha.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17715/EnbXUunrIIIz.webp"
-    ]
+    ],
+    "id": "068"
   },
   {
-    "id": "069",
     "title": "De Lorenzi 180",
     "price": "$ 2.000.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18439/zPXDFMaQUgWL.webp",
@@ -1364,11 +1363,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18439/XrlFgiAbUDIT.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18439/SpjXPoobbPpO.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18439/FskqQREQYzLm.webp"
-    ]
+    ],
+    "id": "069"
   },
   {
-    "id": "070",
-    "title": "Departamento En Venta En Flores, Caba, 2 Ambientes",
+    "title": "Departamento En Venta En Flores, Caba, 2 Ambient",
     "price": "$125.000",
     "main": "https://www.bullano.com.ar/files/05-2026/ad17713/AQdlMpABzbDp.webp",
     "photos": [
@@ -1384,11 +1383,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17713/mqudbXKmxswM.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17713/LVECjqwpEOot.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17713/tVZCDLQyaLsf.webp"
-    ]
+    ],
+    "id": "070"
   },
   {
-    "id": "071",
-    "title": "Departamento En Venta En Villa Urquiza, Caba, 3 Am",
+    "title": "Departamento En Venta En Villa Urquiza, Caba, 3 ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17710/uYVhXkZWaPeO.webp",
     "photos": [
@@ -1404,11 +1403,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17710/cuagKpGaaDhV.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17710/idkOtIRFAXxV.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17710/ihYwIIHQGhhL.webp"
-    ]
+    ],
+    "id": "071"
   },
   {
-    "id": "072",
-    "title": "Departamento En Venta En Villa Carlos Paz, Crdoba,",
+    "title": "Departamento En Venta En Villa Carlos Paz, Crdob",
     "price": "$ 112.500",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17609/wJpfiSomLwFT.webp",
     "photos": [
@@ -1424,11 +1423,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17609/DPbKpJszEmYw.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17609/kFimKBjOVuUV.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17609/knSFaZGbgZcy.webp"
-    ]
+    ],
+    "id": "072"
   },
   {
-    "id": "073",
-    "title": "Departamento En Venta En Recoleta, Caba, 1 Dormito",
+    "title": "Departamento En Venta En Recoleta, Caba, 1 Dormi",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17607/HjBuuzPogckT.webp",
     "photos": [
@@ -1442,11 +1441,11 @@
       "https://www.bullano.com.ar/files/06-2026/ad17686/XwESVWClnfVw.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17689/kYrPlhiDaQug.jpg",
       "https://www.bullano.com.ar/files/04-2026/ad17691/oyzYUvFFZIYf.webp"
-    ]
+    ],
+    "id": "073"
   },
   {
-    "id": "074",
-    "title": "Departamento En Venta En Liniers, Caba, 3 Ambiente",
+    "title": "Departamento En Venta En Liniers, Caba, 3 Ambien",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17691/oyzYUvFFZIYf.webp",
     "photos": [
@@ -1462,11 +1461,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17691/bsSMJbatVJwJ.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17691/UPrdZBrlFpvp.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17691/YMKPGQKXIAPO.webp"
-    ]
+    ],
+    "id": "074"
   },
   {
-    "id": "075",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17684/xRcHJqnQNJcv.webp",
     "photos": [
@@ -1482,11 +1481,11 @@
       "https://www.bullano.com.ar/files/04-2024/ad12176/1713450726782.jpg",
       "https://www.bullano.com.ar/files/04-2024/ad12186/1713532293070.jpg",
       "https://www.bullano.com.ar/files/04-2024/ad12189/1713533925530.jpg"
-    ]
+    ],
+    "id": "075"
   },
   {
-    "id": "076",
-    "title": "Departamento En Alquiler En Ramos Meja, Buenos Air",
+    "title": "Departamento En Alquiler En Ramos Meja, Buenos A",
     "price": "$800.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17679/YFOSvFHVpgvX.webp",
     "photos": [
@@ -1502,11 +1501,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17679/GPBptaZqRecM.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17679/BGgsaZNPdDEw.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17679/ePripenkKnzC.webp"
-    ]
+    ],
+    "id": "076"
   },
   {
-    "id": "077",
-    "title": "Departamento En Alquiler En Neuqun, Con 1 Dormitor",
+    "title": "Departamento En Alquiler En Neuqun, Con 1 Dormit",
     "price": "$1.000.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17667/RBpYCFBUikEo.webp",
     "photos": [
@@ -1522,11 +1521,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17667/BZUGclgjMxVA.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17667/VvRiLEPwHVUW.webp",
       "https://www.bullano.com.ar/files/11-2025/ad16149/1763409080681.jpg"
-    ]
+    ],
+    "id": "077"
   },
   {
-    "id": "078",
-    "title": "Departamento En Venta En Santinho, Florianpolis, 2",
+    "title": "Departamento En Venta En Santinho, Florianpolis,",
     "price": "$ 90.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17657/aMjlGIjtWenf.webp",
     "photos": [
@@ -1541,11 +1540,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17657/yXdJjYLFdGVd.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17657/QPsuCGBzUfgw.webp",
       "https://www.bullano.com.ar/files/07-2022/ad7135/1656888987623.jpeg"
-    ]
+    ],
+    "id": "078"
   },
   {
-    "id": "079",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 3 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 387.500",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17655/VRitEuOMnRPx.webp",
     "photos": [
@@ -1561,10 +1560,10 @@
       "https://www.bullano.com.ar/files/04-2026/ad17655/RjMNSxohnSCF.webp",
       "https://www.bullano.com.ar/files/11-2025/ad16212/1762960670985.jpeg",
       "https://www.bullano.com.ar/files/11-2025/ad16233/1763041553467.jpeg"
-    ]
+    ],
+    "id": "079"
   },
   {
-    "id": "080",
     "title": "Alquiler Departamento 2 Ambientes En Caballito",
     "price": "$ 450.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18437/lSCUEaoAmPsU.webp",
@@ -1581,11 +1580,11 @@
       "https://www.bullano.com.ar/files/08-2026/ad18437/waQLvZFreUPy.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18437/sdKUqMMDKfzx.webp",
       "https://www.bullano.com.ar/files/08-2026/ad18437/vdfVKnfPFRAM.webp"
-    ]
+    ],
+    "id": "080"
   },
   {
-    "id": "081",
-    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, 1 D",
+    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, 1",
     "price": "$540.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17635/IwCoTnxjrjeE.webp",
     "photos": [
@@ -1601,11 +1600,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17635/UJgSAXXwUtJA.webp",
       "https://www.bullano.com.ar/files/05-2024/ad12266/1714743728590.jpg",
       "https://www.bullano.com.ar/files/05-2024/ad12328/1715700231337.jpeg"
-    ]
+    ],
+    "id": "081"
   },
   {
-    "id": "082",
-    "title": "Departamento En Alquiler En Ramos Meja Sur, 3 Ambi",
+    "title": "Departamento En Alquiler En Ramos Meja Sur, 3 Am",
     "price": "$800.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17630/hIxxNMhyxoIv.webp",
     "photos": [
@@ -1621,11 +1620,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17630/KCPtqPQbpovz.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17630/mfnyBfUlhItu.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17630/jPiRNrClyoZd.webp"
-    ]
+    ],
+    "id": "082"
   },
   {
-    "id": "083",
-    "title": "Departamento En Alquiler En San Justo, Buenos Aire",
+    "title": "Departamento En Alquiler En San Justo, Buenos Ai",
     "price": "$500.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17627/oByYEJUNAItt.webp",
     "photos": [
@@ -1641,11 +1640,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17627/YVzuUPNykpda.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17627/vFJXtAwrrCTv.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17627/EQgvyjEwvgbs.webp"
-    ]
+    ],
+    "id": "083"
   },
   {
-    "id": "084",
-    "title": "Departamento En Alquiler En Villa Luzuriaga, Bueno",
+    "title": "Departamento En Alquiler En Villa Luzuriaga, Bue",
     "price": "$520.000",
     "main": "https://www.bullano.com.ar/files/07-2026/ad17624/LNHusFfGJdvt.webp",
     "photos": [
@@ -1661,11 +1660,11 @@
       "https://www.bullano.com.ar/files/07-2026/ad17624/aWTCmyhdBisy.webp",
       "https://www.bullano.com.ar/files/05-2021/ad3970/america-1163803633.jpg",
       "https://www.bullano.com.ar/files/08-2021/ad3998/wagner-427413250.jpg"
-    ]
+    ],
+    "id": "084"
   },
   {
-    "id": "085",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17619/THFefGnrLrcH.webp",
     "photos": [
@@ -1681,11 +1680,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17619/utMEYzWAQtaR.webp",
       "https://www.bullano.com.ar/files/12-2024/ad13853/1733929287917.jpeg",
       "https://www.bullano.com.ar/files/12-2024/ad13854/1733929530543.jpg"
-    ]
+    ],
+    "id": "085"
   },
   {
-    "id": "086",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17598/BIPywBwOACUD.webp",
     "photos": [
@@ -1701,11 +1700,11 @@
       "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
       "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg",
       "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg"
-    ]
+    ],
+    "id": "086"
   },
   {
-    "id": "087",
-    "title": "Departamento En Venta En San Luis, Dentro De Las 4",
+    "title": "Departamento En Venta En San Luis, Dentro De Las",
     "price": "$ 2.125.015",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17591/mxdYXdfLEHtu.webp",
     "photos": [
@@ -1720,11 +1719,11 @@
       "https://www.bullano.com.ar/files/12-2022/ad8428/1670590899871.jpg",
       "https://www.bullano.com.ar/files/07-2023/ad10119/1688731726275.jpg",
       "https://www.bullano.com.ar/files/08-2023/ad10420/1692146516641.jpg"
-    ]
+    ],
+    "id": "087"
   },
   {
-    "id": "088",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 2 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17593/SaYtTgBJcWFn.webp",
     "photos": [
@@ -1740,11 +1739,11 @@
       "https://www.bullano.com.ar/files/02-2021/ad3313/gaudard-428707072.jpg",
       "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
       "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg"
-    ]
+    ],
+    "id": "088"
   },
   {
-    "id": "089",
-    "title": "Departamento En Venta En Rama Cada, San Rafael, 72",
+    "title": "Departamento En Venta En Rama Cada, San Rafael, ",
     "price": "$ 2.000.018",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17572/JqmkozjAPVtJ.webp",
     "photos": [
@@ -1760,11 +1759,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17572/MgsQwvhGklPg.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17572/amBPXtnViAZH.webp",
       "https://www.bullano.com.ar/files/09-2022/ad7715/1663160571959.jpeg"
-    ]
+    ],
+    "id": "089"
   },
   {
-    "id": "090",
-    "title": "Departamento En Alquiler En Ciudad, Mendoza, 2 Dor",
+    "title": "Departamento En Alquiler En Ciudad, Mendoza, 2 D",
     "price": "$650.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17570/uBcnoubLTQTh.webp",
     "photos": [
@@ -1780,10 +1779,10 @@
       "https://www.bullano.com.ar/files/04-2026/ad17570/LKBlUAyJXwKB.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17570/qksWbjHiaGFa.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17570/MOqMyPwgjkxz.webp"
-    ]
+    ],
+    "id": "090"
   },
   {
-    "id": "091",
     "title": "Vendo Depto En Sector Macrocentro",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/08-2026/ad18432/zGYbxmNZQkmn.webp",
@@ -1798,11 +1797,11 @@
       "https://www.bullano.com.ar/files/09-2024/ad13327/1727272376850.jpg",
       "https://www.bullano.com.ar/files/10-2024/ad13391/1727962792473.jpg",
       "https://www.bullano.com.ar/files/10-2024/ad13393/1727963761228.jpeg"
-    ]
+    ],
+    "id": "091"
   },
   {
-    "id": "092",
-    "title": "Departamento En Alquiler En Ciudad, Mendoza, 1 Dor",
+    "title": "Departamento En Alquiler En Ciudad, Mendoza, 1 D",
     "price": "$450.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17568/rLFegkfPysjM.webp",
     "photos": [
@@ -1818,11 +1817,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17568/VGyVLsIxchSu.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17568/OueYIfNhDsaI.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17568/HDhJgxcSAsnE.webp"
-    ]
+    ],
+    "id": "092"
   },
   {
-    "id": "093",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 2 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17504/ZximYcJcXkvL.webp",
     "photos": [
@@ -1838,10 +1837,10 @@
       "https://www.bullano.com.ar/files/10-2022/ad7987/1666271473763.jpeg",
       "https://www.bullano.com.ar/files/10-2022/ad7988/1666271632555.jpeg",
       "https://www.bullano.com.ar/files/10-2022/ad7989/1666271843857.jpeg"
-    ]
+    ],
+    "id": "093"
   },
   {
-    "id": "094",
     "title": "Hermoso Duplex 2/3 Ambientes. Zona Congreso.",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/03-2025/ad14339/1741456560108.jpg",
@@ -1858,11 +1857,11 @@
       "https://www.bullano.com.ar/files/03-2025/ad14339/1741456652017.jpeg",
       "https://www.bullano.com.ar/files/03-2025/ad14339/1741456677292.jpg",
       "https://www.bullano.com.ar/files/03-2025/ad14339/1741456711309.jpeg"
-    ]
+    ],
+    "id": "094"
   },
   {
-    "id": "095",
-    "title": "Departamento En Alquiler En Rosario, Santa Fe, 2 D",
+    "title": "Departamento En Alquiler En Rosario, Santa Fe, 2",
     "price": "$670.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17489/EsRRrYhnXfPQ.webp",
     "photos": [
@@ -1878,11 +1877,11 @@
       "https://www.bullano.com.ar/files/04-2026/ad17489/rtTqGZIxQFmJ.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17489/rTGHTYfhjtnk.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17489/ESmVegAvFkjt.webp"
-    ]
+    ],
+    "id": "095"
   },
   {
-    "id": "096",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 3 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 375.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17470/UmmlbGUhAKGE.webp",
     "photos": [
@@ -1898,11 +1897,11 @@
       "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg",
       "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg",
       "https://www.bullano.com.ar/files/04-2021/ad3678/maria-olguin-1175276237.jpg"
-    ]
+    ],
+    "id": "096"
   },
   {
-    "id": "097",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Dorm",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Do",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17468/oTWVqYqAffUf.webp",
     "photos": [
@@ -1917,11 +1916,11 @@
       "https://www.bullano.com.ar/files/08-2025/ad15338/1755370906443.jpeg",
       "https://www.bullano.com.ar/files/08-2025/ad15385/1755780081197.jpeg",
       "https://www.bullano.com.ar/files/08-2025/ad15390/1755784199216.jpg"
-    ]
+    ],
+    "id": "097"
   },
   {
-    "id": "098",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con Ba",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 100.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17455/LMUZcaMtsILY.webp",
     "photos": [
@@ -1937,11 +1936,11 @@
       "https://www.bullano.com.ar/files/09-2025/ad15565/1757013091584.jpeg",
       "https://www.bullano.com.ar/files/09-2025/ad15567/1757013396107.jpeg",
       "https://www.bullano.com.ar/files/09-2025/ad15577/1757117786354.jpg"
-    ]
+    ],
+    "id": "098"
   },
   {
-    "id": "099",
-    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con 3 ",
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
     "price": "$ 218.750",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17451/PdoeWOWmkkYp.webp",
     "photos": [
@@ -1957,11 +1956,11 @@
       "https://www.bullano.com.ar/files/05-2026/ad17851/gIkmDbAWzfrp.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17932/bDxPbYbogKro.webp",
       "https://www.bullano.com.ar/files/05-2026/ad17954/YDYWMCOgIWof.webp"
-    ]
+    ],
+    "id": "099"
   },
   {
-    "id": "100",
-    "title": "Departamento En Alquiler En Miramar, Buenos Aires,",
+    "title": "Departamento En Alquiler En Miramar, Buenos Aire",
     "price": "$450.000",
     "main": "https://www.bullano.com.ar/files/04-2026/ad17448/LBAqBZUrqZGV.webp",
     "photos": [
@@ -1977,6 +1976,1985 @@
       "https://www.bullano.com.ar/files/04-2026/ad17448/KassaNtUQaap.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17448/jyKRugQAhjbX.webp",
       "https://www.bullano.com.ar/files/04-2026/ad17448/JfWDvFQocVBn.webp"
-    ]
+    ],
+    "id": "100"
+  },
+  {
+    "title": "Departamento En Alquiler En Miramar, Buenos Aire",
+    "price": "$220.000",
+    "main": "https://www.bullano.com.ar/files/04-2026/ad17447/VcghyuSLTbrM.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/04-2026/ad17447/VcghyuSLTbrM.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/AusbYOkNVGmg.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/MGzprJZkqQGy.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/SyVcKIugFyVI.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/cnnOGStpwhYe.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/bpTIGoNWUuPf.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17447/UeFkArHaTdSz.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg",
+      "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3334/teodoro-plaza-1268302729.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3341/calle-1601580183.jpeg",
+      "https://www.bullano.com.ar/files/02-2021/ad3349/cordero-1980230473.jpg"
+    ],
+    "id": "101"
+  },
+  {
+    "title": "Vendo Depto De 1 Dr",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/08-2026/ad18431/lJYItBKEyyuo.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/08-2026/ad18431/lJYItBKEyyuo.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/gRrvELKgxNdP.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/QfIgxherIEHL.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/BeIjrTVBRKRT.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/RrwidHKhSUhx.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/EbfOzTYUzJqt.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18431/UcEScuooRtTb.webp",
+      "https://www.bullano.com.ar/files/06-2024/ad12521/1717536359615.jpg",
+      "https://www.bullano.com.ar/files/06-2024/ad12532/1717594817332.jpeg",
+      "https://www.bullano.com.ar/files/06-2024/ad12608/1718295794780.jpeg",
+      "https://www.bullano.com.ar/files/06-2024/ad12663/1719427443004.jpg",
+      "https://www.bullano.com.ar/files/06-2024/ad12673/1719499603824.jpg"
+    ],
+    "id": "102"
+  },
+  {
+    "title": "Departamento En Alquiler En Caballito, Caba, 4 A",
+    "price": "$1.100.000",
+    "main": "https://www.bullano.com.ar/files/04-2026/ad17444/zVvEKCABCcun.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/04-2026/ad17444/zVvEKCABCcun.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/LfyylAHRSPlt.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/RzyBcblfsBWV.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/ZPUtDsgqevAw.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/FFqBIovKSkos.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/dVVVaydwGqjx.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/AdwWxnQzxUok.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/qOCwgAmWGbaW.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/dlfPfgvjtJyU.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/SbCRBxjZHeke.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/bEQoTAsgyPOo.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17444/KQqIKIQEBLvr.webp"
+    ],
+    "id": "103"
+  },
+  {
+    "title": "Departamento En Alquiler En Godoy Cruz, Mendoza,",
+    "price": "$500.000",
+    "main": "https://www.bullano.com.ar/files/04-2026/ad17442/jxZjtZIspjXW.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/04-2026/ad17442/jxZjtZIspjXW.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/SjbDTKAnzPEF.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/QEPQNofQVogD.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/OrYJoxyeJAdx.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/PdwFAkWUbErU.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/KlkGIaYHONEY.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/muCnylxcQJkl.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/dCxdIbhSAFmC.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/EdNMXguNhnja.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17442/dQnrVfPlbJgG.webp",
+      "https://www.bullano.com.ar/files/06-2022/ad6897/vendimiadores-311124216.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7715/1663160571959.jpeg"
+    ],
+    "id": "104"
+  },
+  {
+    "title": "Departamento En Venta En Canning, Buenos Aires, ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17404/vnclNTmorqnI.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17404/vnclNTmorqnI.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/nOfpsGYDnAkE.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/fhWVheyiRVMG.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/zEbTaHBQEoDj.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/YsQXrbjWsaIh.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/OHAEmVdXuQlr.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/YlxnZMnskxCM.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/MudDtlXeCvbk.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/HTXzRMRYuURH.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/aHtwYlUfSqnJ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/cAYdOuADYiOQ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17404/kySyTzpnOoxr.webp"
+    ],
+    "id": "105"
+  },
+  {
+    "title": "Departamento En Alquiler En Mar Del Plata, Monoa",
+    "price": "$480.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17379/hwRocAyOfoCP.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17379/hwRocAyOfoCP.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17379/RJPSsZzeJiMn.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17379/uQaKGnvhDElZ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17379/NQmobtgTBymw.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17379/IzWVpgAUxnAo.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17379/yTOfHhPMjncW.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18276/pOQnhauAhzja.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18282/lXQgIhSQtDgm.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18285/VCddmfHKxNsW.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18304/dQSbFwfNZOWL.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18320/gBmrTjlSwIGx.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18321/vOecEuzPWLAS.webp"
+    ],
+    "id": "106"
+  },
+  {
+    "title": "Departamento En Venta En Balvanera, Caba, 3 Ambi",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17373/yoKvdiDkXwVj.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17373/yoKvdiDkXwVj.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/TeNrlOxvUGcO.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/YrGqeqzUKElD.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/iPkGURFqlGqL.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/qipgVlcvRAvR.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/ZORSbdMWSzTq.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/bxMGiKldeyrz.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17373/JITETAbFAuKj.webp",
+      "https://www.bullano.com.ar/files/03-2023/ad9151/1678624809251.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9152/1678627609307.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9299/1679577176609.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9319/1679958432103.jpg"
+    ],
+    "id": "107"
+  },
+  {
+    "title": "Departamento En Venta En Almagro, Caba, 2 Ambien",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17302/ZKnenikKlUeL.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17302/ZKnenikKlUeL.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/fUNWcmxYQeSt.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/kRyowGxKrXeF.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/xilPqQFFvYrc.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/JEqHCHDiETYk.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/tRqkDqHipSXK.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/qhLDriISdJhn.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/yBvTLgnsXLjg.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/pIJQOPZwUHDw.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/hQGJvrXZpIqq.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/tfiUhsaDCmvo.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17302/WFgDXSoZJhCG.webp"
+    ],
+    "id": "108"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 275.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17289/dLbaXYgazqcv.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17289/dLbaXYgazqcv.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/MMaGeLspgcsI.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/BUBMxvIdZYux.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/AAbRSltLYLEj.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/qlyVxPNmzmFi.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/bqZThCiypwsb.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/sHfCwkfTpVtE.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/ZLINulkwigTZ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17289/rMMqbdhLKQlI.webp",
+      "https://www.bullano.com.ar/files/02-2021/ad3313/gaudard-428707072.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
+      "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg"
+    ],
+    "id": "109"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, De 1",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17262/MAIJIsTPZpch.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17262/MAIJIsTPZpch.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17262/cNBsLYHyeOYR.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17262/SSJdkoDtLcHU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17262/WOSkMYnJtNFT.webp",
+      "https://www.bullano.com.ar/files/09-2025/ad15522/1756812396973.jpg",
+      "https://www.bullano.com.ar/files/09-2025/ad15527/1756821644198.jpeg",
+      "https://www.bullano.com.ar/files/09-2025/ad15551/1756931854816.jpeg",
+      "https://www.bullano.com.ar/files/09-2025/ad15565/1757013091584.jpeg",
+      "https://www.bullano.com.ar/files/09-2025/ad15567/1757013396107.jpeg",
+      "https://www.bullano.com.ar/files/09-2025/ad15577/1757117786354.jpg"
+    ],
+    "id": "110"
+  },
+  {
+    "title": "Departamento Venta 4 Ambientes 2 Patios Balvaner",
+    "price": "$ 89.900",
+    "main": "https://www.bullano.com.ar/files/08-2026/ad18428/KvCXsHUVvmyr.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/08-2026/ad18428/KvCXsHUVvmyr.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/teqIcpHMeFrV.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/SkyIpEPwfeFb.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/QchfBFEQTucD.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/VrdhqcAEJtCG.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/CqdSLKcMgioD.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/YtVIejPwgGyu.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/VWJOyQpRXria.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/QJUBDZWJGkOY.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/ClNJAohdzFhA.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/skVoIeJKDZEI.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18428/EBwZMWrbpKgY.webp"
+    ],
+    "id": "111"
+  },
+  {
+    "title": "Departamento En Alquiler En Centro, Neuqun, 4 Am",
+    "price": "$1.650.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17250/YERaneCHaICe.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17250/YERaneCHaICe.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17250/HpbCaTGAWSsT.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17250/rPQEHXFbjYSr.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17250/ZkzifaGnzHLG.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17250/wiNHIBJlfOeL.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17250/jqKztsnXJvbC.webp",
+      "https://www.bullano.com.ar/files/03-2024/ad11944/1710763052048.jpg",
+      "https://www.bullano.com.ar/files/05-2024/ad12411/1716386856244.jpeg",
+      "https://www.bullano.com.ar/files/09-2024/ad13273/1726771116730.jpg",
+      "https://www.bullano.com.ar/files/09-2024/ad13299/1726985562756.jpg",
+      "https://www.bullano.com.ar/files/09-2024/ad13323/1727267765889.jpg",
+      "https://www.bullano.com.ar/files/01-2025/ad14091/1738004544564.jpg"
+    ],
+    "id": "112"
+  },
+  {
+    "title": "Departamento En Venta En Cumeln, Neuqun, 2 Ambie",
+    "price": "$1.000.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17247/TDYHcXtLmQBc.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17247/TDYHcXtLmQBc.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/fdUtsCjpByjf.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/GoIcFaqpFMhF.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/BDmhrZpHFHzR.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/fkOQibjZQERF.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/DdlHbGHeiqJK.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/cXfFpTVSKGZG.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/dSnXhfKAfTmU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17247/njLOPrprdVQm.webp",
+      "https://www.bullano.com.ar/files/11-2025/ad16149/1763409080681.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16150/1763409243486.jpg",
+      "https://www.bullano.com.ar/files/03-2026/ad17239/ubIRYdpiJPpU.webp"
+    ],
+    "id": "113"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17248/FtjQhRSZaoHa.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17248/FtjQhRSZaoHa.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17248/inaYBOImuRHb.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17248/yWMzEisjedid.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17248/HNCEyxrMpXyB.webp",
+      "https://www.bullano.com.ar/files/01-2024/ad11480/1706192281350.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11554/1706625188394.jpg",
+      "https://www.bullano.com.ar/files/02-2024/ad11645/1707319415373.jpg",
+      "https://www.bullano.com.ar/files/02-2025/ad11651/1739880226795.jpg",
+      "https://www.bullano.com.ar/files/02-2024/ad11654/1707445579201.jpg",
+      "https://www.bullano.com.ar/files/02-2024/ad11708/1708091874913.jpg"
+    ],
+    "id": "114"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Do",
+    "price": "$ 50.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17238/ByrCnpnJUVNh.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17238/ByrCnpnJUVNh.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17238/rCwsTXOsclrC.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17238/mBPiGcIXbgWp.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17238/qsQVbfusRRxl.webp",
+      "https://www.bullano.com.ar/files/11-2018/ad483/maip-332466777.jpg",
+      "https://www.bullano.com.ar/files/11-2018/ad486/chaco-1268316545.jpg",
+      "https://www.bullano.com.ar/files/11-2018/ad487/pasaje-sorrentino-934048567.jpg",
+      "https://www.bullano.com.ar/files/11-2018/ad490/roque-saenz-1061054097.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3313/gaudard-428707072.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg"
+    ],
+    "id": "115"
+  },
+  {
+    "title": "Departamento En Alquiler En Maip, Mendoza, Con 2",
+    "price": "$900.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17232/NYZylKiYFdFH.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17232/NYZylKiYFdFH.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/AGMgqhiMWeZK.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/xAgAWijgCMvJ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/NBfJEAzVStWH.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/MbCoLUkpeWIJ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/RrtqQrJVIADp.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/ngKbWPTSbWcW.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/IOehimEmZRvR.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/QYibnzkUlcjw.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/DbHEhYRlUaJI.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/eyReersIICEC.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17232/CXQHsoeqXDhM.webp"
+    ],
+    "id": "116"
+  },
+  {
+    "title": "Departamento En Venta En Recoleta, Caba, 3 Ambie",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17203/uIhQVzKvAzZY.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17203/uIhQVzKvAzZY.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/FWwnSsGNgAxq.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/TERjtKZHvCHu.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/OWfCKOlatTyv.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/iFgwrdktbYer.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/FkuwgamLZxmU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/NdFETDmJzzPz.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/TBJwAvkkuEna.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/EQMOIAKnjMcm.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/WqmFpRVrVabp.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/EdBDpgcnOkTo.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17203/DkNupgmghPlW.webp"
+    ],
+    "id": "117"
+  },
+  {
+    "title": "Departamento En Venta En Barrio Las Palmas, Crdo",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17189/TxAbGVWoUUYj.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17189/TxAbGVWoUUYj.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/gytqZMYgVTSL.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/aRHIqJTdjNVB.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/GSVxgxReZgxs.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/uNmvkgURbiCE.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/tQSUhXeQQzYp.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/kJHnZheXngvR.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/kVlrSJtURoDD.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/XWAglIbWFUkr.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/fIVxgPvdgRvg.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/iSbqfGYDhHxJ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17189/REDCRtKeBDOG.webp"
+    ],
+    "id": "118"
+  },
+  {
+    "title": "Departamento En Alquiler Temporario En San Rafae",
+    "price": "$60.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17176/OlWeXKKCeYWr.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17176/OlWeXKKCeYWr.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/zPPZhNHKwNNd.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/ymzZonpJUxfP.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/qHdAzwowZCIK.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/ULZjSPRwKEwZ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/jcXLwsXmKxGn.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/wmUigIqOUxed.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/pYhlzmBJaqrv.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/XRwIlCwVDzfU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/HrUleUnEMISV.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/lsfHtyUIGQNb.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17176/gsMqOneRCgRT.webp"
+    ],
+    "id": "119"
+  },
+  {
+    "title": "A Estrenar Con Terraza Parrilla Y Pileta Propiav",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/08-2026/ad18427/RuNRHvgYwSPi.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/08-2026/ad18427/RuNRHvgYwSPi.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/CtQImOavfRpv.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/lKxdSXFUvIfH.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/VXhCpnikPPuB.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/fZvWeHwmvHjD.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/XLwOfLNyIlHl.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/TwzYwxVvsIGN.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/PKyFNRpdCMOM.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/XpFAxmiPsvCS.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/IVaMgAOKaxTY.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/lCQmOoVAWgbO.webp",
+      "https://www.bullano.com.ar/files/08-2026/ad18427/pSvTtJfCJciQ.webp"
+    ],
+    "id": "120"
+  },
+  {
+    "title": "Departamento En Venta En Valentina Alsina, Lans,",
+    "price": "$ 1.225.008",
+    "main": "https://www.bullano.com.ar/files/04-2026/ad17174/ejjUDNUKpZwq.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/04-2026/ad17174/ejjUDNUKpZwq.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/rMSiKIcUXcmn.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/SSELRauqNdUk.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/FUCJzaDukelE.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/qBoRQKPWoTQI.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/UZxIOdKwowpt.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/yVkYShadhRaX.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/OBKkCfldwlaH.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/MPDMwDWpiWXT.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/LixjMRWoqmrY.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/zbAezkOHWxWM.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17174/lWkRWrDtdWcU.webp"
+    ],
+    "id": "121"
+  },
+  {
+    "title": "Departamento Temporario En San Rafael, Mendoza, ",
+    "price": "$60.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17168/YaQojyVumRhv.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17168/YaQojyVumRhv.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/RPGtBgKHplKc.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/HIqniEaUQefZ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/vHqIqJSmAfPB.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/STNJqTluLYTI.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/ejVvdUmswLvU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/HlDkMRktTxzN.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/eTGskZpfnRcN.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/WDdtslGkOcWz.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/WMXlhnNgvcqr.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/TClvsjgdtyXi.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17168/kAkpihchCNxx.webp"
+    ],
+    "id": "122"
+  },
+  {
+    "title": "Departamento En Alquiler Temporario En San Rafae",
+    "price": "$60.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17167/DycSdbzxtnnh.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17167/DycSdbzxtnnh.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/oAkOymoLbqYs.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/TpzkSCZlLPXb.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/gBtivyJfSnaZ.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/oLAIQeDVShiz.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/XaYJxAvyYncd.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/eoiTpoNWWrXl.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/InZiYHpmPhwx.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/PbyKJTtJAOSP.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17167/sMcugewlVBSw.webp",
+      "https://www.bullano.com.ar/files/02-2021/ad3434/elpidio-gonzales-y-azcuenaga-1814870360.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3822/av-481277838.jpeg"
+    ],
+    "id": "123"
+  },
+  {
+    "title": "Departamento En Alquiler En San Cristbal, Caba, ",
+    "price": "$400.000",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17153/nOUhGGpcdNhY.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17153/nOUhGGpcdNhY.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/PMqKVevbnxsP.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/XdXocCZByKXo.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/wmLLsIpOnURm.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/RVhEmxmdZCMT.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/RPrTaaqzsTkc.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/eLRIClrofyms.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17153/oglLFZBZZYCY.webp",
+      "https://www.bullano.com.ar/files/03-2021/ad3588/bolivar-619915191.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3685/av-carabobo-455-y-av-1731363693.jpeg",
+      "https://www.bullano.com.ar/files/04-2021/ad3727/avenida-soldado-de-la-frontera-64024493.jpg"
+    ],
+    "id": "124"
+  },
+  {
+    "title": "Departamento En Venta En Lans, Buenos Aires, Mon",
+    "price": "$ 1.200.006",
+    "main": "https://www.bullano.com.ar/files/03-2026/ad17152/yDQJOdMFqRoY.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/03-2026/ad17152/yDQJOdMFqRoY.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/nXrqevowyTwe.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/sBakLBIacbcU.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/SdWmubVXrqsg.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/TYQwQfmijlNu.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/gzPgXqcQhLTw.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/SaGTRNlFFAXO.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/cAoYTPQRiyuA.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/MjjQevafPhtG.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17152/bVbXqEkrKuiF.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg",
+      "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg"
+    ],
+    "id": "125"
+  },
+  {
+    "title": "Departamento En Venta En Crdoba, Con Patio Y Asa",
+    "price": "$ 50.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17139/ZxvzKJkxUIbX.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17139/ZxvzKJkxUIbX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/wfuqEsekIObG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/rHLrGEeGUYVX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/ciRNjqvqbpkU.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/dGdYhZlBgLdS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/KVvXNOTwNXgJ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17139/bTeJxqbPGGoJ.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17684/xRcHJqnQNJcv.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17715/UyOlgiEFkAjV.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17748/GWDtHSaClCyA.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17767/KjJzyRvMxTnN.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17839/XwDNgnhtJHYB.webp"
+    ],
+    "id": "126"
+  },
+  {
+    "title": "Departamento En Venta En Centro, Crdoba, Con 3 D",
+    "price": "$ 247.500",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17137/hHNNCsogFqSv.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17137/hHNNCsogFqSv.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/ttbqaOzjHazZ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/GZdRLApcZFws.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/oCIxPREhyias.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/DEuZLFwOjZIS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/bfpbFDQMwEJI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/eLitIUMiMKED.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17137/mXNCkaIxFzbp.webp",
+      "https://www.bullano.com.ar/files/08-2023/ad10502/1693254779615.jpeg",
+      "https://www.bullano.com.ar/files/08-2023/ad10515/1693403241092.jpg",
+      "https://www.bullano.com.ar/files/09-2023/ad10603/1694613867997.jpg",
+      "https://www.bullano.com.ar/files/09-2023/ad10606/1694614648162.jpg"
+    ],
+    "id": "127"
+  },
+  {
+    "title": "Departamento En Venta En Nueva Crdoba, Crdoba, R",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17136/PbMxgTbvUSmp.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17136/PbMxgTbvUSmp.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/ZzRgpAGUlkgW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/LuFTaTSzSZPO.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/mrpRAxmBcluW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/aLCBWAwoxYZt.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/OVfBnipsgVQq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/vnvYeEjqGnvi.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/VATRvoSvkJwX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/kHvOhLlSydih.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17136/roviPZEcXyKQ.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17715/UyOlgiEFkAjV.webp",
+      "https://www.bullano.com.ar/files/05-2026/ad17748/GWDtHSaClCyA.webp"
+    ],
+    "id": "128"
+  },
+  {
+    "title": "Departamento En Venta En Crdoba, Frente A Plaza ",
+    "price": "$ 50.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17134/WIcXDlAsitFB.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17134/WIcXDlAsitFB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/XxkbMoXWxjLB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/qoFgoAYLeFRA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/oshWjNbadUMn.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/XRdURpunwiVK.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/XSOULqmUrqkT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/TarvqVhFBaBf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/DIMAwsfriDOT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17134/kgjgzoNdkLMV.webp",
+      "https://www.bullano.com.ar/files/02-2025/ad14260/1740149611121.jpg",
+      "https://www.bullano.com.ar/files/02-2025/ad14269/1740250818564.jpg",
+      "https://www.bullano.com.ar/files/02-2025/ad14278/1740432496528.jpg"
+    ],
+    "id": "129"
+  },
+  {
+    "title": "Departamento En Venta En Villa Pueyrredn, Caba, ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17127/ezmCiNsTerQR.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17127/ezmCiNsTerQR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/SeMWnyqiZEKY.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/LYXmXsABBDsI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/EhTTUkkCqKgC.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/zMAtEMuQMtXh.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/rYxpCrSBTacZ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/udddolerTtSy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/yDtwpWNevebW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/qadYbpfbPdIi.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/dAoQuXrotsSW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/XRDVWlmBGfaF.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17127/OizJnhzkPXkq.webp"
+    ],
+    "id": "130"
+  },
+  {
+    "title": "Amplio Depto. 1 Dormitorio Con Balcn. Excelente ",
+    "price": "$700.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18425/KoMWQuoUZBft.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18425/KoMWQuoUZBft.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/gRqYBqQUyxKU.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/yUgtlLBgqbFn.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/InKvfuTizwMX.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/YnfUhzyblHau.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/RRFchxCxOGIH.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18425/qtMcEgwfbhzL.webp",
+      "https://www.bullano.com.ar/files/06-2022/ad6938/ituzaingo-1817261806.png",
+      "https://www.bullano.com.ar/files/09-2022/ad7636/1662251185426.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7671/1662678500662.jpeg",
+      "https://www.bullano.com.ar/files/11-2022/ad8265/1669050483303.jpg",
+      "https://www.bullano.com.ar/files/02-2023/ad8764/1675393375998.jpeg"
+    ],
+    "id": "131"
+  },
+  {
+    "title": "Departamento En Venta En Recoleta, Caba, 3 Ambie",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/04-2026/ad17123/bfqtUhbzezUI.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/04-2026/ad17123/bfqtUhbzezUI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/dGXDRFkAWvpK.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/nSKKsiahONRJ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/jKcppyMOUBcV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/FtCpGZrfKCgS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/rdFMHlUYItsJ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/XEywUERygEdy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/XtpDikSEcVdS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/gVkdMedaHpDM.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/EyaRJcNzKZzM.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/dZCUWnwvIBOf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17123/MgAqJRNQgUWB.webp"
+    ],
+    "id": "132"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 3 Do",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17119/QgfFLOREtpeQ.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17119/QgfFLOREtpeQ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17119/pCqbVqsFyGsY.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17119/qDZenHxWBEph.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17119/kRrMOvskyXKW.webp",
+      "https://www.bullano.com.ar/files/01-2022/ad5791/cordoba-duarte-quiros-859453946.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6316/listing-158753890.jpeg",
+      "https://www.bullano.com.ar/files/03-2022/ad6319/listing-199482343.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6320/listing-1758842692.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6323/listing-1465430592.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6334/listing-1423891536.jpg"
+    ],
+    "id": "133"
+  },
+  {
+    "title": "Departamento En Venta En Centro De Crdoba, Con 2",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17114/XTKDBaIpbMmu.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17114/XTKDBaIpbMmu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/DQCvufsbgMnq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/LfUgAHJBNQxv.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/vOvxIbPPZOAA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/QwZLoxqOMXUm.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/tKhuExpTjTvQ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/ZpSlEbGssocu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/gxAIDMGCwRkB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17114/yfPYGDZAfGRh.webp",
+      "https://www.bullano.com.ar/files/06-2025/ad14927/1750022369800.jpg",
+      "https://www.bullano.com.ar/files/06-2025/ad14929/1750024560542.jpg",
+      "https://www.bullano.com.ar/files/07-2025/ad15030/1752671356018.jpeg"
+    ],
+    "id": "134"
+  },
+  {
+    "title": "Departamento En Venta En Santa Catalina Holmberg",
+    "price": "$ 975.012",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17104/qpEoXpqVPCOk.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17104/qpEoXpqVPCOk.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17104/injqwssjloJn.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17104/ZXnoBzFkVMWQ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17104/ZqqOMrXcEElp.webp",
+      "https://www.bullano.com.ar/files/04-2024/ad12056/1712159348562.jpg",
+      "https://www.bullano.com.ar/files/04-2024/ad12058/1712159739522.jpg",
+      "https://www.bullano.com.ar/files/04-2024/ad12065/1712232328661.jpg",
+      "https://www.bullano.com.ar/files/04-2024/ad12095/1712590940140.jpeg",
+      "https://www.bullano.com.ar/files/04-2024/ad12096/1712591193384.jpeg",
+      "https://www.bullano.com.ar/files/04-2024/ad12109/1712667335196.jpg"
+    ],
+    "id": "135"
+  },
+  {
+    "title": "Departamento En Venta En Villa Pueyrredn, Caba, ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad17103/hAagvbJyjugS.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad17103/hAagvbJyjugS.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/vTMmaTQYTbxx.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/iAjKUOoemuif.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/YwAfGIDUadZH.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/LVMHyZIKWvbk.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/MLLRAZnmthdl.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/ZIREfOqzLkxV.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/wKzKGxDbaQRJ.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/YSyswGJjgoeY.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/mtzaBnAwYCke.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/phJimWOLciIw.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad17103/aUvaJEcVPRpc.webp"
+    ],
+    "id": "136"
+  },
+  {
+    "title": "Departamento En Venta En Villa General Belgrano,",
+    "price": "$ 975.001",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17095/JmJcrVHxAgOI.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17095/JmJcrVHxAgOI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17095/JhpqakiqDpBX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17095/axuxuCyXFclA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17095/NcowgOCTYJZs.webp",
+      "https://www.bullano.com.ar/files/07-2021/ad4543/duarte-quiros-1235288575.jpg",
+      "https://www.bullano.com.ar/files/07-2021/ad4566/las-orquideas-1789439569.jpg",
+      "https://www.bullano.com.ar/files/07-2021/ad4695/villa-carlos-677256690.jpg",
+      "https://www.bullano.com.ar/files/08-2021/ad4759/sarmiento-67738839.jpg",
+      "https://www.bullano.com.ar/files/08-2021/ad4814/duarte-quiros-1820716685.jpg",
+      "https://www.bullano.com.ar/files/08-2021/ad4896/buenos-aires-114682931.jpg"
+    ],
+    "id": "137"
+  },
+  {
+    "title": "Departamento En Venta En Cachoeira Do Bom Jesus,",
+    "price": "$ 2.550.010.075",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17078/XZhKzNVQryEC.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17078/XZhKzNVQryEC.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/HRmtVINKvxMQ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/sMZUIDPkSIRc.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/ckNfrwcfINTO.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/YSoaPLrGfNuB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/YQOJxjvtWxtH.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/GphDoSgjYYae.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/ysQqhvYIaoUz.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/myuaUPBkUHOf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/FElMYFKqUlka.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17078/RhqmbyssFUZf.webp",
+      "https://www.bullano.com.ar/files/09-2025/ad15520/1756789778445.jpg"
+    ],
+    "id": "138"
+  },
+  {
+    "title": "Departamento En Alquiler En Ro Cuarto, Crdoba, C",
+    "price": "$550.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17062/IAAdRRINFOZg.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17062/IAAdRRINFOZg.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17062/uxplUYulnKXo.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17062/dysNeMIEQWxv.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17062/RszjEBzXFTzG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17062/NHDfpWkLIeQE.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17062/dClLitwSraWg.webp",
+      "https://www.bullano.com.ar/files/07-2023/ad10260/1690293016290.jpg",
+      "https://www.bullano.com.ar/files/08-2023/ad10451/1692710644403.jpeg",
+      "https://www.bullano.com.ar/files/08-2023/ad10502/1693254779615.jpeg",
+      "https://www.bullano.com.ar/files/08-2023/ad10515/1693403241092.jpg",
+      "https://www.bullano.com.ar/files/09-2023/ad10603/1694613867997.jpg",
+      "https://www.bullano.com.ar/files/09-2023/ad10606/1694614648162.jpg"
+    ],
+    "id": "139"
+  },
+  {
+    "title": "Departamento En Venta En General Paz, Ro Cuarto,",
+    "price": "$ 237.500",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17053/gLpbpqviVsGu.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17053/gLpbpqviVsGu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17053/UEmMjLojxzwV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17053/WHiEurkLCpCI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17053/EESCJTNPiRcJ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17053/FNEvmRgdxCoa.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17053/JRygWmTGlyae.webp",
+      "https://www.bullano.com.ar/files/10-2025/ad15881/1759935513251.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15903/1760039613462.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15947/1760618915413.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15957/1760631944745.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15969/1760716567303.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15976/1760905907690.jpg"
+    ],
+    "id": "140"
+  },
+  {
+    "title": "Maui 2 Dormitorios - Vista Franca Al Ro Y Cocher",
+    "price": "$360.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18385/dDVRNoBgRViA.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18385/dDVRNoBgRViA.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/jdfWJggjkdim.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/pZXFOkdPouUy.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/iCfWiPiRjsnu.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/cQGqSlfbVCVF.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/PlcmZRnwIOvV.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/uWlRXNDlukYa.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/hIgksYZyiRYN.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/bkjhVoBVbIMo.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/FqfbjCIkDzNF.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/CuyDoWVHpWee.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18385/FMuitfaGfOZd.webp"
+    ],
+    "id": "141"
+  },
+  {
+    "title": "Departamento En Venta En Pichincha, Rosario, Con",
+    "price": "$ 4.125.014",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17044/ELxlpcsbTaWX.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17044/ELxlpcsbTaWX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/kDvwbPhwUgvS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/kAtissIPxjHF.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/hQQCOGlyTgli.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/DVhwwUJRiFkH.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/ndvnbCvowkXM.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/otdSncEWcHTc.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/AEEtVWPLcCyp.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/hwGwxTTbEspY.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/CspICoVEoKvs.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/JgsaGzFUWlFa.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17044/bKHxRdRZiExu.webp"
+    ],
+    "id": "142"
+  },
+  {
+    "title": "Departamento En Venta En Mataderos, Caba, 3 Ambi",
+    "price": "$ 2.375.013",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17031/CkfIxXJiQGfc.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17031/CkfIxXJiQGfc.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/lfseuqCDXfTn.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/xvmIhEdejdSk.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/OkZGjjlnKHhH.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/WoUxXwrKHSdY.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/ooZtpwnwdDjb.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/YLpJJWxdSfrV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/zsnRRjOJnwkU.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/HXmJVQRqXHrE.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/QUTkEMxaghEV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/SnzyihtgFaUS.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17031/lEiSYmcxcEqc.webp"
+    ],
+    "id": "143"
+  },
+  {
+    "title": "Departamento En Venta En Recoleta, Caba, Dplex D",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17026/nQuNDSeaLZCC.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17026/nQuNDSeaLZCC.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/jVzzwyYbKBux.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/lnJdYzLDpuAe.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/rQkrvsqgKCta.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/PcpocyPFzjnR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/vreeErttqLny.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/VCibpLpbqaVl.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/izBoRnBWYtzB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/GFTWAyUNEYRW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/bkbkddnGQIOm.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/mlCFybdYUBvA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17026/NjHIoICJKXfA.webp"
+    ],
+    "id": "144"
+  },
+  {
+    "title": "Departamento En Venta En Flores, Caba, 4 Ambient",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad17001/hVyFSbtRwFPR.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad17001/hVyFSbtRwFPR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/pUcXEMffuEOT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/bxinJjGdzfPe.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/GWoQMMzrvtEB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/cKzrBlMsdUwf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/xAeZvwqsIDcC.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/JFZGRkfBpEgm.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/OAKVhhfBMKYd.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/eXVvKJhXUSjy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/jrdwltnJkGYs.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/aCBCdMkCilTu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad17001/NSxYmjIqWEmH.webp"
+    ],
+    "id": "145"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 62.500.032",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16993/cBDkBrzdROJt.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16993/cBDkBrzdROJt.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/LHOmKPHsyVIy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/xhUQBZEVqEbt.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/BQQkogrNOmAZ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/BEZCZECNsset.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/GZbTVFRZcVit.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/BpBPuSJPlGlv.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/ujMYeWYEVWYn.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16993/kkYZnILkHocc.webp",
+      "https://www.bullano.com.ar/files/10-2024/ad13602/1730384548779.jpg",
+      "https://www.bullano.com.ar/files/11-2024/ad13691/1731598739600.jpg",
+      "https://www.bullano.com.ar/files/11-2024/ad13693/1731599315022.jpeg"
+    ],
+    "id": "146"
+  },
+  {
+    "title": "Departamento En Venta En Flores, Caba, 3 Ambient",
+    "price": "$ 3.875.023",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16992/PddcjpuhWoJq.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16992/PddcjpuhWoJq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/wtGIsOyJQtPl.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/nEcftzIyZvHA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/ZVOEYLgbqohx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/ciqPFgVkMMoD.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/FYxwUHJwzCuN.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/HFAKktXMhfYL.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/WtAFMCmdXfyr.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/tcTsxUqzilSq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/kcLzEVXNwikf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/efeOIooVknnH.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16992/ezNyYCPxMCdZ.webp"
+    ],
+    "id": "147"
+  },
+  {
+    "title": "Departamento En Venta En Palermo, Caba, 4 Ambien",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16979/GNsgwiJLHFbW.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16979/GNsgwiJLHFbW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/acQPOHwQaiVV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/wrxKUDKAwqZg.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/DkNlYIZSPvAs.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/qJOlsLPXKCUG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/SreGPTxcOaCh.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/promteLCQhya.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/oyuidmpFRJMp.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/JZLgcSdshsto.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/SLfFlXjZXkak.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/uOQLcdGiLNgy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16979/VslJiGIXCXxT.webp"
+    ],
+    "id": "148"
+  },
+  {
+    "title": "Departamento En Venta En Recoleta, Caba, 3 Ambie",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16950/WMrFxrMKhNdX.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16950/WMrFxrMKhNdX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/CyPnKrwfxSJG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/oNvzROlUujRu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/UvUQBlCtkJLj.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/YzOrZlbixrlj.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/zyQIIiObZbsB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/HtUtkDSxyRUo.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/CThKmVViNYgQ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/qBAekqvRMSCG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/cqodVhYLmQnN.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/mrTYXuyKjWiV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16950/scTHnMhpvpME.webp"
+    ],
+    "id": "149"
+  },
+  {
+    "title": "Departamento En Alquiler En Barrio Reconquista, ",
+    "price": "$500.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16948/dglzQUPRUbpK.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16948/dglzQUPRUbpK.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/YFslBQrNVIvb.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/UsYNVcbQtmMW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/uIKGzDmFSiEb.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/xNFcfZkNymUe.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/fvBwKZxdtnGR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/gfoYJApSrKaR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/IhxafaxZAFnB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/WzKwcurWJyQA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/xcMZmGtoWtGx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/TpGavujowNLx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16948/yOwmMYcYBJlH.webp"
+    ],
+    "id": "150"
+  },
+  {
+    "title": "Departamento Dpto Estandar En Alquiler En Villa ",
+    "price": "$580.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18422/lZAQmhDirMXq.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18422/lZAQmhDirMXq.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/aSPnlAziSFjC.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/LVLnPrCgtjOR.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/OXAxQBRzmKIe.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/ObApoMhtcKpy.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/wxRJVWrtbKVx.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/pBhmMFxNbfKz.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/zZRRZedraBGG.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/woxtkPTZFbtp.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/UXxdYfnSVZKs.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/OCFsTPKHMsiw.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18422/bYymHLTYfnna.webp"
+    ],
+    "id": "151"
+  },
+  {
+    "title": "Departamento En Venta En Cardinales, Ro Cuarto, ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16930/TWJWdYniGEjV.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16930/TWJWdYniGEjV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/UPJWUpItuejF.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/URRwDsDddRvx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/dpfjVLyzENmj.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/zNJvlgkPZqMV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/zSrHbqqfiPxN.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16930/xHItXRvfUeNa.webp",
+      "https://www.bullano.com.ar/files/06-2023/ad9821/1685622977307.jpeg",
+      "https://www.bullano.com.ar/files/06-2023/ad9996/1687442637126.jpeg",
+      "https://www.bullano.com.ar/files/06-2023/ad9998/1687443254917.jpg",
+      "https://www.bullano.com.ar/files/06-2023/ad10013/1687784129982.jpeg",
+      "https://www.bullano.com.ar/files/06-2023/ad10017/1687792911743.jpeg"
+    ],
+    "id": "152"
+  },
+  {
+    "title": "Departamento En Venta En Palermo, Caba, 2 Ambien",
+    "price": "$ 3.122.510",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16929/cpeYfUvArXXW.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16929/cpeYfUvArXXW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/GOLMAwJQXxIX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/HrhSIFDBxeMc.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/XEmqGkwmhtrx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/bEfrrFdAVZmh.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/cJjZZfLviZZm.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/SEkIozpQxtzf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16929/yXVWvFUwlNcc.webp",
+      "https://www.bullano.com.ar/files/02-2022/ad6045/listing-742898442_large.jpeg",
+      "https://www.bullano.com.ar/files/02-2022/ad6077/listing-1598446051.jpg",
+      "https://www.bullano.com.ar/files/02-2022/ad6149/listing-602795149.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6187/listing-292023480.jpeg"
+    ],
+    "id": "153"
+  },
+  {
+    "title": "Departamento En Alquiler En San Carlos, Mar Del ",
+    "price": "$800.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16912/pTKKzvraaoXw.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16912/pTKKzvraaoXw.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/nHWUkilSigNU.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/bcYAahpzdqSL.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/wicmzoAZBRKq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/TEoAOuYiyYOF.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/oQyrZsWKPsUV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/KZYLuZIZVLOT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/dGIFDRvRTCPz.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/JjdJbvxoCXTt.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/kECzLgwJxbSP.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/ptbXeTqNMdqk.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16912/FWkGSPXHLYLO.webp"
+    ],
+    "id": "154"
+  },
+  {
+    "title": "Departamento En Venta En San Carlos, Mar Del Pla",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16903/AdjhPreGVAcH.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16903/AdjhPreGVAcH.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/IXxfjgBrgUCF.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/MqZaMPIaJqYf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/wowzGKHKAwxq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/AlNVknWKnqEP.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/vxIDSblwJHof.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/lXcKmccVgmfX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/MQmEqengBlMh.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/hlBYSzdzqdfV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/LABJXqcXnYRW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/OoLjSjqAFEiA.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16903/OqQqgRKqjBZh.webp"
+    ],
+    "id": "155"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Plan",
+    "price": "$ 142.500",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16898/ajEdbleahEwX.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16898/ajEdbleahEwX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16898/zxHmwjOzdFxx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16898/PdDkwPvPlsRf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16898/zCEneBzDAOst.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16898/iIWdwWirhyfg.webp",
+      "https://www.bullano.com.ar/files/12-2023/ad11305/1703074584134.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11356/1704409848127.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11480/1706192281350.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11554/1706625188394.jpg",
+      "https://www.bullano.com.ar/files/02-2024/ad11645/1707319415373.jpg",
+      "https://www.bullano.com.ar/files/02-2025/ad11651/1739880226795.jpg"
+    ],
+    "id": "156"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16894/urrmHYpMcbqT.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16894/urrmHYpMcbqT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/odXmSCJPXVBU.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/jpnvBClrgcvn.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/xbLvTtewoTRW.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/xuwKEYuQGJnG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/xkolxyqWBxoP.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16894/JDjfJmTbmWxp.webp",
+      "https://www.bullano.com.ar/files/03-2026/ad17386/eYBrRVxvlcdP.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17451/PdoeWOWmkkYp.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17455/LMUZcaMtsILY.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17468/oTWVqYqAffUf.webp",
+      "https://www.bullano.com.ar/files/04-2026/ad17470/UmmlbGUhAKGE.webp"
+    ],
+    "id": "157"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16893/IhtrQWgnPkED.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16893/IhtrQWgnPkED.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/wVUXAIvZzZjR.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/SBNWoERwuglG.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/KxcbeUergekU.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/ExDWgRHFDnfX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/nKcxImcbWFDP.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/veXZxAeDrmiV.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16893/uDrROfSPiTWz.webp",
+      "https://www.bullano.com.ar/files/10-2025/ad15881/1759935513251.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15903/1760039613462.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15947/1760618915413.jpeg",
+      "https://www.bullano.com.ar/files/10-2025/ad15957/1760631944745.jpeg"
+    ],
+    "id": "158"
+  },
+  {
+    "title": "Departamento En Venta En Lomas De Stella Maris, ",
+    "price": "$ 50.000",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16890/pXKyxeGEkyMI.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16890/pXKyxeGEkyMI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/HbkhLRgsovLi.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/DXZZsFBpjuWp.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/hmgWwrKLPUvC.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/OdXJBrrntXjk.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/vMMcUVPsBBsk.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/PvVEfpOtunwy.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/gvHuGQJXYfuZ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/DgnknSePLUzq.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/rJoyhQkcFHPX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/GOETfSDgcyxX.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16890/fcKqlcXeMCJY.webp"
+    ],
+    "id": "159"
+  },
+  {
+    "title": "Departamento En Venta En San Cayetano, Mar Del P",
+    "price": "$ 1.237.511",
+    "main": "https://www.bullano.com.ar/files/02-2026/ad16887/wbhtdrttDmSw.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/02-2026/ad16887/wbhtdrttDmSw.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/eOMQGQnrLlTx.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/eyDQBuXkmiBM.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/iHZYDzbxEppD.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/kJNtqMuHBWQN.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/JOxaBmGwDUOd.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/wTxwGbhfBrpD.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/SnLNqmPKjynu.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16887/lfAGGQXQFBvc.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg",
+      "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3334/teodoro-plaza-1268302729.jpg"
+    ],
+    "id": "160"
+  },
+  {
+    "title": "Semipiso De Categoria Frente A La Embajada De Fr",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18420/fqAOojPAoXdN.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18420/fqAOojPAoXdN.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/DfOITsKTPary.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/JYmOKRAzPNsr.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/HYqTQsUEIfHM.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/lruGkLHYTcrA.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/mdjGeaPdNBHt.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/GJZwHgMnVkZr.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/WoPttYmtQTFY.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/ohsdjqLoXuTp.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/zHEvVIByNpuh.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/gOSsDiteBfLt.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18420/OASwZsGVitiH.webp"
+    ],
+    "id": "161"
+  },
+  {
+    "title": "Departamento En Venta En Palermo, Caba, 2 Ambien",
+    "price": "$159.900",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16870/nKhijjliEmpd.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16870/nKhijjliEmpd.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/IYYlHhhRCrhS.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/FWrqZpxdYifj.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/SbmcyoYDvfoo.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/icxUvuywLjMm.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/CLoRyWjMfsus.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/KrWRjSuKBsSS.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/spCNbcCSRuMS.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/OXOnYWAdDkqk.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/gOlPDBqZTMmL.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/gZhCcqwMSVrq.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16870/JwAlkgHYomSE.webp"
+    ],
+    "id": "162"
+  },
+  {
+    "title": "Departamento En Venta En Santinho, Florianpolis,",
+    "price": "$ 3.250.019",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16778/UlliTyyefdxw.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16778/UlliTyyefdxw.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16778/QnxsHUyeNzsQ.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16778/XLbvijWRlvtK.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16778/vvrYmIukXEgb.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16778/JHzJTXxhwSAD.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/ENqjppziEqbB.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/gKeftKdLCNSi.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/QbhNARCxZzjT.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/pzRwXbxiGroJ.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/VrPdnQjukwPf.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/EyOQLIbsXTbi.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16778/ZUsXJdFSykGY.webp"
+    ],
+    "id": "163"
+  },
+  {
+    "title": "Departamento En Alquiler En Santa Fe, Sobre Parq",
+    "price": "$600.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16753/lumtiByYxhZT.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16753/lumtiByYxhZT.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/AlFWdUDuQtIi.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/yTuWDecpQKYy.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/PRWVwQuORSXc.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/gduDFBsUJdvF.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/ZMmcieKRZkXR.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/hRBKwiAeCsJH.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/dAMXoZInBzkn.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/tQedlgQRlytP.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/nsexgSNNpqsE.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/LajulxYYNJfl.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16753/iweqFqcGviRf.webp"
+    ],
+    "id": "164"
+  },
+  {
+    "title": "Departamento En Alquiler En Canning, Buenos Aire",
+    "price": "$1.100.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16748/uAPOkRRSKmlD.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16748/uAPOkRRSKmlD.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/ZrrvxknbqtXi.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/mriquZQzSDHA.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/dxYGqrcydNzR.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/MTPRNMEaucQN.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/xqonIjaSUvcE.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16748/OVKFtHhYANTk.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg",
+      "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3334/teodoro-plaza-1268302729.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3341/calle-1601580183.jpeg",
+      "https://www.bullano.com.ar/files/02-2021/ad3349/cordero-1980230473.jpg"
+    ],
+    "id": "165"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 2 Do",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16735/nnkGdQgGXkex.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16735/nnkGdQgGXkex.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16735/KvLMEIsGhhWV.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16735/sKpQvhkBTcUr.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16735/kiIcvOIcwQKx.webp",
+      "https://www.bullano.com.ar/files/02-2021/ad3313/gaudard-428707072.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
+      "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg",
+      "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3678/maria-olguin-1175276237.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3679/buenos-aires-227622849.jpg"
+    ],
+    "id": "166"
+  },
+  {
+    "title": "Departamento En Venta En Villa Urquiza, Caba, 2 ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16716/ETwtHbLzwsov.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16716/ETwtHbLzwsov.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/KUTSIuhVuicO.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/TPrONwlRwqmn.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/HaPaoZhJENuO.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/wdGwbZSvlKXB.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/QoJjAirkHDPT.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/rZBwpiJUrypq.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/SCkZWmsPlPYy.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/lzADlAmEjKHG.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/MdGJYIKMmPJm.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16716/QNOEwWsQKydY.webp",
+      "https://www.bullano.com.ar/files/10-2023/ad10979/1698712659782.jpg"
+    ],
+    "id": "167"
+  },
+  {
+    "title": "Departamento En Alquiler En General San Martn, B",
+    "price": "$400.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16693/PJoMdIKBFqCn.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16693/PJoMdIKBFqCn.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16693/hDAcqMJyLrAx.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16693/WSZVCFIeFZti.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16693/jMPJkAzNqlLX.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16693/PgPVymtVkLMI.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16693/qdYltWmfFMVw.webp",
+      "https://www.bullano.com.ar/files/03-2023/ad9168/1678660442742.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9173/1678727122771.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9209/1678908263012.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9210/1678908777448.jpeg",
+      "https://www.bullano.com.ar/files/03-2023/ad9216/1678924289891.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9244/1679095358518.jpg"
+    ],
+    "id": "168"
+  },
+  {
+    "title": "Departamento En Alquiler En Temperley, Buenos Ai",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16663/ItNJlilpiLqe.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16663/ItNJlilpiLqe.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/PRmDgCzospQL.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/mIoayunLITOQ.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/eRHAeatSjsnT.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/ZmTAAgnvsrAa.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/ZEiunXhWUXqN.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/NhpOLroPgczQ.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/xeGbGkGnvygN.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/QCykXfDchPqk.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/IDRVlWuXXRRa.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/pVAkGjBvfOFn.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16663/gJNASCznDygQ.webp"
+    ],
+    "id": "169"
+  },
+  {
+    "title": "Departamento En Venta En San Miguel De Tucumn, 4",
+    "price": "$ 65000000",
+    "main": "https://www.bullano.com.ar/files/01-2026/ad16655/mmAhKRSyBSeh.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2026/ad16655/mmAhKRSyBSeh.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/mnQpRsxgqRZY.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/kAbVRbWPpTIy.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/jMIWvmBCtzVe.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/pMxCNHnyOyXx.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/ZGgMNSOYnXaa.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/uVyDsRCesxag.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/XOnveyVxGtMy.webp",
+      "https://www.bullano.com.ar/files/01-2026/ad16655/jzbdOfyDTmZE.webp",
+      "https://www.bullano.com.ar/files/09-2025/ad15510/1756739808269.jpg",
+      "https://www.bullano.com.ar/files/09-2025/ad15528/1756825757031.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16519/1765447188891.jpg"
+    ],
+    "id": "170"
+  },
+  {
+    "title": "Vendo Nueva Cordoba 2 Dorm A Estrenar Posesion I",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18419/HDqKbHdkyMqj.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18419/HDqKbHdkyMqj.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/SXYSiExCARSy.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/zIZyQQhnQuTH.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/VnqpdLYQxJEa.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/XTiFbXeMRYRv.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/zfRHKuCLsxbk.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/TvlFkJRMRERl.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/NGzNlmkzITBR.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/UNpUEjAQUpSO.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/yWIhjrEcWdSp.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/tzoeyIelqtlk.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18419/GBshHlUEvict.webp"
+    ],
+    "id": "171"
+  },
+  {
+    "title": "Departamento En Venta En Crdoba, 2 Dormitorios Y",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16633/vOFzFWTkdpGJ.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16633/vOFzFWTkdpGJ.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16633/iUnbEJBgvXPp.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16633/qQBVRplVXkib.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16633/GIaNRMILraSt.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16633/CkatUKwDdpsM.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16633/kLjBpAPfjXlF.webp",
+      "https://www.bullano.com.ar/files/09-2021/ad5180/pje-de-la-carcova-530776566.jpeg",
+      "https://www.bullano.com.ar/files/09-2021/ad5181/entre-rios-779084171.png",
+      "https://www.bullano.com.ar/files/09-2021/ad5182/solares-1547802133.png",
+      "https://www.bullano.com.ar/files/10-2021/ad5315/e-de-israel-y-154479663.jpg",
+      "https://www.bullano.com.ar/files/11-2021/ad5401/av-marconi-800-adolma-1577980489.jpg",
+      "https://www.bullano.com.ar/files/11-2021/ad5562/bahia-blanca-1229466505.jpg"
+    ],
+    "id": "172"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 171.250",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16624/iiHVDmZqWsYw.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16624/iiHVDmZqWsYw.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16624/oTJRBqNUGQSh.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16624/RuVoVFXwSRMB.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16624/TIcDSNMoeBdR.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16624/XBMxgrulzrXw.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16624/PMNfWVTVYwES.webp",
+      "https://www.bullano.com.ar/files/04-2023/ad9380/1680544120395.jpg",
+      "https://www.bullano.com.ar/files/05-2023/ad9433/1683211847665.jpg",
+      "https://www.bullano.com.ar/files/04-2023/ad9512/1682107583535.jpg",
+      "https://www.bullano.com.ar/files/04-2023/ad9523/1682351549295.jpeg",
+      "https://www.bullano.com.ar/files/04-2023/ad9524/1682352048871.jpeg",
+      "https://www.bullano.com.ar/files/04-2023/ad9526/1682352846830.jpeg"
+    ],
+    "id": "173"
+  },
+  {
+    "title": "Departamento En Alquiler En San Nicols, Caba, Re",
+    "price": "$990.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16615/XvuTkUuktagZ.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16615/XvuTkUuktagZ.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/lBiYwvBXzWds.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/dsuFxqPuPybN.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16615/AQHugrYYHghh.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16615/dyZeXBcfnLlI.webp",
+      "https://www.bullano.com.ar/files/02-2026/ad16615/zISyfQAZwEwF.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/vBnzuLTpsefZ.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/kxExAqkgjGdy.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/YFnWZsLwRaHY.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/GXtxpHFdVaZv.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/LJVASdybsOZH.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16615/iTZrusVpBukD.webp"
+    ],
+    "id": "174"
+  },
+  {
+    "title": "Departamento En Venta En San Telmo, Caba, 2 Ambi",
+    "price": "$ 1.497.509",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16593/qgrTccZPySOd.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16593/qgrTccZPySOd.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/HRjUOlJJWqFH.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/sjeImbUTyJhN.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/sSswqbwBKvYN.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/dKtRluSIMZnc.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/yOqHrkJNVSWD.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/rdDITjkWLxLW.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/nzUaKQxhFRmR.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/MFSuGqQJicOz.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16593/uZEhwoPJQIWv.webp",
+      "https://www.bullano.com.ar/files/12-2023/ad11279/1702580817731.jpg",
+      "https://www.bullano.com.ar/files/12-2023/ad11286/1702660386387.jpeg"
+    ],
+    "id": "175"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 1.875.017",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16588/paPhOXRiiLzn.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16588/paPhOXRiiLzn.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16588/enQUkNHpLJhu.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16588/upzmLUbzlYzQ.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16588/kEAAqviEtleF.webp",
+      "https://www.bullano.com.ar/files/01-2022/ad5791/cordoba-duarte-quiros-859453946.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6316/listing-158753890.jpeg",
+      "https://www.bullano.com.ar/files/03-2022/ad6319/listing-199482343.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6320/listing-1758842692.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6323/listing-1465430592.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6334/listing-1423891536.jpg"
+    ],
+    "id": "176"
+  },
+  {
+    "title": "Departamento En Venta En Lomas De Zamora, Buenos",
+    "price": "$ 2.750.010",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16575/kPMufutjUTud.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16575/kPMufutjUTud.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/WzcycpeGbLem.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/YQbQREMOXqba.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/bNEjPzuvHhRe.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/eEUrucAmLiLA.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/LkPdzIUyXnxG.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/cyYGqqUMSyxG.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/CTgViJeCsxWA.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/pwXAaTAGhTMJ.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/CsXajGwylbTj.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16575/JBirYzKGFBQf.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg"
+    ],
+    "id": "177"
+  },
+  {
+    "title": "Departamento En Venta En Martn Coronado, Buenos ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16569/SxaNaAUedNru.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16569/SxaNaAUedNru.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/lHXMdHoqOWab.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/remfWvODzXUn.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/XVHoHtJdySWj.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/iNiguwDweoxt.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/NEYOHhcuNPLX.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/baMBhSVGdfXY.webp",
+      "https://www.bullano.com.ar/files/12-2025/ad16569/cDjRfuFTFMzP.webp",
+      "https://www.bullano.com.ar/files/02-2025/ad12604/1739419274832.jpg",
+      "https://www.bullano.com.ar/files/06-2024/ad12616/1718581439108.jpg",
+      "https://www.bullano.com.ar/files/03-2025/ad12617/1740963588983.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad12626/1729137926669.jpg"
+    ],
+    "id": "178"
+  },
+  {
+    "title": "Piso Alto 2 Dorm 2 Bs Terraza",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18414/kkyGhxTunDwT.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18414/kkyGhxTunDwT.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/eTVkcIDuFcCW.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/BtirbeQJxTmj.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/KsZHcTNFzcuD.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/vKFoxkFiZgRT.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/ZbXrnSwMBYya.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/iPrSAmiRpMYg.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/LfJwdgoZvVKF.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/CpKpPltabchP.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18414/SmCwqcTcIivH.webp",
+      "https://www.bullano.com.ar/files/10-2024/ad13391/1727962792473.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13393/1727963761228.jpeg"
+    ],
+    "id": "179"
+  },
+  {
+    "title": "Departamento En Venta En Cofico, Crdoba, Con Bal",
+    "price": "$ 1.950.015",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778189.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778189.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778210.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778212.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778215.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778217.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778220.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778222.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778224.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778227.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778230.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16511/1765389778232.jpg"
+    ],
+    "id": "180"
+  },
+  {
+    "title": "Departamento En Alquiler En Alto Alberdi, Crdoba",
+    "price": "$840.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626478.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626478.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626496.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626498.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626500.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626503.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626505.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626507.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626510.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626515.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16464/1764886626513.jpg",
+      "https://www.bullano.com.ar/files/06-2025/ad14892/1749498746090.jpg",
+      "https://www.bullano.com.ar/files/06-2025/ad14907/1749740836675.jpeg"
+    ],
+    "id": "181"
+  },
+  {
+    "title": "Departamento En Venta En Palermo, Caba, 2 Ambien",
+    "price": "$ 2.125.008",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16451/1764834953027.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764834953027.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764834966657.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764834966658.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835014623.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835014624.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835014625.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835026144.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835026145.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835026146.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835038272.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835038273.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16451/1764835038274.jpg"
+    ],
+    "id": "182"
+  },
+  {
+    "title": "Departamento En Venta En General Paz, Crdoba, Co",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451093.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451093.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451114.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451137.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451036.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451157.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451180.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451208.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451233.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451256.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451295.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16446/1764814451329.jpg",
+      "https://www.bullano.com.ar/files/04-2024/ad12217/1713988449869.jpg"
+    ],
+    "id": "183"
+  },
+  {
+    "title": "Departamento En Venta En San Nicols, Caba, 4 Amb",
+    "price": "$ 30.000.032",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16445/1764807834215.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807834215.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807882336.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807882337.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807893328.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807914551.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807914552.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807914553.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807936549.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807936550.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807936551.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807954114.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16445/1764807954115.jpeg"
+    ],
+    "id": "184"
+  },
+  {
+    "title": "Departamento En Venta En Recoleta, Caba, 4 Ambie",
+    "price": "$ 99.750.028",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16441/1764806861709.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764806861709.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807047640.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807047641.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807063435.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807063436.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807063437.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807075182.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807075181.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807075183.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807088699.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807088700.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16441/1764807088698.jpg"
+    ],
+    "id": "185"
+  },
+  {
+    "title": "Departamento En Venta En Mar Del Plata, 4 Ambien",
+    "price": "$375.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16438/1764792258206.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792258206.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792258220.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792258233.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792258246.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336848.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336890.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336871.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336908.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336924.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336940.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336956.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16438/1764792336970.jpg"
+    ],
+    "id": "186"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, Con ",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488523.jpeg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488523.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488532.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488534.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488536.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488538.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488545.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16431/1764771488543.jpeg",
+      "https://www.bullano.com.ar/files/11-2021/ad5562/bahia-blanca-1229466505.jpg",
+      "https://www.bullano.com.ar/files/01-2022/ad5791/cordoba-duarte-quiros-859453946.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6316/listing-158753890.jpeg",
+      "https://www.bullano.com.ar/files/03-2022/ad6319/listing-199482343.jpg",
+      "https://www.bullano.com.ar/files/03-2022/ad6320/listing-1758842692.jpg"
+    ],
+    "id": "187"
+  },
+  {
+    "title": "4 Ambientes A Estrenar Consultar Financiacin / P",
+    "price": "$ 1",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18413/UehbDHlvPSOC.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18413/UehbDHlvPSOC.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/ZlrffHOXqsGq.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/HvwRvZpDjUiA.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/ZpnQQxAUiFSl.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/yHSPwwTTtFBb.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/pXVBxFcyzEZo.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18413/MlCqTlOGfedJ.webp",
+      "https://www.bullano.com.ar/files/01-2021/ad3243/esquel-113896635.jpeg",
+      "https://www.bullano.com.ar/files/01-2021/ad3258/av-cramer-1817560914.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3334/teodoro-plaza-1268302729.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3341/calle-1601580183.jpeg",
+      "https://www.bullano.com.ar/files/02-2021/ad3349/cordero-1980230473.jpg"
+    ],
+    "id": "188"
+  },
+  {
+    "title": "Departamento En Venta En Pichincha, Rosario, Con",
+    "price": "$ 4.500.014",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633587.jpeg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633587.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633571.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633608.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633596.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633603.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633593.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633579.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633590.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633585.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633606.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633601.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16428/1764715633582.jpeg"
+    ],
+    "id": "189"
+  },
+  {
+    "title": "Departamento En Venta En Flores, Caba, Con Patio",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618384.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618384.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618394.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618396.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618397.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618398.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690618400.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690626651.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690646085.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690649360.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690654568.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690662120.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16422/1764690666243.jpg"
+    ],
+    "id": "190"
+  },
+  {
+    "title": "Departamento En Venta En Flores, Caba, 4 Ambient",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127036.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127036.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127045.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127046.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127050.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127051.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690127052.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143554.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143558.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143559.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143561.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143563.jpg",
+      "https://www.bullano.com.ar/files/12-2025/ad16421/1764690143574.jpg"
+    ],
+    "id": "191"
+  },
+  {
+    "title": "Departamento En Venta En Ro Cuarto, Crdoba, 1 Do",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16419/1764684441413.jpeg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16419/1764684441413.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16419/1764684441424.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16419/1764684441428.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16419/1764684441429.jpeg",
+      "https://www.bullano.com.ar/files/02-2021/ad3313/gaudard-428707072.jpg",
+      "https://www.bullano.com.ar/files/02-2021/ad3448/24-de-septiembre-449837501.jpeg",
+      "https://www.bullano.com.ar/files/03-2021/ad3550/av-pueyrredon-2146171011.jpg",
+      "https://www.bullano.com.ar/files/03-2021/ad3552/sabattini-1146678014.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3678/maria-olguin-1175276237.jpg",
+      "https://www.bullano.com.ar/files/04-2021/ad3679/buenos-aires-227622849.jpg"
+    ],
+    "id": "192"
+  },
+  {
+    "title": "Departamento En Venta En Barrio Parque Sur, Mend",
+    "price": "$ 300.018",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16414/1764629501794.jpeg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629501794.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629545421.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629552275.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629558908.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629565220.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629572679.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629583445.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16414/1764629591895.jpeg",
+      "https://www.bullano.com.ar/files/09-2022/ad7715/1663160571959.jpeg",
+      "https://www.bullano.com.ar/files/10-2022/ad7992/1666274762574.jpg",
+      "https://www.bullano.com.ar/files/11-2022/ad8230/1668606093517.jpg",
+      "https://www.bullano.com.ar/files/05-2023/ad8637/1685245896754.jpg"
+    ],
+    "id": "193"
+  },
+  {
+    "title": "Departamento En Venta En Sector Centro Once, Ro ",
+    "price": "$ 137.500",
+    "main": "https://www.bullano.com.ar/files/12-2025/ad16405/1764600539007.jpeg",
+    "photos": [
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600539007.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600539005.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600539002.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600539000.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600538994.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600538998.jpeg",
+      "https://www.bullano.com.ar/files/12-2025/ad16405/1764600538996.jpeg",
+      "https://www.bullano.com.ar/files/12-2022/ad8452/1670949228899.jpg",
+      "https://www.bullano.com.ar/files/12-2022/ad8523/1672322182534.jpeg",
+      "https://www.bullano.com.ar/files/01-2023/ad8568/1672943422111.jpg",
+      "https://www.bullano.com.ar/files/01-2023/ad8579/1673203947916.jpeg"
+    ],
+    "id": "194"
+  },
+  {
+    "title": "Departamento En Venta En Las Heras, Mendoza, Con",
+    "price": "$ 650.015",
+    "main": "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165501.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165501.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165504.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165505.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165506.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165507.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165508.jpg",
+      "https://www.bullano.com.ar/files/11-2025/ad16369/1764187165509.jpg",
+      "https://www.bullano.com.ar/files/11-2024/ad13651/1731274955777.jpeg",
+      "https://www.bullano.com.ar/files/02-2025/ad14234/1739801785337.jpeg",
+      "https://www.bullano.com.ar/files/03-2025/ad14410/1742401582728.jpg",
+      "https://www.bullano.com.ar/files/04-2025/ad14559/1744519223007.jpeg",
+      "https://www.bullano.com.ar/files/04-2025/ad14628/1745359208374.jpeg"
+    ],
+    "id": "195"
+  },
+  {
+    "title": "Espectacular Depto 3 Ambientes Super Amplio En V",
+    "price": "$ 205.000",
+    "main": "https://www.bullano.com.ar/files/01-2024/ad11578/1706730266227.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730266227.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122590.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730347978.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122588.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122586.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122578.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122559.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122592.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122574.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122595.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122571.jpg",
+      "https://www.bullano.com.ar/files/01-2024/ad11578/1706730122599.jpg"
+    ],
+    "id": "196"
+  },
+  {
+    "title": "Depto 5 Ambientes Con Dependencia Y Cochera En B",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/09-2022/ad7640/1662389604312.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389604312.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389593777.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389616866.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389633757.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389648424.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389659946.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389666158.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389677264.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389684216.jpg",
+      "https://www.bullano.com.ar/files/09-2022/ad7640/1662389694666.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9299/1679577176609.jpg",
+      "https://www.bullano.com.ar/files/03-2023/ad9319/1679958432103.jpg"
+    ],
+    "id": "197"
+  },
+  {
+    "title": "Hermoso Depto Monoambiente En Venta A Estrenar E",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680315.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680315.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680306.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680308.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680307.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680305.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680294.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680309.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680302.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680311.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680312.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680303.jpg",
+      "https://www.bullano.com.ar/files/10-2024/ad13400/1728057680317.jpg"
+    ],
+    "id": "198"
+  },
+  {
+    "title": "Alquile De Departamento De 3 Ambientes En Villa ",
+    "price": "$850.000",
+    "main": "https://www.bullano.com.ar/files/07-2026/ad18403/ZhNlBGvukknm.webp",
+    "photos": [
+      "https://www.bullano.com.ar/files/07-2026/ad18403/ZhNlBGvukknm.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/zIRWFZTytWGq.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/NychKzMdqKcN.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/kUhumTQqVqWX.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/slNIjcXWxEjH.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/QRhVeeLUOwEo.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/LprepyoCRbDD.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/nkrwXvBTSDhd.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/wdlxjwEbXkAj.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/UxagJkPAmpxA.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/sYvQpUiNvGjh.webp",
+      "https://www.bullano.com.ar/files/07-2026/ad18403/xiffrKECREqF.webp"
+    ],
+    "id": "199"
+  },
+  {
+    "title": "Excelente Depto 2 Ambientes En Venta En Colegial",
+    "price": "$ 100.000",
+    "main": "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946798.jpg",
+    "photos": [
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946798.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946791.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946788.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946764.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946730.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946717.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946707.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946698.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946769.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946784.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946724.jpg",
+      "https://www.bullano.com.ar/files/10-2025/ad15827/1759521946742.jpg"
+    ],
+    "id": "200"
   }
 ]
