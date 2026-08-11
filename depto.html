@@ -36,10 +36,9 @@ const id = params.get('id');
 if (!id) {
   document.getElementById('content').innerHTML = '<div class="loading">No se especificó departamento</div>';
 } else {
-  const files = ['data1.json','data2.json','data3.json','data4.json','data5.json'];
-  Promise.all(files.map(f => fetch(f).then(r => r.json()).catch(() => [])))
-    .then(parts => {
-      const data = parts.flat();
+  fetch('data.json')
+    .then(r => r.json())
+    .then(data => {
       const d = data.find(x => x.id === id);
       if (!d) {
         document.getElementById('content').innerHTML = '<div class="loading">Departamento no encontrado</div>';
