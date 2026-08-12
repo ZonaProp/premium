@@ -54,7 +54,7 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí fotos desde la galería o la cámara. El aviso se publica online al instante.</p>
+  <p class="sub">Subí fotos desde la galería o la cámara. El aviso queda pendiente hasta la aprobación del administrador.</p>
 
   <div class="card">
     <h3>Fotos del departamento</h3>
@@ -80,7 +80,6 @@ textarea{min-height:84px;resize:vertical}
     <h3>Datos del aviso</h3>
     <label>Título *</label>
     <input id="titulo" type="text" placeholder="Ej: 3 ambientes luminoso en Palermo" maxlength="80"/>
-
     <div class="row">
       <div>
         <label>Precio alquiler (ARS) *</label>
@@ -97,7 +96,6 @@ textarea{min-height:84px;resize:vertical}
         </datalist>
       </div>
     </div>
-
     <div class="row">
       <div>
         <label>Ambientes *</label>
@@ -114,7 +112,6 @@ textarea{min-height:84px;resize:vertical}
         <input id="dormitorios" type="number" inputmode="numeric" placeholder="2" min="0"/>
       </div>
     </div>
-
     <div class="row">
       <div>
         <label>m²</label>
@@ -125,10 +122,8 @@ textarea{min-height:84px;resize:vertical}
         <input id="banos" type="number" inputmode="numeric" placeholder="1" min="0"/>
       </div>
     </div>
-
     <label>Características</label>
     <input id="features" type="text" placeholder="Cochera, balcón, amoblado, SUM..."/>
-
     <label>Descripción</label>
     <textarea id="desc" placeholder="Piso, expensas, disponibilidad, detalles..."></textarea>
   </div>
@@ -149,9 +144,9 @@ textarea{min-height:84px;resize:vertical}
     </div>
   </div>
 
-  <button class="btn" type="button" id="btnPub">Publicar departamento</button>
+  <button class="btn" type="button" id="btnPub">Enviar a revisión</button>
   <div class="msg" id="msg"></div>
-  <p class="note">Al publicar, el aviso queda online de inmediato en el listado. Máximo 8 fotos (se comprimen automáticamente).</p>
+  <p class="note">Al enviar, el administrador recibe un aviso para aprobar o rechazar. Máximo 8 fotos.</p>
 </div>
 
 <script>
@@ -285,7 +280,7 @@ document.getElementById('btnPub').onclick = async function(){
       if (photos.length < MAX_PHOTOS) photos.push(u);
     });
 
-    btn.textContent = 'Publicando...';
+    btn.textContent = 'Enviando a revisión...';
     progi.style.width = '85%';
 
     const item = {
@@ -306,18 +301,20 @@ document.getElementById('btnPub').onclick = async function(){
       contacto_nombre: nombre,
       contacto_email: email,
       contacto_tel: telefono,
-      publicado: new Date().toISOString()
+      publicado: new Date().toISOString(),
+      estado: 'pendiente'
     };
 
     const res = await fetch(DB_URL);
     const db = await res.json();
     const listings = Array.isArray(db.listings) ? db.listings : [];
-    listings.unshift(item);
+    const pending = Array.isArray(db.pending) ? db.pending : [];
+    pending.unshift(item);
 
     const put = await fetch(DB_URL, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings: listings.slice(0, 200) })
+      body: JSON.stringify({ listings: listings, pending: pending.slice(0, 200) })
     });
     if (!put.ok) throw new Error('Error al guardar');
 
@@ -325,12 +322,15 @@ document.getElementById('btnPub').onclick = async function(){
 
     try {
       const fd = new FormData();
-      fd.append('_subject', 'ZonaProp · Nueva publicación con fotos');
+      fd.append('_subject', 'ZonaProp · PUBLICACIÓN PENDIENTE DE APROBACIÓN');
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
+      fd.append('accion', 'Revisar y aprobar o rechazar');
+      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + item.id);
       fd.append('titulo', titulo);
       fd.append('precio', item.price);
       fd.append('zona', zona);
+      fd.append('ambientes', ambientes);
       fd.append('fotos', String(photos.length));
       fd.append('nombre', nombre);
       fd.append('email', email);
@@ -342,15 +342,14 @@ document.getElementById('btnPub').onclick = async function(){
     } catch(e) {}
 
     msg.className = 'msg ok';
-    msg.textContent = '¡Publicado! Ya está en el listado con ' + photos.length + ' foto(s).';
-    btn.textContent = 'Publicado';
-    setTimeout(function(){ location.href = 'index.html?v=' + Date.now(); }, 1000);
+    msg.textContent = '¡Enviado! Tu aviso quedó pendiente de aprobación (' + photos.length + ' foto/s).';
+    btn.textContent = 'Enviado a revisión';
   } catch (e) {
     console.error(e);
     msg.className = 'msg err';
-    msg.textContent = 'No se pudo publicar. Probá con menos fotos o más livianas.';
+    msg.textContent = 'No se pudo enviar. Probá con menos fotos o más livianas.';
     btn.disabled = false;
-    btn.textContent = 'Publicar departamento';
+    btn.textContent = 'Enviar a revisión';
     prog.style.display = 'none';
   }
 };
