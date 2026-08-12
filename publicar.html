@@ -53,16 +53,16 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí hasta 12 fotos en buena calidad. El aviso queda pendiente de aprobación.</p>
+  <p class="sub">Subí hasta 12 fotos. Preferí JPG/PNG. El aviso queda pendiente de aprobación.</p>
 
   <div class="card">
     <h3>Fotos del departamento</h3>
     <div class="upload-zone" id="drop">
-      <input id="files" type="file" accept="image/*,.jpg,.jpeg,.png,.webp" multiple/>
+      <input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/*,.jpg,.jpeg,.png,.webp" multiple/>
       <input id="filesCam" type="file" accept="image/*" capture="environment" style="display:none"/>
       <div>🖼️</div>
       <strong>Elegir fotos de la galería</strong>
-      <span>Hasta 12 fotos · buena calidad</span>
+      <span>Hasta 12 · mejor JPG o PNG</span>
     </div>
     <div class="pick-row">
       <button type="button" id="btnGal">📁 Galería</button>
@@ -70,7 +70,7 @@ textarea{min-height:84px;resize:vertical}
     </div>
     <div class="previews" id="previews"></div>
     <div class="progress" id="prog"><i id="progi"></i></div>
-    <p class="hint">También podés pegar links de fotos (opcional).</p>
+    <p class="hint">Si una foto falla, se salta y sigue con las demás. También podés pegar links.</p>
     <label>Links de fotos (opcional)</label>
     <textarea id="fotosUrl" placeholder="https://...jpg"></textarea>
   </div>
@@ -144,7 +144,7 @@ textarea{min-height:84px;resize:vertical}
 
   <button class="btn" type="button" id="btnPub">Enviar a revisión</button>
   <div class="msg" id="msg"></div>
-  <p class="note">Las fotos se suben a un servidor de imágenes y el aviso queda pendiente hasta que el admin apruebe.</p>
+  <p class="note">Las fotos se suben al servidor y el aviso queda pendiente hasta que el admin apruebe.</p>
 </div>
 
 <script>
@@ -173,9 +173,10 @@ fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInpu
 fileCam.addEventListener('change', () => { addFiles(fileCam.files); fileCam.value = ''; });
 
 function addFiles(list){
-  const arr = Array.from(list || []).filter(f => !f.type || f.type.startsWith('image/') || /\.(jpe?g|png|webp)$/i.test(f.name||''));
+  const arr = Array.from(list || []);
   for (const f of arr) {
     if (selectedFiles.length >= MAX_PHOTOS) break;
+    if (f.size > 25 * 1024 * 1024) continue; // máx 25MB
     selectedFiles.push({ file: f, preview: URL.createObjectURL(f) });
   }
   renderPreviews();
@@ -184,7 +185,7 @@ function addFiles(list){
 function renderPreviews(){
   previews.innerHTML = selectedFiles.map((item, i) => `
     <div class="pv">
-      <img src="${item.preview}" alt="">
+      <img src="${item.preview}" alt="" onerror="this.style.opacity=.3">
       <button type="button" data-i="${i}" aria-label="Quitar">×</button>
       <div class="n">${i+1}</div>
     </div>`).join('');
@@ -198,23 +199,63 @@ function renderPreviews(){
   });
 }
 
-function fileToDataUrl(file, maxW, quality){
+function readAsDataURL(file){
   return new Promise((resolve, reject) => {
-    const img = new Image();
-    const obj = URL.createObjectURL(file);
-    img.onload = () => {
-      let w = img.width, h = img.height;
-      if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
-      if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
-      const canvas = document.createElement('canvas');
-      canvas.width = w; canvas.height = h;
-      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-      URL.revokeObjectURL(obj);
-      resolve(canvas.toDataURL('image/jpeg', quality));
-    };
-    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('No se pudo leer la imagen')); };
-    img.src = obj;
+    const fr = new FileReader();
+    fr.onload = () => resolve(fr.result);
+    fr.onerror = () => reject(new Error('FileReader'));
+    fr.readAsDataURL(file);
   });
+}
+
+function canvasFromBitmap(bitmap, maxW, quality){
+  let w = bitmap.width, h = bitmap.height;
+  if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+  if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(bitmap, 0, 0, w, h);
+  if (bitmap.close) try { bitmap.close(); } catch(e) {}
+  return canvas.toDataURL('image/jpeg', quality);
+}
+
+async function fileToDataUrl(file, maxW, quality){
+  // 1) createImageBitmap (mejor en Android)
+  if (typeof createImageBitmap === 'function') {
+    try {
+      const bmp = await createImageBitmap(file);
+      return canvasFromBitmap(bmp, maxW, quality);
+    } catch (e) {}
+  }
+  // 2) Image + objectURL
+  try {
+    const dataUrl = await new Promise((resolve, reject) => {
+      const img = new Image();
+      const obj = URL.createObjectURL(file);
+      img.onload = () => {
+        try {
+          let w = img.width, h = img.height;
+          if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+          if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          URL.revokeObjectURL(obj);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        } catch (err) {
+          URL.revokeObjectURL(obj);
+          reject(err);
+        }
+      };
+      img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('img')); };
+      img.src = obj;
+    });
+    return dataUrl;
+  } catch (e) {}
+  // 3) Subir original sin comprimir (JPG/PNG ya legibles)
+  const raw = await readAsDataURL(file);
+  if (typeof raw === 'string' && raw.startsWith('data:')) return raw;
+  throw new Error('No se pudo leer la imagen');
 }
 
 async function uploadPhoto(dataUrl){
@@ -224,7 +265,7 @@ async function uploadPhoto(dataUrl){
     body: JSON.stringify({ dataUrl })
   });
   const j = await r.json().catch(() => ({}));
-  if (!r.ok || !j.url) throw new Error(j.error || 'Error subiendo foto');
+  if (!r.ok || !j.url) throw new Error(j.error || j.detail || 'Error subiendo foto');
   return j.url;
 }
 
@@ -274,17 +315,31 @@ document.getElementById('btnPub').onclick = async function(){
   try {
     const photos = [];
     const files = selectedFiles.slice(0, MAX_PHOTOS);
+    let fallidas = 0;
     for (let i = 0; i < files.length; i++) {
       btn.textContent = 'Subiendo foto ' + (i+1) + '/' + files.length + '...';
-      // buena calidad: 1600px, q 0.82
-      const dataUrl = await fileToDataUrl(files[i].file, 1600, 0.82);
-      const url = await uploadPhoto(dataUrl);
-      photos.push(url);
+      try {
+        const dataUrl = await fileToDataUrl(files[i].file, 1600, 0.82);
+        // si es HEIC raw enorme, recortar tamaño del payload
+        if (dataUrl.length > 7 * 1024 * 1024) {
+          fallidas++;
+          continue;
+        }
+        const url = await uploadPhoto(dataUrl);
+        photos.push(url);
+      } catch (err) {
+        console.warn('foto falló', i+1, err);
+        fallidas++;
+      }
       progi.style.width = Math.round(((i+1) / Math.max(files.length,1)) * 80) + '%';
     }
     fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
       if (photos.length < MAX_PHOTOS) photos.push(u);
     });
+
+    if (!photos.length) {
+      throw new Error('Ninguna foto se pudo procesar. Probá JPG desde la cámara o galería');
+    }
 
     btn.textContent = 'Guardando aviso...';
     progi.style.width = '90%';
@@ -345,12 +400,12 @@ document.getElementById('btnPub').onclick = async function(){
     } catch(e) {}
 
     msg.className = 'msg ok';
-    msg.textContent = '¡Enviado a revisión con ' + photos.length + ' foto(s)!';
+    msg.textContent = '¡Enviado a revisión con ' + photos.length + ' foto(s)!' + (fallidas ? ' (' + fallidas + ' no se pudieron)' : '');
     btn.textContent = 'Enviado a revisión';
   } catch (e) {
     console.error(e);
     msg.className = 'msg err';
-    msg.textContent = 'Error: ' + (e && e.message ? e.message : 'falló el envío') + '. Reintentá.';
+    msg.textContent = 'Error: ' + (e && e.message ? e.message : 'falló el envío');
     btn.disabled = false;
     btn.textContent = 'Enviar a revisión';
     prog.style.display = 'none';
