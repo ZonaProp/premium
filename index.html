@@ -50,18 +50,20 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 .gate-box button{width:100%;margin-top:1rem;padding:.85rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:800;font-size:1rem;cursor:pointer}
 .gate-box button:disabled{opacity:.6;cursor:wait}
 .gate-err{color:#c62828;font-size:.82rem;margin-top:.5rem;display:none}
+.gate-ok{color:#2e7d32;font-size:.82rem;margin-top:.5rem;display:none}
 </style>
 </head>
 <body class="locked">
 <div class="gate" id="gate">
   <div class="gate-box">
     <h2>Ingresá para ver departamentos</h2>
-    <p>Completá tus datos para acceder al listado de alquileres. Email y teléfono son obligatorios.</p>
+    <p>Completá tus datos para acceder al listado. Email y teléfono son obligatorios.</p>
     <label for="gEmail">Email *</label>
-    <input id="gEmail" type="email" placeholder="tunombre@email.com" required autocomplete="email"/>
+    <input id="gEmail" type="email" name="email" placeholder="tunombre@email.com" required autocomplete="email"/>
     <label for="gPhone">Teléfono / WhatsApp *</label>
-    <input id="gPhone" type="tel" placeholder="11 1234-5678" required autocomplete="tel"/>
+    <input id="gPhone" type="tel" name="telefono" placeholder="11 1234-5678" required autocomplete="tel"/>
     <div class="gate-err" id="gateErr">Completá email y teléfono válidos.</div>
+    <div class="gate-ok" id="gateOk">Datos enviados. Entrando...</div>
     <button type="button" id="gateBtn">Ver departamentos</button>
   </div>
 </div>
@@ -121,42 +123,52 @@ document.getElementById('gateBtn').onclick = function(){
   const email = (document.getElementById('gEmail').value || '').trim();
   const phone = (document.getElementById('gPhone').value || '').trim();
   const err = document.getElementById('gateErr');
+  const ok = document.getElementById('gateOk');
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneOk = phone.replace(/\D/g,'').length >= 8;
   if (!emailOk || !phoneOk) {
     err.style.display = 'block';
+    ok.style.display = 'none';
     return;
   }
   err.style.display = 'none';
   const btn = document.getElementById('gateBtn');
   btn.disabled = true;
-  btn.textContent = 'Ingresando...';
+  btn.textContent = 'Enviando...';
 
-  const payload = {
-    _subject: 'ZonaProp Premium · Nuevo contacto',
-    mensaje: 'Visitante completó email y teléfono para entrar al sitio',
-    email: email,
-    telefono: phone,
-    pagina: location.href,
-    cuando: new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }),
-    dispositivo: navigator.userAgent.slice(0, 180),
-    origen: document.referrer || 'Directo',
-    _template: 'table',
-    _captcha: 'false'
-  };
+  const fd = new FormData();
+  fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
+  fd.append('_template', 'table');
+  fd.append('_captcha', 'false');
+  fd.append('_url', 'https://zonaprop.github.io/premium/');
+  fd.append('mensaje', 'Un visitante completó email y teléfono para entrar al sitio');
+  fd.append('email', email);
+  fd.append('telefono', phone);
+  fd.append('pagina', location.href);
+  fd.append('cuando', new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }));
+  fd.append('dispositivo', navigator.userAgent.slice(0, 180));
+  fd.append('origen', document.referrer || 'Directo');
 
   function finish(){
     localStorage.setItem('zp_lead_ok', '1');
     localStorage.setItem('zp_lead_email', email);
     localStorage.setItem('zp_lead_phone', phone);
-    unlockSite();
+    ok.style.display = 'block';
+    setTimeout(unlockSite, 400);
   }
 
-  fetch('https://formsubmit.co/ajax/' + ADMIN_EMAIL, {
+  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(function(){}).finally(finish);
+    body: fd,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r){
+    return r.json().catch(function(){ return {}; });
+  }).then(function(){
+    finish();
+  }).catch(function(){
+    // igual dejamos entrar; el intento de envío se hizo
+    finish();
+  });
 };
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
