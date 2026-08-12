@@ -48,35 +48,40 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 <div class="header"><a href="index.html">←</a> <span>ZonaProp</span></div>
 <div id="content"><div class="loading">Cargando...</div></div>
 <script>
+const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
 if (!id) {
   document.getElementById('content').innerHTML = '<div class="loading">No se especificó departamento</div>';
 } else {
-  fetch('data.json')
-    .then(r => r.json())
-    .then(data => {
-      const d = data.find(x => x.id === id);
+  Promise.all([
+    fetch('data.json').then(r => r.json()).catch(function(){ return []; }),
+    fetch(DB_URL).then(r => r.json()).then(function(db){ return Array.isArray(db.listings) ? db.listings : []; }).catch(function(){ return []; })
+  ]).then(function(results){
+      const data = (results[1] || []).concat(results[0] || []);
+      const d = data.find(x => String(x.id) === String(id));
       if (!d) {
         document.getElementById('content').innerHTML = '<div class="loading">Departamento no encontrado</div>';
         return;
       }
       document.title = d.title + ' · ZonaProp';
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
+      const waNum = (d.contacto_tel || '').replace(/\D/g,'');
+      const wa = waNum.length >= 8 ? ('549' + waNum.replace(/^549/,'').replace(/^0/,'')) : '5491125692598';
       const waText = encodeURIComponent('Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000');
       const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
       const feats = d.features || [];
       document.getElementById('content').innerHTML = `
         <div class="gallery">
           <img class="main" id="mainImg" src="${photos[0]||''}" alt="">
-          <div class="counter" id="counter">1 / ${photos.length}</div>
+          <div class="counter" id="counter">1 / ${photos.length || 1}</div>
           <div class="g-nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
         </div>
         <div class="thumbs" id="thumbs"></div>
         <div class="box">
           <div class="price">${d.price}</div>
           <div class="h2">${d.title}</div>
-          ${d.zona ? `<div class="zona">${d.zona}</div>` : ''}
+          ${d.zona ? `<div class="zona">${d.zona}${d.community ? ' · Publicación de la comunidad' : ''}</div>` : ''}
           <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
           ${d.desc ? `<div class="desc">${d.desc}</div>` : ''}
           ${feats.length ? `<div class="feats"><h3>Características</h3><div class="feat-list">${feats.map(f => `<span class="feat">${f}</span>`).join('')}</div></div>` : ''}
@@ -85,19 +90,19 @@ if (!id) {
           <h3>Reserva para asegurar el departamento</h3>
           <div class="reserva-row"><span>Seña / reserva</span><span class="reserva-monto">$ 50.000</span></div>
           <div class="reserva-row"><span>Se descuenta del primer mes</span><span>Sí</span></div>
-          <p class="reserva-note">Al pagar la reserva de $50.000 el departamento queda bloqueado a tu nombre. El monto se descuenta del alquiler.</p>
+          <p class="reserva-note">Al pagar la reserva de $50.000 el departamento queda bloqueado a tu nombre.</p>
         </div>
         <div class="pago">
-          <h3>Pagar reserva</h3>
+          <h3>Pagar reserva / Contacto</h3>
           <div class="pago-btns">
             <a class="btn-mp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar $50.000 con Mercado Pago</a>
-            <a class="btn-wa" href="https://wa.me/5491125692598?text=${waText}">Reservar por WhatsApp</a>
-            <a class="btn-sec" href="https://wa.me/5491125692598?text=${waText}">Consultar antes de pagar</a>
+            <a class="btn-wa" href="https://wa.me/${wa}?text=${waText}">WhatsApp</a>
+            <a class="btn-sec" href="https://wa.me/${wa}?text=${waText}">Consultar</a>
           </div>
         </div>
         <footer>ZonaProp Premium</footer>
       `;
-      window.photos = photos;
+      window.photos = photos.length ? photos : [''];
       window.cur = 0;
       const t = document.getElementById('thumbs');
       photos.forEach((p, i) => {
