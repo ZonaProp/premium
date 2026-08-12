@@ -142,6 +142,33 @@ document.getElementById('gateBtn').onclick = function(){
   btn.disabled = true;
   btn.textContent = 'Enviando...';
 
+  const lead = {
+    email: email,
+    telefono: phone,
+    cuando: new Date().toISOString(),
+    pagina: location.href,
+    origen: document.referrer || 'Directo',
+    dispositivo: navigator.userAgent.slice(0, 180)
+  };
+
+  // Guardar lead en la DB para el panel admin
+  fetch(DB_URL + '?t=' + Date.now())
+    .then(r => r.json())
+    .then(db => {
+      const listings = Array.isArray(db.listings) ? db.listings : [];
+      const pending = Array.isArray(db.pending) ? db.pending : [];
+      const leads = Array.isArray(db.leads) ? db.leads : [];
+      leads.unshift(lead);
+      // limitar a 200 leads para no crecer infinito
+      return fetch(DB_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ listings, pending, leads: leads.slice(0, 200) })
+      });
+    })
+    .catch(function(){});
+
+  // También mandar por email (como antes)
   const fd = new FormData();
   fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
   fd.append('_template', 'table');
