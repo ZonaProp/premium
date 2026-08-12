@@ -35,11 +35,10 @@ textarea{min-height:90px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar un departamento</h1>
-  <p class="sub">Completá el formulario. Revisamos tu aviso y lo publicamos en el listado. Todos los campos con * son obligatorios.</p>
+  <p class="sub">Tu aviso se publica online al instante y aparece en el listado.</p>
   <div class="card">
     <label>Título del aviso *</label>
     <input id="titulo" type="text" placeholder="Ej: 3 ambientes en Palermo con balcón" required/>
-
     <div class="row">
       <div>
         <label>Precio alquiler (ARS) *</label>
@@ -50,7 +49,6 @@ textarea{min-height:90px;resize:vertical}
         <input id="zona" type="text" placeholder="Ej: Recoleta" required/>
       </div>
     </div>
-
     <div class="row">
       <div>
         <label>Ambientes *</label>
@@ -67,7 +65,6 @@ textarea{min-height:90px;resize:vertical}
         <input id="dormitorios" type="text" placeholder="Ej: 2"/>
       </div>
     </div>
-
     <div class="row">
       <div>
         <label>m²</label>
@@ -78,19 +75,14 @@ textarea{min-height:90px;resize:vertical}
         <input id="banos" type="text" placeholder="Ej: 1"/>
       </div>
     </div>
-
     <label>Características</label>
     <input id="features" type="text" placeholder="Cochera, balcón, amoblado, etc."/>
-
     <label>Descripción</label>
-    <textarea id="desc" placeholder="Contá detalles del departamento, piso, expensas, disponibilidad..."></textarea>
-
+    <textarea id="desc" placeholder="Detalles del departamento..."></textarea>
     <label>Links de fotos (una por línea)</label>
-    <textarea id="fotos" placeholder="https://...jpg&#10;https://...webp"></textarea>
-
+    <textarea id="fotos" placeholder="https://...jpg"></textarea>
     <label>Tu nombre *</label>
     <input id="nombre" type="text" placeholder="Nombre y apellido" required/>
-
     <div class="row">
       <div>
         <label>Tu email *</label>
@@ -101,17 +93,24 @@ textarea{min-height:90px;resize:vertical}
         <input id="telefono" type="tel" placeholder="11 1234-5678" required/>
       </div>
     </div>
-
-    <button class="btn" type="button" id="btnPub">Enviar publicación</button>
+    <button class="btn" type="button" id="btnPub">Publicar ahora</button>
     <div class="msg" id="msg"></div>
-    <p class="note">Al enviar, el equipo de ZonaProp Premium recibe tu aviso por email y lo publica tras revisión. No se publica automáticamente sin control.</p>
+    <p class="note">Al publicar, el aviso queda online de inmediato. También se notifica al administrador por email.</p>
   </div>
 </div>
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
-document.getElementById('btnPub').onclick = function(){
+const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
+
+function formatPrice(p){
+  const n = String(p).replace(/[^0-9]/g,'');
+  if (!n) return 'Consultar';
+  return '$ ' + Number(n).toLocaleString('es-AR');
+}
+
+document.getElementById('btnPub').onclick = async function(){
   const titulo = (document.getElementById('titulo').value||'').trim();
-  const precio = (document.getElementById('precio').value||'').trim();
+  const precioRaw = (document.getElementById('precio').value||'').trim();
   const zona = (document.getElementById('zona').value||'').trim();
   const ambientes = document.getElementById('ambientes').value;
   const dormitorios = (document.getElementById('dormitorios').value||'').trim();
@@ -119,7 +118,7 @@ document.getElementById('btnPub').onclick = function(){
   const banos = (document.getElementById('banos').value||'').trim();
   const features = (document.getElementById('features').value||'').trim();
   const desc = (document.getElementById('desc').value||'').trim();
-  const fotos = (document.getElementById('fotos').value||'').trim();
+  const fotosTxt = (document.getElementById('fotos').value||'').trim();
   const nombre = (document.getElementById('nombre').value||'').trim();
   const email = (document.getElementById('email').value||'').trim();
   const telefono = (document.getElementById('telefono').value||'').trim();
@@ -128,53 +127,78 @@ document.getElementById('btnPub').onclick = function(){
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneOk = telefono.replace(/\D/g,'').length >= 8;
-  if (!titulo || !precio || !zona || !nombre || !emailOk || !phoneOk) {
+  if (!titulo || !precioRaw || !zona || !nombre || !emailOk || !phoneOk) {
     msg.className = 'msg err';
     msg.textContent = 'Completá título, precio, zona, nombre, email y teléfono válidos.';
     return;
   }
 
   btn.disabled = true;
-  btn.textContent = 'Enviando...';
+  btn.textContent = 'Publicando...';
   msg.className = 'msg';
-  msg.textContent = '';
 
-  const fd = new FormData();
-  fd.append('_subject', 'ZonaProp · Nueva publicación de departamento');
-  fd.append('_template', 'table');
-  fd.append('_captcha', 'false');
-  fd.append('_url', 'https://zonaprop.github.io/premium/publicar.html');
-  fd.append('tipo', 'Publicar departamento');
-  fd.append('titulo', titulo);
-  fd.append('precio', precio);
-  fd.append('zona', zona);
-  fd.append('ambientes', ambientes);
-  fd.append('dormitorios', dormitorios);
-  fd.append('m2', m2);
-  fd.append('banos', banos);
-  fd.append('caracteristicas', features);
-  fd.append('descripcion', desc);
-  fd.append('fotos', fotos);
-  fd.append('nombre', nombre);
-  fd.append('email', email);
-  fd.append('telefono', telefono);
-  fd.append('cuando', new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }));
+  const photos = fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).slice(0,12);
+  const item = {
+    id: 'u' + Date.now().toString(36),
+    title: titulo,
+    price: formatPrice(precioRaw),
+    zona: zona,
+    ambientes: ambientes,
+    dormitorios: dormitorios ? (dormitorios.match(/dorm/i) ? dormitorios : dormitorios + ' dorm.') : '',
+    m2: m2 ? (m2.match(/m/) ? m2 : m2 + ' m²') : '',
+    banos: banos ? (banos.match(/baño/i) ? banos : banos + ' baño') : '',
+    features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
+    desc: desc,
+    main: photos[0] || '',
+    photos: photos,
+    tipo: 'Alquiler',
+    community: true,
+    contacto_nombre: nombre,
+    contacto_email: email,
+    contacto_tel: telefono,
+    publicado: new Date().toISOString()
+  };
 
-  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
-    method: 'POST',
-    body: fd,
-    headers: { 'Accept': 'application/json' }
-  }).then(function(r){ return r.json().catch(function(){ return {}; }); })
-  .then(function(){
+  try {
+    const res = await fetch(DB_URL);
+    const db = await res.json();
+    const listings = Array.isArray(db.listings) ? db.listings : [];
+    listings.unshift(item);
+    await fetch(DB_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ listings: listings.slice(0, 500) })
+    });
+
+    // aviso admin por email (si FormSubmit está activado)
+    try {
+      const fd = new FormData();
+      fd.append('_subject', 'ZonaProp · Nueva publicación automática');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+      fd.append('titulo', titulo);
+      fd.append('precio', item.price);
+      fd.append('zona', zona);
+      fd.append('ambientes', ambientes);
+      fd.append('nombre', nombre);
+      fd.append('email', email);
+      fd.append('telefono', telefono);
+      fd.append('id', item.id);
+      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
+        method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
+      }).catch(function(){});
+    } catch(e) {}
+
     msg.className = 'msg ok';
-    msg.textContent = '¡Enviado! Revisamos tu aviso y lo publicamos pronto.';
-    btn.textContent = 'Enviado';
-  }).catch(function(){
-    msg.className = 'msg ok';
-    msg.textContent = 'Solicitud registrada. Si no recibimos el mail, escribinos por WhatsApp.';
+    msg.textContent = '¡Publicado! Ya está en el listado.';
+    btn.textContent = 'Publicado';
+    setTimeout(function(){ location.href = 'index.html?v=' + Date.now(); }, 900);
+  } catch (e) {
+    msg.className = 'msg err';
+    msg.textContent = 'No se pudo publicar. Intentá de nuevo.';
     btn.disabled = false;
-    btn.textContent = 'Enviar publicación';
-  });
+    btn.textContent = 'Publicar ahora';
+  }
 };
 </script>
 </body>
