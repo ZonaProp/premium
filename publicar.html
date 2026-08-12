@@ -6,49 +6,90 @@
 <title>Publicar departamento · ZonaProp Premium</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f5;color:#222}
-header{background:#1a1a2e;color:#fff;padding:.9rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#222}
+header{background:#1a1a2e;color:#fff;padding:.9rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;position:sticky;top:0;z-index:10}
 header a{color:#fff;text-decoration:none;font-size:.95rem}
 header .brand{font-weight:800}
 header .brand span{color:#ff5500}
-.wrap{max-width:560px;margin:0 auto;padding:1.2rem 1rem 2.5rem}
-h1{font-size:1.35rem;margin-bottom:.35rem}
-.sub{color:#666;font-size:.9rem;margin-bottom:1.2rem;line-height:1.4}
-.card{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-label{display:block;font-size:.82rem;font-weight:600;margin:.75rem 0 .3rem}
-input,select,textarea{width:100%;padding:.7rem .8rem;border:1px solid #ddd;border-radius:10px;font-size:1rem;font-family:inherit;background:#fafafa}
-textarea{min-height:90px;resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.wrap{max-width:580px;margin:0 auto;padding:1.1rem 1rem 3rem}
+h1{font-size:1.4rem;margin-bottom:.3rem}
+.sub{color:#666;font-size:.9rem;margin-bottom:1rem;line-height:1.45}
+.card{background:#fff;border-radius:16px;padding:1.15rem 1.15rem 1.3rem;box-shadow:0 4px 18px rgba(0,0,0,.06);margin-bottom:1rem}
+.card h3{font-size:.95rem;margin-bottom:.6rem;color:#1a1a2e}
+label{display:block;font-size:.8rem;font-weight:650;margin:.7rem 0 .28rem;color:#333}
+input,select,textarea{width:100%;padding:.72rem .85rem;border:1.5px solid #e3e3e3;border-radius:11px;font-size:1rem;font-family:inherit;background:#fafafa;transition:border .15s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:#ff5500;background:#fff}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
 @media(max-width:520px){.row{grid-template-columns:1fr}}
-.btn{width:100%;margin-top:1.1rem;padding:.9rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:800;font-size:1rem;cursor:pointer}
-.btn:disabled{opacity:.6;cursor:wait}
-.msg{margin-top:.8rem;font-size:.9rem;display:none}
-.msg.ok{color:#2e7d32;display:block}
-.msg.err{color:#c62828;display:block}
-.note{font-size:.78rem;color:#888;margin-top:.8rem;line-height:1.4}
+.upload-zone{border:2px dashed #d0d0d0;border-radius:14px;padding:1.1rem;text-align:center;background:#fafafa;cursor:pointer;transition:.15s}
+.upload-zone:hover,.upload-zone.drag{border-color:#ff5500;background:#fff7f2}
+.upload-zone strong{display:block;margin:.35rem 0 .15rem;font-size:.95rem}
+.upload-zone span{font-size:.8rem;color:#888}
+.upload-zone input{display:none}
+.previews{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.8rem}
+.previews:empty{display:none}
+.pv{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#eee}
+.pv img{width:100%;height:100%;object-fit:cover}
+.pv button{position:absolute;top:4px;right:4px;border:0;background:rgba(0,0,0,.65);color:#fff;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer}
+.pv .n{position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:6px}
+.btn{width:100%;margin-top:.4rem;padding:.95rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;font-size:1.02rem;cursor:pointer}
+.btn:disabled{opacity:.65;cursor:wait}
+.msg{margin-top:.75rem;font-size:.9rem;display:none;line-height:1.4}
+.msg.ok{color:#1b5e20;display:block;background:#e8f5e9;padding:.7rem .8rem;border-radius:10px}
+.msg.err{color:#b71c1c;display:block;background:#ffebee;padding:.7rem .8rem;border-radius:10px}
+.progress{height:6px;background:#eee;border-radius:99px;margin-top:.7rem;overflow:hidden;display:none}
+.progress>i{display:block;height:100%;width:0;background:#ff5500;transition:width .2s}
+.note{font-size:.76rem;color:#888;margin-top:.85rem;line-height:1.4}
+.hint{font-size:.75rem;color:#999;margin-top:.25rem}
 </style>
 </head>
 <body>
 <header>
   <a class="brand" href="index.html"><span>●</span> ZonaProp Premium</a>
-  <a href="index.html">← Volver al listado</a>
+  <a href="index.html">← Listado</a>
 </header>
 <div class="wrap">
-  <h1>Publicar un departamento</h1>
-  <p class="sub">Tu aviso se publica online al instante y aparece en el listado.</p>
+  <h1>Publicar departamento</h1>
+  <p class="sub">Subí fotos desde tu celular o PC. El aviso se publica online al instante.</p>
+
   <div class="card">
-    <label>Título del aviso *</label>
-    <input id="titulo" type="text" placeholder="Ej: 3 ambientes en Palermo con balcón" required/>
+    <h3>Fotos del departamento</h3>
+    <div class="upload-zone" id="drop">
+      <input id="files" type="file" accept="image/*" multiple capture="environment"/>
+      <div>📷</div>
+      <strong>Tocá para elegir fotos</strong>
+      <span>Hasta 8 fotos · JPG, PNG, HEIC · desde galería o cámara</span>
+    </div>
+    <div class="previews" id="previews"></div>
+    <div class="progress" id="prog"><i id="progi"></i></div>
+    <p class="hint">También podés pegar links de fotos más abajo (opcional).</p>
+    <label>Links de fotos (opcional, una por línea)</label>
+    <textarea id="fotosUrl" placeholder="https://...jpg"></textarea>
+  </div>
+
+  <div class="card">
+    <h3>Datos del aviso</h3>
+    <label>Título *</label>
+    <input id="titulo" type="text" placeholder="Ej: 3 ambientes luminoso en Palermo" maxlength="80"/>
+
     <div class="row">
       <div>
         <label>Precio alquiler (ARS) *</label>
-        <input id="precio" type="text" placeholder="Ej: 750000" required/>
+        <input id="precio" type="number" inputmode="numeric" placeholder="750000" min="0"/>
       </div>
       <div>
         <label>Zona / barrio *</label>
-        <input id="zona" type="text" placeholder="Ej: Recoleta" required/>
+        <input id="zona" type="text" placeholder="Recoleta, Palermo..." list="zonas"/>
+        <datalist id="zonas">
+          <option value="Recoleta"/><option value="Palermo"/><option value="Belgrano"/>
+          <option value="Nuñez"/><option value="Caballito"/><option value="Flores"/>
+          <option value="Balvanera"/><option value="Villa Urquiza"/><option value="Avellaneda"/>
+          <option value="San Cristóbal"/>
+        </datalist>
       </div>
     </div>
+
     <div class="row">
       <div>
         <label>Ambientes *</label>
@@ -62,45 +103,124 @@ textarea{min-height:90px;resize:vertical}
       </div>
       <div>
         <label>Dormitorios</label>
-        <input id="dormitorios" type="text" placeholder="Ej: 2"/>
+        <input id="dormitorios" type="number" inputmode="numeric" placeholder="2" min="0"/>
       </div>
     </div>
+
     <div class="row">
       <div>
         <label>m²</label>
-        <input id="m2" type="text" placeholder="Ej: 65"/>
+        <input id="m2" type="number" inputmode="numeric" placeholder="65" min="0"/>
       </div>
       <div>
         <label>Baños</label>
-        <input id="banos" type="text" placeholder="Ej: 1"/>
+        <input id="banos" type="number" inputmode="numeric" placeholder="1" min="0"/>
       </div>
     </div>
+
     <label>Características</label>
-    <input id="features" type="text" placeholder="Cochera, balcón, amoblado, etc."/>
+    <input id="features" type="text" placeholder="Cochera, balcón, amoblado, SUM..."/>
+
     <label>Descripción</label>
-    <textarea id="desc" placeholder="Detalles del departamento..."></textarea>
-    <label>Links de fotos (una por línea)</label>
-    <textarea id="fotos" placeholder="https://...jpg"></textarea>
-    <label>Tu nombre *</label>
-    <input id="nombre" type="text" placeholder="Nombre y apellido" required/>
+    <textarea id="desc" placeholder="Piso, expensas, disponibilidad, detalles..."></textarea>
+  </div>
+
+  <div class="card">
+    <h3>Tus datos de contacto</h3>
+    <label>Nombre *</label>
+    <input id="nombre" type="text" placeholder="Nombre y apellido"/>
     <div class="row">
       <div>
-        <label>Tu email *</label>
-        <input id="email" type="email" placeholder="tunombre@email.com" required/>
+        <label>Email *</label>
+        <input id="email" type="email" placeholder="tunombre@email.com"/>
       </div>
       <div>
-        <label>Tu WhatsApp *</label>
-        <input id="telefono" type="tel" placeholder="11 1234-5678" required/>
+        <label>WhatsApp *</label>
+        <input id="telefono" type="tel" placeholder="11 1234-5678"/>
       </div>
     </div>
-    <button class="btn" type="button" id="btnPub">Publicar ahora</button>
-    <div class="msg" id="msg"></div>
-    <p class="note">Al publicar, el aviso queda online de inmediato. También se notifica al administrador por email.</p>
   </div>
+
+  <button class="btn" type="button" id="btnPub">Publicar departamento</button>
+  <div class="msg" id="msg"></div>
+  <p class="note">Al publicar, el aviso queda online de inmediato en el listado. Máximo 8 fotos (se comprimen automáticamente).</p>
 </div>
+
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
+const MAX_PHOTOS = 8;
+let selectedFiles = []; // {file, url preview objectURL, dataUrl after compress}
+
+const drop = document.getElementById('drop');
+const fileInput = document.getElementById('files');
+const previews = document.getElementById('previews');
+
+drop.addEventListener('click', () => fileInput.click());
+drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag'); });
+drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
+drop.addEventListener('drop', e => {
+  e.preventDefault();
+  drop.classList.remove('drag');
+  addFiles(e.dataTransfer.files);
+});
+fileInput.addEventListener('change', () => {
+  addFiles(fileInput.files);
+  fileInput.value = '';
+});
+
+function addFiles(list){
+  const arr = Array.from(list || []).filter(f => f.type.startsWith('image/'));
+  for (const f of arr) {
+    if (selectedFiles.length >= MAX_PHOTOS) break;
+    selectedFiles.push({ file: f, preview: URL.createObjectURL(f), dataUrl: null });
+  }
+  renderPreviews();
+}
+
+function renderPreviews(){
+  previews.innerHTML = selectedFiles.map((item, i) => `
+    <div class="pv">
+      <img src="${item.preview}" alt="">
+      <button type="button" data-i="${i}" aria-label="Quitar">×</button>
+      <div class="n">${i+1}</div>
+    </div>`).join('');
+  previews.querySelectorAll('button').forEach(btn => {
+    btn.onclick = () => {
+      const i = +btn.dataset.i;
+      URL.revokeObjectURL(selectedFiles[i].preview);
+      selectedFiles.splice(i, 1);
+      renderPreviews();
+    };
+  });
+}
+
+function compressFile(file){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const obj = URL.createObjectURL(file);
+    img.onload = () => {
+      const maxW = 1200;
+      let w = img.width, h = img.height;
+      if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(obj);
+      // quality adaptive
+      let q = 0.72;
+      let dataUrl = canvas.toDataURL('image/jpeg', q);
+      while (dataUrl.length > 280000 && q > 0.4) {
+        q -= 0.08;
+        dataUrl = canvas.toDataURL('image/jpeg', q);
+      }
+      resolve(dataUrl);
+    };
+    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('No se pudo leer la imagen')); };
+    img.src = obj;
+  });
+}
 
 function formatPrice(p){
   const n = String(p).replace(/[^0-9]/g,'');
@@ -118,68 +238,95 @@ document.getElementById('btnPub').onclick = async function(){
   const banos = (document.getElementById('banos').value||'').trim();
   const features = (document.getElementById('features').value||'').trim();
   const desc = (document.getElementById('desc').value||'').trim();
-  const fotosTxt = (document.getElementById('fotos').value||'').trim();
+  const fotosTxt = (document.getElementById('fotosUrl').value||'').trim();
   const nombre = (document.getElementById('nombre').value||'').trim();
   const email = (document.getElementById('email').value||'').trim();
   const telefono = (document.getElementById('telefono').value||'').trim();
   const msg = document.getElementById('msg');
   const btn = document.getElementById('btnPub');
+  const prog = document.getElementById('prog');
+  const progi = document.getElementById('progi');
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneOk = telefono.replace(/\D/g,'').length >= 8;
   if (!titulo || !precioRaw || !zona || !nombre || !emailOk || !phoneOk) {
     msg.className = 'msg err';
-    msg.textContent = 'Completá título, precio, zona, nombre, email y teléfono válidos.';
+    msg.textContent = 'Completá título, precio, zona, nombre, email y WhatsApp válidos.';
+    return;
+  }
+  if (!selectedFiles.length && !fotosTxt) {
+    msg.className = 'msg err';
+    msg.textContent = 'Agregá al menos una foto (desde el celular/PC o por link).';
     return;
   }
 
   btn.disabled = true;
-  btn.textContent = 'Publicando...';
+  btn.textContent = 'Procesando fotos...';
   msg.className = 'msg';
-
-  const photos = fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).slice(0,12);
-  const item = {
-    id: 'u' + Date.now().toString(36),
-    title: titulo,
-    price: formatPrice(precioRaw),
-    zona: zona,
-    ambientes: ambientes,
-    dormitorios: dormitorios ? (dormitorios.match(/dorm/i) ? dormitorios : dormitorios + ' dorm.') : '',
-    m2: m2 ? (m2.match(/m/) ? m2 : m2 + ' m²') : '',
-    banos: banos ? (banos.match(/baño/i) ? banos : banos + ' baño') : '',
-    features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
-    desc: desc,
-    main: photos[0] || '',
-    photos: photos,
-    tipo: 'Alquiler',
-    community: true,
-    contacto_nombre: nombre,
-    contacto_email: email,
-    contacto_tel: telefono,
-    publicado: new Date().toISOString()
-  };
+  prog.style.display = 'block';
+  progi.style.width = '5%';
 
   try {
+    const photos = [];
+    // compress local files
+    for (let i = 0; i < selectedFiles.length; i++) {
+      const dataUrl = await compressFile(selectedFiles[i].file);
+      photos.push(dataUrl);
+      progi.style.width = Math.round(((i+1) / Math.max(selectedFiles.length,1)) * 70) + '%';
+    }
+    // url links
+    fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
+      if (photos.length < MAX_PHOTOS) photos.push(u);
+    });
+
+    btn.textContent = 'Publicando...';
+    progi.style.width = '85%';
+
+    const item = {
+      id: 'u' + Date.now().toString(36),
+      title: titulo,
+      price: formatPrice(precioRaw),
+      zona: zona,
+      ambientes: ambientes,
+      dormitorios: dormitorios ? dormitorios + ' dorm.' : '',
+      m2: m2 ? m2 + ' m²' : '',
+      banos: banos ? banos + (banos === '1' ? ' baño' : ' baños') : '',
+      features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
+      desc: desc,
+      main: photos[0] || '',
+      photos: photos,
+      tipo: 'Alquiler',
+      community: true,
+      contacto_nombre: nombre,
+      contacto_email: email,
+      contacto_tel: telefono,
+      publicado: new Date().toISOString()
+    };
+
     const res = await fetch(DB_URL);
     const db = await res.json();
     const listings = Array.isArray(db.listings) ? db.listings : [];
     listings.unshift(item);
-    await fetch(DB_URL, {
+
+    const put = await fetch(DB_URL, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings: listings.slice(0, 500) })
+      body: JSON.stringify({ listings: listings.slice(0, 200) })
     });
+    if (!put.ok) throw new Error('Error al guardar');
 
-    // aviso admin por email (si FormSubmit está activado)
+    progi.style.width = '100%';
+
+    // notify admin
     try {
       const fd = new FormData();
-      fd.append('_subject', 'ZonaProp · Nueva publicación automática');
+      fd.append('_subject', 'ZonaProp · Nueva publicación con fotos');
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
       fd.append('titulo', titulo);
       fd.append('precio', item.price);
       fd.append('zona', zona);
-      fd.append('ambientes', ambientes);
+      fd.append('fotos', String(photos.length));
       fd.append('nombre', nombre);
       fd.append('email', email);
       fd.append('telefono', telefono);
@@ -190,14 +337,16 @@ document.getElementById('btnPub').onclick = async function(){
     } catch(e) {}
 
     msg.className = 'msg ok';
-    msg.textContent = '¡Publicado! Ya está en el listado.';
+    msg.textContent = '¡Publicado! Ya está en el listado con ' + photos.length + ' foto(s).';
     btn.textContent = 'Publicado';
-    setTimeout(function(){ location.href = 'index.html?v=' + Date.now(); }, 900);
+    setTimeout(function(){ location.href = 'index.html?v=' + Date.now(); }, 1000);
   } catch (e) {
+    console.error(e);
     msg.className = 'msg err';
-    msg.textContent = 'No se pudo publicar. Intentá de nuevo.';
+    msg.textContent = 'No se pudo publicar. Probá con menos fotos o más livianas.';
     btn.disabled = false;
-    btn.textContent = 'Publicar ahora';
+    btn.textContent = 'Publicar departamento';
+    prog.style.display = 'none';
   }
 };
 </script>
