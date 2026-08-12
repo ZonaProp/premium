@@ -42,6 +42,9 @@ textarea{min-height:84px;resize:vertical}
 .progress>i{display:block;height:100%;width:0;background:#ff5500;transition:width .2s}
 .note{font-size:.76rem;color:#888;margin-top:.85rem;line-height:1.4}
 .hint{font-size:.75rem;color:#999;margin-top:.25rem}
+.pick-row{display:flex;gap:.5rem;margin-top:.75rem}
+.pick-row button{flex:1;border:1.5px solid #e0e0e0;background:#fff;border-radius:11px;padding:.7rem;font-size:.88rem;font-weight:700;cursor:pointer}
+.pick-row button:active{background:#fff7f2;border-color:#ff5500}
 </style>
 </head>
 <body>
@@ -51,15 +54,20 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí fotos desde tu celular o PC. El aviso se publica online al instante.</p>
+  <p class="sub">Subí fotos desde la galería o la cámara. El aviso se publica online al instante.</p>
 
   <div class="card">
     <h3>Fotos del departamento</h3>
     <div class="upload-zone" id="drop">
-      <input id="files" type="file" accept="image/*" multiple capture="environment"/>
-      <div>📷</div>
-      <strong>Tocá para elegir fotos</strong>
-      <span>Hasta 8 fotos · JPG, PNG, HEIC · desde galería o cámara</span>
+      <input id="files" type="file" accept="image/*,.jpg,.jpeg,.png,.webp,.heic,.heif" multiple/>
+      <input id="filesCam" type="file" accept="image/*" capture="environment" style="display:none"/>
+      <div>🖼️</div>
+      <strong>Elegir fotos de la galería</strong>
+      <span>Hasta 8 fotos · JPG, PNG, WEBP</span>
+    </div>
+    <div class="pick-row">
+      <button type="button" id="btnGal">📁 Galería</button>
+      <button type="button" id="btnCam">📷 Cámara</button>
     </div>
     <div class="previews" id="previews"></div>
     <div class="progress" id="prog"><i id="progi"></i></div>
@@ -150,12 +158,15 @@ textarea{min-height:84px;resize:vertical}
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const MAX_PHOTOS = 8;
-let selectedFiles = []; // {file, url preview objectURL, dataUrl after compress}
+let selectedFiles = [];
 
 const drop = document.getElementById('drop');
 const fileInput = document.getElementById('files');
+const fileCam = document.getElementById('filesCam');
 const previews = document.getElementById('previews');
 
+document.getElementById('btnGal').onclick = function(e){ e.stopPropagation(); fileInput.click(); };
+document.getElementById('btnCam').onclick = function(e){ e.stopPropagation(); fileCam.click(); };
 drop.addEventListener('click', () => fileInput.click());
 drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag'); });
 drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
@@ -164,16 +175,14 @@ drop.addEventListener('drop', e => {
   drop.classList.remove('drag');
   addFiles(e.dataTransfer.files);
 });
-fileInput.addEventListener('change', () => {
-  addFiles(fileInput.files);
-  fileInput.value = '';
-});
+fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInput.value = ''; });
+fileCam.addEventListener('change', () => { addFiles(fileCam.files); fileCam.value = ''; });
 
 function addFiles(list){
-  const arr = Array.from(list || []).filter(f => f.type.startsWith('image/'));
+  const arr = Array.from(list || []).filter(f => !f.type || f.type.startsWith('image/') || /\.(jpe?g|png|webp|heic|heif)$/i.test(f.name||''));
   for (const f of arr) {
     if (selectedFiles.length >= MAX_PHOTOS) break;
-    selectedFiles.push({ file: f, preview: URL.createObjectURL(f), dataUrl: null });
+    selectedFiles.push({ file: f, preview: URL.createObjectURL(f) });
   }
   renderPreviews();
 }
@@ -208,7 +217,6 @@ function compressFile(file){
       const ctx = canvas.getContext('2d');
       ctx.drawImage(img, 0, 0, w, h);
       URL.revokeObjectURL(obj);
-      // quality adaptive
       let q = 0.72;
       let dataUrl = canvas.toDataURL('image/jpeg', q);
       while (dataUrl.length > 280000 && q > 0.4) {
@@ -256,7 +264,7 @@ document.getElementById('btnPub').onclick = async function(){
   }
   if (!selectedFiles.length && !fotosTxt) {
     msg.className = 'msg err';
-    msg.textContent = 'Agregá al menos una foto (desde el celular/PC o por link).';
+    msg.textContent = 'Agregá al menos una foto (galería, cámara o link).';
     return;
   }
 
@@ -268,13 +276,11 @@ document.getElementById('btnPub').onclick = async function(){
 
   try {
     const photos = [];
-    // compress local files
     for (let i = 0; i < selectedFiles.length; i++) {
       const dataUrl = await compressFile(selectedFiles[i].file);
       photos.push(dataUrl);
       progi.style.width = Math.round(((i+1) / Math.max(selectedFiles.length,1)) * 70) + '%';
     }
-    // url links
     fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
       if (photos.length < MAX_PHOTOS) photos.push(u);
     });
@@ -317,7 +323,6 @@ document.getElementById('btnPub').onclick = async function(){
 
     progi.style.width = '100%';
 
-    // notify admin
     try {
       const fd = new FormData();
       fd.append('_subject', 'ZonaProp · Nueva publicación con fotos');
