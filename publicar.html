@@ -14,16 +14,14 @@ header .brand span{color:#ff5500}
 .wrap{max-width:580px;margin:0 auto;padding:1.1rem 1rem 3rem}
 h1{font-size:1.4rem;margin-bottom:.3rem}
 .sub{color:#666;font-size:.9rem;margin-bottom:1rem;line-height:1.45}
-.card{background:#fff;border-radius:16px;padding:1.15rem 1.15rem 1.3rem;box-shadow:0 4px 18px rgba(0,0,0,.06);margin-bottom:1rem}
-.card h3{font-size:.95rem;margin-bottom:.6rem;color:#1a1a2e}
-label{display:block;font-size:.8rem;font-weight:650;margin:.7rem 0 .28rem;color:#333}
+.card{background:#fff;border-radius:16px;padding:1.15rem;box-shadow:0 4px 18px rgba(0,0,0,.06);margin-bottom:1rem}
+.card h3{font-size:.95rem;margin-bottom:.6rem}
+label{display:block;font-size:.8rem;font-weight:650;margin:.7rem 0 .28rem}
 input,select,textarea{width:100%;padding:.72rem .85rem;border:1.5px solid #e3e3e3;border-radius:11px;font-size:1rem;font-family:inherit;background:#fafafa}
-input:focus,select:focus,textarea:focus{outline:0;border-color:#ff5500;background:#fff}
-textarea{min-height:84px;resize:vertical}
+textarea{min-height:80px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
 @media(max-width:520px){.row{grid-template-columns:1fr}}
 .upload-zone{border:2px dashed #d0d0d0;border-radius:14px;padding:1.1rem;text-align:center;background:#fafafa;cursor:pointer}
-.upload-zone:hover,.upload-zone.drag{border-color:#ff5500;background:#fff7f2}
 .upload-zone strong{display:block;margin:.35rem 0 .15rem}
 .upload-zone span{font-size:.8rem;color:#888}
 .upload-zone input{display:none}
@@ -32,16 +30,14 @@ textarea{min-height:84px;resize:vertical}
 .pv{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#eee}
 .pv img{width:100%;height:100%;object-fit:cover}
 .pv button{position:absolute;top:4px;right:4px;border:0;background:rgba(0,0,0,.65);color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer}
-.pv .n{position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:6px}
 .btn{width:100%;margin-top:.4rem;padding:.95rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;font-size:1.02rem;cursor:pointer}
 .btn:disabled{opacity:.65;cursor:wait}
 .msg{margin-top:.75rem;font-size:.9rem;display:none;line-height:1.4}
-.msg.ok{color:#1b5e20;display:block;background:#e8f5e9;padding:.7rem .8rem;border-radius:10px}
-.msg.err{color:#b71c1c;display:block;background:#ffebee;padding:.7rem .8rem;border-radius:10px}
+.msg.ok{color:#1b5e20;display:block;background:#e8f5e9;padding:.7rem;border-radius:10px}
+.msg.err{color:#b71c1c;display:block;background:#ffebee;padding:.7rem;border-radius:10px}
 .progress{height:6px;background:#eee;border-radius:99px;margin-top:.7rem;overflow:hidden;display:none}
 .progress>i{display:block;height:100%;width:0;background:#ff5500;transition:width .2s}
 .note{font-size:.76rem;color:#888;margin-top:.85rem;line-height:1.4}
-.hint{font-size:.75rem;color:#999;margin-top:.25rem}
 .pick-row{display:flex;gap:.5rem;margin-top:.75rem}
 .pick-row button{flex:1;border:1.5px solid #e0e0e0;background:#fff;border-radius:11px;padding:.7rem;font-size:.88rem;font-weight:700;cursor:pointer}
 </style>
@@ -53,16 +49,16 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí hasta 12 fotos. Preferí JPG/PNG. El aviso queda pendiente de aprobación.</p>
+  <p class="sub">Usá el botón <b>Cámara</b> o fotos JPG de la galería. Hasta 10 fotos.</p>
 
   <div class="card">
-    <h3>Fotos del departamento</h3>
+    <h3>Fotos</h3>
     <div class="upload-zone" id="drop">
-      <input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/*,.jpg,.jpeg,.png,.webp" multiple/>
+      <input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/*" multiple/>
       <input id="filesCam" type="file" accept="image/*" capture="environment" style="display:none"/>
       <div>🖼️</div>
-      <strong>Elegir fotos de la galería</strong>
-      <span>Hasta 12 · mejor JPG o PNG</span>
+      <strong>Elegir de la galería</strong>
+      <span>JPG / PNG · hasta 10</span>
     </div>
     <div class="pick-row">
       <button type="button" id="btnGal">📁 Galería</button>
@@ -70,209 +66,142 @@ textarea{min-height:84px;resize:vertical}
     </div>
     <div class="previews" id="previews"></div>
     <div class="progress" id="prog"><i id="progi"></i></div>
-    <p class="hint">Si una foto falla, se salta y sigue con las demás. También podés pegar links.</p>
-    <label>Links de fotos (opcional)</label>
-    <textarea id="fotosUrl" placeholder="https://...jpg"></textarea>
   </div>
 
   <div class="card">
     <h3>Datos del aviso</h3>
     <label>Título *</label>
-    <input id="titulo" type="text" placeholder="Ej: 3 ambientes luminoso en Palermo" maxlength="80"/>
+    <input id="titulo" type="text" maxlength="80" placeholder="3 ambientes en Palermo"/>
     <div class="row">
-      <div>
-        <label>Precio alquiler (ARS) *</label>
-        <input id="precio" type="number" inputmode="numeric" placeholder="750000" min="0"/>
-      </div>
-      <div>
-        <label>Zona / barrio *</label>
-        <input id="zona" type="text" placeholder="Recoleta, Palermo..." list="zonas"/>
-        <datalist id="zonas">
-          <option value="Recoleta"/><option value="Palermo"/><option value="Belgrano"/>
-          <option value="Nuñez"/><option value="Caballito"/><option value="Flores"/>
-          <option value="Balvanera"/><option value="Villa Urquiza"/><option value="Avellaneda"/>
-        </datalist>
+      <div><label>Precio (ARS) *</label><input id="precio" type="number" inputmode="numeric" placeholder="750000"/></div>
+      <div><label>Zona *</label><input id="zona" type="text" placeholder="Palermo" list="zonas"/>
+        <datalist id="zonas"><option value="Recoleta"/><option value="Palermo"/><option value="Belgrano"/><option value="Caballito"/><option value="Flores"/></datalist>
       </div>
     </div>
     <div class="row">
-      <div>
-        <label>Ambientes *</label>
-        <select id="ambientes">
-          <option value="1 amb.">1 amb. / Monoambiente</option>
-          <option value="2 amb." selected>2 amb.</option>
-          <option value="3 amb.">3 amb.</option>
-          <option value="4 amb.">4 amb.</option>
-          <option value="5 amb.">5 o más</option>
-        </select>
+      <div><label>Ambientes *</label>
+        <select id="ambientes"><option>1 amb.</option><option selected>2 amb.</option><option>3 amb.</option><option>4 amb.</option><option>5 amb.</option></select>
       </div>
-      <div>
-        <label>Dormitorios</label>
-        <input id="dormitorios" type="number" inputmode="numeric" placeholder="2" min="0"/>
-      </div>
+      <div><label>Dormitorios</label><input id="dormitorios" type="number" inputmode="numeric" placeholder="2"/></div>
     </div>
     <div class="row">
-      <div>
-        <label>m²</label>
-        <input id="m2" type="number" inputmode="numeric" placeholder="65" min="0"/>
-      </div>
-      <div>
-        <label>Baños</label>
-        <input id="banos" type="number" inputmode="numeric" placeholder="1" min="0"/>
-      </div>
+      <div><label>m²</label><input id="m2" type="number" inputmode="numeric" placeholder="65"/></div>
+      <div><label>Baños</label><input id="banos" type="number" inputmode="numeric" placeholder="1"/></div>
     </div>
-    <label>Características</label>
-    <input id="features" type="text" placeholder="Cochera, balcón, amoblado..."/>
-    <label>Descripción</label>
-    <textarea id="desc" placeholder="Detalles..."></textarea>
+    <label>Características</label><input id="features" type="text" placeholder="Balcón, cochera..."/>
+    <label>Descripción</label><textarea id="desc"></textarea>
   </div>
 
   <div class="card">
-    <h3>Tus datos de contacto</h3>
-    <label>Nombre *</label>
-    <input id="nombre" type="text" placeholder="Nombre y apellido"/>
+    <h3>Contacto</h3>
+    <label>Nombre *</label><input id="nombre" type="text"/>
     <div class="row">
-      <div>
-        <label>Email *</label>
-        <input id="email" type="email" placeholder="tunombre@email.com"/>
-      </div>
-      <div>
-        <label>WhatsApp *</label>
-        <input id="telefono" type="tel" placeholder="11 1234-5678"/>
-      </div>
+      <div><label>Email *</label><input id="email" type="email"/></div>
+      <div><label>WhatsApp *</label><input id="telefono" type="tel"/></div>
     </div>
   </div>
 
   <button class="btn" type="button" id="btnPub">Enviar a revisión</button>
   <div class="msg" id="msg"></div>
-  <p class="note">Las fotos se suben al servidor y el aviso queda pendiente hasta que el admin apruebe.</p>
+  <p class="note">Si falla una foto, se salta. Preferí sacar con Cámara.</p>
 </div>
 
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const UPLOAD_URL = 'https://zonaprop-upload-informezonaprop-3360s-projects.vercel.app/api/upload';
-const MAX_PHOTOS = 12;
+const MAX_PHOTOS = 10;
 let selectedFiles = [];
 
-const drop = document.getElementById('drop');
 const fileInput = document.getElementById('files');
 const fileCam = document.getElementById('filesCam');
 const previews = document.getElementById('previews');
+const drop = document.getElementById('drop');
 
-document.getElementById('btnGal').onclick = function(e){ e.stopPropagation(); fileInput.click(); };
-document.getElementById('btnCam').onclick = function(e){ e.stopPropagation(); fileCam.click(); };
-drop.addEventListener('click', () => fileInput.click());
-drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag'); });
-drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
-drop.addEventListener('drop', e => {
-  e.preventDefault();
-  drop.classList.remove('drag');
-  addFiles(e.dataTransfer.files);
-});
-fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInput.value = ''; });
-fileCam.addEventListener('change', () => { addFiles(fileCam.files); fileCam.value = ''; });
+document.getElementById('btnGal').onclick = e => { e.stopPropagation(); fileInput.click(); };
+document.getElementById('btnCam').onclick = e => { e.stopPropagation(); fileCam.click(); };
+drop.onclick = () => fileInput.click();
+fileInput.onchange = () => { addFiles(fileInput.files); fileInput.value=''; };
+fileCam.onchange = () => { addFiles(fileCam.files); fileCam.value=''; };
 
 function addFiles(list){
-  const arr = Array.from(list || []);
-  for (const f of arr) {
+  for (const f of Array.from(list||[])) {
     if (selectedFiles.length >= MAX_PHOTOS) break;
-    if (f.size > 25 * 1024 * 1024) continue; // máx 25MB
     selectedFiles.push({ file: f, preview: URL.createObjectURL(f) });
   }
   renderPreviews();
 }
-
 function renderPreviews(){
-  previews.innerHTML = selectedFiles.map((item, i) => `
-    <div class="pv">
-      <img src="${item.preview}" alt="" onerror="this.style.opacity=.3">
-      <button type="button" data-i="${i}" aria-label="Quitar">×</button>
-      <div class="n">${i+1}</div>
-    </div>`).join('');
-  previews.querySelectorAll('button').forEach(btn => {
-    btn.onclick = () => {
-      const i = +btn.dataset.i;
-      URL.revokeObjectURL(selectedFiles[i].preview);
-      selectedFiles.splice(i, 1);
-      renderPreviews();
-    };
-  });
+  previews.innerHTML = selectedFiles.map((item,i)=>`<div class="pv"><img src="${item.preview}" onerror="this.style.opacity=.3"><button type="button" data-i="${i}">×</button></div>`).join('');
+  previews.querySelectorAll('button').forEach(b=>b.onclick=()=>{URL.revokeObjectURL(selectedFiles[+b.dataset.i].preview);selectedFiles.splice(+b.dataset.i,1);renderPreviews();});
 }
 
-function readAsDataURL(file){
-  return new Promise((resolve, reject) => {
-    const fr = new FileReader();
-    fr.onload = () => resolve(fr.result);
-    fr.onerror = () => reject(new Error('FileReader'));
-    fr.readAsDataURL(file);
-  });
-}
-
-function canvasFromBitmap(bitmap, maxW, quality){
-  let w = bitmap.width, h = bitmap.height;
-  if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
-  if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
-  const canvas = document.createElement('canvas');
-  canvas.width = w; canvas.height = h;
-  canvas.getContext('2d').drawImage(bitmap, 0, 0, w, h);
-  if (bitmap.close) try { bitmap.close(); } catch(e) {}
-  return canvas.toDataURL('image/jpeg', quality);
-}
-
-async function fileToDataUrl(file, maxW, quality){
-  // 1) createImageBitmap (mejor en Android)
-  if (typeof createImageBitmap === 'function') {
+function loadImage(file){
+  return new Promise(async (resolve, reject) => {
     try {
-      const bmp = await createImageBitmap(file);
-      return canvasFromBitmap(bmp, maxW, quality);
-    } catch (e) {}
-  }
-  // 2) Image + objectURL
-  try {
-    const dataUrl = await new Promise((resolve, reject) => {
-      const img = new Image();
-      const obj = URL.createObjectURL(file);
-      img.onload = () => {
+      if (typeof createImageBitmap === 'function') {
         try {
-          let w = img.width, h = img.height;
-          if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
-          if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
-          const canvas = document.createElement('canvas');
-          canvas.width = w; canvas.height = h;
-          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
-          URL.revokeObjectURL(obj);
-          resolve(canvas.toDataURL('image/jpeg', quality));
-        } catch (err) {
-          URL.revokeObjectURL(obj);
-          reject(err);
-        }
-      };
-      img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('img')); };
-      img.src = obj;
-    });
-    return dataUrl;
-  } catch (e) {}
-  // 3) Subir original sin comprimir (JPG/PNG ya legibles)
-  const raw = await readAsDataURL(file);
-  if (typeof raw === 'string' && raw.startsWith('data:')) return raw;
-  throw new Error('No se pudo leer la imagen');
+          const bmp = await createImageBitmap(file);
+          return resolve(bmp);
+        } catch(e) {}
+      }
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('formato no soportado')); };
+      img.src = url;
+    } catch (e) { reject(e); }
+  });
+}
+
+async function compressToJpeg(file){
+  const src = await loadImage(file);
+  const maxSide = 1200;
+  let w = src.width, h = src.height;
+  if (!w || !h) throw new Error('imagen inválida');
+  if (w > maxSide) { h = Math.round(h * maxSide / w); w = maxSide; }
+  if (h > maxSide) { w = Math.round(w * maxSide / h); h = maxSide; }
+
+  // bajar calidad hasta quedar bajo ~900KB en dataURL (~650KB bin)
+  let q = 0.7;
+  let dataUrl = '';
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const canvas = document.createElement('canvas');
+    const scale = Math.pow(0.85, attempt);
+    const cw = Math.max(400, Math.round(w * scale));
+    const ch = Math.max(300, Math.round(h * scale));
+    canvas.width = cw; canvas.height = ch;
+    canvas.getContext('2d').drawImage(src, 0, 0, cw, ch);
+    q = Math.max(0.35, 0.7 - attempt * 0.05);
+    dataUrl = canvas.toDataURL('image/jpeg', q);
+    if (dataUrl.length < 900000) break; // ~900KB texto
+  }
+  if (src.close) try { src.close(); } catch(e) {}
+  if (!dataUrl.startsWith('data:image/jpeg')) throw new Error('no jpeg');
+  return dataUrl;
 }
 
 async function uploadPhoto(dataUrl){
-  const r = await fetch(UPLOAD_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ dataUrl })
-  });
-  const j = await r.json().catch(() => ({}));
-  if (!r.ok || !j.url) throw new Error(j.error || j.detail || 'Error subiendo foto');
-  return j.url;
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 45000);
+  try {
+    const r = await fetch(UPLOAD_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dataUrl }),
+      signal: ctrl.signal
+    });
+    const j = await r.json().catch(()=>({}));
+    if (!r.ok || !j.url) throw new Error(j.error || ('HTTP '+r.status));
+    return j.url;
+  } finally {
+    clearTimeout(t);
+  }
 }
 
 function formatPrice(p){
-  const n = String(p).replace(/[^0-9]/g,'');
-  if (!n) return 'Consultar';
-  return '$ ' + Number(n).toLocaleString('es-AR');
+  const n = String(p).replace(/\D/g,'');
+  return n ? ('$ ' + Number(n).toLocaleString('es-AR')) : 'Consultar';
 }
 
 document.getElementById('btnPub').onclick = async function(){
@@ -285,7 +214,6 @@ document.getElementById('btnPub').onclick = async function(){
   const banos = (document.getElementById('banos').value||'').trim();
   const features = (document.getElementById('features').value||'').trim();
   const desc = (document.getElementById('desc').value||'').trim();
-  const fotosTxt = (document.getElementById('fotosUrl').value||'').trim();
   const nombre = (document.getElementById('nombre').value||'').trim();
   const email = (document.getElementById('email').value||'').trim();
   const telefono = (document.getElementById('telefono').value||'').trim();
@@ -294,69 +222,53 @@ document.getElementById('btnPub').onclick = async function(){
   const prog = document.getElementById('prog');
   const progi = document.getElementById('progi');
 
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const phoneOk = telefono.replace(/\D/g,'').length >= 8;
-  if (!titulo || !precioRaw || !zona || !nombre || !emailOk || !phoneOk) {
-    msg.className = 'msg err';
-    msg.textContent = 'Completá título, precio, zona, nombre, email y WhatsApp válidos.';
-    return;
+  if (!titulo || !precioRaw || !zona || !nombre || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || telefono.replace(/\D/g,'').length < 8) {
+    msg.className='msg err'; msg.textContent='Completá todos los campos obligatorios.'; return;
   }
-  if (!selectedFiles.length && !fotosTxt) {
-    msg.className = 'msg err';
-    msg.textContent = 'Agregá al menos 1 foto.';
-    return;
-  }
+  if (!selectedFiles.length) { msg.className='msg err'; msg.textContent='Agregá al menos 1 foto.'; return; }
 
   btn.disabled = true;
-  msg.className = 'msg';
-  prog.style.display = 'block';
-  progi.style.width = '3%';
+  msg.className='msg';
+  prog.style.display='block';
+  progi.style.width='2%';
+
+  const photos = [];
+  let fallidas = 0;
+  const files = selectedFiles.slice(0, MAX_PHOTOS);
 
   try {
-    const photos = [];
-    const files = selectedFiles.slice(0, MAX_PHOTOS);
-    let fallidas = 0;
-    for (let i = 0; i < files.length; i++) {
-      btn.textContent = 'Subiendo foto ' + (i+1) + '/' + files.length + '...';
+    for (let i=0;i<files.length;i++){
+      btn.textContent = 'Foto '+(i+1)+'/'+files.length+'…';
       try {
-        const dataUrl = await fileToDataUrl(files[i].file, 1600, 0.82);
-        // si es HEIC raw enorme, recortar tamaño del payload
-        if (dataUrl.length > 7 * 1024 * 1024) {
-          fallidas++;
-          continue;
-        }
+        const dataUrl = await compressToJpeg(files[i].file);
         const url = await uploadPhoto(dataUrl);
         photos.push(url);
       } catch (err) {
-        console.warn('foto falló', i+1, err);
+        console.warn(err);
         fallidas++;
       }
-      progi.style.width = Math.round(((i+1) / Math.max(files.length,1)) * 80) + '%';
+      progi.style.width = Math.round(((i+1)/files.length)*85)+'%';
     }
-    fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
-      if (photos.length < MAX_PHOTOS) photos.push(u);
-    });
 
     if (!photos.length) {
-      throw new Error('Ninguna foto se pudo procesar. Probá JPG desde la cámara o galería');
+      throw new Error('No se pudo subir ninguna foto. Usá el botón Cámara o una JPG de la galería.');
     }
 
-    btn.textContent = 'Guardando aviso...';
-    progi.style.width = '90%';
+    btn.textContent = 'Guardando…';
+    progi.style.width = '92%';
 
     const item = {
-      id: 'u' + Date.now().toString(36),
+      id: 'u'+Date.now().toString(36),
       title: titulo,
       price: formatPrice(precioRaw),
-      zona: zona,
-      ambientes: ambientes,
-      dormitorios: dormitorios ? dormitorios + ' dorm.' : '',
-      m2: m2 ? m2 + ' m²' : '',
-      banos: banos ? banos + (banos === '1' ? ' baño' : ' baños') : '',
+      zona, ambientes,
+      dormitorios: dormitorios ? dormitorios+' dorm.' : '',
+      m2: m2 ? m2+' m²' : '',
+      banos: banos ? banos+(banos==='1'?' baño':' baños') : '',
       features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
-      desc: desc,
-      main: photos[0] || '',
-      photos: photos,
+      desc,
+      main: photos[0],
+      photos,
       tipo: 'Alquiler',
       community: true,
       contacto_nombre: nombre,
@@ -366,49 +278,36 @@ document.getElementById('btnPub').onclick = async function(){
       estado: 'pendiente'
     };
 
-    const res = await fetch(DB_URL + '?t=' + Date.now());
+    const res = await fetch(DB_URL+'?t='+Date.now());
     const db = await res.json();
-    const listings = Array.isArray(db.listings) ? db.listings : [];
-    const pending = Array.isArray(db.pending) ? db.pending : [];
+    const listings = Array.isArray(db.listings)?db.listings:[];
+    const pending = Array.isArray(db.pending)?db.pending:[];
     pending.unshift(item);
-    const put = await fetch(DB_URL, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings: listings, pending: pending.slice(0, 100) })
-    });
+    const put = await fetch(DB_URL, { method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ listings, pending: pending.slice(0,80) }) });
     if (!put.ok) throw new Error('No se pudo guardar el aviso');
 
-    progi.style.width = '100%';
-
+    progi.style.width='100%';
     try {
       const fd = new FormData();
-      fd.append('_subject', 'ZonaProp · PUBLICACIÓN PENDIENTE DE APROBACIÓN');
-      fd.append('_template', 'table');
-      fd.append('_captcha', 'false');
-      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + item.id);
-      fd.append('titulo', titulo);
-      fd.append('precio', item.price);
-      fd.append('zona', zona);
-      fd.append('fotos', String(photos.length));
-      fd.append('nombre', nombre);
-      fd.append('email', email);
-      fd.append('telefono', telefono);
-      fd.append('id', item.id);
-      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
-        method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
-      }).catch(function(){});
+      fd.append('_subject','ZonaProp · PENDIENTE DE APROBACIÓN');
+      fd.append('_template','table');
+      fd.append('_captcha','false');
+      fd.append('panel_admin','https://zonaprop.github.io/premium/admin.html?id='+item.id);
+      fd.append('titulo',titulo); fd.append('precio',item.price); fd.append('zona',zona);
+      fd.append('fotos',String(photos.length)); fd.append('nombre',nombre);
+      fd.append('email',email); fd.append('telefono',telefono); fd.append('id',item.id);
+      fetch('https://formsubmit.co/ajax/'+encodeURIComponent(ADMIN_EMAIL),{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(()=>{});
     } catch(e) {}
 
-    msg.className = 'msg ok';
-    msg.textContent = '¡Enviado a revisión con ' + photos.length + ' foto(s)!' + (fallidas ? ' (' + fallidas + ' no se pudieron)' : '');
-    btn.textContent = 'Enviado a revisión';
-  } catch (e) {
-    console.error(e);
-    msg.className = 'msg err';
-    msg.textContent = 'Error: ' + (e && e.message ? e.message : 'falló el envío');
+    msg.className='msg ok';
+    msg.textContent = '¡Listo! Enviado a revisión con '+photos.length+' foto(s)'+(fallidas?' ('+fallidas+' fallaron)':'')+'.';
+    btn.textContent = 'Enviado';
+  } catch(e) {
+    msg.className='msg err';
+    msg.textContent = e.message || 'Error al enviar';
     btn.disabled = false;
     btn.textContent = 'Enviar a revisión';
-    prog.style.display = 'none';
+    prog.style.display='none';
   }
 };
 </script>
