@@ -54,16 +54,16 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí fotos desde la galería o la cámara. El aviso queda pendiente hasta la aprobación del administrador.</p>
+  <p class="sub">Subí fotos livianas (hasta 4). El aviso queda pendiente de aprobación.</p>
 
   <div class="card">
     <h3>Fotos del departamento</h3>
     <div class="upload-zone" id="drop">
-      <input id="files" type="file" accept="image/*,.jpg,.jpeg,.png,.webp,.heic,.heif" multiple/>
+      <input id="files" type="file" accept="image/*,.jpg,.jpeg,.png,.webp" multiple/>
       <input id="filesCam" type="file" accept="image/*" capture="environment" style="display:none"/>
       <div>🖼️</div>
       <strong>Elegir fotos de la galería</strong>
-      <span>Hasta 8 fotos · JPG, PNG, WEBP</span>
+      <span>Máximo 4 fotos · se comprimen solas</span>
     </div>
     <div class="pick-row">
       <button type="button" id="btnGal">📁 Galería</button>
@@ -71,8 +71,8 @@ textarea{min-height:84px;resize:vertical}
     </div>
     <div class="previews" id="previews"></div>
     <div class="progress" id="prog"><i id="progi"></i></div>
-    <p class="hint">También podés pegar links de fotos más abajo (opcional).</p>
-    <label>Links de fotos (opcional, una por línea)</label>
+    <p class="hint">Tip: 2 o 3 fotos alcanzan. También podés pegar links abajo.</p>
+    <label>Links de fotos (opcional)</label>
     <textarea id="fotosUrl" placeholder="https://...jpg"></textarea>
   </div>
 
@@ -92,7 +92,6 @@ textarea{min-height:84px;resize:vertical}
           <option value="Recoleta"/><option value="Palermo"/><option value="Belgrano"/>
           <option value="Nuñez"/><option value="Caballito"/><option value="Flores"/>
           <option value="Balvanera"/><option value="Villa Urquiza"/><option value="Avellaneda"/>
-          <option value="San Cristóbal"/>
         </datalist>
       </div>
     </div>
@@ -123,9 +122,9 @@ textarea{min-height:84px;resize:vertical}
       </div>
     </div>
     <label>Características</label>
-    <input id="features" type="text" placeholder="Cochera, balcón, amoblado, SUM..."/>
+    <input id="features" type="text" placeholder="Cochera, balcón, amoblado..."/>
     <label>Descripción</label>
-    <textarea id="desc" placeholder="Piso, expensas, disponibilidad, detalles..."></textarea>
+    <textarea id="desc" placeholder="Detalles..."></textarea>
   </div>
 
   <div class="card">
@@ -146,13 +145,13 @@ textarea{min-height:84px;resize:vertical}
 
   <button class="btn" type="button" id="btnPub">Enviar a revisión</button>
   <div class="msg" id="msg"></div>
-  <p class="note">Al enviar, el administrador recibe un aviso para aprobar o rechazar. Máximo 8 fotos.</p>
+  <p class="note">Máximo 4 fotos. Se comprimen para que el envío no falle.</p>
 </div>
 
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
-const MAX_PHOTOS = 8;
+const MAX_PHOTOS = 4;
 let selectedFiles = [];
 
 const drop = document.getElementById('drop');
@@ -174,7 +173,7 @@ fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInpu
 fileCam.addEventListener('change', () => { addFiles(fileCam.files); fileCam.value = ''; });
 
 function addFiles(list){
-  const arr = Array.from(list || []).filter(f => !f.type || f.type.startsWith('image/') || /\.(jpe?g|png|webp|heic|heif)$/i.test(f.name||''));
+  const arr = Array.from(list || []).filter(f => !f.type || f.type.startsWith('image/') || /\.(jpe?g|png|webp)$/i.test(f.name||''));
   for (const f of arr) {
     if (selectedFiles.length >= MAX_PHOTOS) break;
     selectedFiles.push({ file: f, preview: URL.createObjectURL(f) });
@@ -199,28 +198,36 @@ function renderPreviews(){
   });
 }
 
-function compressFile(file){
+function compressFile(file, maxW, maxChars){
   return new Promise((resolve, reject) => {
     const img = new Image();
     const obj = URL.createObjectURL(file);
     img.onload = () => {
-      const maxW = 1200;
       let w = img.width, h = img.height;
       if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+      if (h > maxW) { w = Math.round(w * maxW / h); h = maxW; }
       const canvas = document.createElement('canvas');
       canvas.width = w; canvas.height = h;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0, w, h);
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
       URL.revokeObjectURL(obj);
-      let q = 0.72;
+      let q = 0.55;
       let dataUrl = canvas.toDataURL('image/jpeg', q);
-      while (dataUrl.length > 280000 && q > 0.4) {
-        q -= 0.08;
+      while (dataUrl.length > maxChars && q > 0.28) {
+        q -= 0.07;
         dataUrl = canvas.toDataURL('image/jpeg', q);
+      }
+      // still too big? shrink canvas more
+      if (dataUrl.length > maxChars) {
+        const scale = 0.7;
+        const c2 = document.createElement('canvas');
+        c2.width = Math.max(320, Math.round(w * scale));
+        c2.height = Math.max(240, Math.round(h * scale));
+        c2.getContext('2d').drawImage(canvas, 0, 0, c2.width, c2.height);
+        dataUrl = c2.toDataURL('image/jpeg', 0.4);
       }
       resolve(dataUrl);
     };
-    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('No se pudo leer la imagen')); };
+    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('imagen')); };
     img.src = obj;
   });
 }
@@ -229,6 +236,24 @@ function formatPrice(p){
   const n = String(p).replace(/[^0-9]/g,'');
   if (!n) return 'Consultar';
   return '$ ' + Number(n).toLocaleString('es-AR');
+}
+
+async function savePending(item){
+  const res = await fetch(DB_URL + '?t=' + Date.now());
+  const db = await res.json();
+  const listings = Array.isArray(db.listings) ? db.listings : [];
+  const pending = Array.isArray(db.pending) ? db.pending : [];
+  pending.unshift(item);
+  const body = JSON.stringify({ listings: listings, pending: pending.slice(0, 50) });
+  const put = await fetch(DB_URL, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: body
+  });
+  if (!put.ok) {
+    const t = await put.text().catch(()=>'');
+    throw new Error('guardar ' + put.status + ' ' + t.slice(0,80));
+  }
 }
 
 document.getElementById('btnPub').onclick = async function(){
@@ -259,31 +284,33 @@ document.getElementById('btnPub').onclick = async function(){
   }
   if (!selectedFiles.length && !fotosTxt) {
     msg.className = 'msg err';
-    msg.textContent = 'Agregá al menos una foto (galería, cámara o link).';
+    msg.textContent = 'Agregá al menos 1 foto.';
     return;
   }
 
   btn.disabled = true;
-  btn.textContent = 'Procesando fotos...';
+  btn.textContent = 'Comprimiendo fotos...';
   msg.className = 'msg';
   prog.style.display = 'block';
   progi.style.width = '5%';
 
   try {
     const photos = [];
-    for (let i = 0; i < selectedFiles.length; i++) {
-      const dataUrl = await compressFile(selectedFiles[i].file);
+    const files = selectedFiles.slice(0, MAX_PHOTOS);
+    for (let i = 0; i < files.length; i++) {
+      // ~45KB por foto en base64
+      const dataUrl = await compressFile(files[i].file, 720, 65000);
       photos.push(dataUrl);
-      progi.style.width = Math.round(((i+1) / Math.max(selectedFiles.length,1)) * 70) + '%';
+      progi.style.width = Math.round(((i+1) / Math.max(files.length,1)) * 60) + '%';
     }
     fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
       if (photos.length < MAX_PHOTOS) photos.push(u);
     });
 
-    btn.textContent = 'Enviando a revisión...';
-    progi.style.width = '85%';
+    btn.textContent = 'Enviando...';
+    progi.style.width = '75%';
 
-    const item = {
+    const base = {
       id: 'u' + Date.now().toString(36),
       title: titulo,
       price: formatPrice(precioRaw),
@@ -294,8 +321,6 @@ document.getElementById('btnPub').onclick = async function(){
       banos: banos ? banos + (banos === '1' ? ' baño' : ' baños') : '',
       features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
       desc: desc,
-      main: photos[0] || '',
-      photos: photos,
       tipo: 'Alquiler',
       community: true,
       contacto_nombre: nombre,
@@ -305,18 +330,19 @@ document.getElementById('btnPub').onclick = async function(){
       estado: 'pendiente'
     };
 
-    const res = await fetch(DB_URL);
-    const db = await res.json();
-    const listings = Array.isArray(db.listings) ? db.listings : [];
-    const pending = Array.isArray(db.pending) ? db.pending : [];
-    pending.unshift(item);
-
-    const put = await fetch(DB_URL, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings: listings, pending: pending.slice(0, 200) })
-    });
-    if (!put.ok) throw new Error('Error al guardar');
+    // intentar con todas; si falla, con 1 foto; si falla, sin fotos
+    let used = photos.slice();
+    try {
+      await savePending(Object.assign({}, base, { main: used[0]||'', photos: used }));
+    } catch (e1) {
+      if (used.length > 1) {
+        used = used.slice(0, 1);
+        btn.textContent = 'Reintentando con 1 foto...';
+        await savePending(Object.assign({}, base, { main: used[0]||'', photos: used }));
+      } else {
+        throw e1;
+      }
+    }
 
     progi.style.width = '100%';
 
@@ -325,29 +351,27 @@ document.getElementById('btnPub').onclick = async function(){
       fd.append('_subject', 'ZonaProp · PUBLICACIÓN PENDIENTE DE APROBACIÓN');
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
-      fd.append('accion', 'Revisar y aprobar o rechazar');
-      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + item.id);
+      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + base.id);
       fd.append('titulo', titulo);
-      fd.append('precio', item.price);
+      fd.append('precio', base.price);
       fd.append('zona', zona);
-      fd.append('ambientes', ambientes);
-      fd.append('fotos', String(photos.length));
+      fd.append('fotos', String(used.length));
       fd.append('nombre', nombre);
       fd.append('email', email);
       fd.append('telefono', telefono);
-      fd.append('id', item.id);
+      fd.append('id', base.id);
       fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
         method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
       }).catch(function(){});
     } catch(e) {}
 
     msg.className = 'msg ok';
-    msg.textContent = '¡Enviado! Tu aviso quedó pendiente de aprobación (' + photos.length + ' foto/s).';
+    msg.textContent = '¡Enviado a revisión! (' + used.length + ' foto/s). Revisalo en el panel admin.';
     btn.textContent = 'Enviado a revisión';
   } catch (e) {
     console.error(e);
     msg.className = 'msg err';
-    msg.textContent = 'No se pudo enviar. Probá con menos fotos o más livianas.';
+    msg.textContent = 'Falló el envío. Probá con 1 o 2 fotos más chicas. (' + (e && e.message ? e.message : '') + ')';
     btn.disabled = false;
     btn.textContent = 'Enviar a revisión';
     prog.style.display = 'none';
