@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Admin · Aprobar publicaciones</title>
+<title>Admin · ZonaProp</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#222}
-header{background:#1a1a2e;color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center}
-header a{color:#fff;text-decoration:none}
+header{background:#1a1a2e;color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+header a{color:#fff;text-decoration:none;font-size:.9rem}
 .wrap{max-width:720px;margin:0 auto;padding:1rem 1rem 3rem}
 h1{font-size:1.25rem;margin:1rem 0 .5rem}
+h2{font-size:1.05rem;margin:1.5rem 0 .5rem;color:#1a1a2e}
 .login{background:#fff;padding:1.2rem;border-radius:14px;max-width:360px;margin:2rem auto}
 .login input{width:100%;padding:.7rem;border:1px solid #ddd;border-radius:10px;margin:.5rem 0 1rem}
 .login button{width:100%;padding:.8rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:800}
@@ -25,30 +26,53 @@ h1{font-size:1.25rem;margin:1rem 0 .5rem}
 .ok{background:#2e7d32}.no{background:#c62828}
 .empty{text-align:center;padding:2rem;color:#888}
 .err{color:#c62828;font-size:.9rem;margin-top:.5rem}
+.tabs{display:flex;gap:.4rem;margin:1rem 0;flex-wrap:wrap}
+.tabs button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.4rem .9rem;font-size:.85rem;cursor:pointer;font-weight:600}
+.tabs button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
+.lead-card{background:#fff;border-radius:12px;padding:.9rem 1rem;margin-bottom:.7rem;box-shadow:0 1px 6px rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;flex-wrap:wrap}
+.lead-card .info{flex:1;min-width:180px}
+.lead-card .when{font-size:.78rem;color:#888;white-space:nowrap}
+.badge-new{background:#e8f5e9;color:#2e7d32;font-size:.7rem;font-weight:700;padding:.15rem .45rem;border-radius:6px;margin-left:.4rem}
 </style>
 </head>
 <body>
 <header>
   <strong>Admin ZonaProp</strong>
-  <a href="index.html">Ver sitio</a>
+  <div>
+    <a href="index.html">Ver sitio</a>
+    &nbsp;·&nbsp;
+    <a href="#" id="btnLogout" style="display:none">Salir</a>
+  </div>
 </header>
 <div class="wrap" id="app">
   <div class="login" id="loginBox">
     <h2>Acceso admin</h2>
-    <p style="font-size:.9rem;color:#666;margin:.4rem 0">Ingresá la clave para aprobar publicaciones.</p>
+    <p style="font-size:.9rem;color:#666;margin:.4rem 0">Ingresá la clave.</p>
     <input id="pass" type="password" placeholder="Clave admin"/>
     <button type="button" id="btnLogin">Entrar</button>
     <div class="err" id="loginErr" style="display:none">Clave incorrecta</div>
   </div>
   <div id="panel" style="display:none">
-    <h1>Pendientes de aprobación</h1>
-    <p class="meta" id="count"></p>
-    <div id="list"></div>
+    <div class="tabs">
+      <button type="button" class="on" data-tab="leads">Visitantes que ingresan</button>
+      <button type="button" data-tab="pending">Pendientes de aprobación</button>
+    </div>
+
+    <div id="tab-leads">
+      <h1>Visitantes que ingresaron</h1>
+      <p class="meta" id="leadsCount"></p>
+      <div id="leadsList"></div>
+    </div>
+
+    <div id="tab-pending" style="display:none">
+      <h1>Pendientes de aprobación</h1>
+      <p class="meta" id="count"></p>
+      <div id="list"></div>
+    </div>
   </div>
 </div>
 <script>
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
-// Clave simple (cambiá si querés)
 const ADMIN_PASS = 'zonaprop2026';
 
 if (sessionStorage.getItem('zp_admin') === '1') showPanel();
@@ -62,12 +86,29 @@ document.getElementById('btnLogin').onclick = function(){
   }
 };
 
+document.getElementById('btnLogout').onclick = function(e){
+  e.preventDefault();
+  sessionStorage.removeItem('zp_admin');
+  location.reload();
+};
+
+document.querySelectorAll('.tabs button').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const tab = btn.dataset.tab;
+    document.getElementById('tab-leads').style.display = tab === 'leads' ? 'block' : 'none';
+    document.getElementById('tab-pending').style.display = tab === 'pending' ? 'block' : 'none';
+  };
+});
+
 async function loadDB(){
   const r = await fetch(DB_URL + '?t=' + Date.now());
   const db = await r.json();
   return {
     listings: Array.isArray(db.listings) ? db.listings : [],
-    pending: Array.isArray(db.pending) ? db.pending : []
+    pending: Array.isArray(db.pending) ? db.pending : [],
+    leads: Array.isArray(db.leads) ? db.leads : []
   };
 }
 
@@ -83,10 +124,35 @@ async function saveDB(db){
 async function showPanel(){
   document.getElementById('loginBox').style.display = 'none';
   document.getElementById('panel').style.display = 'block';
-  await render();
+  document.getElementById('btnLogout').style.display = 'inline';
+  await renderLeads();
+  await renderPending();
 }
 
-async function render(){
+async function renderLeads(){
+  const db = await loadDB();
+  const list = document.getElementById('leadsList');
+  const leads = db.leads || [];
+  document.getElementById('leadsCount').textContent = leads.length + ' visitante(s) registrados';
+  if (!leads.length) {
+    list.innerHTML = '<div class="empty">Todavía no ingresó nadie.</div>';
+    return;
+  }
+  list.innerHTML = leads.map((l, i) => {
+    const when = l.cuando ? new Date(l.cuando).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }) : '';
+    const isNew = i < 5;
+    return `<div class="lead-card">
+      <div class="info">
+        <strong>${l.email || '—'}</strong>${isNew ? '<span class="badge-new">nuevo</span>' : ''}<br>
+        <span class="meta">📱 ${l.telefono || '—'}</span><br>
+        <span class="meta">Origen: ${l.origen || 'Directo'} · ${l.pagina ? l.pagina.replace('https://zonaprop.github.io/premium/','') : ''}</span>
+      </div>
+      <div class="when">${when}</div>
+    </div>`;
+  }).join('');
+}
+
+async function renderPending(){
   const db = await loadDB();
   const list = document.getElementById('list');
   document.getElementById('count').textContent = db.pending.length + ' pendiente(s)';
@@ -94,7 +160,7 @@ async function render(){
     list.innerHTML = '<div class="empty">No hay publicaciones pendientes.</div>';
     return;
   }
-  list.innerHTML = db.pending.map((d, idx) => {
+  list.innerHTML = db.pending.map((d) => {
     const photos = d.photos || (d.main ? [d.main] : []);
     const main = photos[0] || '';
     return `<div class="card" data-id="${d.id}">
@@ -121,7 +187,7 @@ async function render(){
       try {
         const db = await loadDB();
         const i = db.pending.findIndex(x => x.id === id);
-        if (i < 0) { await render(); return; }
+        if (i < 0) { await renderPending(); return; }
         const item = db.pending[i];
         db.pending.splice(i, 1);
         if (act === 'ok') {
@@ -130,7 +196,7 @@ async function render(){
           db.listings.unshift(item);
         }
         await saveDB(db);
-        await render();
+        await renderPending();
       } catch (e) {
         alert('Error al guardar. Reintentá.');
         btn.disabled = false;
@@ -142,6 +208,10 @@ async function render(){
 // deep link ?id= to highlight
 const focusId = new URLSearchParams(location.search).get('id');
 if (focusId && sessionStorage.getItem('zp_admin') === '1') {
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
+  document.querySelector('[data-tab="pending"]').classList.add('on');
+  document.getElementById('tab-leads').style.display = 'none';
+  document.getElementById('tab-pending').style.display = 'block';
   setTimeout(() => {
     const el = document.querySelector('[data-id="'+focusId+'"]');
     if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
