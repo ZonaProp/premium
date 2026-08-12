@@ -111,6 +111,7 @@ footer{text-align:center;padding:1.2rem;color:#666;font-size:.85rem}
 </div>
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
+const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const HOME_LIMIT = 20;
 let ALL = [];
 let showAll = false;
@@ -178,18 +179,19 @@ document.getElementById('gateBtn').onclick = function(){
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
 function cardHTML(d){
   const specs=['Alquiler',d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
+  const badge = (d.community ? 'Comunidad · ' : '') + (d.zona ? d.zona + ' · ' : '') + ((d.photos||[]).length) + ' fotos';
   return `<article class="card">
-    <a href="depto.html?id=${d.id}">
+    <a href="depto.html?id=${encodeURIComponent(d.id)}">
       <div class="card-img">${d.main?`<img src="${d.main}" alt="" loading="lazy">`:''}</div>
       <div class="card-body">
         <div class="price">${d.price}</div>
         <h2>${d.title}</h2>
         <div class="specs">${specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
-        <div class="badge">${d.zona?d.zona+' · ':''}${(d.photos||[]).length} fotos</div>
+        <div class="badge">${badge}</div>
       </div>
     </a>
     <div class="card-actions">
-      <a class="btn-o" href="depto.html?id=${d.id}">Ver</a>
+      <a class="btn-o" href="depto.html?id=${encodeURIComponent(d.id)}">Ver</a>
       <a class="btn-g" href="https://wa.me/5491125692598?text=${encodeURIComponent('Hola! Quiero info de '+d.title)}">WhatsApp</a>
     </div>
   </article>`;
@@ -226,9 +228,7 @@ function applyFilters(){
     more.style.display='none';
   }
 }
-fetch('data.json').then(r=>r.json()).then(data=>{
-  ALL=data;
-  applyFilters();
+function wireUI(){
   document.getElementById('btnBuscar').onclick=()=>{showAll=false;applyFilters()};
   document.getElementById('btnLimpiar').onclick=()=>{
     document.getElementById('q').value='';
@@ -249,7 +249,19 @@ fetch('data.json').then(r=>r.json()).then(data=>{
       applyFilters();
     };
   });
-}).catch(e=>{
+}
+
+Promise.all([
+  fetch('data.json').then(r=>r.json()).catch(function(){ return []; }),
+  fetch(DB_URL).then(r=>r.json()).then(function(db){ return Array.isArray(db.listings) ? db.listings : []; }).catch(function(){ return []; })
+]).then(function(results){
+  const base = results[0] || [];
+  const community = results[1] || [];
+  // comunidad primero (más nuevas)
+  ALL = community.concat(base);
+  applyFilters();
+  wireUI();
+}).catch(function(){
   document.getElementById('grid').innerHTML='<div class="loading">Error cargando datos</div>';
 });
 </script>
