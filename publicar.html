@@ -17,21 +17,21 @@ h1{font-size:1.4rem;margin-bottom:.3rem}
 .card{background:#fff;border-radius:16px;padding:1.15rem 1.15rem 1.3rem;box-shadow:0 4px 18px rgba(0,0,0,.06);margin-bottom:1rem}
 .card h3{font-size:.95rem;margin-bottom:.6rem;color:#1a1a2e}
 label{display:block;font-size:.8rem;font-weight:650;margin:.7rem 0 .28rem;color:#333}
-input,select,textarea{width:100%;padding:.72rem .85rem;border:1.5px solid #e3e3e3;border-radius:11px;font-size:1rem;font-family:inherit;background:#fafafa;transition:border .15s}
+input,select,textarea{width:100%;padding:.72rem .85rem;border:1.5px solid #e3e3e3;border-radius:11px;font-size:1rem;font-family:inherit;background:#fafafa}
 input:focus,select:focus,textarea:focus{outline:0;border-color:#ff5500;background:#fff}
 textarea{min-height:84px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
 @media(max-width:520px){.row{grid-template-columns:1fr}}
-.upload-zone{border:2px dashed #d0d0d0;border-radius:14px;padding:1.1rem;text-align:center;background:#fafafa;cursor:pointer;transition:.15s}
+.upload-zone{border:2px dashed #d0d0d0;border-radius:14px;padding:1.1rem;text-align:center;background:#fafafa;cursor:pointer}
 .upload-zone:hover,.upload-zone.drag{border-color:#ff5500;background:#fff7f2}
-.upload-zone strong{display:block;margin:.35rem 0 .15rem;font-size:.95rem}
+.upload-zone strong{display:block;margin:.35rem 0 .15rem}
 .upload-zone span{font-size:.8rem;color:#888}
 .upload-zone input{display:none}
 .previews{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.8rem}
 .previews:empty{display:none}
 .pv{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#eee}
 .pv img{width:100%;height:100%;object-fit:cover}
-.pv button{position:absolute;top:4px;right:4px;border:0;background:rgba(0,0,0,.65);color:#fff;width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer}
+.pv button{position:absolute;top:4px;right:4px;border:0;background:rgba(0,0,0,.65);color:#fff;width:26px;height:26px;border-radius:50%;cursor:pointer}
 .pv .n{position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,.55);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:6px}
 .btn{width:100%;margin-top:.4rem;padding:.95rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;font-size:1.02rem;cursor:pointer}
 .btn:disabled{opacity:.65;cursor:wait}
@@ -44,7 +44,6 @@ textarea{min-height:84px;resize:vertical}
 .hint{font-size:.75rem;color:#999;margin-top:.25rem}
 .pick-row{display:flex;gap:.5rem;margin-top:.75rem}
 .pick-row button{flex:1;border:1.5px solid #e0e0e0;background:#fff;border-radius:11px;padding:.7rem;font-size:.88rem;font-weight:700;cursor:pointer}
-.pick-row button:active{background:#fff7f2;border-color:#ff5500}
 </style>
 </head>
 <body>
@@ -54,7 +53,7 @@ textarea{min-height:84px;resize:vertical}
 </header>
 <div class="wrap">
   <h1>Publicar departamento</h1>
-  <p class="sub">Subí fotos livianas (hasta 4). El aviso queda pendiente de aprobación.</p>
+  <p class="sub">Subí hasta 12 fotos en buena calidad. El aviso queda pendiente de aprobación.</p>
 
   <div class="card">
     <h3>Fotos del departamento</h3>
@@ -63,7 +62,7 @@ textarea{min-height:84px;resize:vertical}
       <input id="filesCam" type="file" accept="image/*" capture="environment" style="display:none"/>
       <div>🖼️</div>
       <strong>Elegir fotos de la galería</strong>
-      <span>Máximo 4 fotos · se comprimen solas</span>
+      <span>Hasta 12 fotos · buena calidad</span>
     </div>
     <div class="pick-row">
       <button type="button" id="btnGal">📁 Galería</button>
@@ -71,7 +70,7 @@ textarea{min-height:84px;resize:vertical}
     </div>
     <div class="previews" id="previews"></div>
     <div class="progress" id="prog"><i id="progi"></i></div>
-    <p class="hint">Tip: 2 o 3 fotos alcanzan. También podés pegar links abajo.</p>
+    <p class="hint">También podés pegar links de fotos (opcional).</p>
     <label>Links de fotos (opcional)</label>
     <textarea id="fotosUrl" placeholder="https://...jpg"></textarea>
   </div>
@@ -145,13 +144,14 @@ textarea{min-height:84px;resize:vertical}
 
   <button class="btn" type="button" id="btnPub">Enviar a revisión</button>
   <div class="msg" id="msg"></div>
-  <p class="note">Máximo 4 fotos. Se comprimen para que el envío no falle.</p>
+  <p class="note">Las fotos se suben a un servidor de imágenes y el aviso queda pendiente hasta que el admin apruebe.</p>
 </div>
 
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
-const MAX_PHOTOS = 4;
+const UPLOAD_URL = 'https://zonaprop-upload-informezonaprop-3360s-projects.vercel.app/api/upload';
+const MAX_PHOTOS = 12;
 let selectedFiles = [];
 
 const drop = document.getElementById('drop');
@@ -198,7 +198,7 @@ function renderPreviews(){
   });
 }
 
-function compressFile(file, maxW, maxChars){
+function fileToDataUrl(file, maxW, quality){
   return new Promise((resolve, reject) => {
     const img = new Image();
     const obj = URL.createObjectURL(file);
@@ -210,50 +210,28 @@ function compressFile(file, maxW, maxChars){
       canvas.width = w; canvas.height = h;
       canvas.getContext('2d').drawImage(img, 0, 0, w, h);
       URL.revokeObjectURL(obj);
-      let q = 0.55;
-      let dataUrl = canvas.toDataURL('image/jpeg', q);
-      while (dataUrl.length > maxChars && q > 0.28) {
-        q -= 0.07;
-        dataUrl = canvas.toDataURL('image/jpeg', q);
-      }
-      // still too big? shrink canvas more
-      if (dataUrl.length > maxChars) {
-        const scale = 0.7;
-        const c2 = document.createElement('canvas');
-        c2.width = Math.max(320, Math.round(w * scale));
-        c2.height = Math.max(240, Math.round(h * scale));
-        c2.getContext('2d').drawImage(canvas, 0, 0, c2.width, c2.height);
-        dataUrl = c2.toDataURL('image/jpeg', 0.4);
-      }
-      resolve(dataUrl);
+      resolve(canvas.toDataURL('image/jpeg', quality));
     };
-    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('imagen')); };
+    img.onerror = () => { URL.revokeObjectURL(obj); reject(new Error('No se pudo leer la imagen')); };
     img.src = obj;
   });
+}
+
+async function uploadPhoto(dataUrl){
+  const r = await fetch(UPLOAD_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ dataUrl })
+  });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.url) throw new Error(j.error || 'Error subiendo foto');
+  return j.url;
 }
 
 function formatPrice(p){
   const n = String(p).replace(/[^0-9]/g,'');
   if (!n) return 'Consultar';
   return '$ ' + Number(n).toLocaleString('es-AR');
-}
-
-async function savePending(item){
-  const res = await fetch(DB_URL + '?t=' + Date.now());
-  const db = await res.json();
-  const listings = Array.isArray(db.listings) ? db.listings : [];
-  const pending = Array.isArray(db.pending) ? db.pending : [];
-  pending.unshift(item);
-  const body = JSON.stringify({ listings: listings, pending: pending.slice(0, 50) });
-  const put = await fetch(DB_URL, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: body
-  });
-  if (!put.ok) {
-    const t = await put.text().catch(()=>'');
-    throw new Error('guardar ' + put.status + ' ' + t.slice(0,80));
-  }
 }
 
 document.getElementById('btnPub').onclick = async function(){
@@ -289,28 +267,29 @@ document.getElementById('btnPub').onclick = async function(){
   }
 
   btn.disabled = true;
-  btn.textContent = 'Comprimiendo fotos...';
   msg.className = 'msg';
   prog.style.display = 'block';
-  progi.style.width = '5%';
+  progi.style.width = '3%';
 
   try {
     const photos = [];
     const files = selectedFiles.slice(0, MAX_PHOTOS);
     for (let i = 0; i < files.length; i++) {
-      // ~45KB por foto en base64
-      const dataUrl = await compressFile(files[i].file, 720, 65000);
-      photos.push(dataUrl);
-      progi.style.width = Math.round(((i+1) / Math.max(files.length,1)) * 60) + '%';
+      btn.textContent = 'Subiendo foto ' + (i+1) + '/' + files.length + '...';
+      // buena calidad: 1600px, q 0.82
+      const dataUrl = await fileToDataUrl(files[i].file, 1600, 0.82);
+      const url = await uploadPhoto(dataUrl);
+      photos.push(url);
+      progi.style.width = Math.round(((i+1) / Math.max(files.length,1)) * 80) + '%';
     }
     fotosTxt.split(/\n+/).map(s=>s.trim()).filter(s=>/^https?:\/\//i.test(s)).forEach(u => {
       if (photos.length < MAX_PHOTOS) photos.push(u);
     });
 
-    btn.textContent = 'Enviando...';
-    progi.style.width = '75%';
+    btn.textContent = 'Guardando aviso...';
+    progi.style.width = '90%';
 
-    const base = {
+    const item = {
       id: 'u' + Date.now().toString(36),
       title: titulo,
       price: formatPrice(precioRaw),
@@ -321,6 +300,8 @@ document.getElementById('btnPub').onclick = async function(){
       banos: banos ? banos + (banos === '1' ? ' baño' : ' baños') : '',
       features: features ? features.split(/[,;]/).map(s=>s.trim()).filter(Boolean) : [],
       desc: desc,
+      main: photos[0] || '',
+      photos: photos,
       tipo: 'Alquiler',
       community: true,
       contacto_nombre: nombre,
@@ -330,19 +311,17 @@ document.getElementById('btnPub').onclick = async function(){
       estado: 'pendiente'
     };
 
-    // intentar con todas; si falla, con 1 foto; si falla, sin fotos
-    let used = photos.slice();
-    try {
-      await savePending(Object.assign({}, base, { main: used[0]||'', photos: used }));
-    } catch (e1) {
-      if (used.length > 1) {
-        used = used.slice(0, 1);
-        btn.textContent = 'Reintentando con 1 foto...';
-        await savePending(Object.assign({}, base, { main: used[0]||'', photos: used }));
-      } else {
-        throw e1;
-      }
-    }
+    const res = await fetch(DB_URL + '?t=' + Date.now());
+    const db = await res.json();
+    const listings = Array.isArray(db.listings) ? db.listings : [];
+    const pending = Array.isArray(db.pending) ? db.pending : [];
+    pending.unshift(item);
+    const put = await fetch(DB_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ listings: listings, pending: pending.slice(0, 100) })
+    });
+    if (!put.ok) throw new Error('No se pudo guardar el aviso');
 
     progi.style.width = '100%';
 
@@ -351,27 +330,27 @@ document.getElementById('btnPub').onclick = async function(){
       fd.append('_subject', 'ZonaProp · PUBLICACIÓN PENDIENTE DE APROBACIÓN');
       fd.append('_template', 'table');
       fd.append('_captcha', 'false');
-      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + base.id);
+      fd.append('panel_admin', 'https://zonaprop.github.io/premium/admin.html?id=' + item.id);
       fd.append('titulo', titulo);
-      fd.append('precio', base.price);
+      fd.append('precio', item.price);
       fd.append('zona', zona);
-      fd.append('fotos', String(used.length));
+      fd.append('fotos', String(photos.length));
       fd.append('nombre', nombre);
       fd.append('email', email);
       fd.append('telefono', telefono);
-      fd.append('id', base.id);
+      fd.append('id', item.id);
       fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
         method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
       }).catch(function(){});
     } catch(e) {}
 
     msg.className = 'msg ok';
-    msg.textContent = '¡Enviado a revisión! (' + used.length + ' foto/s). Revisalo en el panel admin.';
+    msg.textContent = '¡Enviado a revisión con ' + photos.length + ' foto(s)!';
     btn.textContent = 'Enviado a revisión';
   } catch (e) {
     console.error(e);
     msg.className = 'msg err';
-    msg.textContent = 'Falló el envío. Probá con 1 o 2 fotos más chicas. (' + (e && e.message ? e.message : '') + ')';
+    msg.textContent = 'Error: ' + (e && e.message ? e.message : 'falló el envío') + '. Reintentá.';
     btn.disabled = false;
     btn.textContent = 'Enviar a revisión';
     prog.style.display = 'none';
