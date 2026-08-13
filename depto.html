@@ -26,8 +26,9 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222}
-.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;gap:.6rem}
+.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
 .header a{color:#fff;text-decoration:none;font-size:1.2rem}
+.header .share-btn{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.4rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer}
 .gallery{position:relative;background:#111}
 .gallery img.main{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
@@ -38,15 +39,17 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .thumbs img.on{opacity:1;outline:2px solid #ff5500}
 .box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
 .price{font-size:1.55rem;font-weight:800;color:#ff5500}
-.h2{font-size:1.1rem;font-weight:700;margin:.25rem 0}
-.zona{font-size:.85rem;color:#666;margin-top:.15rem}
+.h2{font-size:1.15rem;font-weight:700;margin:.3rem 0 .15rem;line-height:1.3}
+.zona{font-size:.88rem;color:#666;margin-top:.15rem}
 .specs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
 .spec{background:#f3f3f3;border-radius:999px;padding:.4rem .75rem;font-size:.82rem;font-weight:600}
-.desc{margin-top:.9rem;font-size:.9rem;line-height:1.45;color:#444}
-.feats{margin-top:.9rem}
-.feats h3{font-size:.95rem;margin-bottom:.5rem}
-.feat-list{display:flex;flex-wrap:wrap;gap:.4rem}
-.feat{border:1px solid #e0e0e0;border-radius:8px;padding:.35rem .65rem;font-size:.8rem;background:#fafafa}
+.section{background:#fff;margin-top:8px;padding:1.15rem 1.2rem}
+.section h3{font-size:.98rem;font-weight:700;margin-bottom:.55rem;color:#1a1a2e}
+.desc{font-size:.92rem;line-height:1.55;color:#333}
+.desc.empty{color:#888;font-style:italic}
+.feats{margin-top:.4rem}
+.feat-list{display:flex;flex-wrap:wrap;gap:.45rem}
+.feat{border:1px solid #e0e0e0;border-radius:8px;padding:.35rem .7rem;font-size:.8rem;background:#fafafa}
 .reserva{background:#fff;margin-top:8px;padding:1.2rem;border-top:3px solid #ff5500}
 .reserva h3{font-size:1rem;margin-bottom:.6rem}
 .reserva-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #eee}
@@ -66,15 +69,30 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .btn-sec{display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;font-weight:600;text-decoration:none;color:#1a1a2e;background:#eee;font-size:.9rem}
 footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 .loading{text-align:center;padding:3rem;color:#888}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:opacity .25s;z-index:100;pointer-events:none}
+.toast.show{opacity:1}
 </style>
 </head>
 <body>
-<div class="header"><a href="index.html">←</a> <span>ZonaProp</span></div>
+<div class="header">
+  <a href="index.html">←</a>
+  <span>ZonaProp</span>
+  <button class="share-btn" id="btnShare" type="button">Compartir</button>
+</div>
 <div id="content"><div class="loading">Cargando...</div></div>
+<div class="toast" id="toast">Link copiado</div>
 <script>
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
 if (!id) {
   document.getElementById('content').innerHTML = '<div class="loading">No se especificó departamento</div>';
 } else {
@@ -89,24 +107,35 @@ if (!id) {
         return;
       }
 
-      // --- Actualizar meta tags para vista previa al compartir ---
+      // --- Construir descripción sólida ---
+      let fullDesc = (d.desc || '').trim();
+      if (!fullDesc || fullDesc.length < 15) {
+        const parts = [];
+        if (d.zona) parts.push('Ubicado en ' + d.zona);
+        if (d.ambientes) parts.push(d.ambientes);
+        if (d.dormitorios) parts.push(d.dormitorios);
+        if (d.m2) parts.push(d.m2);
+        if (d.banos) parts.push(d.banos);
+        if (d.features && d.features.length) parts.push('Características: ' + d.features.join(', '));
+        fullDesc = parts.length
+          ? parts.join(' · ') + '. Departamento en alquiler disponible ahora.'
+          : 'Departamento en alquiler. Consultá por disponibilidad y condiciones.';
+      }
+
+      // --- Meta tags para vista previa ---
       const title = (d.title || 'Departamento') + (d.price ? ' · ' + d.price : '') + ' · ZonaProp';
-      const desc = (d.zona ? d.zona + ' · ' : '') + (d.ambientes || '') + (d.dormitorios ? ' · ' + d.dormitorios : '') + (d.m2 ? ' · ' + d.m2 : '') + (d.desc ? ' · ' + d.desc.slice(0, 120) : ' Departamento en alquiler');
+      const ogDesc = fullDesc.slice(0, 160);
       const img = (d.photos && d.photos[0]) || d.main || 'https://zonaprop.github.io/premium/logo.svg';
       const pageUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
 
       document.title = title;
-      document.querySelector('meta[name="description"]').setAttribute('content', desc);
-
-      // Open Graph
+      document.querySelector('meta[name="description"]').setAttribute('content', ogDesc);
       document.getElementById('ogTitle').setAttribute('content', title);
-      document.getElementById('ogDesc').setAttribute('content', desc);
+      document.getElementById('ogDesc').setAttribute('content', ogDesc);
       document.getElementById('ogImage').setAttribute('content', img);
       document.querySelector('meta[property="og:url"]').setAttribute('content', pageUrl);
-
-      // Twitter
       document.getElementById('twTitle').setAttribute('content', title);
-      document.getElementById('twDesc').setAttribute('content', desc);
+      document.getElementById('twDesc').setAttribute('content', ogDesc);
       document.getElementById('twImage').setAttribute('content', img);
 
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
@@ -115,7 +144,6 @@ if (!id) {
       const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
       const feats = d.features || [];
 
-      // Fecha mínima = hoy
       const hoy = new Date();
       const yyyy = hoy.getFullYear();
       const mm = String(hoy.getMonth() + 1).padStart(2, '0');
@@ -129,14 +157,25 @@ if (!id) {
           <div class="g-nav"><button onclick="show(cur-1)">‹</button><button onclick="show(cur+1)">›</button></div>
         </div>
         <div class="thumbs" id="thumbs"></div>
+
         <div class="box">
-          <div class="price">${d.price}</div>
-          <div class="h2">${d.title}</div>
+          <div class="price">${d.price || 'Consultar'}</div>
+          <div class="h2">${d.title || 'Departamento'}</div>
           ${d.zona ? `<div class="zona">${d.zona}${d.community ? ' · Publicación de la comunidad' : ''}</div>` : ''}
           <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
-          ${d.desc ? `<div class="desc">${d.desc}</div>` : ''}
-          ${feats.length ? `<div class="feats"><h3>Características</h3><div class="feat-list">${feats.map(f => `<span class="feat">${f}</span>`).join('')}</div></div>` : ''}
         </div>
+
+        <div class="section">
+          <h3>Descripción</h3>
+          <div class="desc">${fullDesc}</div>
+        </div>
+
+        ${feats.length ? `
+        <div class="section">
+          <h3>Características</h3>
+          <div class="feat-list">${feats.map(f => `<span class="feat">${f}</span>`).join('')}</div>
+        </div>` : ''}
+
         <div class="reserva">
           <h3>Reserva para asegurar el departamento</h3>
           <div class="reserva-row"><span>Seña / reserva</span><span class="reserva-monto">$ 50.000</span></div>
@@ -145,10 +184,11 @@ if (!id) {
 
           <div class="fecha-ingreso">
             <label for="fechaIngreso">📅 Fecha de ingreso deseada</label>
-            <input type="date" id="fechaIngreso" min="${minDate}" required />
+            <input type="date" id="fechaIngreso" min="${minDate}" />
             <p class="fecha-hint">Elegí en el calendario la fecha en la que querés ingresar al departamento.</p>
           </div>
         </div>
+
         <div class="pago">
           <h3>Pagar reserva / Contacto</h3>
           <div class="pago-btns">
@@ -157,10 +197,11 @@ if (!id) {
             <a class="btn-sec" id="btnConsultar" href="#">Consultar</a>
           </div>
         </div>
+
         <footer>ZonaProp Premium</footer>
       `;
 
-      // Actualizar links de WhatsApp cuando cambie la fecha
+      // WhatsApp con fecha
       function updateWaLinks() {
         const fechaVal = document.getElementById('fechaIngreso').value;
         let fechaTxt = '';
@@ -168,16 +209,36 @@ if (!id) {
           const [y, m, day] = fechaVal.split('-');
           fechaTxt = ' · Fecha de ingreso: ' + day + '/' + m + '/' + y;
         }
-        const baseText = 'Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000' + fechaTxt;
-        const waText = encodeURIComponent(baseText);
-        const href = 'https://wa.me/' + wa + '?text=' + waText;
+        const baseText = 'Hola! Quiero reservar: ' + (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de $50.000' + fechaTxt;
+        const href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(baseText);
         document.getElementById('btnWa').href = href;
         document.getElementById('btnConsultar').href = href;
       }
-
       document.getElementById('fechaIngreso').addEventListener('change', updateWaLinks);
-      updateWaLinks(); // inicial
+      updateWaLinks();
 
+      // Botón Compartir
+      document.getElementById('btnShare').onclick = async function() {
+        const shareData = {
+          title: d.title || 'Departamento',
+          text: (d.price || '') + ' · ' + (d.zona || '') + '\n' + fullDesc.slice(0, 100),
+          url: pageUrl
+        };
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (e) {}
+        } else {
+          try {
+            await navigator.clipboard.writeText(pageUrl);
+            showToast('Link copiado');
+          } catch (e) {
+            showToast('No se pudo copiar');
+          }
+        }
+      };
+
+      // Galería
       window.photos = photos.length ? photos : [''];
       window.cur = 0;
       const t = document.getElementById('thumbs');
@@ -193,6 +254,7 @@ if (!id) {
       document.getElementById('content').innerHTML = '<div class="loading">Error cargando</div>';
     });
 }
+
 function show(i) {
   if (!window.photos || !window.photos.length) return;
   if (i < 0) i = window.photos.length - 1;
