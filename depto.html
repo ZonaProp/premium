@@ -3,7 +3,26 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
-<title>Departamento · ZonaProp</title>
+<title>Departamento · ZonaProp Premium</title>
+<meta name="description" content="Departamento en alquiler · ZonaProp Premium"/>
+
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ZonaProp Premium"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:url" content="https://zonaprop.github.io/premium/depto.html"/>
+<meta property="og:title" content="Departamento · ZonaProp Premium" id="ogTitle"/>
+<meta property="og:description" content="Departamento en alquiler en Buenos Aires. Mirá fotos, precio y reservá." id="ogDesc"/>
+<meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg" id="ogImage"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Departamento · ZonaProp Premium" id="twTitle"/>
+<meta name="twitter:description" content="Departamento en alquiler en Buenos Aires. Mirá fotos, precio y reservá." id="twDesc"/>
+<meta name="twitter:image" content="https://zonaprop.github.io/premium/logo.svg" id="twImage"/>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222}
@@ -69,7 +88,27 @@ if (!id) {
         document.getElementById('content').innerHTML = '<div class="loading">Departamento no encontrado</div>';
         return;
       }
-      document.title = d.title + ' · ZonaProp';
+
+      // --- Actualizar meta tags para vista previa al compartir ---
+      const title = (d.title || 'Departamento') + (d.price ? ' · ' + d.price : '') + ' · ZonaProp';
+      const desc = (d.zona ? d.zona + ' · ' : '') + (d.ambientes || '') + (d.dormitorios ? ' · ' + d.dormitorios : '') + (d.m2 ? ' · ' + d.m2 : '') + (d.desc ? ' · ' + d.desc.slice(0, 120) : ' Departamento en alquiler');
+      const img = (d.photos && d.photos[0]) || d.main || 'https://zonaprop.github.io/premium/logo.svg';
+      const pageUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
+
+      document.title = title;
+      document.querySelector('meta[name="description"]').setAttribute('content', desc);
+
+      // Open Graph
+      document.getElementById('ogTitle').setAttribute('content', title);
+      document.getElementById('ogDesc').setAttribute('content', desc);
+      document.getElementById('ogImage').setAttribute('content', img);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', pageUrl);
+
+      // Twitter
+      document.getElementById('twTitle').setAttribute('content', title);
+      document.getElementById('twDesc').setAttribute('content', desc);
+      document.getElementById('twImage').setAttribute('content', img);
+
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
       const waNum = (d.contacto_tel || '').replace(/\D/g,'');
       const wa = waNum.length >= 8 ? ('549' + waNum.replace(/^549/,'').replace(/^0/,'')) : '5491125692598';
