@@ -34,6 +34,11 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .reserva-row:last-child{border-bottom:0}
 .reserva-monto{font-size:1.35rem;font-weight:800;color:#ff5500}
 .reserva-note{font-size:.8rem;color:#666;margin-top:.6rem;line-height:1.4}
+.fecha-ingreso{margin-top:1rem;padding-top:.9rem;border-top:1px solid #eee}
+.fecha-ingreso label{display:block;font-size:.88rem;font-weight:700;margin-bottom:.4rem;color:#333}
+.fecha-ingreso input[type="date"]{width:100%;padding:.75rem .9rem;border:1.5px solid #ddd;border-radius:10px;font-size:1rem;background:#fafafa;font-family:inherit}
+.fecha-ingreso input[type="date"]:focus{outline:none;border-color:#ff5500;box-shadow:0 0 0 3px rgba(255,85,0,.15)}
+.fecha-hint{font-size:.78rem;color:#888;margin-top:.35rem}
 .pago{background:#fff;margin-top:8px;padding:1.2rem}
 .pago h3{font-size:1rem;margin-bottom:.8rem}
 .pago-btns{display:flex;flex-direction:column;gap:10px}
@@ -68,9 +73,16 @@ if (!id) {
       const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
       const waNum = (d.contacto_tel || '').replace(/\D/g,'');
       const wa = waNum.length >= 8 ? ('549' + waNum.replace(/^549/,'').replace(/^0/,'')) : '5491125692598';
-      const waText = encodeURIComponent('Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000');
       const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
       const feats = d.features || [];
+
+      // Fecha mínima = hoy
+      const hoy = new Date();
+      const yyyy = hoy.getFullYear();
+      const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+      const dd = String(hoy.getDate()).padStart(2, '0');
+      const minDate = yyyy + '-' + mm + '-' + dd;
+
       document.getElementById('content').innerHTML = `
         <div class="gallery">
           <img class="main" id="mainImg" src="${photos[0]||''}" alt="">
@@ -91,17 +103,42 @@ if (!id) {
           <div class="reserva-row"><span>Seña / reserva</span><span class="reserva-monto">$ 50.000</span></div>
           <div class="reserva-row"><span>Se descuenta del primer mes</span><span>Sí</span></div>
           <p class="reserva-note">Al pagar la reserva de $50.000 el departamento queda bloqueado a tu nombre.</p>
+
+          <div class="fecha-ingreso">
+            <label for="fechaIngreso">📅 Fecha de ingreso deseada</label>
+            <input type="date" id="fechaIngreso" min="${minDate}" required />
+            <p class="fecha-hint">Elegí en el calendario la fecha en la que querés ingresar al departamento.</p>
+          </div>
         </div>
         <div class="pago">
           <h3>Pagar reserva / Contacto</h3>
           <div class="pago-btns">
             <a class="btn-mp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar $50.000 con Mercado Pago</a>
-            <a class="btn-wa" href="https://wa.me/${wa}?text=${waText}">WhatsApp</a>
-            <a class="btn-sec" href="https://wa.me/${wa}?text=${waText}">Consultar</a>
+            <a class="btn-wa" id="btnWa" href="#">WhatsApp</a>
+            <a class="btn-sec" id="btnConsultar" href="#">Consultar</a>
           </div>
         </div>
         <footer>ZonaProp Premium</footer>
       `;
+
+      // Actualizar links de WhatsApp cuando cambie la fecha
+      function updateWaLinks() {
+        const fechaVal = document.getElementById('fechaIngreso').value;
+        let fechaTxt = '';
+        if (fechaVal) {
+          const [y, m, day] = fechaVal.split('-');
+          fechaTxt = ' · Fecha de ingreso: ' + day + '/' + m + '/' + y;
+        }
+        const baseText = 'Hola! Quiero reservar: ' + d.title + ' (ID ' + d.id + '). Reserva de $50.000' + fechaTxt;
+        const waText = encodeURIComponent(baseText);
+        const href = 'https://wa.me/' + wa + '?text=' + waText;
+        document.getElementById('btnWa').href = href;
+        document.getElementById('btnConsultar').href = href;
+      }
+
+      document.getElementById('fechaIngreso').addEventListener('change', updateWaLinks);
+      updateWaLinks(); // inicial
+
       window.photos = photos.length ? photos : [''];
       window.cur = 0;
       const t = document.getElementById('thumbs');
