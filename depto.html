@@ -67,10 +67,30 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .btn-mp{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:#009ee3;font-size:.95rem}
 .btn-wa{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:#25d366;font-size:.95rem}
 .btn-sec{display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;font-weight:600;text-decoration:none;color:#1a1a2e;background:#eee;font-size:.9rem}
+.btn-reservar{display:block;width:100%;text-align:center;padding:.95rem 1rem;border:0;border-radius:12px;font-weight:800;font-size:1.02rem;cursor:pointer;background:#ff5500;color:#fff;margin-top:1rem;box-shadow:0 4px 14px rgba(255,85,0,.25)}
+.btn-reservar:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
 footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 .loading{text-align:center;padding:3rem;color:#888}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:opacity .25s;z-index:100;pointer-events:none}
 .toast.show{opacity:1}
+
+/* Modal de condiciones formales */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,15,25,.88);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+.modal-overlay.show{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.4);padding:1.5rem 1.35rem 1.4rem}
+.modal-box h2{font-size:1.15rem;font-weight:800;color:#1a1a2e;margin-bottom:.75rem;line-height:1.3}
+.modal-box .cond-intro{font-size:.9rem;color:#444;margin-bottom:1rem;line-height:1.5}
+.modal-box .cond-list{list-style:none;margin:0 0 1.2rem;padding:0}
+.modal-box .cond-list li{position:relative;padding:.55rem 0 .55rem 1.4rem;font-size:.9rem;line-height:1.5;color:#222;border-bottom:1px solid #f0f0f0}
+.modal-box .cond-list li:last-child{border-bottom:0}
+.modal-box .cond-list li::before{content:"•";position:absolute;left:0;color:#ff5500;font-weight:800;font-size:1.1rem}
+.modal-box .cond-destacado{background:#fff8f0;border:1px solid #ffe0c2;border-radius:10px;padding:.85rem 1rem;margin-bottom:1.1rem;font-size:.9rem;line-height:1.5;color:#333}
+.modal-box .cond-destacado strong{color:#ff5500}
+.modal-actions{display:flex;flex-direction:column;gap:10px;margin-top:1.1rem}
+.modal-actions .btn-aceptar{background:#ff5500;color:#fff;border:0;border-radius:12px;padding:.95rem 1rem;font-weight:800;font-size:1rem;cursor:pointer}
+.modal-actions .btn-cancelar{background:#eee;color:#333;border:0;border-radius:12px;padding:.75rem 1rem;font-weight:600;font-size:.92rem;cursor:pointer}
+.pago-bloqueado .pago-btns{opacity:.45;pointer-events:none}
+.pago-bloqueado .pago-msg{font-size:.85rem;color:#666;margin-bottom:.75rem;line-height:1.4;background:#f8f8f8;padding:.7rem .9rem;border-radius:8px}
 </style>
 </head>
 <body>
@@ -80,6 +100,34 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
   <button class="share-btn" id="btnShare" type="button">Compartir</button>
 </div>
 <div id="content"><div class="loading">Cargando...</div></div>
+
+<!-- Modal formal de condiciones de reserva -->
+<div class="modal-overlay" id="modalCondiciones" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <h2 id="modalTitle">Condiciones de la reserva</h2>
+    <p class="cond-intro">Antes de continuar, le informamos de manera formal las condiciones aplicables a la reserva del departamento:</p>
+
+    <div class="cond-destacado">
+      La <strong>reserva equivale al 30% del valor mensual</strong> del alquiler.
+      <br><br>
+      <span id="modalMontoTexto">Monto de la reserva: se calculará según el valor del departamento.</span>
+    </div>
+
+    <ul class="cond-list">
+      <li>En caso de que usted se quede con el departamento, el monto abonado en concepto de reserva <strong>se descuenta del mes corriente</strong>.</li>
+      <li>En caso de que no se concrete el alquiler, el importe de la reserva <strong>se le devuelve en la visita</strong>.</li>
+      <li>Si necesita <strong>facturación</strong> que indique lo abonado y el restante, con la cláusula correspondiente de devolución o descuento, se le brinda <strong>sin inconvenientes</strong>.</li>
+    </ul>
+
+    <p style="font-size:.82rem;color:#666;line-height:1.45;margin-bottom:.5rem;">Al aceptar estas condiciones y proceder al pago o contacto, usted declara conocer y aceptar los términos aquí expuestos.</p>
+
+    <div class="modal-actions">
+      <button type="button" class="btn-aceptar" id="btnAceptarCond">Acepto las condiciones y deseo continuar</button>
+      <button type="button" class="btn-cancelar" id="btnCancelarCond">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast">Link copiado</div>
 <script>
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
@@ -91,6 +139,16 @@ function showToast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function parsePrice(p) {
+  if (!p) return 0;
+  const n = String(p).replace(/[^0-9]/g, '');
+  return n ? parseInt(n, 10) : 0;
+}
+
+function formatARS(n) {
+  return '$ ' + n.toLocaleString('es-AR');
 }
 
 if (!id) {
@@ -144,6 +202,11 @@ if (!id) {
       const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
       const feats = d.features || [];
 
+      // --- Cálculo de reserva = 30% del valor mensual ---
+      const precioMensual = parsePrice(d.price);
+      const montoReserva = precioMensual > 0 ? Math.round(precioMensual * 0.30) : 50000;
+      const montoReservaFmt = formatARS(montoReserva);
+
       const hoy = new Date();
       const yyyy = hoy.getFullYear();
       const mm = String(hoy.getMonth() + 1).padStart(2, '0');
@@ -178,22 +241,26 @@ if (!id) {
 
         <div class="reserva">
           <h3>Reserva para asegurar el departamento</h3>
-          <div class="reserva-row"><span>Seña / reserva</span><span class="reserva-monto">$ 50.000</span></div>
-          <div class="reserva-row"><span>Se descuenta del primer mes</span><span>Sí</span></div>
-          <p class="reserva-note">Al pagar la reserva de $50.000 el departamento queda bloqueado a tu nombre.</p>
+          <div class="reserva-row"><span>Seña / reserva (30% del valor mensual)</span><span class="reserva-monto">${montoReservaFmt}</span></div>
+          <div class="reserva-row"><span>Se descuenta del mes corriente si se concreta</span><span>Sí</span></div>
+          <div class="reserva-row"><span>Devolución en la visita si no se concreta</span><span>Sí</span></div>
+          <p class="reserva-note">Al abonar la reserva el departamento queda bloqueado a su nombre. Las condiciones completas se presentan antes de continuar.</p>
 
           <div class="fecha-ingreso">
             <label for="fechaIngreso">📅 Fecha de ingreso deseada</label>
             <input type="date" id="fechaIngreso" min="${minDate}" />
             <p class="fecha-hint">Elegí en el calendario la fecha en la que querés ingresar al departamento.</p>
           </div>
+
+          <button type="button" class="btn-reservar" id="btnAbrirCondiciones">Ver condiciones y reservar</button>
         </div>
 
-        <div class="pago">
+        <div class="pago pago-bloqueado" id="pagoSection">
           <h3>Pagar reserva / Contacto</h3>
+          <p class="pago-msg" id="pagoMsg">Debés aceptar las condiciones de la reserva para habilitar el pago y el contacto.</p>
           <div class="pago-btns">
-            <a class="btn-mp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar $50.000 con Mercado Pago</a>
-            <a class="btn-wa" id="btnWa" href="#">WhatsApp</a>
+            <a class="btn-mp" id="btnMp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar ${montoReservaFmt} con Mercado Pago</a>
+            <a class="btn-wa" id="btnWa" href="#">WhatsApp · Reservar</a>
             <a class="btn-sec" id="btnConsultar" href="#">Consultar</a>
           </div>
         </div>
@@ -201,7 +268,12 @@ if (!id) {
         <footer>ZonaProp Premium</footer>
       `;
 
-      // WhatsApp con fecha
+      // Actualizar texto del modal con el monto calculado
+      document.getElementById('modalMontoTexto').innerHTML =
+        'Monto de la reserva para este departamento: <strong>' + montoReservaFmt + '</strong> (30% del valor mensual' +
+        (precioMensual > 0 ? ' de ' + formatARS(precioMensual) : '') + ').';
+
+      // WhatsApp con fecha y monto de reserva
       function updateWaLinks() {
         const fechaVal = document.getElementById('fechaIngreso').value;
         let fechaTxt = '';
@@ -209,13 +281,53 @@ if (!id) {
           const [y, m, day] = fechaVal.split('-');
           fechaTxt = ' · Fecha de ingreso: ' + day + '/' + m + '/' + y;
         }
-        const baseText = 'Hola! Quiero reservar: ' + (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de $50.000' + fechaTxt;
+        const baseText = 'Hola! Acepto las condiciones de reserva y quiero reservar: ' +
+          (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de ' + montoReservaFmt +
+          ' (30% del valor mensual)' + fechaTxt;
         const href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(baseText);
         document.getElementById('btnWa').href = href;
         document.getElementById('btnConsultar').href = href;
       }
       document.getElementById('fechaIngreso').addEventListener('change', updateWaLinks);
       updateWaLinks();
+
+      // Modal de condiciones
+      const modal = document.getElementById('modalCondiciones');
+      const pagoSection = document.getElementById('pagoSection');
+
+      document.getElementById('btnAbrirCondiciones').onclick = function() {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      };
+
+      document.getElementById('btnCancelarCond').onclick = function() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      };
+
+      document.getElementById('btnAceptarCond').onclick = function() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+        // Habilitar sección de pago
+        pagoSection.classList.remove('pago-bloqueado');
+        const msg = document.getElementById('pagoMsg');
+        if (msg) {
+          msg.textContent = 'Condiciones aceptadas. Ya podés pagar la reserva o contactarnos por WhatsApp.';
+          msg.style.background = '#e8f5e9';
+          msg.style.color = '#2e7d32';
+        }
+        // Scroll suave a la sección de pago
+        pagoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        showToast('Condiciones aceptadas');
+      };
+
+      // Cerrar modal al hacer clic fuera
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
 
       // Botón Compartir
       document.getElementById('btnShare').onclick = async function() {
