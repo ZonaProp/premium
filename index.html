@@ -108,6 +108,14 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
         <option value="700000-900000">$700.000 – $900.000</option>
         <option value="900000-999999999">Más de $900.000</option>
       </select>
+      <select id="ambientes">
+        <option value="">Cualquier ambientes</option>
+        <option value="1">1 ambiente</option>
+        <option value="2">2 ambientes</option>
+        <option value="3">3 ambientes</option>
+        <option value="4">4 ambientes</option>
+        <option value="5">5+ ambientes</option>
+      </select>
       <button id="btnBuscar" type="button">Buscar</button>
       <button id="btnLimpiar" class="sec" type="button">Limpiar</button>
     </div>
@@ -252,14 +260,21 @@ function cardHTML(d){
 
 function render(list,label){
   const grid=document.getElementById('grid');
-  grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona o rango de precio.</div>';
+  grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona, precio o cantidad de ambientes.</div>';
   document.getElementById('meta').textContent=label;
   document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
+}
+
+function parseAmbientes(a){
+  if(!a) return 0;
+  const m=String(a).match(/(\d+)/);
+  return m ? parseInt(m[1],10) : 0;
 }
 
 function applyFilters(){
   const q=(document.getElementById('q').value||'').trim().toLowerCase();
   const pr=document.getElementById('precio').value;
+  const amb=document.getElementById('ambientes').value;
   let list=ALL.slice();
   if(q){
     list=list.filter(d=>{
@@ -272,7 +287,15 @@ function applyFilters(){
     const [min,max]=pr.split('-').map(Number);
     list=list.filter(d=>{const v=parsePrice(d.price);return v>=min&&v<=max});
   }
-  const searching=!!(q||pr);
+  if(amb){
+    const n=parseInt(amb,10);
+    list=list.filter(d=>{
+      const v=parseAmbientes(d.ambientes);
+      if(n===5) return v>=5;
+      return v===n;
+    });
+  }
+  const searching=!!(q||pr||amb);
   const more=document.getElementById('moreWrap');
   if(!searching && !showAll){
     render(list.slice(0,HOME_LIMIT),'Mostrando '+Math.min(HOME_LIMIT,list.length)+' destacados');
@@ -289,6 +312,7 @@ function wireUI(){
   document.getElementById('btnLimpiar').onclick=()=>{
     document.getElementById('q').value='';
     document.getElementById('precio').value='';
+    document.getElementById('ambientes').value='';
     document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
     showAll=false;
     applyFilters();
@@ -296,6 +320,7 @@ function wireUI(){
   document.getElementById('btnVerTodo').onclick=()=>{showAll=true;applyFilters();window.scrollTo({top:0,behavior:'smooth'})};
   document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter'){showAll=false;applyFilters()}});
   document.getElementById('precio').addEventListener('change',()=>{showAll=false;applyFilters()});
+  document.getElementById('ambientes').addEventListener('change',()=>{showAll=false;applyFilters()});
   document.querySelectorAll('#chips button').forEach(btn=>{
     btn.onclick=()=>{
       document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
