@@ -273,7 +273,7 @@ if (!id) {
         'Monto de la reserva para este departamento: <strong>' + montoReservaFmt + '</strong> (30% del valor mensual' +
         (precioMensual > 0 ? ' de ' + formatARS(precioMensual) : '') + ').';
 
-      // WhatsApp con fecha y monto de reserva
+      // WhatsApp con fecha, monto de reserva y link de la publicación
       function updateWaLinks() {
         const fechaVal = document.getElementById('fechaIngreso').value;
         let fechaTxt = '';
@@ -283,7 +283,8 @@ if (!id) {
         }
         const baseText = 'Hola! Acepto las condiciones de reserva y quiero reservar: ' +
           (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de ' + montoReservaFmt +
-          ' (30% del valor mensual)' + fechaTxt;
+          ' (30% del valor mensual)' + fechaTxt +
+          '\n\nLink de la publicación: ' + pageUrl;
         const href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(baseText);
         document.getElementById('btnWa').href = href;
         document.getElementById('btnConsultar').href = href;
