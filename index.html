@@ -228,6 +228,8 @@ function cardHTML(d){
   const specs=[d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
   const photoCount = (d.photos && d.photos.length) ? d.photos.length : (d.main ? 1 : 0);
   const badge = d.community ? 'Comunidad' : (d.zona || '');
+  const deptoUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
+  const waText = 'Hola! Quiero info de ' + (d.title || 'este departamento') + '\n\nLink de la publicación: ' + deptoUrl;
   return `<article class="card">
     <a href="depto.html?id=${encodeURIComponent(d.id)}">
       <div class="card-img">
@@ -243,7 +245,7 @@ function cardHTML(d){
     </a>
     <div class="card-actions">
       <a class="btn-o" href="depto.html?id=${encodeURIComponent(d.id)}">Ver</a>
-      <a class="btn-g" href="https://wa.me/5491125692598?text=${encodeURIComponent('Hola! Quiero info de '+(d.title||'este departamento'))}">WhatsApp</a>
+      <a class="btn-g" href="https://wa.me/5491125692598?text=${encodeURIComponent(waText)}">WhatsApp</a>
     </div>
   </article>`;
 }
