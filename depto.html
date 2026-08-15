@@ -56,6 +56,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .reserva-row:last-child{border-bottom:0}
 .reserva-monto{font-size:1.35rem;font-weight:800;color:#ff5500}
 .reserva-note{font-size:.8rem;color:#666;margin-top:.6rem;line-height:1.4}
+.pago-info{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:10px;padding:.85rem 1rem;margin-top:.9rem;font-size:.88rem;line-height:1.5;color:#1b5e20}
+.pago-info strong{color:#2e7d32}
+.pago-info .alias{font-size:1.05rem;font-weight:800;letter-spacing:.02em;margin:.25rem 0}
 .fecha-ingreso{margin-top:1rem;padding-top:.9rem;border-top:1px solid #eee}
 .fecha-ingreso label{display:block;font-size:.88rem;font-weight:700;margin-bottom:.4rem;color:#333}
 .fecha-ingreso input[type="date"]{width:100%;padding:.75rem .9rem;border:1.5px solid #ddd;border-radius:10px;font-size:1rem;background:#fafafa;font-family:inherit}
@@ -86,6 +89,8 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 .modal-box .cond-list li::before{content:"•";position:absolute;left:0;color:#ff5500;font-weight:800;font-size:1.1rem}
 .modal-box .cond-destacado{background:#fff8f0;border:1px solid #ffe0c2;border-radius:10px;padding:.85rem 1rem;margin-bottom:1.1rem;font-size:.9rem;line-height:1.5;color:#333}
 .modal-box .cond-destacado strong{color:#ff5500}
+.modal-box .pago-datos{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:10px;padding:.85rem 1rem;margin-bottom:1.1rem;font-size:.9rem;line-height:1.5;color:#1b5e20}
+.modal-box .pago-datos strong{color:#2e7d32}
 .modal-actions{display:flex;flex-direction:column;gap:10px;margin-top:1.1rem}
 .modal-actions .btn-aceptar{background:#ff5500;color:#fff;border:0;border-radius:12px;padding:.95rem 1rem;font-weight:800;font-size:1rem;cursor:pointer}
 .modal-actions .btn-cancelar{background:#eee;color:#333;border:0;border-radius:12px;padding:.75rem 1rem;font-weight:600;font-size:.92rem;cursor:pointer}
@@ -111,6 +116,13 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
       La <strong>reserva equivale al 30% del valor mensual</strong> del alquiler.
       <br><br>
       <span id="modalMontoTexto">Monto de la reserva: se calculará según el valor del departamento.</span>
+    </div>
+
+    <div class="pago-datos">
+      <strong>Datos para la transferencia / Mercado Pago:</strong><br>
+      Alias / usuario: <strong>Leonela8.mp</strong><br>
+      Titularidad: <strong>Leonela Giselle López</strong><br><br>
+      Una vez realizado el pago, <strong>enviá el comprobante por WhatsApp</strong> para confirmar la reserva.
     </div>
 
     <ul class="cond-list">
@@ -246,6 +258,13 @@ if (!id) {
           <div class="reserva-row"><span>Devolución en la visita si no se concreta</span><span>Sí</span></div>
           <p class="reserva-note">Al abonar la reserva el departamento queda bloqueado a su nombre. Las condiciones completas se presentan antes de continuar.</p>
 
+          <div class="pago-info">
+            <strong>Transferí la reserva a:</strong>
+            <div class="alias">Leonela8.mp</div>
+            Titularidad: <strong>Leonela Giselle López</strong><br><br>
+            Después de pagar, <strong>enviá el comprobante por WhatsApp</strong> para confirmar la reserva.
+          </div>
+
           <div class="fecha-ingreso">
             <label for="fechaIngreso">📅 Fecha de ingreso deseada</label>
             <input type="date" id="fechaIngreso" min="${minDate}" />
@@ -258,9 +277,15 @@ if (!id) {
         <div class="pago pago-bloqueado" id="pagoSection">
           <h3>Pagar reserva / Contacto</h3>
           <p class="pago-msg" id="pagoMsg">Debés aceptar las condiciones de la reserva para habilitar el pago y el contacto.</p>
+          <div class="pago-info" style="margin-bottom:1rem">
+            <strong>Datos de pago:</strong><br>
+            Alias: <strong>Leonela8.mp</strong><br>
+            Titular: <strong>Leonela Giselle López</strong><br>
+            Enviá el comprobante por WhatsApp una vez realizado el pago.
+          </div>
           <div class="pago-btns">
             <a class="btn-mp" id="btnMp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar ${montoReservaFmt} con Mercado Pago</a>
-            <a class="btn-wa" id="btnWa" href="#">WhatsApp · Reservar</a>
+            <a class="btn-wa" id="btnWa" href="#">WhatsApp · Enviar comprobante / Reservar</a>
             <a class="btn-sec" id="btnConsultar" href="#">Consultar</a>
           </div>
         </div>
@@ -273,7 +298,7 @@ if (!id) {
         'Monto de la reserva para este departamento: <strong>' + montoReservaFmt + '</strong> (30% del valor mensual' +
         (precioMensual > 0 ? ' de ' + formatARS(precioMensual) : '') + ').';
 
-      // WhatsApp con fecha, monto de reserva y link de la publicación
+      // WhatsApp con fecha, monto de reserva, datos de pago y link de la publicación
       function updateWaLinks() {
         const fechaVal = document.getElementById('fechaIngreso').value;
         let fechaTxt = '';
@@ -284,6 +309,7 @@ if (!id) {
         const baseText = 'Hola! Acepto las condiciones de reserva y quiero reservar: ' +
           (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de ' + montoReservaFmt +
           ' (30% del valor mensual)' + fechaTxt +
+          '\n\nVoy a transferir a Leonela8.mp (titular: Leonela Giselle López) y envío el comprobante por este chat.' +
           '\n\nLink de la publicación: ' + pageUrl;
         const href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(baseText);
         document.getElementById('btnWa').href = href;
@@ -313,7 +339,7 @@ if (!id) {
         pagoSection.classList.remove('pago-bloqueado');
         const msg = document.getElementById('pagoMsg');
         if (msg) {
-          msg.textContent = 'Condiciones aceptadas. Ya podés pagar la reserva o contactarnos por WhatsApp.';
+          msg.textContent = 'Condiciones aceptadas. Transferí a Leonela8.mp y enviá el comprobante por WhatsApp.';
           msg.style.background = '#e8f5e9';
           msg.style.color = '#2e7d32';
         }
