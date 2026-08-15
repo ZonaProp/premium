@@ -75,6 +75,27 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 .gate-box button:disabled{opacity:.6;cursor:wait}
 .gate-err{color:#c62828;font-size:.82rem;margin-top:.55rem;display:none}
 .gate-ok{color:#2e7d32;font-size:.82rem;margin-top:.55rem;display:none}
+
+/* Chat flotante */
+.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;border:0;box-shadow:0 6px 20px rgba(37,211,102,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:28px;transition:transform .2s,box-shadow .2s}
+.chat-fab:hover{transform:scale(1.06);box-shadow:0 8px 24px rgba(37,211,102,.55)}
+.chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff}
+.chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(340px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;max-height:70vh}
+.chat-panel.open{display:flex}
+.chat-head{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.chat-head .avatar{width:40px;height:40px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.chat-head .info{flex:1;min-width:0}
+.chat-head .info strong{display:block;font-size:.95rem}
+.chat-head .info span{font-size:.75rem;opacity:.85}
+.chat-head .close{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;line-height:1}
+.chat-body{padding:14px;background:#e5ddd5;flex:1;overflow-y:auto;min-height:120px}
+.chat-msg{background:#fff;border-radius:10px;padding:10px 12px;font-size:.88rem;line-height:1.45;max-width:90%;box-shadow:0 1px 2px rgba(0,0,0,.08);margin-bottom:8px}
+.chat-msg.bot{border-top-left-radius:2px}
+.chat-msg .time{font-size:.68rem;color:#999;margin-top:4px;text-align:right}
+.chat-foot{padding:10px 12px;background:#f0f0f0;display:flex;gap:8px;align-items:flex-end}
+.chat-foot textarea{flex:1;border:0;border-radius:20px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;max-height:90px;min-height:42px;background:#fff;outline:none}
+.chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#25d366;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.chat-foot button:disabled{opacity:.5;cursor:wait}
 </style>
 </head>
 <body class="locked">
@@ -139,8 +160,37 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 </div>
 <footer id="footer">ZonaProp Premium</footer>
 </div>
+
+<!-- Chat flotante -->
+<button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">
+  💬
+  <span class="badge-dot" id="chatDot"></span>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="avatar">🏠</div>
+    <div class="info">
+      <strong>ZonaProp Premium</strong>
+      <span>Respondemos por WhatsApp</span>
+    </div>
+    <button type="button" class="close" id="chatClose" aria-label="Cerrar">×</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">
+      ¡Hola! 👋 ¿Te interesa algún departamento?<br><br>
+      Escribinos acá y te respondemos por WhatsApp con la info que necesites.
+      <div class="time">ahora</div>
+    </div>
+  </div>
+  <div class="chat-foot">
+    <textarea id="chatInput" rows="1" placeholder="Escribí tu consulta..." maxlength="500"></textarea>
+    <button type="button" id="chatSend" aria-label="Enviar">➤</button>
+  </div>
+</div>
+
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
+const ADMIN_WA = '5491171365501';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const HOME_LIMIT = 24;
 let ALL = [];
@@ -253,7 +303,7 @@ function cardHTML(d){
     </a>
     <div class="card-actions">
       <a class="btn-o" href="depto.html?id=${encodeURIComponent(d.id)}">Ver</a>
-      <a class="btn-g" href="https://wa.me/5491171365501?text=${encodeURIComponent(waText)}">WhatsApp</a>
+      <a class="btn-g" href="https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(waText)}">WhatsApp</a>
     </div>
   </article>`;
 }
@@ -331,6 +381,62 @@ function wireUI(){
     };
   });
 }
+
+// --- Chat flotante ---
+(function(){
+  const fab = document.getElementById('chatFab');
+  const panel = document.getElementById('chatPanel');
+  const closeBtn = document.getElementById('chatClose');
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+  const body = document.getElementById('chatBody');
+  const dot = document.getElementById('chatDot');
+
+  fab.onclick = function(){
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+      input.focus();
+      if (dot) dot.style.display = 'none';
+    }
+  };
+  closeBtn.onclick = function(){ panel.classList.remove('open'); };
+
+  function sendChat(){
+    const text = (input.value || '').trim();
+    if (!text) return;
+    sendBtn.disabled = true;
+
+    const userMsg = document.createElement('div');
+    userMsg.className = 'chat-msg';
+    userMsg.style.marginLeft = 'auto';
+    userMsg.style.background = '#dcf8c6';
+    userMsg.style.borderTopRightRadius = '2px';
+    userMsg.innerHTML = text.replace(/</g,'<') + '<div class="time">ahora</div>';
+    body.appendChild(userMsg);
+    body.scrollTop = body.scrollHeight;
+    input.value = '';
+
+    const reply = document.createElement('div');
+    reply.className = 'chat-msg bot';
+    reply.innerHTML = 'Perfecto, te redirigimos a WhatsApp para continuar la conversación 💬<div class="time">ahora</div>';
+    body.appendChild(reply);
+    body.scrollTop = body.scrollHeight;
+
+    const waText = 'Hola! Vi el listado de ZonaProp Premium y quiero consultar:\n\n' + text + '\n\nPágina: ' + location.href;
+    setTimeout(function(){
+      window.open('https://wa.me/' + ADMIN_WA + '?text=' + encodeURIComponent(waText), '_blank');
+      sendBtn.disabled = false;
+    }, 600);
+  }
+
+  sendBtn.onclick = sendChat;
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendChat();
+    }
+  });
+})();
 
 Promise.all([
   fetch('data.json').then(r=>r.json()).catch(function(){ return []; }),
