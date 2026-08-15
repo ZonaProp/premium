@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Departamentos · ZonaProp Premium</title>
 
-<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://zonaprop.github.io/premium/"/>
 <meta property="og:title" content="ZonaProp Premium · Departamentos en alquiler"/>
@@ -16,7 +15,6 @@
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:site_name" content="ZonaProp Premium"/>
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="ZonaProp Premium · Departamentos en alquiler"/>
 <meta name="twitter:description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
@@ -76,26 +74,33 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 .gate-err{color:#c62828;font-size:.82rem;margin-top:.55rem;display:none}
 .gate-ok{color:#2e7d32;font-size:.82rem;margin-top:.55rem;display:none}
 
-/* Chat flotante */
-.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;border:0;box-shadow:0 6px 20px rgba(37,211,102,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:28px;transition:transform .2s,box-shadow .2s}
-.chat-fab:hover{transform:scale(1.06);box-shadow:0 8px 24px rgba(37,211,102,.55)}
-.chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff}
-.chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(340px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;max-height:70vh}
+/* Chat web */
+.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .2s}
+.chat-fab:hover{transform:scale(1.06)}
+.chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff;display:none}
+.chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(520px,70vh)}
 .chat-panel.open{display:flex}
-.chat-head{background:#075e54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
-.chat-head .avatar{width:40px;height:40px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.chat-head{background:#1a1a2e;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.chat-head .avatar{width:40px;height:40px;border-radius:50%;background:#ff5500;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .chat-head .info{flex:1;min-width:0}
 .chat-head .info strong{display:block;font-size:.95rem}
 .chat-head .info span{font-size:.75rem;opacity:.85}
 .chat-head .close{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;line-height:1}
-.chat-body{padding:14px;background:#e5ddd5;flex:1;overflow-y:auto;min-height:120px}
-.chat-msg{background:#fff;border-radius:10px;padding:10px 12px;font-size:.88rem;line-height:1.45;max-width:90%;box-shadow:0 1px 2px rgba(0,0,0,.08);margin-bottom:8px}
-.chat-msg.bot{border-top-left-radius:2px}
+.chat-body{padding:14px;background:#f0f2f5;flex:1;overflow-y:auto}
+.chat-msg{border-radius:12px;padding:10px 12px;font-size:.88rem;line-height:1.45;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.06);margin-bottom:8px;word-break:break-word}
+.chat-msg.bot{background:#fff;border-top-left-radius:3px}
+.chat-msg.user{background:#ffe8d9;margin-left:auto;border-top-right-radius:3px}
+.chat-msg.admin{background:#e8f5e9;border-top-left-radius:3px}
 .chat-msg .time{font-size:.68rem;color:#999;margin-top:4px;text-align:right}
-.chat-foot{padding:10px 12px;background:#f0f0f0;display:flex;gap:8px;align-items:flex-end}
-.chat-foot textarea{flex:1;border:0;border-radius:20px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;max-height:90px;min-height:42px;background:#fff;outline:none}
-.chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#25d366;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.chat-foot button:disabled{opacity:.5;cursor:wait}
+.chat-start{padding:12px;background:#fff;border-bottom:1px solid #eee}
+.chat-start label{display:block;font-size:.78rem;font-weight:600;margin:.4rem 0 .2rem}
+.chat-start input{width:100%;padding:.6rem .75rem;border:1.5px solid #ddd;border-radius:10px;font-size:.9rem;margin-bottom:.4rem}
+.chat-start button{width:100%;padding:.7rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer;margin-top:.3rem}
+.chat-foot{padding:10px 12px;background:#fff;border-top:1px solid #eee;display:flex;gap:8px;align-items:flex-end}
+.chat-foot textarea{flex:1;border:1.5px solid #e0e0e0;border-radius:18px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;max-height:90px;min-height:42px;background:#fafafa;outline:none}
+.chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#ff5500;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0}
+.chat-foot button:disabled{opacity:.5}
+.chat-status{font-size:.72rem;color:#888;text-align:center;padding:4px 0 0}
 </style>
 </head>
 <body class="locked">
@@ -161,31 +166,31 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 <footer id="footer">ZonaProp Premium</footer>
 </div>
 
-<!-- Chat flotante -->
-<button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">
-  💬
-  <span class="badge-dot" id="chatDot"></span>
-</button>
+<!-- Chat web -->
+<button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">💬<span class="badge-dot" id="chatDot"></span></button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
     <div class="avatar">🏠</div>
     <div class="info">
       <strong>ZonaProp Premium</strong>
-      <span>Respondemos por WhatsApp</span>
+      <span>Chat en vivo · respondemos acá</span>
     </div>
     <button type="button" class="close" id="chatClose" aria-label="Cerrar">×</button>
   </div>
-  <div class="chat-body" id="chatBody">
-    <div class="chat-msg bot">
-      ¡Hola! 👋 ¿Te interesa algún departamento?<br><br>
-      Escribinos acá y te respondemos por WhatsApp con la info que necesites.
-      <div class="time">ahora</div>
-    </div>
+  <div class="chat-start" id="chatStart">
+    <p style="font-size:.88rem;color:#444;margin-bottom:.5rem">Para empezar, decinos tu nombre:</p>
+    <label>Nombre *</label>
+    <input id="chatNombre" type="text" placeholder="Tu nombre" maxlength="40"/>
+    <label>Teléfono (opcional)</label>
+    <input id="chatTel" type="tel" placeholder="11 1234-5678"/>
+    <button type="button" id="chatStartBtn">Iniciar chat</button>
   </div>
-  <div class="chat-foot">
-    <textarea id="chatInput" rows="1" placeholder="Escribí tu consulta..." maxlength="500"></textarea>
+  <div class="chat-body" id="chatBody" style="display:none"></div>
+  <div class="chat-foot" id="chatFoot" style="display:none">
+    <textarea id="chatInput" rows="1" placeholder="Escribí tu mensaje..." maxlength="800"></textarea>
     <button type="button" id="chatSend" aria-label="Enviar">➤</button>
   </div>
+  <div class="chat-status" id="chatStatus" style="display:none"></div>
 </div>
 
 <script>
@@ -200,10 +205,7 @@ function unlockSite(){
   document.getElementById('gate').style.display = 'none';
   document.body.classList.remove('locked');
 }
-
-if (localStorage.getItem('zp_lead_ok') === '1') {
-  unlockSite();
-}
+if (localStorage.getItem('zp_lead_ok') === '1') unlockSite();
 
 document.getElementById('gateBtn').onclick = function(){
   const email = (document.getElementById('gEmail').value || '').trim();
@@ -212,76 +214,32 @@ document.getElementById('gateBtn').onclick = function(){
   const ok = document.getElementById('gateOk');
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const phoneOk = phone.replace(/\D/g,'').length >= 8;
-  if (!emailOk || !phoneOk) {
-    err.style.display = 'block';
-    ok.style.display = 'none';
-    return;
-  }
+  if (!emailOk || !phoneOk) { err.style.display = 'block'; ok.style.display = 'none'; return; }
   err.style.display = 'none';
   const btn = document.getElementById('gateBtn');
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-
-  const lead = {
-    email: email,
-    telefono: phone,
-    cuando: new Date().toISOString(),
-    pagina: location.href,
-    origen: document.referrer || 'Directo',
-    dispositivo: navigator.userAgent.slice(0, 180)
-  };
-
-  fetch(DB_URL + '?t=' + Date.now())
-    .then(r => r.json())
-    .then(db => {
-      const listings = Array.isArray(db.listings) ? db.listings : [];
-      const pending = Array.isArray(db.pending) ? db.pending : [];
-      const leads = Array.isArray(db.leads) ? db.leads : [];
-      leads.unshift(lead);
-      return fetch(DB_URL, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ listings, pending, leads: leads.slice(0, 200) })
-      });
-    })
-    .catch(function(){});
-
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  const lead = { email, telefono: phone, cuando: new Date().toISOString(), pagina: location.href, origen: document.referrer || 'Directo', dispositivo: navigator.userAgent.slice(0, 180) };
+  fetch(DB_URL + '?t=' + Date.now()).then(r => r.json()).then(db => {
+    const listings = Array.isArray(db.listings) ? db.listings : [];
+    const pending = Array.isArray(db.pending) ? db.pending : [];
+    const leads = Array.isArray(db.leads) ? db.leads : [];
+    const chats = Array.isArray(db.chats) ? db.chats : [];
+    leads.unshift(lead);
+    return fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads: leads.slice(0, 200), chats }) });
+  }).catch(function(){});
   const fd = new FormData();
   fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
-  fd.append('_template', 'table');
-  fd.append('_captcha', 'false');
+  fd.append('_template', 'table'); fd.append('_captcha', 'false');
   fd.append('_url', 'https://zonaprop.github.io/premium/');
   fd.append('mensaje', 'Un visitante completó email y teléfono para entrar al sitio');
-  fd.append('email', email);
-  fd.append('telefono', phone);
+  fd.append('email', email); fd.append('telefono', phone);
   fd.append('pagina', location.href);
   fd.append('cuando', new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }));
-  fd.append('dispositivo', navigator.userAgent.slice(0, 180));
-  fd.append('origen', document.referrer || 'Directo');
-
-  function finish(){
-    localStorage.setItem('zp_lead_ok', '1');
-    localStorage.setItem('zp_lead_email', email);
-    localStorage.setItem('zp_lead_phone', phone);
-    ok.style.display = 'block';
-    setTimeout(unlockSite, 400);
-  }
-
-  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), {
-    method: 'POST',
-    body: fd,
-    headers: { 'Accept': 'application/json' }
-  }).then(function(r){
-    return r.json().catch(function(){ return {}; });
-  }).then(function(){
-    finish();
-  }).catch(function(){
-    finish();
-  });
+  function finish(){ localStorage.setItem('zp_lead_ok', '1'); localStorage.setItem('zp_lead_email', email); localStorage.setItem('zp_lead_phone', phone); ok.style.display = 'block'; setTimeout(unlockSite, 400); }
+  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).then(function(){ finish(); }).catch(function(){ finish(); });
 };
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
-
 function cardHTML(d){
   const specs=[d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
   const photoCount = (d.photos && d.photos.length) ? d.photos.length : (d.main ? 1 : 0);
@@ -290,61 +248,30 @@ function cardHTML(d){
   const waText = 'Hola! Quiero info de ' + (d.title || 'este departamento') + '\n\nLink de la publicación: ' + deptoUrl;
   return `<article class="card">
     <a href="depto.html?id=${encodeURIComponent(d.id)}">
-      <div class="card-img">
-        ${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}
-        ${badge ? `<span class="card-badge">${badge}</span>` : ''}
-      </div>
-      <div class="card-body">
-        <div class="price">${d.price || 'Consultar'}</div>
-        <h2>${d.title || 'Departamento'}</h2>
+      <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}${badge ? `<span class="card-badge">${badge}</span>` : ''}</div>
+      <div class="card-body"><div class="price">${d.price || 'Consultar'}</div><h2>${d.title || 'Departamento'}</h2>
         <div class="specs">${specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
-        <div class="badge">${d.zona && !d.community ? d.zona + ' · ' : ''}${photoCount} fotos</div>
-      </div>
-    </a>
+        <div class="badge">${d.zona && !d.community ? d.zona + ' · ' : ''}${photoCount} fotos</div></div></a>
     <div class="card-actions">
       <a class="btn-o" href="depto.html?id=${encodeURIComponent(d.id)}">Ver</a>
       <a class="btn-g" href="https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(waText)}">WhatsApp</a>
-    </div>
-  </article>`;
+    </div></article>`;
 }
-
 function render(list,label){
   const grid=document.getElementById('grid');
   grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona, precio o cantidad de ambientes.</div>';
   document.getElementById('meta').textContent=label;
   document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
 }
-
-function parseAmbientes(a){
-  if(!a) return 0;
-  const m=String(a).match(/(\d+)/);
-  return m ? parseInt(m[1],10) : 0;
-}
-
+function parseAmbientes(a){ if(!a) return 0; const m=String(a).match(/(\d+)/); return m ? parseInt(m[1],10) : 0; }
 function applyFilters(){
   const q=(document.getElementById('q').value||'').trim().toLowerCase();
   const pr=document.getElementById('precio').value;
   const amb=document.getElementById('ambientes').value;
   let list=ALL.slice();
-  if(q){
-    list=list.filter(d=>{
-      const t=(d.title||'').toLowerCase();
-      const z=(d.zona||'').toLowerCase();
-      return t.includes(q)||z.includes(q);
-    });
-  }
-  if(pr){
-    const [min,max]=pr.split('-').map(Number);
-    list=list.filter(d=>{const v=parsePrice(d.price);return v>=min&&v<=max});
-  }
-  if(amb){
-    const n=parseInt(amb,10);
-    list=list.filter(d=>{
-      const v=parseAmbientes(d.ambientes);
-      if(n===5) return v>=5;
-      return v===n;
-    });
-  }
+  if(q) list=list.filter(d=>{ const t=(d.title||'').toLowerCase(); const z=(d.zona||'').toLowerCase(); return t.includes(q)||z.includes(q); });
+  if(pr){ const [min,max]=pr.split('-').map(Number); list=list.filter(d=>{const v=parsePrice(d.price);return v>=min&&v<=max}); }
+  if(amb){ const n=parseInt(amb,10); list=list.filter(d=>{ const v=parseAmbientes(d.ambientes); if(n===5) return v>=5; return v===n; }); }
   const searching=!!(q||pr||amb);
   const more=document.getElementById('moreWrap');
   if(!searching && !showAll){
@@ -356,95 +283,197 @@ function applyFilters(){
     more.style.display='none';
   }
 }
-
 function wireUI(){
   document.getElementById('btnBuscar').onclick=()=>{showAll=false;applyFilters()};
-  document.getElementById('btnLimpiar').onclick=()=>{
-    document.getElementById('q').value='';
-    document.getElementById('precio').value='';
-    document.getElementById('ambientes').value='';
-    document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
-    showAll=false;
-    applyFilters();
-  };
+  document.getElementById('btnLimpiar').onclick=()=>{ document.getElementById('q').value=''; document.getElementById('precio').value=''; document.getElementById('ambientes').value=''; document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); showAll=false; applyFilters(); };
   document.getElementById('btnVerTodo').onclick=()=>{showAll=true;applyFilters();window.scrollTo({top:0,behavior:'smooth'})};
   document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter'){showAll=false;applyFilters()}});
   document.getElementById('precio').addEventListener('change',()=>{showAll=false;applyFilters()});
   document.getElementById('ambientes').addEventListener('change',()=>{showAll=false;applyFilters()});
-  document.querySelectorAll('#chips button').forEach(btn=>{
-    btn.onclick=()=>{
-      document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on'));
-      btn.classList.add('on');
-      document.getElementById('q').value=btn.dataset.z;
-      showAll=false;
-      applyFilters();
-    };
-  });
+  document.querySelectorAll('#chips button').forEach(btn=>{ btn.onclick=()=>{ document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); document.getElementById('q').value=btn.dataset.z; showAll=false; applyFilters(); }; });
 }
 
-// --- Chat flotante ---
+/* ========== CHAT WEB REAL ========== */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
   const closeBtn = document.getElementById('chatClose');
+  const startBox = document.getElementById('chatStart');
+  const body = document.getElementById('chatBody');
+  const foot = document.getElementById('chatFoot');
+  const statusEl = document.getElementById('chatStatus');
   const input = document.getElementById('chatInput');
   const sendBtn = document.getElementById('chatSend');
-  const body = document.getElementById('chatBody');
   const dot = document.getElementById('chatDot');
+  let chatId = localStorage.getItem('zp_chat_id') || '';
+  let chatNombre = localStorage.getItem('zp_chat_nombre') || '';
+  let lastCount = 0;
+  let pollTimer = null;
 
-  fab.onclick = function(){
+  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
+  function fmtTime(iso){
+    if(!iso) return '';
+    try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
+  }
+
+  function renderMessages(messages){
+    body.innerHTML = (messages||[]).map(m => {
+      const cls = m.from === 'user' ? 'user' : (m.from === 'admin' ? 'admin' : 'bot');
+      return `<div class="chat-msg ${cls}">${esc(m.text)}<div class="time">${fmtTime(m.at)}</div></div>`;
+    }).join('');
+    body.scrollTop = body.scrollHeight;
+    lastCount = (messages||[]).length;
+  }
+
+  async function loadChat(){
+    if (!chatId) return null;
+    try {
+      const r = await fetch(DB_URL + '?t=' + Date.now());
+      const db = await r.json();
+      const chats = Array.isArray(db.chats) ? db.chats : [];
+      return chats.find(c => c.id === chatId) || null;
+    } catch(e){ return null; }
+  }
+
+  async function saveChatMessage(text, from){
+    const r = await fetch(DB_URL + '?t=' + Date.now());
+    const db = await r.json();
+    const listings = Array.isArray(db.listings) ? db.listings : [];
+    const pending = Array.isArray(db.pending) ? db.pending : [];
+    const leads = Array.isArray(db.leads) ? db.leads : [];
+    let chats = Array.isArray(db.chats) ? db.chats : [];
+    let chat = chats.find(c => c.id === chatId);
+    const msg = { from: from, text: text, at: new Date().toISOString() };
+    if (!chat) {
+      chat = {
+        id: chatId,
+        nombre: chatNombre,
+        telefono: localStorage.getItem('zp_chat_tel') || '',
+        messages: [msg],
+        pagina: location.href,
+        updated: msg.at,
+        leido_admin: false
+      };
+      chats.unshift(chat);
+    } else {
+      chat.messages = chat.messages || [];
+      chat.messages.push(msg);
+      chat.updated = msg.at;
+      if (from === 'user') chat.leido_admin = false;
+    }
+    chats = chats.slice(0, 80);
+    await fetch(DB_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ listings, pending, leads, chats })
+    });
+    return chat;
+  }
+
+  function showChatUI(){
+    startBox.style.display = 'none';
+    body.style.display = 'block';
+    foot.style.display = 'flex';
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Conectado · los mensajes se guardan en la web';
+  }
+
+  async function openExisting(){
+    if (!chatId) return false;
+    const chat = await loadChat();
+    if (!chat) { chatId = ''; localStorage.removeItem('zp_chat_id'); return false; }
+    showChatUI();
+    renderMessages(chat.messages);
+    startPolling();
+    return true;
+  }
+
+  function startPolling(){
+    if (pollTimer) clearInterval(pollTimer);
+    pollTimer = setInterval(async () => {
+      const chat = await loadChat();
+      if (!chat) return;
+      if ((chat.messages||[]).length > lastCount) {
+        renderMessages(chat.messages);
+        if (!panel.classList.contains('open')) {
+          if (dot) dot.style.display = 'block';
+        }
+      }
+    }, 6000);
+  }
+
+  fab.onclick = async function(){
     panel.classList.toggle('open');
     if (panel.classList.contains('open')) {
-      input.focus();
       if (dot) dot.style.display = 'none';
+      if (chatId) {
+        const ok = await openExisting();
+        if (!ok) { startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none'; }
+      }
     }
   };
   closeBtn.onclick = function(){ panel.classList.remove('open'); };
 
-  function sendChat(){
+  document.getElementById('chatStartBtn').onclick = async function(){
+    const nombre = (document.getElementById('chatNombre').value || '').trim();
+    const tel = (document.getElementById('chatTel').value || '').trim();
+    if (!nombre) { document.getElementById('chatNombre').focus(); return; }
+    chatNombre = nombre;
+    chatId = 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+    localStorage.setItem('zp_chat_id', chatId);
+    localStorage.setItem('zp_chat_nombre', nombre);
+    localStorage.setItem('zp_chat_tel', tel);
+    showChatUI();
+    const welcome = '¡Hola ' + nombre + '! ¿En qué departamento estás interesado/a? Contanos zona, ambientes o presupuesto.';
+    body.innerHTML = `<div class="chat-msg bot">${esc(welcome)}<div class="time">ahora</div></div>`;
+    // guardar chat vacío inicial no es necesario hasta primer mensaje de usuario
+    lastCount = 0;
+    startPolling();
+  };
+
+  async function sendMsg(){
     const text = (input.value || '').trim();
-    if (!text) return;
+    if (!text || !chatId) return;
     sendBtn.disabled = true;
-
-    const userMsg = document.createElement('div');
-    userMsg.className = 'chat-msg';
-    userMsg.style.marginLeft = 'auto';
-    userMsg.style.background = '#dcf8c6';
-    userMsg.style.borderTopRightRadius = '2px';
-    userMsg.innerHTML = text.replace(/</g,'<') + '<div class="time">ahora</div>';
-    body.appendChild(userMsg);
-    body.scrollTop = body.scrollHeight;
     input.value = '';
-
-    const reply = document.createElement('div');
-    reply.className = 'chat-msg bot';
-    reply.innerHTML = 'Perfecto, te redirigimos a WhatsApp para continuar la conversación 💬<div class="time">ahora</div>';
-    body.appendChild(reply);
-    body.scrollTop = body.scrollHeight;
-
-    const waText = 'Hola! Vi el listado de ZonaProp Premium y quiero consultar:\n\n' + text + '\n\nPágina: ' + location.href;
-    setTimeout(function(){
-      window.open('https://wa.me/' + ADMIN_WA + '?text=' + encodeURIComponent(waText), '_blank');
-      sendBtn.disabled = false;
-    }, 600);
+    try {
+      const chat = await saveChatMessage(text, 'user');
+      renderMessages(chat.messages);
+      // email aviso
+      try {
+        const fd = new FormData();
+        fd.append('_subject', 'ZonaProp · Nuevo mensaje de chat');
+        fd.append('_template', 'table'); fd.append('_captcha', 'false');
+        fd.append('nombre', chatNombre);
+        fd.append('telefono', localStorage.getItem('zp_chat_tel') || '');
+        fd.append('mensaje', text);
+        fd.append('chat_id', chatId);
+        fd.append('admin', 'https://zonaprop.github.io/premium/admin.html');
+        fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
+      } catch(e){}
+    } catch(e){
+      statusEl.textContent = 'Error al enviar. Reintentá.';
+    }
+    sendBtn.disabled = false;
+    input.focus();
   }
 
-  sendBtn.onclick = sendChat;
+  sendBtn.onclick = sendMsg;
   input.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      sendChat();
-    }
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
   });
+
+  // si ya tenía chat, precargar al abrir
+  if (chatId) {
+    // no auto-abrir panel, solo preparar
+  }
 })();
 
 Promise.all([
   fetch('data.json').then(r=>r.json()).catch(function(){ return []; }),
   fetch(DB_URL).then(r=>r.json()).then(function(db){ return Array.isArray(db.listings) ? db.listings : []; }).catch(function(){ return []; })
 ]).then(function(results){
-  const base = results[0] || [];
-  const community = results[1] || [];
-  ALL = community.concat(base);
+  ALL = (results[1] || []).concat(results[0] || []);
   applyFilters();
   wireUI();
 }).catch(function(){
