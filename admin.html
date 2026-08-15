@@ -18,26 +18,22 @@ header a:hover{opacity:1}
 .login input{width:100%;padding:.75rem .9rem;border:1.5px solid #ddd;border-radius:10px;margin:.4rem 0 1rem;font-size:1rem}
 .login button{width:100%;padding:.9rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;font-size:1rem;cursor:pointer}
 .err{color:#c62828;font-size:.88rem;margin-top:.5rem;display:none}
-
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0 1.2rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0 1.2rem}
 .stat{background:#fff;border-radius:12px;padding:.9rem .8rem;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,.05)}
 .stat .n{font-size:1.5rem;font-weight:800;color:#1a1a2e}
 .stat .l{font-size:.72rem;color:#666;margin-top:.15rem}
 .stat.orange .n{color:#ff5500}
 .stat.green .n{color:#2e7d32}
-
+.stat.blue .n{color:#1565c0}
 .tabs{display:flex;gap:.4rem;margin:0 0 1rem;flex-wrap:wrap}
 .tabs button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.45rem 1rem;font-size:.86rem;cursor:pointer;font-weight:600;transition:all .15s}
 .tabs button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
-
 .toolbar{display:flex;gap:.5rem;margin-bottom:.9rem;flex-wrap:wrap;align-items:center}
 .toolbar input{flex:1;min-width:160px;padding:.6rem .85rem;border:1.5px solid #ddd;border-radius:10px;font-size:.9rem;background:#fff}
 .toolbar button{padding:.6rem 1rem;border:0;border-radius:10px;background:#eee;font-weight:600;font-size:.85rem;cursor:pointer}
 .toolbar button.primary{background:#ff5500;color:#fff}
-
 h1{font-size:1.2rem;margin:0 0 .35rem}
 .meta{font-size:.85rem;color:#666;margin-bottom:.8rem}
-
 .lead-card{background:#fff;border-radius:12px;padding:1rem;margin-bottom:.7rem;box-shadow:0 1px 6px rgba(0,0,0,.05)}
 .lead-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;flex-wrap:wrap}
 .lead-top strong{font-size:.95rem;word-break:break-all}
@@ -48,8 +44,8 @@ h1{font-size:1.2rem;margin:0 0 .35rem}
 .btn-wa-sm{background:#25d366;color:#fff}
 .btn-mail{background:#e3f2fd;color:#1565c0}
 .btn-copy{background:#f5f5f5;color:#333}
+.btn-chat{background:#ff5500;color:#fff}
 .when{font-size:.75rem;color:#999;white-space:nowrap}
-
 .card{background:#fff;border-radius:14px;padding:1rem;margin-bottom:1rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .card img.main{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:.6rem}
 .thumbs{display:flex;gap:6px;overflow-x:auto;margin-bottom:.7rem;padding-bottom:2px}
@@ -62,13 +58,30 @@ h1{font-size:1.2rem;margin:0 0 .35rem}
 .actions button{flex:1;padding:.75rem;border:0;border-radius:10px;font-weight:700;cursor:pointer;color:#fff;font-size:.9rem}
 .ok{background:#2e7d32}.no{background:#c62828}
 .actions button:disabled{opacity:.55;cursor:wait}
-
 .empty{text-align:center;padding:2.5rem 1rem;color:#888;background:#fff;border-radius:14px}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:opacity .25s;z-index:100;pointer-events:none}
 .toast.show{opacity:1}
 
+/* Chat admin */
+.chat-list-item{background:#fff;border-radius:12px;padding:1rem;margin-bottom:.7rem;box-shadow:0 1px 6px rgba(0,0,0,.05);cursor:pointer;border:2px solid transparent;transition:border-color .15s}
+.chat-list-item:hover{border-color:#ff5500}
+.chat-list-item.unread{border-left:4px solid #ff5500}
+.chat-list-item .preview{font-size:.82rem;color:#666;margin-top:.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-thread{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);display:none;flex-direction:column;max-height:70vh}
+.chat-thread.open{display:flex}
+.chat-thread-head{background:#1a1a2e;color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.chat-thread-head button{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.35rem .7rem;border-radius:8px;cursor:pointer;font-size:.8rem}
+.chat-thread-body{padding:12px;background:#f0f2f5;flex:1;overflow-y:auto;min-height:200px;max-height:400px}
+.chat-bubble{border-radius:12px;padding:8px 12px;font-size:.88rem;line-height:1.4;max-width:85%;margin-bottom:8px;word-break:break-word}
+.chat-bubble.user{background:#fff;border-top-left-radius:3px}
+.chat-bubble.admin{background:#dcf8c6;margin-left:auto;border-top-right-radius:3px}
+.chat-bubble .t{font-size:.68rem;color:#999;margin-top:3px;text-align:right}
+.chat-thread-foot{padding:10px;background:#fff;border-top:1px solid #eee;display:flex;gap:8px}
+.chat-thread-foot textarea{flex:1;border:1.5px solid #ddd;border-radius:12px;padding:10px;font-size:.9rem;font-family:inherit;resize:none;min-height:42px}
+.chat-thread-foot button{padding:0 1.1rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer}
+
 @media(max-width:520px){
-  .stats{grid-template-columns:1fr 1fr 1fr;gap:.5rem}
+  .stats{grid-template-columns:1fr 1fr;gap:.5rem}
   .stat .n{font-size:1.25rem}
 }
 </style>
@@ -86,7 +99,7 @@ h1{font-size:1.2rem;margin:0 0 .35rem}
 <div class="wrap" id="app">
   <div class="login" id="loginBox">
     <h2>Acceso admin</h2>
-    <p>Ingresá la clave para administrar leads y publicaciones.</p>
+    <p>Ingresá la clave para administrar leads, chats y publicaciones.</p>
     <input id="pass" type="password" placeholder="Clave admin" autocomplete="current-password"/>
     <button type="button" id="btnLogin">Entrar</button>
     <div class="err" id="loginErr">Clave incorrecta</div>
@@ -95,16 +108,41 @@ h1{font-size:1.2rem;margin:0 0 .35rem}
   <div id="panel" style="display:none">
     <div class="stats" id="stats">
       <div class="stat"><div class="n" id="sLeads">—</div><div class="l">Visitantes</div></div>
+      <div class="stat blue"><div class="n" id="sChats">—</div><div class="l">Chats</div></div>
       <div class="stat orange"><div class="n" id="sPending">—</div><div class="l">Pendientes</div></div>
       <div class="stat green"><div class="n" id="sListings">—</div><div class="l">Publicados</div></div>
     </div>
 
     <div class="tabs">
-      <button type="button" class="on" data-tab="leads">Visitantes</button>
+      <button type="button" class="on" data-tab="chats">Chats</button>
+      <button type="button" data-tab="leads">Visitantes</button>
       <button type="button" data-tab="pending">Pendientes</button>
     </div>
 
-    <div id="tab-leads">
+    <div id="tab-chats">
+      <h1>Chats de la web</h1>
+      <p class="meta" id="chatsCount"></p>
+      <div class="toolbar">
+        <button type="button" class="primary" id="btnRefreshChats">Actualizar</button>
+      </div>
+      <div id="chatsList"></div>
+      <div class="chat-thread" id="chatThread">
+        <div class="chat-thread-head">
+          <div>
+            <strong id="threadName">—</strong>
+            <div style="font-size:.75rem;opacity:.8" id="threadMeta"></div>
+          </div>
+          <button type="button" id="btnBackChats">← Volver</button>
+        </div>
+        <div class="chat-thread-body" id="threadBody"></div>
+        <div class="chat-thread-foot">
+          <textarea id="threadReply" rows="1" placeholder="Responder..."></textarea>
+          <button type="button" id="btnReply">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-leads" style="display:none">
       <h1>Visitantes que ingresaron</h1>
       <p class="meta" id="leadsCount"></p>
       <div class="toolbar">
@@ -131,6 +169,7 @@ h1{font-size:1.2rem;margin:0 0 .35rem}
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const ADMIN_PASS = 'zonaprop2026';
 let cachedDB = null;
+let currentChatId = null;
 
 function toast(msg) {
   const t = document.getElementById('toast');
@@ -149,11 +188,9 @@ document.getElementById('btnLogin').onclick = function(){
     document.getElementById('loginErr').style.display = 'block';
   }
 };
-
 document.getElementById('pass').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('btnLogin').click();
 });
-
 document.getElementById('btnLogout').onclick = function(e){
   e.preventDefault();
   sessionStorage.removeItem('zp_admin');
@@ -165,8 +202,13 @@ document.querySelectorAll('.tabs button').forEach(btn => {
     document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
     const tab = btn.dataset.tab;
+    document.getElementById('tab-chats').style.display = tab === 'chats' ? 'block' : 'none';
     document.getElementById('tab-leads').style.display = tab === 'leads' ? 'block' : 'none';
     document.getElementById('tab-pending').style.display = tab === 'pending' ? 'block' : 'none';
+    if (tab === 'chats') {
+      document.getElementById('chatsList').style.display = 'block';
+      document.getElementById('chatThread').classList.remove('open');
+    }
   };
 });
 
@@ -176,7 +218,8 @@ async function loadDB(){
   cachedDB = {
     listings: Array.isArray(db.listings) ? db.listings : [],
     pending: Array.isArray(db.pending) ? db.pending : [],
-    leads: Array.isArray(db.leads) ? db.leads : []
+    leads: Array.isArray(db.leads) ? db.leads : [],
+    chats: Array.isArray(db.chats) ? db.chats : []
   };
   return cachedDB;
 }
@@ -193,6 +236,7 @@ async function saveDB(db){
 
 function updateStats(db) {
   document.getElementById('sLeads').textContent = db.leads.length;
+  document.getElementById('sChats').textContent = db.chats.length;
   document.getElementById('sPending').textContent = db.pending.length;
   document.getElementById('sListings').textContent = db.listings.length;
 }
@@ -203,6 +247,7 @@ async function showPanel(){
   document.getElementById('btnLogout').style.display = 'inline';
   const db = await loadDB();
   updateStats(db);
+  await renderChats();
   await renderLeads();
   await renderPending();
 }
@@ -212,129 +257,189 @@ function formatPhone(tel) {
   if (n.length < 8) return tel || '—';
   return tel;
 }
-
 function waLink(tel) {
   let n = (tel || '').replace(/\D/g, '');
   if (n.length < 8) return null;
   if (!n.startsWith('54')) n = '549' + n.replace(/^0/, '');
   return 'https://wa.me/' + n;
 }
+function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
+function fmtWhen(iso){
+  if(!iso) return '';
+  try { return new Date(iso).toLocaleString('es-AR',{timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
+}
 
+/* ===== CHATS ===== */
+async function renderChats(){
+  const db = cachedDB || await loadDB();
+  const list = document.getElementById('chatsList');
+  const chats = (db.chats || []).slice().sort((a,b) => (b.updated||'').localeCompare(a.updated||''));
+  const unread = chats.filter(c => c.leido_admin === false).length;
+  document.getElementById('chatsCount').textContent =
+    chats.length + ' conversación(es)' + (unread ? ' · ' + unread + ' sin leer' : '');
+
+  if (!chats.length) {
+    list.innerHTML = '<div class="empty">Todavía no hay chats de la web.</div>';
+    return;
+  }
+
+  list.innerHTML = chats.map(c => {
+    const msgs = c.messages || [];
+    const last = msgs[msgs.length - 1];
+    const preview = last ? ((last.from === 'admin' ? 'Vos: ' : '') + (last.text || '')).slice(0, 80) : 'Sin mensajes';
+    const unreadCls = c.leido_admin === false ? ' unread' : '';
+    return `<div class="chat-list-item${unreadCls}" data-cid="${esc(c.id)}">
+      <div class="lead-top">
+        <div><strong>${esc(c.nombre || 'Anónimo')}</strong>${c.leido_admin === false ? '<span class="badge-new">nuevo</span>' : ''}</div>
+        <div class="when">${fmtWhen(c.updated)}</div>
+      </div>
+      <div class="preview">${esc(preview)}</div>
+      <div class="lead-meta">${c.telefono ? '📱 ' + esc(c.telefono) + ' · ' : ''}${msgs.length} mensaje(s)</div>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('.chat-list-item').forEach(el => {
+    el.onclick = () => openThread(el.dataset.cid);
+  });
+}
+
+async function openThread(cid){
+  currentChatId = cid;
+  const db = await loadDB();
+  const chat = (db.chats || []).find(c => c.id === cid);
+  if (!chat) return;
+
+  // marcar leído
+  if (chat.leido_admin === false) {
+    chat.leido_admin = true;
+    await saveDB(db);
+  }
+
+  document.getElementById('chatsList').style.display = 'none';
+  const thread = document.getElementById('chatThread');
+  thread.classList.add('open');
+  document.getElementById('threadName').textContent = chat.nombre || 'Anónimo';
+  document.getElementById('threadMeta').textContent =
+    (chat.telefono ? chat.telefono + ' · ' : '') + fmtWhen(chat.updated);
+
+  const body = document.getElementById('threadBody');
+  body.innerHTML = (chat.messages || []).map(m => {
+    const cls = m.from === 'admin' ? 'admin' : 'user';
+    return `<div class="chat-bubble ${cls}">${esc(m.text)}<div class="t">${fmtWhen(m.at)}</div></div>`;
+  }).join('');
+  body.scrollTop = body.scrollHeight;
+}
+
+document.getElementById('btnBackChats').onclick = function(){
+  document.getElementById('chatThread').classList.remove('open');
+  document.getElementById('chatsList').style.display = 'block';
+  currentChatId = null;
+  renderChats();
+};
+
+document.getElementById('btnReply').onclick = async function(){
+  const text = (document.getElementById('threadReply').value || '').trim();
+  if (!text || !currentChatId) return;
+  const btn = document.getElementById('btnReply');
+  btn.disabled = true;
+  try {
+    const db = await loadDB();
+    const chat = (db.chats || []).find(c => c.id === currentChatId);
+    if (!chat) throw new Error('no chat');
+    chat.messages = chat.messages || [];
+    chat.messages.push({ from: 'admin', text, at: new Date().toISOString() });
+    chat.updated = new Date().toISOString();
+    await saveDB(db);
+    document.getElementById('threadReply').value = '';
+    openThread(currentChatId);
+    toast('Respuesta enviada');
+  } catch(e){
+    toast('Error al enviar');
+  }
+  btn.disabled = false;
+};
+
+document.getElementById('btnRefreshChats').onclick = async () => {
+  await loadDB();
+  updateStats(cachedDB);
+  await renderChats();
+  toast('Actualizado');
+};
+
+/* ===== LEADS ===== */
 async function renderLeads(){
   const db = cachedDB || await loadDB();
   const list = document.getElementById('leadsList');
   const leads = db.leads || [];
   const q = (document.getElementById('leadSearch').value || '').trim().toLowerCase();
-
   let filtered = leads;
-  if (q) {
-    filtered = leads.filter(l =>
-      (l.email || '').toLowerCase().includes(q) ||
-      (l.telefono || '').includes(q)
-    );
-  }
-
-  document.getElementById('leadsCount').textContent =
-    filtered.length + ' de ' + leads.length + ' visitante(s)';
-
+  if (q) filtered = leads.filter(l => (l.email || '').toLowerCase().includes(q) || (l.telefono || '').includes(q));
+  document.getElementById('leadsCount').textContent = filtered.length + ' de ' + leads.length + ' visitante(s)';
   if (!filtered.length) {
-    list.innerHTML = '<div class="empty">' + (q ? 'No hay resultados para esa búsqueda.' : 'Todavía no ingresó nadie.') + '</div>';
+    list.innerHTML = '<div class="empty">' + (q ? 'No hay resultados.' : 'Todavía no ingresó nadie.') + '</div>';
     return;
   }
-
-  list.innerHTML = filtered.map((l, i) => {
-    const when = l.cuando
-      ? new Date(l.cuando).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' })
-      : '';
+  list.innerHTML = filtered.map((l) => {
+    const when = l.cuando ? new Date(l.cuando).toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }) : '';
     const isNew = leads.indexOf(l) < 5;
     const wa = waLink(l.telefono);
     const page = (l.pagina || '').replace('https://zonaprop.github.io/premium/', '') || 'inicio';
-
     return `<div class="lead-card">
-      <div class="lead-top">
-        <div>
-          <strong>${l.email || '—'}</strong>${isNew ? '<span class="badge-new">nuevo</span>' : ''}
-        </div>
-        <div class="when">${when}</div>
-      </div>
-      <div class="lead-meta">
-        📱 ${formatPhone(l.telefono)}<br>
-        Origen: ${l.origen || 'Directo'} · Página: ${page}
-      </div>
+      <div class="lead-top"><div><strong>${esc(l.email || '—')}</strong>${isNew ? '<span class="badge-new">nuevo</span>' : ''}</div><div class="when">${when}</div></div>
+      <div class="lead-meta">📱 ${formatPhone(l.telefono)}<br>Origen: ${esc(l.origen || 'Directo')} · Página: ${esc(page)}</div>
       <div class="lead-actions">
         ${wa ? `<a class="btn-wa-sm" href="${wa}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
-        ${l.email ? `<a class="btn-mail" href="mailto:${l.email}">Email</a>` : ''}
-        <button class="btn-copy" type="button" data-copy="${(l.email || '') + ' | ' + (l.telefono || '')}">Copiar</button>
-      </div>
-    </div>`;
+        ${l.email ? `<a class="btn-mail" href="mailto:${esc(l.email)}">Email</a>` : ''}
+        <button class="btn-copy" type="button" data-copy="${esc((l.email || '') + ' | ' + (l.telefono || ''))}">Copiar</button>
+      </div></div>`;
   }).join('');
-
   list.querySelectorAll('.btn-copy').forEach(btn => {
     btn.onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(btn.dataset.copy);
-        toast('Copiado');
-      } catch (e) {
-        toast('No se pudo copiar');
-      }
+      try { await navigator.clipboard.writeText(btn.dataset.copy); toast('Copiado'); } catch(e){ toast('No se pudo copiar'); }
     };
   });
 }
 
+/* ===== PENDING ===== */
 async function renderPending(){
   const db = cachedDB || await loadDB();
   const list = document.getElementById('list');
   document.getElementById('count').textContent = db.pending.length + ' pendiente(s)';
-
   if (!db.pending.length) {
     list.innerHTML = '<div class="empty">No hay publicaciones pendientes.</div>';
     return;
   }
-
   list.innerHTML = db.pending.map((d) => {
     const photos = d.photos || (d.main ? [d.main] : []);
     const main = photos[0] || '';
     const wa = waLink(d.contacto_tel);
-
     return `<div class="card" data-id="${d.id}">
       ${main ? `<img class="main" src="${main}" alt="">` : ''}
       ${photos.length > 1 ? `<div class="thumbs">${photos.slice(0,8).map(p=>`<img src="${p}" alt="">`).join('')}</div>` : ''}
       <div class="price">${d.price || 'Consultar'}</div>
-      <h3>${d.title || 'Sin título'}</h3>
-      <div class="meta">${d.zona || '—'} · ${d.ambientes || ''} · ${photos.length} fotos</div>
-      <div class="meta">
-        👤 ${d.contacto_nombre || '—'} ·
-        ${d.contacto_tel || ''} ·
-        ${d.contacto_email || ''}
-        ${wa ? ` · <a href="${wa}" target="_blank" rel="noopener" style="color:#25d366;font-weight:600">WhatsApp</a>` : ''}
-      </div>
-      <div class="meta">ID: ${d.id}</div>
-      ${d.desc ? `<div class="desc-box">${d.desc}</div>` : ''}
+      <h3>${esc(d.title || 'Sin título')}</h3>
+      <div class="meta">${esc(d.zona || '—')} · ${esc(d.ambientes || '')} · ${photos.length} fotos</div>
+      <div class="meta">👤 ${esc(d.contacto_nombre || '—')} · ${esc(d.contacto_tel || '')} · ${esc(d.contacto_email || '')}
+        ${wa ? ` · <a href="${wa}" target="_blank" rel="noopener" style="color:#25d366;font-weight:600">WhatsApp</a>` : ''}</div>
+      <div class="meta">ID: ${esc(d.id)}</div>
+      ${d.desc ? `<div class="desc-box">${esc(d.desc)}</div>` : ''}
       <div class="actions">
         <button class="ok" type="button" data-act="ok" data-id="${d.id}">✓ Aprobar</button>
         <button class="no" type="button" data-act="no" data-id="${d.id}">✕ Rechazar</button>
-      </div>
-    </div>`;
+      </div></div>`;
   }).join('');
-
   list.querySelectorAll('button[data-act]').forEach(btn => {
     btn.onclick = async () => {
       const id = btn.dataset.id;
       const act = btn.dataset.act;
-
-      if (act === 'no' && !confirm('¿Rechazar esta publicación? Se eliminará de la cola.')) return;
-
+      if (act === 'no' && !confirm('¿Rechazar esta publicación?')) return;
       btn.disabled = true;
       const other = btn.parentElement.querySelector('button[data-act="' + (act === 'ok' ? 'no' : 'ok') + '"]');
       if (other) other.disabled = true;
-
       try {
         const db = await loadDB();
         const i = db.pending.findIndex(x => x.id === id);
-        if (i < 0) {
-          await renderPending();
-          return;
-        }
+        if (i < 0) { await renderPending(); return; }
         const item = db.pending[i];
         db.pending.splice(i, 1);
         if (act === 'ok') {
@@ -342,9 +447,7 @@ async function renderPending(){
           item.aprobado_en = new Date().toISOString();
           db.listings.unshift(item);
           toast('Publicación aprobada');
-        } else {
-          toast('Publicación rechazada');
-        }
+        } else toast('Publicación rechazada');
         await saveDB(db);
         updateStats(db);
         await renderPending();
@@ -359,29 +462,19 @@ async function renderPending(){
 
 document.getElementById('leadSearch').addEventListener('input', () => renderLeads());
 document.getElementById('btnRefreshLeads').onclick = async () => {
-  await loadDB();
-  updateStats(cachedDB);
-  await renderLeads();
-  toast('Actualizado');
+  await loadDB(); updateStats(cachedDB); await renderLeads(); toast('Actualizado');
 };
 document.getElementById('btnRefreshPending').onclick = async () => {
-  await loadDB();
-  updateStats(cachedDB);
-  await renderPending();
-  toast('Actualizado');
+  await loadDB(); updateStats(cachedDB); await renderPending(); toast('Actualizado');
 };
 
-// deep link ?id=
 const focusId = new URLSearchParams(location.search).get('id');
 if (focusId && sessionStorage.getItem('zp_admin') === '1') {
   document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
   document.querySelector('[data-tab="pending"]').classList.add('on');
+  document.getElementById('tab-chats').style.display = 'none';
   document.getElementById('tab-leads').style.display = 'none';
   document.getElementById('tab-pending').style.display = 'block';
-  setTimeout(() => {
-    const el = document.querySelector('[data-id="'+focusId+'"]');
-    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 600);
 }
 </script>
 </body>
