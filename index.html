@@ -293,7 +293,6 @@ function applyFilters(){
     soft.style.display = 'none';
     document.getElementById('btnVerTodo').textContent = 'Ver todo el listado (' + list.length + ')';
   } else {
-    // searching without unlock: show matches up to limit, then soft gate
     const preview = list.slice(0, HOME_LIMIT);
     render(preview, list.length + ' resultado' + (list.length===1?'':'s') + (list.length > HOME_LIMIT ? ' · mostrando ' + HOME_LIMIT : ''));
     more.style.display = 'none';
@@ -317,7 +316,7 @@ function wireUI(){
   document.querySelectorAll('#chips button').forEach(btn=>{ btn.onclick=()=>{ document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); document.getElementById('q').value=btn.dataset.z; showAll=false; applyFilters(); }; });
 }
 
-/* CHAT WEB + auto-respuesta */
+/* CHAT WEB + auto-respuesta (fix) */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
@@ -357,26 +356,29 @@ function wireUI(){
       return chats.find(c => c.id === chatId) || null;
     } catch(e){ return null; }
   }
-  async function saveChatMessage(text, from){
+  async function saveChatMessages(msgs){
     const r = await fetch(DB_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('No se pudo leer la base (' + r.status + ')');
     const db = await r.json();
     const listings = Array.isArray(db.listings) ? db.listings : [];
     const pending = Array.isArray(db.pending) ? db.pending : [];
     const leads = Array.isArray(db.leads) ? db.leads : [];
     let chats = Array.isArray(db.chats) ? db.chats : [];
     let chat = chats.find(c => c.id === chatId);
-    const msg = { from: from, text: text, at: new Date().toISOString() };
+    const now = new Date().toISOString();
+    const toAdd = (msgs || []).map(m => ({ from: m.from, text: m.text, at: now }));
     if (!chat) {
-      chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel') || '', messages: [msg], pagina: location.href, updated: msg.at, leido_admin: false };
+      chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel') || '', messages: toAdd.slice(), pagina: location.href, updated: now, leido_admin: false };
       chats.unshift(chat);
     } else {
       chat.messages = chat.messages || [];
-      chat.messages.push(msg);
-      chat.updated = msg.at;
-      if (from === 'user') chat.leido_admin = false;
+      toAdd.forEach(m => chat.messages.push(m));
+      chat.updated = now;
+      if (toAdd.some(m => m.from === 'user')) chat.leido_admin = false;
     }
     chats = chats.slice(0, 80);
-    await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
+    const put = await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
+    if (!put.ok) throw new Error('No se pudo guardar (' + put.status + ')');
     return chat;
   }
   function showChatUI(){
@@ -444,29 +446,38 @@ function wireUI(){
     if (!text || !chatId) return;
     sendBtn.disabled = true;
     input.value = '';
+    statusEl.textContent = 'Enviando...';
+    const optimistic = [];
     try {
-      let chat = await saveChatMessage(text, 'user');
-      // Auto-respuesta si es el primer mensaje del usuario
-      const userMsgs = (chat.messages || []).filter(m => m.from === 'user');
-      if (userMsgs.length === 1) {
-        const auto = 'Recibimos tu mensaje ✅ Te respondemos a la brevedad por este chat. Horario de atención: lun a vie 10–19 hs.';
-        chat = await saveChatMessage(auto, 'bot');
-      }
+      const existing = await loadChat();
+      optimistic.push(...((existing && existing.messages) || []));
+    } catch(e){}
+    optimistic.push({ from: 'user', text: text, at: new Date().toISOString() });
+    const isFirst = optimistic.filter(m => m.from === 'user').length === 1;
+    const auto = 'Recibimos tu mensaje ✅ Te respondemos a la brevedad por este chat. Horario: lun a vie 10–19 hs.';
+    if (isFirst) optimistic.push({ from: 'bot', text: auto, at: new Date().toISOString() });
+    renderMessages(optimistic);
+    try {
+      const payload = [{ from: 'user', text: text }];
+      if (isFirst) payload.push({ from: 'bot', text: auto });
+      const chat = await saveChatMessages(payload);
       renderMessages(chat.messages);
-      try {
-        const fd = new FormData();
-        fd.append('_subject', 'ZonaProp · Nuevo mensaje de chat');
-        fd.append('_template', 'table'); fd.append('_captcha', 'false');
-        fd.append('nombre', chatNombre);
-        fd.append('telefono', localStorage.getItem('zp_chat_tel') || '');
-        fd.append('mensaje', text);
-        fd.append('chat_id', chatId);
-        fd.append('admin', 'https://zonaprop.github.io/premium/admin.html');
-        fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
-      } catch(e){}
+      statusEl.textContent = 'Enviado · respondemos en horario hábil';
     } catch(e){
-      statusEl.textContent = 'Error al enviar. Reintentá.';
+      statusEl.textContent = 'Aviso enviado por email. Si no ves respuesta, reintentá en un momento.';
     }
+    try {
+      const fd = new FormData();
+      fd.append('_subject', 'ZonaProp · Nuevo mensaje de chat');
+      fd.append('_template', 'table'); fd.append('_captcha', 'false');
+      fd.append('nombre', chatNombre);
+      fd.append('telefono', localStorage.getItem('zp_chat_tel') || '');
+      fd.append('mensaje', text);
+      fd.append('chat_id', chatId);
+      fd.append('pagina', location.href);
+      fd.append('admin', 'https://zonaprop.github.io/premium/admin.html');
+      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
+    } catch(e){}
     sendBtn.disabled = false;
     input.focus();
   }
