@@ -55,9 +55,9 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 .spec{background:#f0f0f0;border-radius:999px;padding:.28rem .6rem;font-size:.72rem;font-weight:600;color:#444}
 .badge{font-size:.78rem;color:#666;margin-top:.4rem}
 .card-actions{display:flex;gap:.5rem;padding:.75rem 1rem 1rem}
-.btn-o,.btn-g{flex:1;text-align:center;padding:.55rem;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;color:#fff}
+.btn-o,.btn-g{flex:1;text-align:center;padding:.55rem;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;color:#fff;border:0;cursor:pointer;font-family:inherit}
 .btn-o{background:#ff5500}
-.btn-g{background:#25d366}
+.btn-g{background:#1a1a2e}
 .more-wrap{max-width:1140px;margin:0 auto 1.8rem;padding:0 1rem;text-align:center}
 .more-wrap button{border:0;background:#ff5500;color:#fff;border-radius:999px;padding:.85rem 1.6rem;font-size:.98rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(255,85,0,.25)}
 footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
@@ -195,7 +195,6 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
-const ADMIN_WA = '5491171365501';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
 const HOME_LIMIT = 24;
 let ALL = [];
@@ -240,12 +239,12 @@ document.getElementById('gateBtn').onclick = function(){
 };
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
+
 function cardHTML(d){
   const specs=[d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
   const photoCount = (d.photos && d.photos.length) ? d.photos.length : (d.main ? 1 : 0);
   const badge = d.community ? 'Comunidad' : (d.zona || '');
-  const deptoUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
-  const waText = 'Hola! Quiero info de ' + (d.title || 'este departamento') + '\n\nLink de la publicación: ' + deptoUrl;
+  const titleSafe = (d.title || 'este departamento').replace(/"/g, '"').replace(/'/g, "\\'");
   return `<article class="card">
     <a href="depto.html?id=${encodeURIComponent(d.id)}">
       <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}${badge ? `<span class="card-badge">${badge}</span>` : ''}</div>
@@ -254,15 +253,29 @@ function cardHTML(d){
         <div class="badge">${d.zona && !d.community ? d.zona + ' · ' : ''}${photoCount} fotos</div></div></a>
     <div class="card-actions">
       <a class="btn-o" href="depto.html?id=${encodeURIComponent(d.id)}">Ver</a>
-      <a class="btn-g" href="https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(waText)}">WhatsApp</a>
+      <button type="button" class="btn-g" data-chat-title="${titleSafe}" data-chat-id="${encodeURIComponent(d.id)}">Consultar</button>
     </div></article>`;
 }
+
 function render(list,label){
   const grid=document.getElementById('grid');
   grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona, precio o cantidad de ambientes.</div>';
   document.getElementById('meta').textContent=label;
   document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
+  // wire Consultar buttons -> open web chat
+  grid.querySelectorAll('button.btn-g[data-chat-title]').forEach(btn => {
+    btn.onclick = function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      const title = btn.getAttribute('data-chat-title') || 'un departamento';
+      const id = btn.getAttribute('data-chat-id') || '';
+      if (window.openWebChat) {
+        window.openWebChat('Hola! Me interesa: ' + title + (id ? ' (ID ' + id + ')' : ''));
+      }
+    };
+  });
 }
+
 function parseAmbientes(a){ if(!a) return 0; const m=String(a).match(/(\d+)/); return m ? parseInt(m[1],10) : 0; }
 function applyFilters(){
   const q=(document.getElementById('q').value||'').trim().toLowerCase();
@@ -293,7 +306,7 @@ function wireUI(){
   document.querySelectorAll('#chips button').forEach(btn=>{ btn.onclick=()=>{ document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); document.getElementById('q').value=btn.dataset.z; showAll=false; applyFilters(); }; });
 }
 
-/* ========== CHAT WEB REAL ========== */
+/* ========== CHAT WEB REAL (sin WhatsApp) ========== */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
@@ -309,8 +322,15 @@ function wireUI(){
   let chatNombre = localStorage.getItem('zp_chat_nombre') || '';
   let lastCount = 0;
   let pollTimer = null;
+  let pendingPrefill = '';
 
-  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
+  function esc(s){
+    return String(s||'')
+      .replace(/&/g,'&')
+      .replace(/</g,'<')
+      .replace(/>/g,'>')
+      .replace(/"/g,'"');
+  }
   function fmtTime(iso){
     if(!iso) return '';
     try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
@@ -375,7 +395,7 @@ function wireUI(){
     body.style.display = 'block';
     foot.style.display = 'flex';
     statusEl.style.display = 'block';
-    statusEl.textContent = 'Conectado · los mensajes se guardan en la web';
+    statusEl.textContent = 'Conectado · chat solo en la web';
   }
 
   async function openExisting(){
@@ -402,14 +422,38 @@ function wireUI(){
     }, 6000);
   }
 
-  fab.onclick = async function(){
-    panel.classList.toggle('open');
-    if (panel.classList.contains('open')) {
-      if (dot) dot.style.display = 'none';
-      if (chatId) {
-        const ok = await openExisting();
-        if (!ok) { startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none'; }
+  async function openPanel(){
+    panel.classList.add('open');
+    if (dot) dot.style.display = 'none';
+    if (chatId) {
+      const ok = await openExisting();
+      if (!ok) {
+        startBox.style.display = 'block';
+        body.style.display = 'none';
+        foot.style.display = 'none';
+      } else if (pendingPrefill) {
+        input.value = pendingPrefill;
+        pendingPrefill = '';
+        input.focus();
       }
+    } else {
+      startBox.style.display = 'block';
+      body.style.display = 'none';
+      foot.style.display = 'none';
+    }
+  }
+
+  // Global: open chat from card "Consultar" buttons
+  window.openWebChat = function(prefillText){
+    pendingPrefill = prefillText || '';
+    openPanel();
+  };
+
+  fab.onclick = function(){
+    if (panel.classList.contains('open')) {
+      panel.classList.remove('open');
+    } else {
+      openPanel();
     }
   };
   closeBtn.onclick = function(){ panel.classList.remove('open'); };
@@ -426,9 +470,13 @@ function wireUI(){
     showChatUI();
     const welcome = '¡Hola ' + nombre + '! ¿En qué departamento estás interesado/a? Contanos zona, ambientes o presupuesto.';
     body.innerHTML = `<div class="chat-msg bot">${esc(welcome)}<div class="time">ahora</div></div>`;
-    // guardar chat vacío inicial no es necesario hasta primer mensaje de usuario
     lastCount = 0;
     startPolling();
+    if (pendingPrefill) {
+      input.value = pendingPrefill;
+      pendingPrefill = '';
+    }
+    input.focus();
   };
 
   async function sendMsg(){
@@ -439,7 +487,6 @@ function wireUI(){
     try {
       const chat = await saveChatMessage(text, 'user');
       renderMessages(chat.messages);
-      // email aviso
       try {
         const fd = new FormData();
         fd.append('_subject', 'ZonaProp · Nuevo mensaje de chat');
@@ -462,11 +509,6 @@ function wireUI(){
   input.addEventListener('keydown', function(e){
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
   });
-
-  // si ya tenía chat, precargar al abrir
-  if (chatId) {
-    // no auto-abrir panel, solo preparar
-  }
 })();
 
 Promise.all([
