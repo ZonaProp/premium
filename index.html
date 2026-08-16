@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="google-site-verification" content="YnQi2av9iB6p3Kt_TslesEpz6x0wbzblieXWZCl81O8"/>
 <title>Alquiler de Departamentos en Buenos Aires | Recoleta, Palermo, Belgrano · ZonaProp Premium</title>
 <meta name="description" content="Alquilá departamentos en Buenos Aires: Recoleta, Palermo, Belgrano, Caballito, Núñez y más. Fotos reales, precios actualizados y reserva online. Consultá por chat en la web."/>
 <meta name="keywords" content="alquiler departamentos buenos aires, alquiler recoleta, alquiler palermo, alquiler belgrano, departamentos en alquiler CABA, alquiler 2 ambientes, alquiler 3 ambientes, alquiler caballito, alquiler nuñez"/>
@@ -328,7 +329,7 @@ function wireUI(){
   let lastCount = 0;
   let pollTimer = null;
   let pendingPrefill = '';
-  function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
   function fmtTime(iso){ try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; } }
   function renderMessages(messages){
     body.innerHTML = (messages||[]).map(m => `<div class="chat-msg ${m.from==='user'?'user':(m.from==='admin'?'admin':'bot')}">${esc(m.text)}<div class="time">${fmtTime(m.at)}</div></div>`).join('');
