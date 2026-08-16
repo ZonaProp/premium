@@ -12,10 +12,9 @@
 <meta property="og:title" content="Departamento · ZonaProp Premium" id="ogTitle"/>
 <meta property="og:description" content="Departamento en alquiler en Buenos Aires." id="ogDesc"/>
 <meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg" id="ogImage"/>
-<meta name="twitter:card" content="summary_large_image"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222;padding-bottom:72px}
 .header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
 .header a{color:#fff;text-decoration:none;font-size:1.2rem}
 .header .share-btn{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.4rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer}
@@ -24,7 +23,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
 .g-nav button{background:rgba(0,0,0,.6);border:0;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
 .counter{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.65);color:#fff;padding:4px 10px;border-radius:999px;font-size:.8rem}
-.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff;scrollbar-width:none}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff}
 .thumbs img{width:70px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.65;flex-shrink:0}
 .thumbs img.on{opacity:1;outline:2px solid #ff5500}
 .box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
@@ -38,12 +37,15 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .desc{font-size:.92rem;line-height:1.55;color:#333}
 .feat-list{display:flex;flex-wrap:wrap;gap:.45rem}
 .feat{border:1px solid #e0e0e0;border-radius:8px;padding:.35rem .7rem;font-size:.8rem;background:#fafafa}
+.steps{display:grid;grid-template-columns:1fr;gap:.7rem}
+.step{display:flex;gap:.75rem;align-items:flex-start}
+.step .num{width:28px;height:28px;border-radius:50%;background:#ff5500;color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step strong{display:block;font-size:.9rem}
+.step span{font-size:.8rem;color:#666;line-height:1.35}
 .reserva{background:#fff;margin-top:8px;padding:1.2rem;border-top:3px solid #ff5500}
 .reserva h3{font-size:1rem;margin-bottom:.6rem}
 .reserva-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid #eee}
-.reserva-row:last-child{border-bottom:0}
 .reserva-monto{font-size:1.35rem;font-weight:800;color:#ff5500}
-.reserva-note{font-size:.8rem;color:#666;margin-top:.6rem;line-height:1.4}
 .pago-info{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:10px;padding:.85rem 1rem;margin-top:.9rem;font-size:.88rem;line-height:1.5;color:#1b5e20}
 .pago-info strong{color:#2e7d32}
 .pago-info .alias{font-size:1.05rem;font-weight:800;margin:.25rem 0}
@@ -52,15 +54,18 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .fecha-ingreso input[type="date"]{width:100%;padding:.75rem .9rem;border:1.5px solid #ddd;border-radius:10px;font-size:1rem;background:#fafafa;font-family:inherit}
 .fecha-hint{font-size:.78rem;color:#888;margin-top:.35rem}
 .pago{background:#fff;margin-top:8px;padding:1.2rem}
-.pago h3{font-size:1rem;margin-bottom:.8rem}
 .pago-btns{display:flex;flex-direction:column;gap:10px}
 .btn-mp{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;text-decoration:none;color:#fff;background:#009ee3;font-size:.95rem}
 .btn-chat{display:block;text-align:center;padding:.85rem 1rem;border-radius:10px;font-weight:700;border:0;color:#fff;background:#ff5500;font-size:.95rem;cursor:pointer;font-family:inherit;width:100%}
 .btn-sec{display:block;text-align:center;padding:.7rem 1rem;border-radius:10px;font-weight:600;border:0;color:#1a1a2e;background:#eee;font-size:.9rem;cursor:pointer;font-family:inherit;width:100%}
 .btn-reservar{display:block;width:100%;text-align:center;padding:.95rem 1rem;border:0;border-radius:12px;font-weight:800;font-size:1.02rem;cursor:pointer;background:#ff5500;color:#fff;margin-top:1rem}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:7000;background:#fff;border-top:1px solid #e5e5e5;padding:10px 12px;display:flex;gap:8px;box-shadow:0 -4px 16px rgba(0,0,0,.08)}
+.sticky-cta button{flex:1;padding:.85rem;border:0;border-radius:12px;font-weight:800;font-size:.92rem;cursor:pointer;font-family:inherit}
+.sticky-cta .s-chat{background:#1a1a2e;color:#fff}
+.sticky-cta .s-res{background:#ff5500;color:#fff}
 footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 .loading{text-align:center;padding:3rem;color:#888}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:opacity .25s;z-index:100;pointer-events:none}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.7rem 1.2rem;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:opacity .25s;z-index:100;pointer-events:none}
 .toast.show{opacity:1}
 .modal-overlay{position:fixed;inset:0;background:rgba(15,15,25,.88);z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
 .modal-overlay.show{display:flex}
@@ -79,11 +84,9 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 .modal-actions .btn-cancelar{background:#eee;color:#333;border:0;border-radius:12px;padding:.75rem 1rem;font-weight:600;font-size:.92rem;cursor:pointer}
 .pago-bloqueado .pago-btns{opacity:.45;pointer-events:none}
 .pago-bloqueado .pago-msg{font-size:.85rem;color:#666;margin-bottom:.75rem;line-height:1.4;background:#f8f8f8;padding:.7rem .9rem;border-radius:8px}
-
-/* Chat web */
-.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px}
+.chat-fab{position:fixed;bottom:82px;right:18px;z-index:8000;width:56px;height:56px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px}
 .chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff;display:none}
-.chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(520px,70vh)}
+.chat-panel{position:fixed;bottom:150px;right:18px;z-index:8001;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(480px,62vh)}
 .chat-panel.open{display:flex}
 .chat-head{background:#1a1a2e;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
 .chat-head .avatar{width:40px;height:40px;border-radius:50%;background:#ff5500;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
@@ -116,19 +119,24 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 </div>
 <div id="content"><div class="loading">Cargando...</div></div>
 
+<div class="sticky-cta" id="stickyCta" style="display:none">
+  <button type="button" class="s-chat" id="stickyChat">Consultar</button>
+  <button type="button" class="s-res" id="stickyRes">Reservar</button>
+</div>
+
 <div class="modal-overlay" id="modalCondiciones" role="dialog">
   <div class="modal-box">
     <h2>Condiciones de la reserva</h2>
-    <p class="cond-intro">Antes de continuar, le informamos las condiciones de la reserva:</p>
+    <p class="cond-intro">Antes de continuar, le informamos las condiciones:</p>
     <div class="cond-destacado">
-      La <strong>reserva equivale al 30% del valor mensual</strong> del alquiler.<br><br>
-      <span id="modalMontoTexto">Monto de la reserva: se calculará según el valor del departamento.</span>
+      La <strong>reserva equivale al 30% del valor mensual</strong>.<br><br>
+      <span id="modalMontoTexto">Monto de la reserva: se calculará según el departamento.</span>
     </div>
     <div class="pago-datos">
-      <strong>Datos para la transferencia / Mercado Pago:</strong><br>
+      <strong>Transferencia / Mercado Pago:</strong><br>
       Alias: <strong>Leonela8.mp</strong><br>
       Titularidad: <strong>Leonela Giselle López</strong><br><br>
-      Después de pagar, avisanos por el <strong>chat de la web</strong> y enviá el comprobante.
+      Después de pagar, avisanos por el <strong>chat de la web</strong>.
     </div>
     <ul class="cond-list">
       <li>Si se concreta el alquiler, la reserva <strong>se descuenta del mes corriente</strong>.</li>
@@ -144,14 +152,13 @@ footer{text-align:center;padding:1.4rem;color:#888;font-size:.82rem}
 
 <div class="toast" id="toast">Link copiado</div>
 
-<!-- Chat web (SIN WhatsApp) -->
 <button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">💬<span class="badge-dot" id="chatDot"></span></button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
     <div class="avatar">🏠</div>
     <div class="info">
       <strong>ZonaProp Premium</strong>
-      <span>Chat en vivo · solo en la web</span>
+      <span>Chat · respondemos en breve</span>
     </div>
     <button type="button" class="close" id="chatClose" aria-label="Cerrar">×</button>
   </div>
@@ -192,7 +199,7 @@ function formatARS(n) {
   return '$ ' + n.toLocaleString('es-AR');
 }
 
-/* ===== CHAT WEB REAL (sin WhatsApp) ===== */
+/* CHAT + auto-respuesta */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
@@ -210,9 +217,7 @@ function formatARS(n) {
   let pollTimer = null;
   let pendingPrefill = '';
 
-  function esc(s){
-    return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>');
-  }
+  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
   function fmtTime(iso){
     if(!iso) return '';
     try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
@@ -244,15 +249,7 @@ function formatARS(n) {
     let chat = chats.find(c => c.id === chatId);
     const msg = { from: from, text: text, at: new Date().toISOString() };
     if (!chat) {
-      chat = {
-        id: chatId,
-        nombre: chatNombre,
-        telefono: localStorage.getItem('zp_chat_tel') || '',
-        messages: [msg],
-        pagina: location.href,
-        updated: msg.at,
-        leido_admin: false
-      };
+      chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel') || '', messages: [msg], pagina: location.href, updated: msg.at, leido_admin: false };
       chats.unshift(chat);
     } else {
       chat.messages = chat.messages || [];
@@ -261,11 +258,7 @@ function formatARS(n) {
       if (from === 'user') chat.leido_admin = false;
     }
     chats = chats.slice(0, 80);
-    await fetch(DB_URL, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings, pending, leads, chats })
-    });
+    await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
     return chat;
   }
   function showChatUI(){
@@ -273,7 +266,7 @@ function formatARS(n) {
     body.style.display = 'block';
     foot.style.display = 'flex';
     statusEl.style.display = 'block';
-    statusEl.textContent = 'Conectado · chat solo en la web';
+    statusEl.textContent = 'Respondemos en horario hábil · chat solo en la web';
   }
   async function openExisting(){
     if (!chatId) return false;
@@ -300,23 +293,14 @@ function formatARS(n) {
     if (dot) dot.style.display = 'none';
     if (chatId) {
       const ok = await openExisting();
-      if (!ok) {
-        startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none';
-      } else if (pendingPrefill) {
-        input.value = pendingPrefill; pendingPrefill = ''; input.focus();
-      }
+      if (!ok) { startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none'; }
+      else if (pendingPrefill) { input.value = pendingPrefill; pendingPrefill = ''; input.focus(); }
     } else {
       startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none';
     }
   }
-  window.openWebChat = function(prefillText){
-    pendingPrefill = prefillText || '';
-    openPanel();
-  };
-  fab.onclick = function(){
-    if (panel.classList.contains('open')) panel.classList.remove('open');
-    else openPanel();
-  };
+  window.openWebChat = function(prefillText){ pendingPrefill = prefillText || ''; openPanel(); };
+  fab.onclick = function(){ if (panel.classList.contains('open')) panel.classList.remove('open'); else openPanel(); };
   closeBtn.onclick = function(){ panel.classList.remove('open'); };
 
   document.getElementById('chatStartBtn').onclick = async function(){
@@ -343,7 +327,12 @@ function formatARS(n) {
     sendBtn.disabled = true;
     input.value = '';
     try {
-      const chat = await saveChatMessage(text, 'user');
+      let chat = await saveChatMessage(text, 'user');
+      const userMsgs = (chat.messages || []).filter(m => m.from === 'user');
+      if (userMsgs.length === 1) {
+        const auto = 'Recibimos tu mensaje ✅ Te respondemos a la brevedad por este chat. Horario: lun a vie 10–19 hs.';
+        chat = await saveChatMessage(auto, 'bot');
+      }
       renderMessages(chat.messages);
       try {
         const fd = new FormData();
@@ -364,9 +353,7 @@ function formatARS(n) {
     input.focus();
   }
   sendBtn.onclick = sendMsg;
-  input.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
-  });
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); } });
 })();
 
 if (!id) {
@@ -425,8 +412,16 @@ if (!id) {
         <div class="box">
           <div class="price">${d.price || 'Consultar'}</div>
           <div class="h2">${d.title || 'Departamento'}</div>
-          ${d.zona ? `<div class="zona">${d.zona}${d.community ? ' · Comunidad' : ''}</div>` : ''}
+          ${d.zona ? `<div class="zona">📍 ${d.zona}${d.community ? ' · Comunidad' : ''}</div>` : ''}
           <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
+        </div>
+        <div class="section">
+          <h3>Cómo funciona</h3>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><strong>Consultá</strong><span>Escribinos por el chat de la web sobre este depto</span></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Reservá el 30%</strong><span>Transferí a Leonela8.mp (Leonela Giselle López)</span></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Confirmá</strong><span>Avisá por chat con el comprobante y coordinamos visita</span></div></div>
+          </div>
         </div>
         <div class="section"><h3>Descripción</h3><div class="desc">${fullDesc}</div></div>
         ${feats.length ? `<div class="section"><h3>Características</h3><div class="feat-list">${feats.map(f => `<span class="feat">${f}</span>`).join('')}</div></div>` : ''}
@@ -458,13 +453,14 @@ if (!id) {
           </div>
           <div class="pago-btns">
             <a class="btn-mp" href="https://www.mercadopago.com.ar/" target="_blank" rel="noopener">Pagar ${montoReservaFmt} con Mercado Pago</a>
-            <button type="button" class="btn-chat" id="btnChatReserva">Chat · Avisar reserva / Consultar</button>
+            <button type="button" class="btn-chat" id="btnChatReserva">Chat · Avisar reserva</button>
             <button type="button" class="btn-sec" id="btnConsultar">Consultar por chat</button>
           </div>
         </div>
         <footer>ZonaProp Premium</footer>
       `;
 
+      document.getElementById('stickyCta').style.display = 'flex';
       document.getElementById('modalMontoTexto').innerHTML =
         'Monto de la reserva: <strong>' + montoReservaFmt + '</strong> (30% del valor mensual' +
         (precioMensual > 0 ? ' de ' + formatARS(precioMensual) : '') + ').';
@@ -483,12 +479,10 @@ if (!id) {
         return 'Hola! Me interesa: ' + (d.title || 'este departamento') + ' (ID ' + d.id + '). ' + pageUrl;
       }
 
-      document.getElementById('btnChatReserva').onclick = function(){
-        if (window.openWebChat) window.openWebChat(chatTextReserva());
-      };
-      document.getElementById('btnConsultar').onclick = function(){
-        if (window.openWebChat) window.openWebChat(chatTextConsulta());
-      };
+      document.getElementById('btnChatReserva').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextReserva()); };
+      document.getElementById('btnConsultar').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextConsulta()); };
+      document.getElementById('stickyChat').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextConsulta()); };
+      document.getElementById('stickyRes').onclick = function(){ document.getElementById('btnAbrirCondiciones').click(); };
 
       const modal = document.getElementById('modalCondiciones');
       const pagoSection = document.getElementById('pagoSection');
@@ -506,7 +500,7 @@ if (!id) {
         pagoSection.classList.remove('pago-bloqueado');
         const msg = document.getElementById('pagoMsg');
         if (msg) {
-          msg.textContent = 'Condiciones aceptadas. Transferí a Leonela8.mp y avisá por el chat de la web.';
+          msg.textContent = 'Condiciones aceptadas. Transferí a Leonela8.mp y avisá por el chat.';
           msg.style.background = '#e8f5e9';
           msg.style.color = '#2e7d32';
         }
