@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# No indexar admin ni datos crudos
+Disallow: /admin.html
+Disallow: /data.json
+Disallow: /data1.json
+Disallow: /data2.json
+Disallow: /data3.json
+Disallow: /data4.json
+Disallow: /data5.json
+Disallow: /listado_100.csv
+
+Sitemap: https://zonaprop.github.io/premium/sitemap.xml
