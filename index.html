@@ -3,15 +3,28 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Departamentos · ZonaProp Premium</title>
+<title>Alquiler de Departamentos en Buenos Aires | Recoleta, Palermo, Belgrano · ZonaProp Premium</title>
+<meta name="description" content="Alquilá departamentos en Buenos Aires: Recoleta, Palermo, Belgrano, Caballito, Núñez y más. Fotos reales, precios actualizados y reserva online. Consultá por chat en la web."/>
+<meta name="keywords" content="alquiler departamentos buenos aires, alquiler recoleta, alquiler palermo, alquiler belgrano, departamentos en alquiler CABA, alquiler 2 ambientes, alquiler 3 ambientes, alquiler caballito, alquiler nuñez"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta name="author" content="ZonaProp Premium"/>
+<meta name="geo.region" content="AR-C"/>
+<meta name="geo.placename" content="Buenos Aires"/>
+<meta name="theme-color" content="#1a1a2e"/>
+<link rel="canonical" href="https://zonaprop.github.io/premium/"/>
+<link rel="alternate" hreflang="es-AR" href="https://zonaprop.github.io/premium/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://zonaprop.github.io/premium/"/>
-<meta property="og:title" content="ZonaProp Premium · Departamentos en alquiler"/>
-<meta property="og:description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
+<meta property="og:title" content="Alquiler de Departamentos en Buenos Aires · ZonaProp Premium"/>
+<meta property="og:description" content="Departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Reserva online y consultá por chat."/>
 <meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg"/>
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:site_name" content="ZonaProp Premium"/>
-<meta name="description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Alquiler de Departamentos en Buenos Aires · ZonaProp Premium"/>
+<meta name="twitter:description" content="Departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Reserva online."/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"ZonaProp Premium","url":"https://zonaprop.github.io/premium/","logo":"https://zonaprop.github.io/premium/logo.svg","description":"Departamentos en alquiler en Buenos Aires: Recoleta, Palermo, Belgrano y más.","areaServed":{"@type":"City","name":"Buenos Aires"},"availableLanguage":"Spanish"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ZonaProp Premium","url":"https://zonaprop.github.io/premium/"}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f5;color:#222}
@@ -37,8 +50,7 @@ h1{text-align:center;padding:1.3rem 1rem .4rem;font-size:1.4rem;font-weight:800}
 .chips button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
 .meta{max-width:1140px;margin:0 auto .6rem;padding:0 1rem;font-size:.85rem;color:#666}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;max-width:1140px;margin:0 auto;padding:0 1rem 2.5rem}
-.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-direction:column}
 .card a{text-decoration:none;color:inherit;flex:1}
 .card-img{aspect-ratio:4/3;background:#eee;overflow:hidden;position:relative}
 .card-img img{width:100%;height:100%;object-fit:cover}
@@ -54,7 +66,7 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 .btn-o{background:#ff5500}
 .btn-g{background:#1a1a2e}
 .more-wrap{max-width:1140px;margin:0 auto 1.8rem;padding:0 1rem;text-align:center}
-.more-wrap button{border:0;background:#ff5500;color:#fff;border-radius:999px;padding:.85rem 1.6rem;font-size:.98rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(255,85,0,.25)}
+.more-wrap button{border:0;background:#ff5500;color:#fff;border-radius:999px;padding:.85rem 1.6rem;font-size:.98rem;font-weight:700;cursor:pointer}
 .soft-gate{max-width:480px;margin:0 auto 1.5rem;padding:1.2rem 1.3rem;background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center;display:none}
 .soft-gate h3{font-size:1.05rem;margin-bottom:.4rem}
 .soft-gate p{font-size:.88rem;color:#555;margin-bottom:.9rem;line-height:1.45}
@@ -62,32 +74,30 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 .soft-gate button{width:100%;padding:.8rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;cursor:pointer;margin-top:.3rem}
 .soft-gate .err{color:#c62828;font-size:.8rem;display:none;margin-bottom:.4rem}
 footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
-.loading{text-align:center;padding:3rem;color:#888}
-.empty{text-align:center;padding:2.5rem 1rem;color:#888;font-size:.95rem}
+.loading,.empty{text-align:center;padding:2.5rem 1rem;color:#888}
 .chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px}
 .chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff;display:none}
 .chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(520px,70vh)}
 .chat-panel.open{display:flex}
 .chat-head{background:#1a1a2e;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
 .chat-head .avatar{width:40px;height:40px;border-radius:50%;background:#ff5500;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.chat-head .info{flex:1;min-width:0}
+.chat-head .info{flex:1}
 .chat-head .info strong{display:block;font-size:.95rem}
 .chat-head .info span{font-size:.75rem;opacity:.85}
-.chat-head .close{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px;line-height:1}
+.chat-head .close{background:transparent;border:0;color:#fff;font-size:22px;cursor:pointer;padding:4px 8px}
 .chat-body{padding:14px;background:#f0f2f5;flex:1;overflow-y:auto}
-.chat-msg{border-radius:12px;padding:10px 12px;font-size:.88rem;line-height:1.45;max-width:88%;box-shadow:0 1px 2px rgba(0,0,0,.06);margin-bottom:8px;word-break:break-word}
-.chat-msg.bot{background:#fff;border-top-left-radius:3px}
-.chat-msg.user{background:#ffe8d9;margin-left:auto;border-top-right-radius:3px}
-.chat-msg.admin{background:#e8f5e9;border-top-left-radius:3px}
+.chat-msg{border-radius:12px;padding:10px 12px;font-size:.88rem;line-height:1.45;max-width:88%;margin-bottom:8px;word-break:break-word}
+.chat-msg.bot{background:#fff}
+.chat-msg.user{background:#ffe8d9;margin-left:auto}
+.chat-msg.admin{background:#e8f5e9}
 .chat-msg .time{font-size:.68rem;color:#999;margin-top:4px;text-align:right}
 .chat-start{padding:12px;background:#fff;border-bottom:1px solid #eee}
 .chat-start label{display:block;font-size:.78rem;font-weight:600;margin:.4rem 0 .2rem}
 .chat-start input{width:100%;padding:.6rem .75rem;border:1.5px solid #ddd;border-radius:10px;font-size:.9rem;margin-bottom:.4rem}
 .chat-start button{width:100%;padding:.7rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer;margin-top:.3rem}
 .chat-foot{padding:10px 12px;background:#fff;border-top:1px solid #eee;display:flex;gap:8px;align-items:flex-end}
-.chat-foot textarea{flex:1;border:1.5px solid #e0e0e0;border-radius:18px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;max-height:90px;min-height:42px;background:#fafafa;outline:none}
-.chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#ff5500;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0}
-.chat-foot button:disabled{opacity:.5}
+.chat-foot textarea{flex:1;border:1.5px solid #e0e0e0;border-radius:18px;padding:10px 14px;font-size:.9rem;font-family:inherit;resize:none;min-height:42px;background:#fafafa}
+.chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#ff5500;color:#fff;font-size:18px;cursor:pointer}
 .chat-status{font-size:.72rem;color:#888;text-align:center;padding:4px 0 0}
 @media(max-width:640px){.how-inner{grid-template-columns:1fr}}
 </style>
@@ -97,7 +107,8 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
   <div class="brand"><span>●</span> ZonaProp Premium</div>
   <a class="pub" href="publicar.html">+ Publicar</a>
 </header>
-<h1>Departamentos en alquiler</h1>
+<h1>Departamentos en alquiler en Buenos Aires</h1>
+<p style="text-align:center;color:#666;font-size:.9rem;padding:0 1rem .8rem;max-width:640px;margin:0 auto">Alquiler de departamentos en Recoleta, Palermo, Belgrano, Caballito y más barrios de CABA. Fotos, precios y reserva online.</p>
 
 <div class="how">
   <div class="how-inner">
@@ -147,7 +158,7 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 
 <div class="soft-gate" id="softGate">
   <h3>Ver el listado completo</h3>
-  <p>Dejanos un email y teléfono para mostrarte todos los departamentos y contactarte si aparece algo que te sirva.</p>
+  <p>Dejanos un email y teléfono para mostrarte todos los departamentos.</p>
   <div class="err" id="softErr">Completá email y teléfono válidos.</div>
   <input id="softEmail" type="email" placeholder="Email" autocomplete="email"/>
   <input id="softPhone" type="tel" placeholder="Teléfono / WhatsApp" autocomplete="tel"/>
@@ -157,7 +168,7 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 <div class="more-wrap" id="moreWrap" style="display:none">
   <button type="button" id="btnVerTodo">Ver todo el listado</button>
 </div>
-<footer id="footer">ZonaProp Premium</footer>
+<footer id="footer">ZonaProp Premium · Alquiler de departamentos en Buenos Aires</footer>
 
 <button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">💬<span class="badge-dot" id="chatDot"></span></button>
 <div class="chat-panel" id="chatPanel">
@@ -194,11 +205,7 @@ let showAll = false;
 let isUnlocked = localStorage.getItem('zp_lead_ok') === '1';
 
 function saveLead(email, phone){
-  const lead = {
-    email, telefono: phone, cuando: new Date().toISOString(), pagina: location.href,
-    origen: document.referrer || 'Directo', dispositivo: navigator.userAgent.slice(0, 180),
-    estado: 'nuevo'
-  };
+  const lead = { email, telefono: phone, cuando: new Date().toISOString(), pagina: location.href, origen: document.referrer || 'Directo', dispositivo: navigator.userAgent.slice(0, 180), estado: 'nuevo' };
   fetch(DB_URL + '?t=' + Date.now()).then(r => r.json()).then(db => {
     const listings = Array.isArray(db.listings) ? db.listings : [];
     const pending = Array.isArray(db.pending) ? db.pending : [];
@@ -211,13 +218,10 @@ function saveLead(email, phone){
     const fd = new FormData();
     fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
     fd.append('_template', 'table'); fd.append('_captcha', 'false');
-    fd.append('email', email); fd.append('telefono', phone);
-    fd.append('pagina', location.href);
+    fd.append('email', email); fd.append('telefono', phone); fd.append('pagina', location.href);
     fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
   } catch(e){}
   localStorage.setItem('zp_lead_ok', '1');
-  localStorage.setItem('zp_lead_email', email);
-  localStorage.setItem('zp_lead_phone', phone);
   isUnlocked = true;
 }
 
@@ -225,9 +229,7 @@ document.getElementById('softBtn').onclick = function(){
   const email = (document.getElementById('softEmail').value || '').trim();
   const phone = (document.getElementById('softPhone').value || '').trim();
   const err = document.getElementById('softErr');
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const phoneOk = phone.replace(/\D/g,'').length >= 8;
-  if (!emailOk || !phoneOk) { err.style.display = 'block'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || phone.replace(/\D/g,'').length < 8) { err.style.display = 'block'; return; }
   err.style.display = 'none';
   saveLead(email, phone);
   document.getElementById('softGate').style.display = 'none';
@@ -245,7 +247,7 @@ function cardHTML(d){
   const titleSafe = String(d.title || 'este departamento').replace(/"/g,'').replace(/'/g,'');
   return `<article class="card">
     <a href="depto.html?id=${encodeURIComponent(d.id)}">
-      <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}${badge ? `<span class="card-badge">${badge}</span>` : ''}</div>
+      <div class="card-img">${d.main ? `<img src="${d.main}" alt="${(d.title||'Departamento').replace(/"/g,'')} en alquiler ${d.zona||'Buenos Aires'}" loading="lazy">` : ''}${badge ? `<span class="card-badge">${badge}</span>` : ''}</div>
       <div class="card-body"><div class="price">${d.price || 'Consultar'}</div><h2>${d.title || 'Departamento'}</h2>
         <div class="specs">${specs.map(s=>`<span class="spec">${s}</span>`).join('')}</div>
         <div class="badge">${d.zona && !d.community ? d.zona + ' · ' : ''}${photoCount} fotos</div></div></a>
@@ -257,15 +259,13 @@ function cardHTML(d){
 
 function render(list,label){
   const grid=document.getElementById('grid');
-  grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona, precio o cantidad de ambientes.</div>';
+  grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.</div>';
   document.getElementById('meta').textContent=label;
-  document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
+  document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium · Alquiler Buenos Aires';
   grid.querySelectorAll('button.btn-g[data-chat-title]').forEach(btn => {
     btn.onclick = function(e){
       e.preventDefault(); e.stopPropagation();
-      const title = btn.getAttribute('data-chat-title') || 'un departamento';
-      const id = btn.getAttribute('data-chat-id') || '';
-      if (window.openWebChat) window.openWebChat('Hola! Me interesa: ' + title + (id ? ' (ID ' + id + ')' : ''));
+      if (window.openWebChat) window.openWebChat('Hola! Me interesa: ' + (btn.getAttribute('data-chat-title')||'') + ' (ID ' + (btn.getAttribute('data-chat-id')||'') + ')');
     };
   });
 }
@@ -275,26 +275,25 @@ function applyFilters(){
   const pr=document.getElementById('precio').value;
   const amb=document.getElementById('ambientes').value;
   let list=ALL.slice();
-  if(q) list=list.filter(d=>{ const t=(d.title||'').toLowerCase(); const z=(d.zona||'').toLowerCase(); return t.includes(q)||z.includes(q); });
+  if(q) list=list.filter(d=>((d.title||'')+(d.zona||'')).toLowerCase().includes(q));
   if(pr){ const [min,max]=pr.split('-').map(Number); list=list.filter(d=>{const v=parsePrice(d.price);return v>=min&&v<=max}); }
-  if(amb){ const n=parseInt(amb,10); list=list.filter(d=>{ const v=parseAmbientes(d.ambientes); if(n===5) return v>=5; return v===n; }); }
+  if(amb){ const n=parseInt(amb,10); list=list.filter(d=>{ const v=parseAmbientes(d.ambientes); return n===5?v>=5:v===n; }); }
   const searching=!!(q||pr||amb);
   const more=document.getElementById('moreWrap');
   const soft = document.getElementById('softGate');
-
   if (isUnlocked || showAll) {
     soft.style.display = 'none';
-    render(list, searching ? (list.length+' resultado'+(list.length===1?'':'s')+(q?' para "'+q+'"':'')) : ('Listado completo · '+list.length+' departamentos'));
+    render(list, searching ? (list.length+' resultados') : ('Listado completo · '+list.length+' departamentos en alquiler'));
     more.style.display = 'none';
   } else if (!searching) {
     const preview = list.slice(0, HOME_LIMIT);
-    render(preview, 'Mostrando ' + preview.length + ' destacados · hay ' + list.length + ' en total');
+    render(preview, 'Mostrando ' + preview.length + ' destacados · ' + list.length + ' en total');
     more.style.display = list.length > HOME_LIMIT ? 'block' : 'none';
     soft.style.display = 'none';
     document.getElementById('btnVerTodo').textContent = 'Ver todo el listado (' + list.length + ')';
   } else {
     const preview = list.slice(0, HOME_LIMIT);
-    render(preview, list.length + ' resultado' + (list.length===1?'':'s') + (list.length > HOME_LIMIT ? ' · mostrando ' + HOME_LIMIT : ''));
+    render(preview, list.length + ' resultados');
     more.style.display = 'none';
     soft.style.display = list.length > HOME_LIMIT ? 'block' : 'none';
   }
@@ -304,11 +303,8 @@ function wireUI(){
   document.getElementById('btnBuscar').onclick=()=>{showAll=false;applyFilters()};
   document.getElementById('btnLimpiar').onclick=()=>{ document.getElementById('q').value=''; document.getElementById('precio').value=''; document.getElementById('ambientes').value=''; document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); showAll=false; applyFilters(); };
   document.getElementById('btnVerTodo').onclick=()=>{
-    if (isUnlocked) { showAll=true; applyFilters(); window.scrollTo({top:0,behavior:'smooth'}); }
-    else {
-      document.getElementById('softGate').style.display = 'block';
-      document.getElementById('softGate').scrollIntoView({behavior:'smooth',block:'center'});
-    }
+    if (isUnlocked) { showAll=true; applyFilters(); }
+    else { document.getElementById('softGate').style.display = 'block'; document.getElementById('softGate').scrollIntoView({behavior:'smooth',block:'center'}); }
   };
   document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter'){showAll=false;applyFilters()}});
   document.getElementById('precio').addEventListener('change',()=>{showAll=false;applyFilters()});
@@ -316,7 +312,6 @@ function wireUI(){
   document.querySelectorAll('#chips button').forEach(btn=>{ btn.onclick=()=>{ document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); document.getElementById('q').value=btn.dataset.z; showAll=false; applyFilters(); }; });
 }
 
-/* CHAT WEB + auto-respuesta (fix) */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
@@ -333,32 +328,20 @@ function wireUI(){
   let lastCount = 0;
   let pollTimer = null;
   let pendingPrefill = '';
-
-  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
-  function fmtTime(iso){
-    if(!iso) return '';
-    try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
-  }
+  function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function fmtTime(iso){ try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; } }
   function renderMessages(messages){
-    body.innerHTML = (messages||[]).map(m => {
-      const cls = m.from === 'user' ? 'user' : (m.from === 'admin' ? 'admin' : 'bot');
-      return `<div class="chat-msg ${cls}">${esc(m.text)}<div class="time">${fmtTime(m.at)}</div></div>`;
-    }).join('');
+    body.innerHTML = (messages||[]).map(m => `<div class="chat-msg ${m.from==='user'?'user':(m.from==='admin'?'admin':'bot')}">${esc(m.text)}<div class="time">${fmtTime(m.at)}</div></div>`).join('');
     body.scrollTop = body.scrollHeight;
     lastCount = (messages||[]).length;
   }
   async function loadChat(){
     if (!chatId) return null;
-    try {
-      const r = await fetch(DB_URL + '?t=' + Date.now());
-      const db = await r.json();
-      const chats = Array.isArray(db.chats) ? db.chats : [];
-      return chats.find(c => c.id === chatId) || null;
-    } catch(e){ return null; }
+    try { const r = await fetch(DB_URL + '?t=' + Date.now()); const db = await r.json(); return (db.chats||[]).find(c => c.id === chatId) || null; } catch(e){ return null; }
   }
   async function saveChatMessages(msgs){
     const r = await fetch(DB_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('No se pudo leer la base (' + r.status + ')');
+    if (!r.ok) throw new Error('read');
     const db = await r.json();
     const listings = Array.isArray(db.listings) ? db.listings : [];
     const pending = Array.isArray(db.pending) ? db.pending : [];
@@ -366,132 +349,77 @@ function wireUI(){
     let chats = Array.isArray(db.chats) ? db.chats : [];
     let chat = chats.find(c => c.id === chatId);
     const now = new Date().toISOString();
-    const toAdd = (msgs || []).map(m => ({ from: m.from, text: m.text, at: now }));
-    if (!chat) {
-      chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel') || '', messages: toAdd.slice(), pagina: location.href, updated: now, leido_admin: false };
-      chats.unshift(chat);
-    } else {
-      chat.messages = chat.messages || [];
-      toAdd.forEach(m => chat.messages.push(m));
-      chat.updated = now;
-      if (toAdd.some(m => m.from === 'user')) chat.leido_admin = false;
-    }
+    const toAdd = (msgs||[]).map(m => ({ from: m.from, text: m.text, at: now }));
+    if (!chat) { chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel')||'', messages: toAdd.slice(), pagina: location.href, updated: now, leido_admin: false }; chats.unshift(chat); }
+    else { chat.messages = chat.messages||[]; toAdd.forEach(m=>chat.messages.push(m)); chat.updated = now; if (toAdd.some(m=>m.from==='user')) chat.leido_admin = false; }
     chats = chats.slice(0, 80);
     const put = await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
-    if (!put.ok) throw new Error('No se pudo guardar (' + put.status + ')');
+    if (!put.ok) throw new Error('write');
     return chat;
   }
-  function showChatUI(){
-    startBox.style.display = 'none';
-    body.style.display = 'block';
-    foot.style.display = 'flex';
-    statusEl.style.display = 'block';
-    statusEl.textContent = 'Respondemos en el horario hábil · chat solo en la web';
-  }
+  function showChatUI(){ startBox.style.display='none'; body.style.display='block'; foot.style.display='flex'; statusEl.style.display='block'; statusEl.textContent='Respondemos en horario hábil · chat en la web'; }
   async function openExisting(){
     if (!chatId) return false;
     const chat = await loadChat();
-    if (!chat) { chatId = ''; localStorage.removeItem('zp_chat_id'); return false; }
-    showChatUI();
-    renderMessages(chat.messages);
-    startPolling();
-    return true;
+    if (!chat) { chatId=''; localStorage.removeItem('zp_chat_id'); return false; }
+    showChatUI(); renderMessages(chat.messages); startPolling(); return true;
   }
   function startPolling(){
     if (pollTimer) clearInterval(pollTimer);
     pollTimer = setInterval(async () => {
       const chat = await loadChat();
-      if (!chat) return;
-      if ((chat.messages||[]).length > lastCount) {
-        renderMessages(chat.messages);
-        if (!panel.classList.contains('open') && dot) dot.style.display = 'block';
-      }
+      if (chat && (chat.messages||[]).length > lastCount) { renderMessages(chat.messages); if (!panel.classList.contains('open') && dot) dot.style.display='block'; }
     }, 6000);
   }
   async function openPanel(){
-    panel.classList.add('open');
-    if (dot) dot.style.display = 'none';
-    if (chatId) {
-      const ok = await openExisting();
-      if (!ok) { startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none'; }
-      else if (pendingPrefill) { input.value = pendingPrefill; pendingPrefill = ''; input.focus(); }
-    } else {
-      startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none';
-    }
+    panel.classList.add('open'); if (dot) dot.style.display='none';
+    if (chatId) { const ok = await openExisting(); if (!ok) { startBox.style.display='block'; body.style.display='none'; foot.style.display='none'; } else if (pendingPrefill) { input.value=pendingPrefill; pendingPrefill=''; input.focus(); } }
+    else { startBox.style.display='block'; body.style.display='none'; foot.style.display='none'; }
   }
-  window.openWebChat = function(prefillText){ pendingPrefill = prefillText || ''; openPanel(); };
-  fab.onclick = function(){ if (panel.classList.contains('open')) panel.classList.remove('open'); else openPanel(); };
+  window.openWebChat = function(t){ pendingPrefill=t||''; openPanel(); };
+  fab.onclick = function(){ panel.classList.contains('open') ? panel.classList.remove('open') : openPanel(); };
   closeBtn.onclick = function(){ panel.classList.remove('open'); };
-
   document.getElementById('chatStartBtn').onclick = async function(){
-    const nombre = (document.getElementById('chatNombre').value || '').trim();
-    const tel = (document.getElementById('chatTel').value || '').trim();
+    const nombre = (document.getElementById('chatNombre').value||'').trim();
+    const tel = (document.getElementById('chatTel').value||'').trim();
     if (!nombre) { document.getElementById('chatNombre').focus(); return; }
-    chatNombre = nombre;
-    chatId = 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-    localStorage.setItem('zp_chat_id', chatId);
-    localStorage.setItem('zp_chat_nombre', nombre);
-    localStorage.setItem('zp_chat_tel', tel);
+    chatNombre = nombre; chatId = 'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+    localStorage.setItem('zp_chat_id', chatId); localStorage.setItem('zp_chat_nombre', nombre); localStorage.setItem('zp_chat_tel', tel);
     showChatUI();
-    const welcome = '¡Hola ' + nombre + '! ¿En qué departamento estás interesado/a? Contanos zona, ambientes o presupuesto.';
-    body.innerHTML = `<div class="chat-msg bot">${esc(welcome)}<div class="time">ahora</div></div>`;
-    lastCount = 0;
-    startPolling();
-    if (pendingPrefill) { input.value = pendingPrefill; pendingPrefill = ''; }
-    input.focus();
+    body.innerHTML = `<div class="chat-msg bot">${esc('¡Hola '+nombre+'! ¿En qué departamento estás interesado/a?')}<div class="time">ahora</div></div>`;
+    lastCount=0; startPolling(); if (pendingPrefill){ input.value=pendingPrefill; pendingPrefill=''; } input.focus();
   };
-
   async function sendMsg(){
-    const text = (input.value || '').trim();
+    const text = (input.value||'').trim();
     if (!text || !chatId) return;
-    sendBtn.disabled = true;
-    input.value = '';
-    statusEl.textContent = 'Enviando...';
-    const optimistic = [];
-    try {
-      const existing = await loadChat();
-      optimistic.push(...((existing && existing.messages) || []));
-    } catch(e){}
-    optimistic.push({ from: 'user', text: text, at: new Date().toISOString() });
-    const isFirst = optimistic.filter(m => m.from === 'user').length === 1;
-    const auto = 'Recibimos tu mensaje ✅ Te respondemos a la brevedad por este chat. Horario: lun a vie 10–19 hs.';
-    if (isFirst) optimistic.push({ from: 'bot', text: auto, at: new Date().toISOString() });
+    sendBtn.disabled=true; input.value=''; statusEl.textContent='Enviando...';
+    const optimistic=[]; try { const ex=await loadChat(); if(ex) optimistic.push(...(ex.messages||[])); } catch(e){}
+    optimistic.push({from:'user',text,at:new Date().toISOString()});
+    const isFirst = optimistic.filter(m=>m.from==='user').length===1;
+    const auto='Recibimos tu mensaje ✅ Te respondemos a la brevedad. Horario: lun a vie 10–19 hs.';
+    if (isFirst) optimistic.push({from:'bot',text:auto,at:new Date().toISOString()});
     renderMessages(optimistic);
     try {
-      const payload = [{ from: 'user', text: text }];
-      if (isFirst) payload.push({ from: 'bot', text: auto });
-      const chat = await saveChatMessages(payload);
-      renderMessages(chat.messages);
-      statusEl.textContent = 'Enviado · respondemos en horario hábil';
-    } catch(e){
-      statusEl.textContent = 'Aviso enviado por email. Si no ves respuesta, reintentá en un momento.';
-    }
+      const payload=[{from:'user',text}]; if(isFirst) payload.push({from:'bot',text:auto});
+      const chat=await saveChatMessages(payload); renderMessages(chat.messages); statusEl.textContent='Enviado · respondemos en horario hábil';
+    } catch(e){ statusEl.textContent='Aviso enviado por email.'; }
     try {
-      const fd = new FormData();
-      fd.append('_subject', 'ZonaProp · Nuevo mensaje de chat');
-      fd.append('_template', 'table'); fd.append('_captcha', 'false');
-      fd.append('nombre', chatNombre);
-      fd.append('telefono', localStorage.getItem('zp_chat_tel') || '');
-      fd.append('mensaje', text);
-      fd.append('chat_id', chatId);
-      fd.append('pagina', location.href);
-      fd.append('admin', 'https://zonaprop.github.io/premium/admin.html');
-      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
+      const fd=new FormData();
+      fd.append('_subject','ZonaProp · Nuevo mensaje de chat'); fd.append('_template','table'); fd.append('_captcha','false');
+      fd.append('nombre',chatNombre); fd.append('telefono',localStorage.getItem('zp_chat_tel')||''); fd.append('mensaje',text); fd.append('chat_id',chatId); fd.append('admin','https://zonaprop.github.io/premium/admin.html');
+      fetch('https://formsubmit.co/ajax/'+encodeURIComponent(ADMIN_EMAIL),{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(function(){});
     } catch(e){}
-    sendBtn.disabled = false;
-    input.focus();
+    sendBtn.disabled=false; input.focus();
   }
-  sendBtn.onclick = sendMsg;
-  input.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); } });
+  sendBtn.onclick=sendMsg;
+  input.addEventListener('keydown',function(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); sendMsg(); } });
 })();
 
 Promise.all([
   fetch('data.json').then(r=>r.json()).catch(function(){ return []; }),
-  fetch(DB_URL).then(r=>r.json()).then(function(db){ return Array.isArray(db.listings) ? db.listings : []; }).catch(function(){ return []; })
+  fetch(DB_URL).then(r=>r.json()).then(function(db){ return Array.isArray(db.listings)?db.listings:[]; }).catch(function(){ return []; })
 ]).then(function(results){
-  ALL = (results[1] || []).concat(results[0] || []);
-  applyFilters();
-  wireUI();
+  ALL=(results[1]||[]).concat(results[0]||[]); applyFilters(); wireUI();
 }).catch(function(){
   document.getElementById('grid').innerHTML='<div class="loading">Error cargando datos</div>';
 });
