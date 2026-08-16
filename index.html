@@ -4,33 +4,28 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Departamentos · ZonaProp Premium</title>
-
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://zonaprop.github.io/premium/"/>
 <meta property="og:title" content="ZonaProp Premium · Departamentos en alquiler"/>
 <meta property="og:description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
 <meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:site_name" content="ZonaProp Premium"/>
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="ZonaProp Premium · Departamentos en alquiler"/>
-<meta name="twitter:description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
-<meta name="twitter:image" content="https://zonaprop.github.io/premium/logo.svg"/>
-
 <meta name="description" content="Encontrá departamentos en alquiler en Recoleta, Palermo, Belgrano y más. Listado actualizado de propiedades en Buenos Aires."/>
-
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f5;color:#222}
-body.locked{overflow:hidden}
 header{background:#1a1a2e;color:#fff;padding:1rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
 header .brand{font-weight:700;font-size:1.05rem}
 header span{color:#ff5500}
 header a.pub{color:#fff;text-decoration:none;background:#ff5500;padding:.5rem .9rem;border-radius:999px;font-size:.85rem;font-weight:700}
-h1{text-align:center;padding:1.3rem 1rem .5rem;font-size:1.4rem;font-weight:800}
+h1{text-align:center;padding:1.3rem 1rem .4rem;font-size:1.4rem;font-weight:800}
+.how{max-width:1140px;margin:0 auto 1rem;padding:0 1rem}
+.how-inner{background:#fff;border-radius:14px;padding:1rem 1.1rem;box-shadow:0 2px 10px rgba(0,0,0,.05);display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.how-step{text-align:center;padding:.4rem}
+.how-step .n{width:28px;height:28px;border-radius:50%;background:#ff5500;color:#fff;font-weight:800;font-size:.85rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.35rem}
+.how-step strong{display:block;font-size:.88rem;margin-bottom:.15rem}
+.how-step span{font-size:.75rem;color:#666;line-height:1.35}
 .search{max-width:1140px;margin:0 auto 1rem;padding:0 1rem}
 .search-box{background:#fff;border-radius:14px;padding:1rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .search-row{display:flex;flex-wrap:wrap;gap:.6rem}
@@ -38,7 +33,7 @@ h1{text-align:center;padding:1.3rem 1rem .5rem;font-size:1.4rem;font-weight:800}
 .search-row button{padding:.7rem 1.15rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;font-size:.92rem;cursor:pointer}
 .search-row button.sec{background:#eee;color:#333}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
-.chips button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.38rem .8rem;font-size:.8rem;cursor:pointer;transition:all .15s}
+.chips button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.38rem .8rem;font-size:.8rem;cursor:pointer}
 .chips button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
 .meta{max-width:1140px;margin:0 auto .6rem;padding:0 1rem;font-size:.85rem;color:#666}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;max-width:1140px;margin:0 auto;padding:0 1rem 2.5rem}
@@ -60,23 +55,16 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 .btn-g{background:#1a1a2e}
 .more-wrap{max-width:1140px;margin:0 auto 1.8rem;padding:0 1rem;text-align:center}
 .more-wrap button{border:0;background:#ff5500;color:#fff;border-radius:999px;padding:.85rem 1.6rem;font-size:.98rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(255,85,0,.25)}
+.soft-gate{max-width:480px;margin:0 auto 1.5rem;padding:1.2rem 1.3rem;background:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center;display:none}
+.soft-gate h3{font-size:1.05rem;margin-bottom:.4rem}
+.soft-gate p{font-size:.88rem;color:#555;margin-bottom:.9rem;line-height:1.45}
+.soft-gate input{width:100%;padding:.7rem .85rem;border:1.5px solid #ddd;border-radius:10px;font-size:.95rem;margin-bottom:.5rem}
+.soft-gate button{width:100%;padding:.8rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;cursor:pointer;margin-top:.3rem}
+.soft-gate .err{color:#c62828;font-size:.8rem;display:none;margin-bottom:.4rem}
 footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 .loading{text-align:center;padding:3rem;color:#888}
 .empty{text-align:center;padding:2.5rem 1rem;color:#888;font-size:.95rem}
-.gate{position:fixed;inset:0;background:rgba(15,15,25,.93);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem}
-.gate-box{background:#fff;border-radius:18px;padding:1.5rem 1.35rem 1.4rem;width:100%;max-width:400px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-.gate-box h2{font-size:1.2rem;margin-bottom:.4rem}
-.gate-box p{font-size:.9rem;color:#555;margin-bottom:1.1rem;line-height:1.45}
-.gate-box label{display:block;font-size:.8rem;font-weight:600;margin:.6rem 0 .28rem}
-.gate-box input{width:100%;padding:.75rem .85rem;border:1.5px solid #ddd;border-radius:10px;font-size:1rem}
-.gate-box button{width:100%;margin-top:1.1rem;padding:.9rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;font-size:1.02rem;cursor:pointer}
-.gate-box button:disabled{opacity:.6;cursor:wait}
-.gate-err{color:#c62828;font-size:.82rem;margin-top:.55rem;display:none}
-.gate-ok{color:#2e7d32;font-size:.82rem;margin-top:.55rem;display:none}
-
-/* Chat web */
-.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .2s}
-.chat-fab:hover{transform:scale(1.06)}
+.chat-fab{position:fixed;bottom:22px;right:18px;z-index:8000;width:60px;height:60px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:26px}
 .chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:12px;height:12px;background:#ff3b30;border-radius:50%;border:2px solid #fff;display:none}
 .chat-panel{position:fixed;bottom:92px;right:18px;z-index:8001;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(520px,70vh)}
 .chat-panel.open{display:flex}
@@ -101,28 +89,24 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 .chat-foot button{width:44px;height:44px;border-radius:50%;border:0;background:#ff5500;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0}
 .chat-foot button:disabled{opacity:.5}
 .chat-status{font-size:.72rem;color:#888;text-align:center;padding:4px 0 0}
+@media(max-width:640px){.how-inner{grid-template-columns:1fr}}
 </style>
 </head>
-<body class="locked">
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <h2>Ingresá para ver departamentos</h2>
-    <p>Completá tus datos para acceder al listado completo. Email y teléfono son obligatorios.</p>
-    <label for="gEmail">Email *</label>
-    <input id="gEmail" type="email" name="email" placeholder="tunombre@email.com" required autocomplete="email"/>
-    <label for="gPhone">Teléfono / WhatsApp *</label>
-    <input id="gPhone" type="tel" name="telefono" placeholder="11 1234-5678" required autocomplete="tel"/>
-    <div class="gate-err" id="gateErr">Completá email y teléfono válidos.</div>
-    <div class="gate-ok" id="gateOk">Datos enviados. Entrando...</div>
-    <button type="button" id="gateBtn">Ver departamentos</button>
-  </div>
-</div>
-<div class="main-app" id="mainApp">
+<body>
 <header>
   <div class="brand"><span>●</span> ZonaProp Premium</div>
   <a class="pub" href="publicar.html">+ Publicar</a>
 </header>
 <h1>Departamentos en alquiler</h1>
+
+<div class="how">
+  <div class="how-inner">
+    <div class="how-step"><div class="n">1</div><strong>Elegís</strong><span>Mirás fotos, zona y precio sin registrarte</span></div>
+    <div class="how-step"><div class="n">2</div><strong>Consultás</strong><span>Escribís por el chat de la web</span></div>
+    <div class="how-step"><div class="n">3</div><strong>Reservás</strong><span>30% a Leonela8.mp y confirmás por chat</span></div>
+  </div>
+</div>
+
 <div class="search">
   <div class="search-box">
     <div class="search-row">
@@ -160,20 +144,28 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 </div>
 <div class="meta" id="meta"></div>
 <div class="grid" id="grid"><div class="loading">Cargando departamentos...</div></div>
+
+<div class="soft-gate" id="softGate">
+  <h3>Ver el listado completo</h3>
+  <p>Dejanos un email y teléfono para mostrarte todos los departamentos y contactarte si aparece algo que te sirva.</p>
+  <div class="err" id="softErr">Completá email y teléfono válidos.</div>
+  <input id="softEmail" type="email" placeholder="Email" autocomplete="email"/>
+  <input id="softPhone" type="tel" placeholder="Teléfono / WhatsApp" autocomplete="tel"/>
+  <button type="button" id="softBtn">Ver todo el listado</button>
+</div>
+
 <div class="more-wrap" id="moreWrap" style="display:none">
   <button type="button" id="btnVerTodo">Ver todo el listado</button>
 </div>
 <footer id="footer">ZonaProp Premium</footer>
-</div>
 
-<!-- Chat web -->
 <button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">💬<span class="badge-dot" id="chatDot"></span></button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-head">
     <div class="avatar">🏠</div>
     <div class="info">
       <strong>ZonaProp Premium</strong>
-      <span>Chat en vivo · respondemos acá</span>
+      <span>Chat · respondemos en breve</span>
     </div>
     <button type="button" class="close" id="chatClose" aria-label="Cerrar">×</button>
   </div>
@@ -196,28 +188,17 @@ footer{text-align:center;padding:1.3rem;color:#666;font-size:.85rem}
 <script>
 const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
-const HOME_LIMIT = 24;
+const HOME_LIMIT = 8;
 let ALL = [];
 let showAll = false;
+let isUnlocked = localStorage.getItem('zp_lead_ok') === '1';
 
-function unlockSite(){
-  document.getElementById('gate').style.display = 'none';
-  document.body.classList.remove('locked');
-}
-if (localStorage.getItem('zp_lead_ok') === '1') unlockSite();
-
-document.getElementById('gateBtn').onclick = function(){
-  const email = (document.getElementById('gEmail').value || '').trim();
-  const phone = (document.getElementById('gPhone').value || '').trim();
-  const err = document.getElementById('gateErr');
-  const ok = document.getElementById('gateOk');
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const phoneOk = phone.replace(/\D/g,'').length >= 8;
-  if (!emailOk || !phoneOk) { err.style.display = 'block'; ok.style.display = 'none'; return; }
-  err.style.display = 'none';
-  const btn = document.getElementById('gateBtn');
-  btn.disabled = true; btn.textContent = 'Enviando...';
-  const lead = { email, telefono: phone, cuando: new Date().toISOString(), pagina: location.href, origen: document.referrer || 'Directo', dispositivo: navigator.userAgent.slice(0, 180) };
+function saveLead(email, phone){
+  const lead = {
+    email, telefono: phone, cuando: new Date().toISOString(), pagina: location.href,
+    origen: document.referrer || 'Directo', dispositivo: navigator.userAgent.slice(0, 180),
+    estado: 'nuevo'
+  };
   fetch(DB_URL + '?t=' + Date.now()).then(r => r.json()).then(db => {
     const listings = Array.isArray(db.listings) ? db.listings : [];
     const pending = Array.isArray(db.pending) ? db.pending : [];
@@ -226,25 +207,42 @@ document.getElementById('gateBtn').onclick = function(){
     leads.unshift(lead);
     return fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads: leads.slice(0, 200), chats }) });
   }).catch(function(){});
-  const fd = new FormData();
-  fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
-  fd.append('_template', 'table'); fd.append('_captcha', 'false');
-  fd.append('_url', 'https://zonaprop.github.io/premium/');
-  fd.append('mensaje', 'Un visitante completó email y teléfono para entrar al sitio');
-  fd.append('email', email); fd.append('telefono', phone);
-  fd.append('pagina', location.href);
-  fd.append('cuando', new Date().toLocaleString('es-AR', { timeZone: 'America/Argentina/Buenos_Aires' }));
-  function finish(){ localStorage.setItem('zp_lead_ok', '1'); localStorage.setItem('zp_lead_email', email); localStorage.setItem('zp_lead_phone', phone); ok.style.display = 'block'; setTimeout(unlockSite, 400); }
-  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).then(function(){ finish(); }).catch(function(){ finish(); });
+  try {
+    const fd = new FormData();
+    fd.append('_subject', 'ZonaProp Premium · Nuevo contacto');
+    fd.append('_template', 'table'); fd.append('_captcha', 'false');
+    fd.append('email', email); fd.append('telefono', phone);
+    fd.append('pagina', location.href);
+    fetch('https://formsubmit.co/ajax/' + encodeURIComponent(ADMIN_EMAIL), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).catch(function(){});
+  } catch(e){}
+  localStorage.setItem('zp_lead_ok', '1');
+  localStorage.setItem('zp_lead_email', email);
+  localStorage.setItem('zp_lead_phone', phone);
+  isUnlocked = true;
+}
+
+document.getElementById('softBtn').onclick = function(){
+  const email = (document.getElementById('softEmail').value || '').trim();
+  const phone = (document.getElementById('softPhone').value || '').trim();
+  const err = document.getElementById('softErr');
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const phoneOk = phone.replace(/\D/g,'').length >= 8;
+  if (!emailOk || !phoneOk) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  saveLead(email, phone);
+  document.getElementById('softGate').style.display = 'none';
+  showAll = true;
+  applyFilters();
 };
 
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
+function parseAmbientes(a){ if(!a) return 0; const m=String(a).match(/(\d+)/); return m ? parseInt(m[1],10) : 0; }
 
 function cardHTML(d){
   const specs=[d.ambientes,d.dormitorios,d.m2,d.banos].filter(Boolean);
   const photoCount = (d.photos && d.photos.length) ? d.photos.length : (d.main ? 1 : 0);
   const badge = d.community ? 'Comunidad' : (d.zona || '');
-  const titleSafe = (d.title || 'este departamento').replace(/"/g, '"').replace(/'/g, "\\'");
+  const titleSafe = String(d.title || 'este departamento').replace(/"/g,'').replace(/'/g,'');
   return `<article class="card">
     <a href="depto.html?id=${encodeURIComponent(d.id)}">
       <div class="card-img">${d.main ? `<img src="${d.main}" alt="" loading="lazy">` : ''}${badge ? `<span class="card-badge">${badge}</span>` : ''}</div>
@@ -262,21 +260,16 @@ function render(list,label){
   grid.innerHTML=list.length?list.map(cardHTML).join(''):'<div class="empty">No hay resultados.<br>Probá otra zona, precio o cantidad de ambientes.</div>';
   document.getElementById('meta').textContent=label;
   document.getElementById('footer').textContent=list.length+' departamentos · ZonaProp Premium';
-  // wire Consultar buttons -> open web chat
   grid.querySelectorAll('button.btn-g[data-chat-title]').forEach(btn => {
     btn.onclick = function(e){
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       const title = btn.getAttribute('data-chat-title') || 'un departamento';
       const id = btn.getAttribute('data-chat-id') || '';
-      if (window.openWebChat) {
-        window.openWebChat('Hola! Me interesa: ' + title + (id ? ' (ID ' + id + ')' : ''));
-      }
+      if (window.openWebChat) window.openWebChat('Hola! Me interesa: ' + title + (id ? ' (ID ' + id + ')' : ''));
     };
   });
 }
 
-function parseAmbientes(a){ if(!a) return 0; const m=String(a).match(/(\d+)/); return m ? parseInt(m[1],10) : 0; }
 function applyFilters(){
   const q=(document.getElementById('q').value||'').trim().toLowerCase();
   const pr=document.getElementById('precio').value;
@@ -287,26 +280,44 @@ function applyFilters(){
   if(amb){ const n=parseInt(amb,10); list=list.filter(d=>{ const v=parseAmbientes(d.ambientes); if(n===5) return v>=5; return v===n; }); }
   const searching=!!(q||pr||amb);
   const more=document.getElementById('moreWrap');
-  if(!searching && !showAll){
-    render(list.slice(0,HOME_LIMIT),'Mostrando '+Math.min(HOME_LIMIT,list.length)+' destacados');
-    more.style.display=list.length>HOME_LIMIT?'block':'none';
-    document.getElementById('btnVerTodo').textContent='Ver todo el listado ('+list.length+')';
-  } else {
+  const soft = document.getElementById('softGate');
+
+  if (isUnlocked || showAll) {
+    soft.style.display = 'none';
     render(list, searching ? (list.length+' resultado'+(list.length===1?'':'s')+(q?' para "'+q+'"':'')) : ('Listado completo · '+list.length+' departamentos'));
-    more.style.display='none';
+    more.style.display = 'none';
+  } else if (!searching) {
+    const preview = list.slice(0, HOME_LIMIT);
+    render(preview, 'Mostrando ' + preview.length + ' destacados · hay ' + list.length + ' en total');
+    more.style.display = list.length > HOME_LIMIT ? 'block' : 'none';
+    soft.style.display = 'none';
+    document.getElementById('btnVerTodo').textContent = 'Ver todo el listado (' + list.length + ')';
+  } else {
+    // searching without unlock: show matches up to limit, then soft gate
+    const preview = list.slice(0, HOME_LIMIT);
+    render(preview, list.length + ' resultado' + (list.length===1?'':'s') + (list.length > HOME_LIMIT ? ' · mostrando ' + HOME_LIMIT : ''));
+    more.style.display = 'none';
+    soft.style.display = list.length > HOME_LIMIT ? 'block' : 'none';
   }
 }
+
 function wireUI(){
   document.getElementById('btnBuscar').onclick=()=>{showAll=false;applyFilters()};
   document.getElementById('btnLimpiar').onclick=()=>{ document.getElementById('q').value=''; document.getElementById('precio').value=''; document.getElementById('ambientes').value=''; document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); showAll=false; applyFilters(); };
-  document.getElementById('btnVerTodo').onclick=()=>{showAll=true;applyFilters();window.scrollTo({top:0,behavior:'smooth'})};
+  document.getElementById('btnVerTodo').onclick=()=>{
+    if (isUnlocked) { showAll=true; applyFilters(); window.scrollTo({top:0,behavior:'smooth'}); }
+    else {
+      document.getElementById('softGate').style.display = 'block';
+      document.getElementById('softGate').scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  };
   document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter'){showAll=false;applyFilters()}});
   document.getElementById('precio').addEventListener('change',()=>{showAll=false;applyFilters()});
   document.getElementById('ambientes').addEventListener('change',()=>{showAll=false;applyFilters()});
   document.querySelectorAll('#chips button').forEach(btn=>{ btn.onclick=()=>{ document.querySelectorAll('#chips button').forEach(b=>b.classList.remove('on')); btn.classList.add('on'); document.getElementById('q').value=btn.dataset.z; showAll=false; applyFilters(); }; });
 }
 
-/* ========== CHAT WEB REAL (sin WhatsApp) ========== */
+/* CHAT WEB + auto-respuesta */
 (function(){
   const fab = document.getElementById('chatFab');
   const panel = document.getElementById('chatPanel');
@@ -324,18 +335,11 @@ function wireUI(){
   let pollTimer = null;
   let pendingPrefill = '';
 
-  function esc(s){
-    return String(s||'')
-      .replace(/&/g,'&')
-      .replace(/</g,'<')
-      .replace(/>/g,'>')
-      .replace(/"/g,'"');
-  }
+  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
   function fmtTime(iso){
     if(!iso) return '';
     try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; }
   }
-
   function renderMessages(messages){
     body.innerHTML = (messages||[]).map(m => {
       const cls = m.from === 'user' ? 'user' : (m.from === 'admin' ? 'admin' : 'bot');
@@ -344,7 +348,6 @@ function wireUI(){
     body.scrollTop = body.scrollHeight;
     lastCount = (messages||[]).length;
   }
-
   async function loadChat(){
     if (!chatId) return null;
     try {
@@ -354,7 +357,6 @@ function wireUI(){
       return chats.find(c => c.id === chatId) || null;
     } catch(e){ return null; }
   }
-
   async function saveChatMessage(text, from){
     const r = await fetch(DB_URL + '?t=' + Date.now());
     const db = await r.json();
@@ -365,15 +367,7 @@ function wireUI(){
     let chat = chats.find(c => c.id === chatId);
     const msg = { from: from, text: text, at: new Date().toISOString() };
     if (!chat) {
-      chat = {
-        id: chatId,
-        nombre: chatNombre,
-        telefono: localStorage.getItem('zp_chat_tel') || '',
-        messages: [msg],
-        pagina: location.href,
-        updated: msg.at,
-        leido_admin: false
-      };
+      chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel') || '', messages: [msg], pagina: location.href, updated: msg.at, leido_admin: false };
       chats.unshift(chat);
     } else {
       chat.messages = chat.messages || [];
@@ -382,22 +376,16 @@ function wireUI(){
       if (from === 'user') chat.leido_admin = false;
     }
     chats = chats.slice(0, 80);
-    await fetch(DB_URL, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ listings, pending, leads, chats })
-    });
+    await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
     return chat;
   }
-
   function showChatUI(){
     startBox.style.display = 'none';
     body.style.display = 'block';
     foot.style.display = 'flex';
     statusEl.style.display = 'block';
-    statusEl.textContent = 'Conectado · chat solo en la web';
+    statusEl.textContent = 'Respondemos en el horario hábil · chat solo en la web';
   }
-
   async function openExisting(){
     if (!chatId) return false;
     const chat = await loadChat();
@@ -407,7 +395,6 @@ function wireUI(){
     startPolling();
     return true;
   }
-
   function startPolling(){
     if (pollTimer) clearInterval(pollTimer);
     pollTimer = setInterval(async () => {
@@ -415,47 +402,23 @@ function wireUI(){
       if (!chat) return;
       if ((chat.messages||[]).length > lastCount) {
         renderMessages(chat.messages);
-        if (!panel.classList.contains('open')) {
-          if (dot) dot.style.display = 'block';
-        }
+        if (!panel.classList.contains('open') && dot) dot.style.display = 'block';
       }
     }, 6000);
   }
-
   async function openPanel(){
     panel.classList.add('open');
     if (dot) dot.style.display = 'none';
     if (chatId) {
       const ok = await openExisting();
-      if (!ok) {
-        startBox.style.display = 'block';
-        body.style.display = 'none';
-        foot.style.display = 'none';
-      } else if (pendingPrefill) {
-        input.value = pendingPrefill;
-        pendingPrefill = '';
-        input.focus();
-      }
+      if (!ok) { startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none'; }
+      else if (pendingPrefill) { input.value = pendingPrefill; pendingPrefill = ''; input.focus(); }
     } else {
-      startBox.style.display = 'block';
-      body.style.display = 'none';
-      foot.style.display = 'none';
+      startBox.style.display = 'block'; body.style.display = 'none'; foot.style.display = 'none';
     }
   }
-
-  // Global: open chat from card "Consultar" buttons
-  window.openWebChat = function(prefillText){
-    pendingPrefill = prefillText || '';
-    openPanel();
-  };
-
-  fab.onclick = function(){
-    if (panel.classList.contains('open')) {
-      panel.classList.remove('open');
-    } else {
-      openPanel();
-    }
-  };
+  window.openWebChat = function(prefillText){ pendingPrefill = prefillText || ''; openPanel(); };
+  fab.onclick = function(){ if (panel.classList.contains('open')) panel.classList.remove('open'); else openPanel(); };
   closeBtn.onclick = function(){ panel.classList.remove('open'); };
 
   document.getElementById('chatStartBtn').onclick = async function(){
@@ -472,10 +435,7 @@ function wireUI(){
     body.innerHTML = `<div class="chat-msg bot">${esc(welcome)}<div class="time">ahora</div></div>`;
     lastCount = 0;
     startPolling();
-    if (pendingPrefill) {
-      input.value = pendingPrefill;
-      pendingPrefill = '';
-    }
+    if (pendingPrefill) { input.value = pendingPrefill; pendingPrefill = ''; }
     input.focus();
   };
 
@@ -485,7 +445,13 @@ function wireUI(){
     sendBtn.disabled = true;
     input.value = '';
     try {
-      const chat = await saveChatMessage(text, 'user');
+      let chat = await saveChatMessage(text, 'user');
+      // Auto-respuesta si es el primer mensaje del usuario
+      const userMsgs = (chat.messages || []).filter(m => m.from === 'user');
+      if (userMsgs.length === 1) {
+        const auto = 'Recibimos tu mensaje ✅ Te respondemos a la brevedad por este chat. Horario de atención: lun a vie 10–19 hs.';
+        chat = await saveChatMessage(auto, 'bot');
+      }
       renderMessages(chat.messages);
       try {
         const fd = new FormData();
@@ -504,11 +470,8 @@ function wireUI(){
     sendBtn.disabled = false;
     input.focus();
   }
-
   sendBtn.onclick = sendMsg;
-  input.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
-  });
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); } });
 })();
 
 Promise.all([
