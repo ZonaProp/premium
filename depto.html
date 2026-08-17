@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
 <title>Departamento en alquiler Buenos Aires · ZonaProp Premium</title>
-<meta name="description" content="Departamento en alquiler en Buenos Aires. Fotos, precio y reserva online."/>
+<meta name="description" content="Departamento en alquiler en Buenos Aires. Consultá por WhatsApp 11 2607-0920."/>
 <meta name="robots" content="index, follow"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="ZonaProp Premium"/>
@@ -18,7 +18,7 @@
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222;padding-bottom:72px}
 .header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
 .header a{color:#fff;text-decoration:none;font-size:1.2rem}
-.header .share-btn{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.4rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer}
+.header .share-btn{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.4rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:none}
 .gallery{position:relative;background:#111}
 .gallery img.main{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
@@ -43,12 +43,12 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .feat{background:#f5f5f5;border-radius:8px;padding:.35rem .65rem;font-size:.8rem}
 .cta-row{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
 .cta-row button,.cta-row a{flex:1;min-width:140px;text-align:center;padding:.75rem;border-radius:12px;font-weight:700;font-size:.92rem;border:0;cursor:pointer;text-decoration:none;color:#fff;font-family:inherit}
-.btn-chat{background:#1a1a2e}
+.btn-wa{background:#25D366}
 .btn-res{background:#ff5500}
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e0e0;padding:.7rem 1rem;display:flex;gap:.6rem;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,.08)}
-.sticky-cta button{flex:1;padding:.75rem;border-radius:12px;font-weight:700;border:0;cursor:pointer;font-family:inherit;font-size:.9rem}
-.s-chat{background:#1a1a2e;color:#fff}
-.s-res{background:#ff5500;color:#fff}
+.sticky-cta a,.sticky-cta button{flex:1;padding:.75rem;border-radius:12px;font-weight:700;border:0;cursor:pointer;font-family:inherit;font-size:.9rem;text-align:center;text-decoration:none;color:#fff}
+.s-wa{background:#25D366}
+.s-res{background:#ff5500}
 .loading{text-align:center;padding:3rem;color:#888}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
 .modal-overlay.open{display:flex}
@@ -59,43 +59,23 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 .modal .btn-aceptar{width:100%;padding:.8rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;cursor:pointer;margin-top:.5rem}
 .modal .btn-cancelar{width:100%;padding:.7rem;border:0;border-radius:12px;background:#eee;color:#333;font-weight:600;cursor:pointer;margin-top:.4rem}
 .toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.6rem 1.2rem;border-radius:999px;font-size:.85rem;display:none;z-index:300}
-.chat-fab{position:fixed;bottom:80px;right:18px;z-index:150;width:56px;height:56px;border-radius:50%;background:#ff5500;color:#fff;border:0;box-shadow:0 6px 20px rgba(255,85,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px}
-.chat-fab .badge-dot{position:absolute;top:4px;right:4px;width:10px;height:10px;background:#ff3b30;border-radius:50%;border:2px solid #fff;display:none}
-.chat-panel{position:fixed;bottom:150px;right:18px;z-index:151;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);overflow:hidden;display:none;flex-direction:column;height:min(480px,60vh)}
-.chat-panel.open{display:flex}
-.chat-head{background:#1a1a2e;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
-.chat-head .avatar{width:36px;height:36px;border-radius:50%;background:#ff5500;display:flex;align-items:center;justify-content:center;font-size:16px}
-.chat-head .info{flex:1}
-.chat-head .info strong{display:block;font-size:.9rem}
-.chat-head .info span{font-size:.72rem;opacity:.85}
-.chat-head .close{background:transparent;border:0;color:#fff;font-size:20px;cursor:pointer}
-.chat-body{padding:12px;background:#f0f2f5;flex:1;overflow-y:auto}
-.chat-msg{border-radius:12px;padding:10px 12px;font-size:.86rem;line-height:1.45;max-width:88%;margin-bottom:8px;word-break:break-word}
-.chat-msg.bot{background:#fff}
-.chat-msg.user{background:#ffe8d9;margin-left:auto}
-.chat-msg.admin{background:#e8f5e9}
-.chat-msg .time{font-size:.68rem;color:#999;margin-top:4px;text-align:right}
-.chat-start{padding:12px;background:#fff;border-bottom:1px solid #eee}
-.chat-start label{display:block;font-size:.78rem;font-weight:600;margin:.35rem 0 .15rem}
-.chat-start input{width:100%;padding:.55rem .7rem;border:1.5px solid #ddd;border-radius:10px;font-size:.88rem;margin-bottom:.35rem}
-.chat-start button{width:100%;padding:.65rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer;margin-top:.25rem}
-.chat-foot{padding:10px;background:#fff;border-top:1px solid #eee;display:flex;gap:8px;align-items:flex-end}
-.chat-foot textarea{flex:1;border:1.5px solid #e0e0e0;border-radius:18px;padding:10px 12px;font-size:.88rem;font-family:inherit;resize:none;min-height:40px;background:#fafafa}
-.chat-foot button{width:42px;height:42px;border-radius:50%;border:0;background:#ff5500;color:#fff;font-size:16px;cursor:pointer}
-.chat-status{font-size:.7rem;color:#888;text-align:center;padding:4px 0 0}
 #pagoSection{display:none;margin-top:1rem;padding:1rem;background:#f8f8f8;border-radius:12px}
-#pagoSection strong{display:block;margin-bottom:.4rem}
+.contacto{background:#e8f5e9;margin-top:8px;padding:1rem 1.2rem;font-size:.9rem}
+.contacto a{color:#128C7E;font-weight:800;text-decoration:none}
 </style>
 </head>
 <body>
 <div class="header">
   <a href="index.html">← Volver</a>
-  <button class="share-btn" id="btnShare" type="button">Compartir</button>
+  <div style="display:flex;gap:.5rem;align-items:center">
+    <a class="share-btn" href="https://wa.me/5491126070920" id="headerWa" target="_blank" rel="noopener" style="background:#25D366">WhatsApp</a>
+    <button class="share-btn" id="btnShare" type="button">Compartir</button>
+  </div>
 </div>
 <div id="content"><div class="loading">Cargando...</div></div>
 
 <div class="sticky-cta" id="stickyCta" style="display:none">
-  <button type="button" class="s-chat" id="stickyChat">Consultar</button>
+  <a class="s-wa" id="stickyWa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp</a>
   <button type="button" class="s-res" id="stickyRes">Reservar</button>
 </div>
 
@@ -105,7 +85,7 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
     <p>La reserva es del <strong>30%</strong> del valor del alquiler mensual.</p>
     <p><span id="modalMontoTexto">Monto de la reserva: se calculará según el departamento.</span></p>
     <p>Pago a <strong>Leonela8.mp</strong><br>Titular: <strong>Leonela Giselle López</strong></p>
-    <p>Enviá el comprobante por el chat de la web.</p>
+    <p>Enviá el comprobante por WhatsApp al <strong>11 2607-0920</strong>.</p>
     <label style="font-size:.8rem;font-weight:600">Fecha de ingreso deseada</label>
     <input type="date" id="fechaIngreso"/>
     <button type="button" class="btn-aceptar" id="btnAceptarCond">Acepto y deseo continuar</button>
@@ -115,32 +95,9 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#22
 
 <div class="toast" id="toast">Link copiado</div>
 
-<button type="button" class="chat-fab" id="chatFab" aria-label="Abrir chat">💬<span class="badge-dot" id="chatDot"></span></button>
-<div class="chat-panel" id="chatPanel">
-  <div class="chat-head">
-    <div class="avatar">🏠</div>
-    <div class="info"><strong>ZonaProp Premium</strong><span>Chat · respondemos en breve</span></div>
-    <button type="button" class="close" id="chatClose" aria-label="Cerrar">×</button>
-  </div>
-  <div class="chat-start" id="chatStart">
-    <p style="font-size:.85rem;color:#444;margin-bottom:.4rem">Para empezar, decinos tu nombre:</p>
-    <label>Nombre *</label>
-    <input id="chatNombre" type="text" placeholder="Tu nombre" maxlength="40"/>
-    <label>Teléfono (opcional)</label>
-    <input id="chatTel" type="tel" placeholder="11 1234-5678"/>
-    <button type="button" id="chatStartBtn">Iniciar chat</button>
-  </div>
-  <div class="chat-body" id="chatBody" style="display:none"></div>
-  <div class="chat-foot" id="chatFoot" style="display:none">
-    <textarea id="chatInput" rows="1" placeholder="Escribí tu mensaje..." maxlength="800"></textarea>
-    <button type="button" id="chatSend" aria-label="Enviar">➤</button>
-  </div>
-  <div class="chat-status" id="chatStatus" style="display:none"></div>
-</div>
-
 <script>
-const ADMIN_EMAIL = 'informezonaprop@gmail.com';
 const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
+const WA = 'https://wa.me/5491126070920';
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
@@ -165,7 +122,7 @@ Promise.all([
     if (d.m2) parts.push(d.m2);
     if (d.banos) parts.push(d.banos);
     if (d.features && d.features.length) parts.push('Características: ' + d.features.join(', '));
-    fullDesc = parts.length ? parts.join(' · ') + '.' : 'Departamento en alquiler. Consultá por el chat.';
+    fullDesc = parts.length ? parts.join(' · ') + '.' : 'Departamento en alquiler. Consultá por WhatsApp.';
   }
   const zonaTxt = (d.zona || 'Buenos Aires').trim();
   const ambTxt = (d.ambientes || '').toString().trim();
@@ -187,6 +144,8 @@ Promise.all([
   const precioMensual = parsePrice(d.price);
   const montoReserva = precioMensual > 0 ? Math.round(precioMensual * 0.30) : 50000;
   const montoReservaFmt = formatARS(montoReserva);
+  const waMsg = encodeURIComponent('Hola! Me interesa: ' + (d.title || 'este departamento') + ' (ID ' + d.id + ') en ZonaProp Premium. ' + pageUrl);
+  const waUrl = WA + '?text=' + waMsg;
 
   document.getElementById('content').innerHTML = `
     <div class="gallery">
@@ -201,22 +160,23 @@ Promise.all([
       ${d.zona ? `<div class="zona">📍 ${d.zona}${d.community ? ' · Comunidad' : ''}</div>` : ''}
       <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
     </div>
+    <div class="contacto">📱 Contacto WhatsApp: <a href="${waUrl}" target="_blank" rel="noopener">11 2607-0920</a></div>
     <div class="section">
       <h3>Cómo funciona</h3>
       <div class="steps">
-        <div class="step"><div class="n">1</div><div>Consultás por el chat de la web</div></div>
+        <div class="step"><div class="n">1</div><div>Consultás por WhatsApp al 11 2607-0920</div></div>
         <div class="step"><div class="n">2</div><div>Reservás el 30% a Leonela8.mp (Leonela Giselle López)</div></div>
-        <div class="step"><div class="n">3</div><div>Enviás el comprobante por el chat</div></div>
+        <div class="step"><div class="n">3</div><div>Enviás el comprobante por WhatsApp</div></div>
       </div>
       <div class="cta-row">
-        <button type="button" class="btn-chat" id="btnConsultar">Consultar</button>
+        <a class="btn-wa" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
         <button type="button" class="btn-res" id="btnAbrirCondiciones">Reservar</button>
       </div>
       <div id="pagoSection">
         <strong>Datos de pago</strong>
         <p>Mercado Pago: <strong>Leonela8.mp</strong><br>Titular: Leonela Giselle López<br>Monto reserva: <strong>${montoReservaFmt}</strong></p>
-        <p id="pagoMsg" style="font-size:.85rem;color:#555">Cuando pagues, avisanos por el chat con el comprobante.</p>
-        <button type="button" class="btn-chat" id="btnChatReserva" style="margin-top:.5rem;width:100%">Avisar por chat</button>
+        <p style="font-size:.85rem;color:#555">Cuando pagues, enviá el comprobante por WhatsApp al 11 2607-0920.</p>
+        <a class="btn-wa" href="${waUrl}" target="_blank" rel="noopener" style="display:block;margin-top:.5rem">Enviar comprobante por WhatsApp</a>
       </div>
     </div>
     <div class="section">
@@ -227,20 +187,9 @@ Promise.all([
   `;
 
   document.getElementById('stickyCta').style.display = 'flex';
+  document.getElementById('stickyWa').href = waUrl;
+  document.getElementById('headerWa').href = waUrl;
   document.getElementById('modalMontoTexto').innerHTML = 'Monto de la reserva: <strong>' + montoReservaFmt + '</strong>';
-
-  function chatTextReserva(){
-    const fechaVal = document.getElementById('fechaIngreso').value;
-    const fechaTxt = fechaVal ? ' Fecha ingreso: ' + fechaVal + '.' : '';
-    return 'Hola! Quiero reservar: ' + (d.title || 'este departamento') + ' (ID ' + d.id + '). Reserva de ' + montoReservaFmt + fechaTxt;
-  }
-  function chatTextConsulta(){
-    return 'Hola! Me interesa: ' + (d.title || 'este departamento') + ' (ID ' + d.id + '). ' + pageUrl;
-  }
-  document.getElementById('btnChatReserva').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextReserva()); };
-  document.getElementById('btnConsultar').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextConsulta()); };
-  document.getElementById('stickyChat').onclick = function(){ if (window.openWebChat) window.openWebChat(chatTextConsulta()); };
-  document.getElementById('stickyRes').onclick = function(){ document.getElementById('btnAbrirCondiciones').click(); };
 
   const modal = document.getElementById('modalCondiciones');
   const pagoSection = document.getElementById('pagoSection');
@@ -258,6 +207,7 @@ Promise.all([
     pagoSection.style.display = 'block';
     pagoSection.scrollIntoView({behavior:'smooth',block:'center'});
   };
+  document.getElementById('stickyRes').onclick = function(){ document.getElementById('btnAbrirCondiciones').click(); };
 
   document.getElementById('btnShare').onclick = async function() {
     const shareData = { title: d.title || 'Departamento', text: (d.price || '') + ' · ' + (d.zona || ''), url: pageUrl };
@@ -287,110 +237,6 @@ function show(i){
   document.getElementById('counter').textContent = (i+1) + ' / ' + window.photos.length;
   document.querySelectorAll('#thumbs img').forEach((el, idx) => el.classList.toggle('on', idx === i));
 }
-
-/* CHAT */
-(function(){
-  const fab = document.getElementById('chatFab');
-  const panel = document.getElementById('chatPanel');
-  const closeBtn = document.getElementById('chatClose');
-  const startBox = document.getElementById('chatStart');
-  const body = document.getElementById('chatBody');
-  const foot = document.getElementById('chatFoot');
-  const statusEl = document.getElementById('chatStatus');
-  const input = document.getElementById('chatInput');
-  const sendBtn = document.getElementById('chatSend');
-  const dot = document.getElementById('chatDot');
-  let chatId = localStorage.getItem('zp_chat_id') || '';
-  let chatNombre = localStorage.getItem('zp_chat_nombre') || '';
-  let lastCount = 0;
-  let pollTimer = null;
-  let pendingPrefill = '';
-  function esc(s){ return String(s||'').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>'); }
-  function fmtTime(iso){ try { return new Date(iso).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Argentina/Buenos_Aires'}); } catch(e){ return ''; } }
-  function renderMessages(messages){
-    body.innerHTML = (messages||[]).map(m => `<div class="chat-msg ${m.from==='user'?'user':(m.from==='admin'?'admin':'bot')}">${esc(m.text)}<div class="time">${fmtTime(m.at)}</div></div>`).join('');
-    body.scrollTop = body.scrollHeight;
-    lastCount = (messages||[]).length;
-  }
-  async function loadChat(){
-    if (!chatId) return null;
-    try { const r = await fetch(DB_URL + '?t=' + Date.now()); const db = await r.json(); return (db.chats||[]).find(c => c.id === chatId) || null; } catch(e){ return null; }
-  }
-  async function saveChatMessages(msgs){
-    const r = await fetch(DB_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('read');
-    const db = await r.json();
-    const listings = Array.isArray(db.listings) ? db.listings : [];
-    const pending = Array.isArray(db.pending) ? db.pending : [];
-    const leads = Array.isArray(db.leads) ? db.leads : [];
-    let chats = Array.isArray(db.chats) ? db.chats : [];
-    let chat = chats.find(c => c.id === chatId);
-    const now = new Date().toISOString();
-    const toAdd = (msgs||[]).map(m => ({ from: m.from, text: m.text, at: now }));
-    if (!chat) { chat = { id: chatId, nombre: chatNombre, telefono: localStorage.getItem('zp_chat_tel')||'', messages: toAdd.slice(), pagina: location.href, updated: now, leido_admin: false }; chats.unshift(chat); }
-    else { chat.messages = chat.messages||[]; toAdd.forEach(m=>chat.messages.push(m)); chat.updated = now; if (toAdd.some(m=>m.from==='user')) chat.leido_admin = false; }
-    chats = chats.slice(0, 80);
-    const put = await fetch(DB_URL, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ listings, pending, leads, chats }) });
-    if (!put.ok) throw new Error('write');
-    return chat;
-  }
-  function showChatUI(){ startBox.style.display='none'; body.style.display='block'; foot.style.display='flex'; statusEl.style.display='block'; statusEl.textContent='Respondemos en horario hábil · chat en la web'; }
-  async function openExisting(){
-    if (!chatId) return false;
-    const chat = await loadChat();
-    if (!chat) { chatId=''; localStorage.removeItem('zp_chat_id'); return false; }
-    showChatUI(); renderMessages(chat.messages); startPolling(); return true;
-  }
-  function startPolling(){
-    if (pollTimer) clearInterval(pollTimer);
-    pollTimer = setInterval(async () => {
-      const chat = await loadChat();
-      if (chat && (chat.messages||[]).length > lastCount) { renderMessages(chat.messages); if (!panel.classList.contains('open') && dot) dot.style.display='block'; }
-    }, 6000);
-  }
-  async function openPanel(){
-    panel.classList.add('open'); if (dot) dot.style.display='none';
-    if (chatId) { const ok = await openExisting(); if (!ok) { startBox.style.display='block'; body.style.display='none'; foot.style.display='none'; } else if (pendingPrefill) { input.value=pendingPrefill; pendingPrefill=''; input.focus(); } }
-    else { startBox.style.display='block'; body.style.display='none'; foot.style.display='none'; }
-  }
-  window.openWebChat = function(t){ pendingPrefill=t||''; openPanel(); };
-  fab.onclick = function(){ panel.classList.contains('open') ? panel.classList.remove('open') : openPanel(); };
-  closeBtn.onclick = function(){ panel.classList.remove('open'); };
-  document.getElementById('chatStartBtn').onclick = async function(){
-    const nombre = (document.getElementById('chatNombre').value||'').trim();
-    const tel = (document.getElementById('chatTel').value||'').trim();
-    if (!nombre) { document.getElementById('chatNombre').focus(); return; }
-    chatNombre = nombre; chatId = 'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-    localStorage.setItem('zp_chat_id', chatId); localStorage.setItem('zp_chat_nombre', nombre); localStorage.setItem('zp_chat_tel', tel);
-    showChatUI();
-    body.innerHTML = `<div class="chat-msg bot">${esc('¡Hola '+nombre+'! ¿En qué departamento estás interesado/a?')}<div class="time">ahora</div></div>`;
-    lastCount=0; startPolling(); if (pendingPrefill){ input.value=pendingPrefill; pendingPrefill=''; } input.focus();
-  };
-  async function sendMsg(){
-    const text = (input.value||'').trim();
-    if (!text || !chatId) return;
-    sendBtn.disabled=true; input.value=''; statusEl.textContent='Enviando...';
-    const optimistic=[]; try { const ex=await loadChat(); if(ex) optimistic.push(...(ex.messages||[])); } catch(e){}
-    optimistic.push({from:'user',text,at:new Date().toISOString()});
-    const isFirst = optimistic.filter(m=>m.from==='user').length===1;
-    const auto='Recibimos tu mensaje ✅ Te respondemos a la brevedad. Horario: lun a vie 10–19 hs.';
-    if (isFirst) optimistic.push({from:'bot',text:auto,at:new Date().toISOString()});
-    renderMessages(optimistic);
-    try {
-      const payload=[{from:'user',text}]; if(isFirst) payload.push({from:'bot',text:auto});
-      const chat=await saveChatMessages(payload); renderMessages(chat.messages); statusEl.textContent='Enviado · respondemos en horario hábil';
-    } catch(e){ statusEl.textContent='Aviso enviado por email.'; }
-    try {
-      const fd=new FormData();
-      fd.append('_subject','ZonaProp · Nuevo mensaje de chat'); fd.append('_template','table'); fd.append('_captcha','false');
-      fd.append('nombre',chatNombre); fd.append('telefono',localStorage.getItem('zp_chat_tel')||''); fd.append('mensaje',text); fd.append('chat_id',chatId); fd.append('admin','https://zonaprop.github.io/premium/admin.html');
-      fetch('https://formsubmit.co/ajax/'+encodeURIComponent(ADMIN_EMAIL),{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(function(){});
-    } catch(e){}
-    sendBtn.disabled=false; input.focus();
-  }
-  sendBtn.onclick=sendMsg;
-  input.addEventListener('keydown',function(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); sendMsg(); } });
-})();
 </script>
 </body>
 </html>
