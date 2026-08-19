@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://zonaprop.github.io/premium/sitemap-1.xml</loc></sitemap>
-<sitemap><loc>https://zonaprop.github.io/premium/sitemap-3.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-pages.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d1.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d2.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d3.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d4.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d5.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d6.xml</loc></sitemap>
+<sitemap><loc>https://zonaprop.github.io/premium/sitemap-d7.xml</loc></sitemap>
 </sitemapindex>
