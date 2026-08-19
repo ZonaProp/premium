@@ -1,0 +1,10 @@
+{
+  "name": "ZonaProp Premium",
+  "short_name": "ZonaProp",
+  "start_url": "/premium/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "description": "Departamentos en alquiler en Buenos Aires",
+  "icons": [{"src": "logo.svg", "sizes": "any", "type": "image/svg+xml"}]
+}
