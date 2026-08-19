@@ -9,10 +9,17 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="ZonaProp Premium"/>
 <meta property="og:locale" content="es_AR"/>
-<meta property="og:url" content="https://zonaprop.github.io/premium/depto.html"/>
 <meta property="og:title" content="Departamento · ZonaProp Premium" id="ogTitle"/>
 <meta property="og:description" content="Departamento en alquiler en Buenos Aires." id="ogDesc"/>
 <meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg" id="ogImage"/>
+<meta property="og:url" content="https://zonaprop.github.io/premium/depto.html" id="ogUrl"/>
+<link rel="canonical" href="https://zonaprop.github.io/premium/depto.html" id="canonical"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Departamento · ZonaProp Premium" id="twTitle"/>
+<meta name="twitter:description" content="Departamento en alquiler en Buenos Aires." id="twDesc"/>
+<meta name="twitter:image" content="https://zonaprop.github.io/premium/logo.svg" id="twImage"/>
+<link rel="preconnect" href="https://jsonbin-zeta.vercel.app" crossorigin>
+<link rel="dns-prefetch" href="https://jsonbin-zeta.vercel.app">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222;padding-bottom:72px}
@@ -126,8 +133,15 @@ Promise.all([
   }
   const zonaTxt = (d.zona || 'Buenos Aires').trim();
   const ambTxt = (d.ambientes || '').toString().trim();
-  const titleCore = ambTxt ? ('Alquiler ' + ambTxt + ' en ' + zonaTxt) : ((d.title || 'Departamento en alquiler') + ' en ' + zonaTxt);
-  const title = titleCore + (d.price ? ' · ' + d.price : '') + ' | ZonaProp';
+  const m2Txt = (d.m2 || '').toString().trim();
+  const featsArr = Array.isArray(d.features) ? d.features.filter(Boolean) : [];
+  let titleParts = [];
+  if (ambTxt) titleParts.push('Alquiler ' + ambTxt); else titleParts.push(d.title || 'Departamento en alquiler');
+  titleParts.push('en ' + zonaTxt);
+  if (m2Txt) titleParts.push(m2Txt);
+  if (featsArr.some(function(f){ return /cochera|garage|estacionamiento/i.test(f); })) titleParts.push('con cochera');
+  const titleCore = titleParts.join(' ');
+  const title = titleCore + (d.price ? ' · ' + d.price : '') + ' | ZonaProp Premium';
   const ogDesc = fullDesc.slice(0, 160);
   const img = (d.photos && d.photos[0]) || d.main || 'https://zonaprop.github.io/premium/logo.svg';
   const pageUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
@@ -136,6 +150,28 @@ Promise.all([
   document.getElementById('ogTitle').setAttribute('content', title);
   document.getElementById('ogDesc').setAttribute('content', ogDesc);
   document.getElementById('ogImage').setAttribute('content', img);
+  var ou = document.getElementById('ogUrl'); if (ou) ou.setAttribute('content', pageUrl);
+  var can = document.getElementById('canonical'); if (can) can.setAttribute('href', pageUrl);
+  var tt = document.getElementById('twTitle'); if (tt) tt.setAttribute('content', title);
+  var td = document.getElementById('twDesc'); if (td) td.setAttribute('content', ogDesc);
+  var ti = document.getElementById('twImage'); if (ti) ti.setAttribute('content', img);
+
+  // Schema.org RealEstateListing
+  var schema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": title,
+    "description": ogDesc,
+    "url": pageUrl,
+    "datePosted": new Date().toISOString().split('T')[0],
+    "image": (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : [img]),
+    "offers": { "@type": "Offer", "price": parsePrice(d.price) || undefined, "priceCurrency": "ARS", "availability": "https://schema.org/InStock" },
+    "address": { "@type": "PostalAddress", "addressLocality": zonaTxt, "addressRegion": "Buenos Aires", "addressCountry": "AR" }
+  };
+  if (!schema.offers.price) delete schema.offers;
+  var ld = document.getElementById('schema-ld');
+  if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'schema-ld'; document.head.appendChild(ld); }
+  ld.textContent = JSON.stringify(schema);
 
   const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
   window.photos = photos; window.cur = 0;
@@ -220,7 +256,7 @@ Promise.all([
   const t = document.getElementById('thumbs');
   photos.forEach((src, i) => {
     const imgEl = document.createElement('img');
-    imgEl.src = src; imgEl.className = i===0?'on':'';
+    imgEl.src = src; imgEl.loading = 'lazy'; imgEl.decoding = 'async'; imgEl.className = i===0?'on':'';
     imgEl.onclick = function(){ show(i); };
     t.appendChild(imgEl);
   });
