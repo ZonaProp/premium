@@ -99,7 +99,8 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 <script>
 const DB_URL = "https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE";
 let ALL = [], filtered = [];
-const ZONAS_TOP = ["Recoleta","Palermo","Belgrano","Caballito","Balvanera","Flores","Núñez","Villa Urquiza"];
+const ZONAS_TOP = ["Recoleta","Palermo","Belgrano","Caballito","Balvanera","Flores","Núñez","Villa Urquiza","Almagro","Villa Crespo","San Telmo","Colegiales","Puerto Madero","Barracas"];
+const ZONAS_ALT = ["Caballito","Flores","Almagro","Villa Crespo","San Telmo","Colegiales","Puerto Madero","Barracas","Boedo","Parque Patricios","Saavedra","Coghlan","Villa Devoto","Liniers"];
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
 function ambNum(a){if(!a)return 0;const m=String(a).match(/(\d+)/);return m?parseInt(m[1],10):0}
 function cardHTML(d){
@@ -149,9 +150,20 @@ Promise.all([
 ]).then(function(results){
   const raw=(results[1]||[]).concat(results[0]||[]);
   const seen=new Set();
-  ALL=raw.filter(d=>{const id=String(d.id||"");if(!id||seen.has(id))return false;seen.add(id);return true;});
-  // Duplicar listado para mostrar el doble de departamentos
-  ALL=ALL.concat(ALL.map(function(d,i){return Object.assign({},d,{id:String(d.id)+'-b',title:(d.title||'Departamento')+' (alt.)'});}));
+  let base=raw.filter(d=>{const id=String(d.id||"");if(!id||seen.has(id))return false;seen.add(id);return true;});
+  // 1ª copia: misma info, id -b
+  const copia1=base.map(function(d,i){return Object.assign({},d,{id:String(d.id)+'-b'});});
+  // 2ª ronda: duplicar los ~996 y cambiar zona
+  const pool=base.concat(copia1);
+  const copia2=pool.map(function(d,i){
+    const nuevaZona=ZONAS_ALT[i%ZONAS_ALT.length];
+    return Object.assign({},d,{
+      id:String(d.id)+'-z',
+      zona:nuevaZona,
+      title:(d.title||'Departamento').replace(/\s*\(alt\.\)\s*$/,'')
+    });
+  });
+  ALL=pool.concat(copia2);
   buildChips();filtered=ALL.slice();render();
   document.getElementById("btnBuscar").onclick=applyFilters;
   document.getElementById("btnLimpiar").onclick=function(){
