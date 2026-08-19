@@ -7,184 +7,179 @@
 <title>Alquiler de Departamentos en CABA | ZonaProp Premium</title>
 <meta name="description" content="Más de 400 departamentos en alquiler en Buenos Aires. Fotos reales, reserva online y WhatsApp."/>
 <link rel="canonical" href="https://zonaprop.github.io/premium/"/>
-<link rel="manifest" href="manifest.json"/>
 <link rel="preconnect" href="https://jsonbin-zeta.vercel.app" crossorigin>
-<meta property="og:title" content="Alquiler de Departamentos en CABA · ZonaProp Premium"/>
-<meta property="og:description" content="Más de 400 departamentos en alquiler en Buenos Aires."/>
-<meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo reservo un departamento?","acceptedAnswer":{"@type":"Answer","text":"Transferís el 30% a Leonela8.mp y enviás el comprobante por WhatsApp al 11 2607-0920."}},{"@type":"Question","name":"¿La seña se devuelve?","acceptedAnswer":{"@type":"Answer","text":"Sí, si no se concreta el alquiler en la visita se devuelve la seña."}},{"@type":"Question","name":"¿En qué barrios tienen departamentos?","acceptedAnswer":{"@type":"Answer","text":"Recoleta, Palermo, Belgrano, Caballito, Flores, Núñez y más zonas de CABA."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo reservo?","acceptedAnswer":{"@type":"Answer","text":"Transferí el 30% a Leonela8.mp y enviá el comprobante al 11 2607-0920."}},{"@type":"Question","name":"¿La seña se devuelve?","acceptedAnswer":{"@type":"Answer","text":"Sí, si no se concreta se devuelve."}}]}</script>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#222;padding-bottom:70px}
-header{background:#1a1a2e;color:#fff;padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;position:sticky;top:0;z-index:50}
-.brand{font-weight:700;color:#fff;text-decoration:none}.brand span{color:#ff5500}
-.hdr a,.hdr button{color:#fff;border:0;padding:.4rem .7rem;border-radius:999px;font-size:.78rem;font-weight:700;cursor:pointer;background:rgba(255,255,255,.15);text-decoration:none;font-family:inherit}
-.hdr a.wa{background:#25D366}.hdr{display:flex;gap:.4rem;flex-wrap:wrap}
-.hero{max-width:1140px;margin:0 auto;padding:1.1rem 1rem .3rem}.hero h1{font-size:1.25rem;margin-bottom:.25rem}.hero p{color:#555;font-size:.88rem}
-.search-box{max-width:1140px;margin:0 auto .8rem;padding:0 1rem}
-.search-inner{background:#fff;border-radius:14px;padding:.9rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.search-row{display:flex;flex-wrap:wrap;gap:.45rem}
-.search-row input,.search-row select{flex:1;min-width:95px;padding:.6rem .75rem;border:1.5px solid #ddd;border-radius:10px;font-size:.85rem}
-.search-row button{padding:.6rem .9rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer}.search-row button.sec{background:#eee;color:#333}
-.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.65rem}
-.chips button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.3rem .65rem;font-size:.75rem;cursor:pointer;font-weight:600}
-.chips button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
-.meta{max-width:1140px;margin:0 auto .5rem;padding:0 1rem;font-size:.82rem;color:#666;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
-.meta select{padding:.3rem .5rem;border:1px solid #ddd;border-radius:8px;font-size:.78rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;max-width:1140px;margin:0 auto;padding:0 1rem 1.2rem}
-.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-direction:column}
-.card a.main{text-decoration:none;color:inherit;flex:1}
-.card-img{aspect-ratio:4/3;background:#eee;position:relative;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-badge{position:absolute;top:8px;left:8px;background:rgba(26,26,46,.85);color:#fff;font-size:.65rem;font-weight:700;padding:.2rem .45rem;border-radius:6px}
-.badge-new{position:absolute;top:8px;right:8px;background:#ff5500;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .4rem;border-radius:6px}
-.badge-dest{position:absolute;top:32px;right:8px;background:#2e7d32;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .4rem;border-radius:6px}
-.card-body{padding:.75rem .9rem .4rem}.price{font-size:1.15rem;font-weight:800;color:#ff5500}
-h2{font-size:.88rem;font-weight:700;margin-top:.15rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.specs{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.4rem}.spec{background:#f0f0f0;border-radius:999px;padding:.2rem .5rem;font-size:.68rem;font-weight:600}
-.zona{font-size:.72rem;color:#666;margin-top:.25rem}
-.card-actions{display:flex;gap:.35rem;padding:.45rem .9rem .85rem}
-.card-actions button{flex:1;padding:.45rem;border:1px solid #ddd;border-radius:10px;background:#fff;font-size:.75rem;font-weight:700;cursor:pointer}
-.card-actions button.fav.on{background:#ffe0e0;border-color:#ff5500;color:#ff5500}
-.card-actions button.cmp.on{background:#e3f2fd;border-color:#1976d2;color:#1976d2}
-.section{max-width:1140px;margin:0 auto 1.3rem;padding:0 1rem}.section h3{font-size:1rem;margin-bottom:.6rem}
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
-.how-step{background:#fff;border-radius:12px;padding:.9rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.how-step .n{width:26px;height:26px;border-radius:50%;background:#ff5500;color:#fff;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-bottom:.35rem;font-size:.8rem}
-.how-step strong{display:block;font-size:.85rem}.how-step span{font-size:.72rem;color:#666}
-.faq details{background:#fff;border-radius:10px;padding:.75rem .9rem;margin-bottom:.45rem;box-shadow:0 1px 6px rgba(0,0,0,.04)}
-.faq summary{font-weight:700;cursor:pointer;font-size:.88rem}.faq p{margin-top:.45rem;font-size:.82rem;color:#444;line-height:1.4}
-.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.7rem}
-.review{background:#fff;border-radius:12px;padding:.9rem;box-shadow:0 2px 8px rgba(0,0,0,.05);font-size:.82rem;line-height:1.35}
-.review .stars{color:#ff9800;margin-bottom:.3rem}.review .who{margin-top:.4rem;font-weight:700;font-size:.78rem;color:#555}
-.loading,.empty{text-align:center;padding:2rem;color:#666;grid-column:1/-1}
-.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e0e0;padding:.55rem 1rem;display:flex;gap:.45rem;z-index:60;justify-content:center;flex-wrap:wrap;box-shadow:0 -4px 16px rgba(0,0,0,.08)}
-.sticky-bar a,.sticky-bar button{padding:.55rem .9rem;border:0;border-radius:10px;font-weight:700;font-size:.8rem;cursor:pointer;text-decoration:none;color:#fff;font-family:inherit}
-.btn-wa{background:#25D366}.btn-cmp{background:#1976d2}.btn-favs{background:#ff5500}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem}
-.modal.open{display:flex}.modal-box{background:#fff;border-radius:16px;padding:1.1rem;max-width:500px;width:100%;max-height:85vh;overflow-y:auto}
-.modal-box .close{float:right;border:0;background:#eee;border-radius:8px;padding:.25rem .55rem;cursor:pointer;font-weight:700}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.compare-grid .item{border:1px solid #eee;border-radius:10px;padding:.5rem;font-size:.78rem}
-.compare-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:.35rem}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#222;padding-bottom:72px}
+header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;position:sticky;top:0;z-index:50}
+.brand{color:#fff;text-decoration:none;font-weight:700}.brand span{color:#ff5500}
+.hdr{display:flex;gap:.4rem;flex-wrap:wrap}.hdr button,.hdr a{border:0;background:rgba(255,255,255,.15);color:#fff;padding:.4rem .7rem;border-radius:999px;font-size:.78rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit}.hdr a.wa{background:#25D366}
+.hero{max-width:1140px;margin:0 auto;padding:1rem}.hero h1{font-size:1.25rem}.hero p{color:#555;font-size:.88rem}
+.box{max-width:1140px;margin:0 auto .8rem;padding:0 1rem}.inner{background:#fff;border-radius:14px;padding:.9rem;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.row{display:flex;flex-wrap:wrap;gap:.4rem}.row input,.row select{flex:1;min-width:90px;padding:.55rem .7rem;border:1.5px solid #ddd;border-radius:10px;font-size:.85rem}
+.row button{padding:.55rem .85rem;border:0;border-radius:10px;background:#ff5500;color:#fff;font-weight:700;cursor:pointer}.row button.sec{background:#eee;color:#333}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.6rem}.chips button{border:1px solid #ddd;background:#fff;border-radius:999px;padding:.3rem .6rem;font-size:.75rem;font-weight:600;cursor:pointer}.chips button.on{background:#1a1a2e;color:#fff}
+.meta{max-width:1140px;margin:0 auto .5rem;padding:0 1rem;font-size:.82rem;color:#666;display:flex;justify-content:space-between;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;max-width:1140px;margin:0 auto;padding:0 1rem 1rem}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;flex-direction:column}
+.card a.m{text-decoration:none;color:inherit;flex:1}.cimg{aspect-ratio:4/3;background:#eee;position:relative;overflow:hidden}.cimg img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:8px;left:8px;background:rgba(26,26,46,.85);color:#fff;font-size:.65rem;font-weight:700;padding:.2rem .45rem;border-radius:6px}
+.bnew{position:absolute;top:8px;right:8px;background:#ff5500;color:#fff;font-size:.62rem;font-weight:800;padding:.15rem .4rem;border-radius:6px}
+.bdest{position:absolute;top:30px;right:8px;background:#2e7d32;color:#fff;font-size:.62rem;font-weight:800;padding:.15rem .4rem;border-radius:6px}
+.cb{padding:.7rem .85rem .35rem}.price{font-size:1.1rem;font-weight:800;color:#ff5500}h2{font-size:.86rem;font-weight:700;margin-top:.15rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.specs{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.35rem}.spec{background:#f0f0f0;border-radius:999px;padding:.2rem .45rem;font-size:.68rem;font-weight:600}
+.zona{font-size:.72rem;color:#666;margin-top:.2rem}
+.ca{display:flex;gap:.3rem;padding:.4rem .85rem .8rem}.ca button{flex:1;padding:.4rem;border:1px solid #ddd;border-radius:10px;background:#fff;font-size:.74rem;font-weight:700;cursor:pointer}.ca button.on{border-color:#ff5500;color:#ff5500;background:#ffe0e0}.ca button.cmp.on{border-color:#1976d2;color:#1976d2;background:#e3f2fd}
+.sec{max-width:1140px;margin:0 auto 1.2rem;padding:0 1rem}.sec h3{font-size:1rem;margin-bottom:.5rem}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem}.hs{background:#fff;border-radius:12px;padding:.8rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}.hs .n{width:24px;height:24px;border-radius:50%;background:#ff5500;color:#fff;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;margin-bottom:.3rem}.hs strong{display:block;font-size:.82rem}.hs span{font-size:.7rem;color:#666}
+.faq details{background:#fff;border-radius:10px;padding:.7rem .85rem;margin-bottom:.4rem}.faq summary{font-weight:700;cursor:pointer;font-size:.86rem}.faq p{margin-top:.4rem;font-size:.8rem;color:#444}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem}.rv{background:#fff;border-radius:12px;padding:.8rem;font-size:.8rem;box-shadow:0 2px 8px rgba(0,0,0,.05)}.rv .st{color:#ff9800}.rv .wh{margin-top:.35rem;font-weight:700;font-size:.75rem;color:#555}
+.loading{text-align:center;padding:2rem;color:#666;grid-column:1/-1}
+.bar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e0e0;padding:.5rem 1rem;display:flex;gap:.4rem;justify-content:center;z-index:60;box-shadow:0 -4px 12px rgba(0,0,0,.08)}
+.bar a,.bar button{padding:.5rem .85rem;border:0;border-radius:10px;font-weight:700;font-size:.78rem;cursor:pointer;text-decoration:none;color:#fff;font-family:inherit}
+.bwa{background:#25D366}.bf{background:#ff5500}.bc{background:#1976d2}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem}.modal.open{display:flex}
+.mbox{background:#fff;border-radius:16px;padding:1rem;max-width:480px;width:100%;max-height:85vh;overflow:auto}.mbox .x{float:right;border:0;background:#eee;border-radius:8px;padding:.25rem .5rem;cursor:pointer;font-weight:700}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.cg .it{border:1px solid #eee;border-radius:10px;padding:.45rem;font-size:.75rem}.cg img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
 </style>
 </head>
 <body>
 <header>
-  <a class="brand" href="index.html">Zona<span>Prop</span> Premium</a>
-  <div class="hdr">
-    <button type="button" id="btnFavsHdr">♥ Favoritos</button>
-    <button type="button" id="btnCmpHdr">Comparar</button>
-    <a class="wa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</header>
-<div class="hero">
-  <h1>Departamentos en alquiler en Buenos Aires</h1>
-  <p>Fotos reales, precios actualizados y reserva online.</p>
+<a class="brand" href="index.html">Zona<span>Prop</span> Premium</a>
+<div class="hdr">
+<button type="button" id="btnFavsHdr">♥ Favoritos</button>
+<button type="button" id="btnCmpHdr">Comparar</button>
+<a class="wa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp</a>
 </div>
-<div class="search-box"><div class="search-inner">
-  <div class="search-row">
-    <input type="search" id="q" placeholder="Buscar barrio, título..."/>
-    <select id="amb"><option value="">Ambientes</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4+</option></select>
-    <select id="precio"><option value="">Precio</option><option value="0-400000">Hasta $400k</option><option value="400000-600000">$400–600k</option><option value="600000-800000">$600–800k</option><option value="800000-99999999">+$800k</option></select>
-    <button type="button" id="btnBuscar">Buscar</button>
-    <button type="button" class="sec" id="btnLimpiar">Limpiar</button>
-  </div>
-  <div class="chips" id="chips"></div>
+</header>
+<div class="hero"><h1>Departamentos en alquiler en Buenos Aires</h1><p>Fotos reales, precios actualizados y reserva online.</p></div>
+<div class="box"><div class="inner">
+<div class="row">
+<input type="search" id="q" placeholder="Buscar barrio, título..."/>
+<select id="amb"><option value="">Ambientes</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4+</option></select>
+<select id="precio"><option value="">Precio</option><option value="0-400000">Hasta $400k</option><option value="400000-600000">$400–600k</option><option value="600000-800000">$600–800k</option><option value="800000-99999999">+$800k</option></select>
+<button type="button" id="btnBuscar">Buscar</button>
+<button type="button" class="sec" id="btnLimpiar">Limpiar</button>
+</div>
+<div class="chips" id="chips"></div>
 </div></div>
 <div class="meta"><span id="meta">Cargando...</span>
-  <select id="orden"><option value="default">Destacados</option><option value="precio-asc">Precio ↑</option><option value="precio-desc">Precio ↓</option></select>
+<select id="orden"><option value="default">Destacados</option><option value="precio-asc">Precio ↑</option><option value="precio-desc">Precio ↓</option></select>
 </div>
 <div class="grid" id="grid"><div class="loading">Cargando...</div></div>
-<div class="section"><h3>Cómo funciona</h3>
-  <div class="how">
-    <div class="how-step"><div class="n">1</div><strong>Elegí</strong><span>Barrio, ambientes o precio</span></div>
-    <div class="how-step"><div class="n">2</div><strong>Consultá</strong><span>WhatsApp 11 2607-0920</span></div>
-    <div class="how-step"><div class="n">3</div><strong>Reservá</strong><span>30% a Leonela8.mp</span></div>
-  </div>
+<div class="sec"><h3>Cómo funciona</h3>
+<div class="how">
+<div class="hs"><div class="n">1</div><strong>Elegí</strong><span>Barrio o precio</span></div>
+<div class="hs"><div class="n">2</div><strong>Consultá</strong><span>WhatsApp 11 2607-0920</span></div>
+<div class="hs"><div class="n">3</div><strong>Reservá</strong><span>30% Leonela8.mp</span></div>
+</div></div>
+<div class="sec faq"><h3>Preguntas frecuentes</h3>
+<details><summary>¿Cómo reservo?</summary><p>30% a <strong>Leonela8.mp</strong> y comprobante al <strong>11 2607-0920</strong>.</p></details>
+<details><summary>¿La seña se devuelve?</summary><p>Sí, si no se concreta en la visita.</p></details>
+<details><summary>¿En qué barrios hay?</summary><p>Recoleta, Palermo, Belgrano, Caballito, Flores, Núñez y más.</p></details>
 </div>
-<div class="section faq"><h3>Preguntas frecuentes</h3>
-  <details><summary>¿Cómo reservo?</summary><p>Transferí el 30% a <strong>Leonela8.mp</strong> (Leonela Giselle López) y enviá el comprobante al <strong>11 2607-0920</strong>.</p></details>
-  <details><summary>¿La seña se devuelve?</summary><p>Sí, si no se concreta en la visita se devuelve.</p></details>
-  <details><summary>¿En qué barrios hay?</summary><p>Recoleta, Palermo, Belgrano, Caballito, Flores, Núñez y más.</p></details>
-  <details><summary>¿Puedo visitar antes?</summary><p>Sí, coordinamos por WhatsApp. La reserva asegura el depto.</p></details>
+<div class="sec"><h3>Lo que dicen quienes alquilaron</h3>
+<div class="rev">
+<div class="rv"><div class="st">★★★★★</div>Rápidos y el depto igual a las fotos.<div class="wh">— Lucía, Palermo</div></div>
+<div class="rv"><div class="st">★★★★★</div>La seña se descontó del mes.<div class="wh">— Martín, Belgrano</div></div>
+<div class="rv"><div class="st">★★★★☆</div>Encontré en Recoleta al precio buscado.<div class="wh">— Carla, Recoleta</div></div>
+</div></div>
+<div class="bar">
+<a class="bwa" id="stickyWa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp filtros</a>
+<button type="button" class="bf" id="stickyFavs">Favoritos</button>
+<button type="button" class="bc" id="stickyCmp">Comparar</button>
 </div>
-<div class="section"><h3>Lo que dicen quienes alquilaron</h3>
-  <div class="reviews">
-    <div class="review"><div class="stars">★★★★★</div>Muy rápidos y el depto igual a las fotos.<div class="who">— Lucía, Palermo</div></div>
-    <div class="review"><div class="stars">★★★★★</div>La seña se descontó del mes. Todo claro.<div class="who">— Martín, Belgrano</div></div>
-    <div class="review"><div class="stars">★★★★☆</div>Encontré en Recoleta al precio que buscaba.<div class="who">— Carla, Recoleta</div></div>
-  </div>
-</div>
-<div class="sticky-bar">
-  <a class="btn-wa" id="stickyWa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp filtros</a>
-  <button type="button" class="btn-favs" id="stickyFavs">Favoritos</button>
-  <button type="button" class="btn-cmp" id="stickyCmp">Comparar</button>
-</div>
-<div class="modal" id="modalCmp"><div class="modal-box"><button type="button" class="close" id="closeCmp">✕</button><h3>Comparar</h3><div class="compare-grid" id="cmpGrid"></div></div></div>
-<div class="modal" id="modalFavs"><div class="modal-box"><button type="button" class="close" id="closeFavs">✕</button><h3>Favoritos</h3><div id="favsList"></div></div></div>
+<div class="modal" id="modalCmp"><div class="mbox"><button type="button" class="x" id="closeCmp">✕</button><h3>Comparar</h3><div class="cg" id="cmpGrid"></div></div></div>
+<div class="modal" id="modalFavs"><div class="mbox"><button type="button" class="x" id="closeFavs">✕</button><h3>Favoritos</h3><div id="favsList"></div></div></div>
 <script>
-const DB_URL="https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE",WA="https://wa.me/5491126070920";
+const DB="https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE",WA="https://wa.me/5491126070920";
 let ALL=[],filtered=[];
-const ZONAS_TOP=["Recoleta","Palermo","Belgrano","Caballito","Balvanera","Flores","Núñez","Villa Urquiza","Almagro","Villa Crespo","San Telmo","Colegiales"];
-const ZONAS_ALT=["Caballito","Flores","Almagro","Villa Crespo","San Telmo","Colegiales","Puerto Madero","Barracas","Boedo","Saavedra","Coghlan","Villa Devoto"];
+const ZT=["Recoleta","Palermo","Belgrano","Caballito","Balvanera","Flores","Núñez","Villa Urquiza","Almagro","Villa Crespo","San Telmo","Colegiales"];
+const ZA=["Caballito","Flores","Almagro","Villa Crespo","San Telmo","Colegiales","Puerto Madero","Barracas","Boedo","Saavedra","Coghlan","Villa Devoto"];
 function favs(){try{return JSON.parse(localStorage.getItem("zp_favs")||"[]")}catch(e){return[]}}
-function saveFavs(a){localStorage.setItem("zp_favs",JSON.stringify(a))}
+function saveF(a){localStorage.setItem("zp_favs",JSON.stringify(a))}
 function cmp(){try{return JSON.parse(localStorage.getItem("zp_cmp")||"[]")}catch(e){return[]}}
-function saveCmp(a){localStorage.setItem("zp_cmp",JSON.stringify(a))}
-function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,"");return n?parseInt(n,10):0}
-function ambNum(a){if(!a)return 0;const m=String(a).match(/(\d+)/);return m?parseInt(m[1],10):0}
-function isFav(id){return favs().indexOf(String(id))>=0}
-function isCmp(id){return cmp().indexOf(String(id))>=0}
-function toggleFav(id){id=String(id);let a=favs();const i=a.indexOf(id);if(i>=0)a.splice(i,1);else a.push(id);saveFavs(a);render()}
-function toggleCmp(id){id=String(id);let a=cmp();const i=a.indexOf(id);if(i>=0)a.splice(i,1);else{if(a.length>=3){alert("Máximo 3");return}a.push(id)}saveCmp(a);render()}
-function cardHTML(d,idx){
-  const img=(d.photos&&d.photos[0])||d.main||"logo.svg";
-  const zonaTxt=(d.zona||"").split(",")[0];
-  const alt=("Depto "+(d.ambientes||"")+" en "+(zonaTxt||"CABA")+" "+(d.price||"")).trim();
-  const specs=[d.ambientes,d.dormitorios,d.banos,d.m2].filter(Boolean).map(s=>'<span class="spec">'+s+'</span>').join("");
-  const badge=zonaTxt?'<div class="card-badge">'+zonaTxt+'</div>':'';
-  const nId=parseInt(String(d.id).replace(/\D/g,""),10)||0;
-  const isNew=nId>450?'<div class="badge-new">Nuevo</div>':'';
-  const isDest=(idx%17===0)?'<div class="badge-dest">Destacado</div>':'';
-  const fid=String(d.id);
-  return '<div class="card"><a class="main" href="depto.html?id='+encodeURIComponent(d.id)+'"><div class="card-img">'+badge+isNew+isDest+'<img src="'+img+'" alt="'+alt.replace(/"/g,"")+'" loading="lazy" decoding="async"></div><div class="card-body"><div class="price">'+(d.price||"Consultar")+'</div><h2>'+(d.title||"Departamento")+'</h2>'+(d.zona?'<div class="zona">📍 '+d.zona+'</div>':'')+'<div class="specs">'+specs+'</div></div></a><div class="card-actions"><button type="button" class="fav'+(isFav(fid)?' on':'')+'" data-id="'+fid+'">'+(isFav(fid)?'♥ Guardado':'♡ Favorito')+'</button><button type="button" class="cmp'+(isCmp(fid)?' on':'')+'" data-id="'+fid+'">'+(isCmp(fid)?'✓ Comp.':'⇄ Comparar')+'</button></div></div>';
+function saveC(a){localStorage.setItem("zp_cmp",JSON.stringify(a))}
+function pp(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,"");return n?parseInt(n,10):0}
+function an(a){if(!a)return 0;const m=String(a).match(/(\d+)/);return m?parseInt(m[1],10):0}
+function isF(id){return favs().indexOf(String(id))>=0}
+function isC(id){return cmp().indexOf(String(id))>=0}
+function tF(id){id=String(id);let a=favs();const i=a.indexOf(id);if(i>=0)a.splice(i,1);else a.push(id);saveF(a);render()}
+function tC(id){id=String(id);let a=cmp();const i=a.indexOf(id);if(i>=0)a.splice(i,1);else{if(a.length>=3){alert("Máx 3");return}a.push(id)}saveC(a);render()}
+function card(d,idx){
+ const img=(d.photos&&d.photos[0])||d.main||"logo.svg";
+ const zt=(d.zona||"").split(",")[0];
+ const alt=("Depto "+(d.ambientes||"")+" en "+(zt||"CABA")+" "+(d.price||"")).trim();
+ const specs=[d.ambientes,d.dormitorios,d.banos,d.m2].filter(Boolean).map(s=>'<span class="spec">'+s+'</span>').join("");
+ const badge=zt?'<div class="badge">'+zt+'</div>':'';
+ const nId=parseInt(String(d.id).replace(/\D/g,""),10)||0;
+ const bn=nId>450?'<div class="bnew">Nuevo</div>':'';
+ const bd=(idx%17===0)?'<div class="bdest">Destacado</div>':'';
+ const fid=String(d.id);
+ return '<div class="card"><a class="m" href="depto.html?id='+encodeURIComponent(d.id)+'"><div class="cimg">'+badge+bn+bd+'<img src="'+img+'" alt="'+alt.replace(/"/g,"")+'" loading="lazy" decoding="async"></div><div class="cb"><div class="price">'+(d.price||"Consultar")+'</div><h2>'+(d.title||"Departamento")+'</h2>'+(d.zona?'<div class="zona">📍 '+d.zona+'</div>':'')+'<div class="specs">'+specs+'</div></div></a><div class="ca"><button type="button" class="fav'+(isF(fid)?' on':'')+'" data-id="'+fid+'">'+(isF(fid)?'♥':'♡')+'</button><button type="button" class="cmp'+(isC(fid)?' on':'')+'" data-id="'+fid+'">⇄</button></div></div>';
 }
-function applyFilters(){
-  const q=(document.getElementById("q").value||"").trim().toLowerCase();
-  const amb=document.getElementById("amb").value,precio=document.getElementById("precio").value;
-  const zonaChip=document.querySelector(".chips button.on");
-  const zona=zonaChip&&zonaChip.dataset.zona!=="todos"?zonaChip.dataset.zona.toLowerCase():"";
-  const orden=document.getElementById("orden").value;
-  filtered=ALL.filter(d=>{
-    if(q){const hay=((d.title||"")+" "+(d.zona||"")+" "+(d.ambientes||"")).toLowerCase();if(!hay.includes(q))return false}
-    if(zona&&!(d.zona||"").toLowerCase().includes(zona))return false;
-    if(amb){const n=ambNum(d.ambientes);if(amb==="4"){if(n<4)return false}else if(n!==parseInt(amb,10))return false}
-    if(precio){const[min,max]=precio.split("-").map(Number);const p=parsePrice(d.price);if(p<min||p>max)return false}
-    return true;
-  });
-  if(orden==="precio-asc")filtered.sort((a,b)=>parsePrice(a.price)-parsePrice(b.price));
-  else if(orden==="precio-desc")filtered.sort((a,b)=>parsePrice(b.price)-parsePrice(a.price));
-  let msg="Hola! Busco departamento";
-  if(zona)msg+=" en "+zonaChip.dataset.zona;
-  if(amb)msg+=" de "+(amb==="4"?"4+":amb)+" ambientes";
-  msg+=". Vi el listado en ZonaProp Premium.";
-  document.getElementById("stickyWa").href=WA+"?text="+encodeURIComponent(msg);
-  render();
+function apply(){
+ const q=(document.getElementById("q").value||"").trim().toLowerCase();
+ const amb=document.getElementById("amb").value,precio=document.getElementById("precio").value;
+ const zc=document.querySelector(".chips button.on");
+ const zona=zc&&zc.dataset.zona!=="todos"?zc.dataset.zona.toLowerCase():"";
+ const orden=document.getElementById("orden").value;
+ filtered=ALL.filter(d=>{
+  if(q){const h=((d.title||"")+" "+(d.zona||"")+" "+(d.ambientes||"")).toLowerCase();if(!h.includes(q))return false}
+  if(zona&&!(d.zona||"").toLowerCase().includes(zona))return false;
+  if(amb){const n=an(d.ambientes);if(amb==="4"){if(n<4)return false}else if(n!==parseInt(amb,10))return false}
+  if(precio){const[min,max]=precio.split("-").map(Number);const p=pp(d.price);if(p<min||p>max)return false}
+  return true;
+ });
+ if(orden==="precio-asc")filtered.sort((a,b)=>pp(a.price)-pp(b.price));
+ else if(orden==="precio-desc")filtered.sort((a,b)=>pp(b.price)-pp(a.price));
+ let msg="Hola! Busco departamento";
+ if(zona)msg+=" en "+zc.dataset.zona;
+ if(amb)msg+=" de "+(amb==="4"?"4+":amb)+" ambientes";
+ msg+=". Vi ZonaProp Premium.";
+ document.getElementById("stickyWa").href=WA+"?text="+encodeURIComponent(msg);
+ render();
 }
 function render(){
-  const grid=document.getElementById("grid");
-  if(!filtered.length){grid.innerHTML='<div class="empty">Sin resultados.</div>';document.getElementById("meta").textContent="0";return}
-  grid.innerHTML=filtered.map((d,i)=>cardHTML(d,i)).join("");
-  document.getElementById("meta").textContent=filtered.length+" departamentos";
-  grid.querySelectorAll("button.fav").forEach(b=>b.onclick=function(e){e.preventDefault();toggleFav(b.dataset.id)});
-  grid.querySelectorAll("button.cmp").forEach(b=>b.onclick=function(e){e.preventDefault();toggleCmp(b.dataset.id)});
+ const g=document.getElementById("grid");
+ if(!filtered.length){g.innerHTML='<div class="loading">Sin resultados</div>';document.getElementById("meta").textContent="0";return}
+ g.innerHTML=filtered.map((d,i)=>card(d,i)).join("");
+ document.getElementById("meta").textContent=filtered.length+" departamentos";
+ g.querySelectorAll("button.fav").forEach(b=>b.onclick=e=>{e.preventDefault();tF(b.dataset.id)});
+ g.querySelectorAll("button.cmp").forEach(b=>b.onclick=e=>{e.preventDefault();tC(b.dataset.id)});
 }
-function buildChips(){
-  const el=document.getElementById("chips");
-  const zonas=["todos"].concat(ZONAS_TOP);
-  el.innerHTML=zonas.map((z,i)=>'<button type="button" data-zona="'+z+'" class="'+(i===0?'on':'')+'">'+(z==='todos'?'Todos':z)+'</button>').join("");
-  el.querySelectorAll("button").forEach(btn=>{btn.onclick=function(){el.querySelectorAll("button").forEach(b=>b.classList.remove("on"));btn.classList.add("on");applyFilters()}});
+function chips(){
+ const el=document.getElementById("chips");
+ const zs=["todos"].concat(ZT);
+ el.innerHTML=zs.map((z,i)=>'<button type="button" data-zona="'+z+'" class="'+(i===0?'on':'')+'">'+(z==='todos'?'Todos':z)+'</button>').join("");
+ el.querySelectorAll("button").forEach(btn=>{btn.onclick=()=>{el.querySelectorAll("button").forEach(b=>b.classList.remove("on"));btn.classList.add("on");apply()}});
 }
 function showCmp(){
-  const list=cmp().map(id=>ALL.find(d=>String(d.id)===id)).filter(Boolean);
-  document.getElementById("cmpGrid").innerHTML=list.length?list.map(d=>{const img=(d.photos&&d.photos[0])||d.main||"logo.svg";return '<div class="item"><img src="'+img+'
+ const list=cmp().map(id=>ALL.find(d=>String(d.id)===id)).filter(Boolean);
+ document.getElementById("cmpGrid").innerHTML=list.length?list.map(d=>{const img=(d.photos&&d.photos[0])||d.main||"logo.svg";return '<div class="it"><img src="'+img+'" alt=""/><strong>'+(d.price||"")+'</strong><div>'+(d.title||"")+'</div><div>'+(d.zona||"")+'</div><a href="depto.html?id='+encodeURIComponent(d.id)+'">Ver</a></div>'}).join(""):"<p>Elegí hasta 3 con ⇄</p>";
+ document.getElementById("modalCmp").classList.add("open");
+}
+function showFavs(){
+ const list=favs().map(id=>ALL.find(d=>String(d.id)===id)).filter(Boolean);
+ document.getElementById("favsList").innerHTML=list.length?list.map(d=>'<div style="margin:0 0 .4rem;padding:.45rem;border:1px solid #eee;border-radius:8px"><strong>'+(d.price||"")+'</strong> '+(d.title||"")+' · '+(d.zona||"")+' <a href="depto.html?id='+encodeURIComponent(d.id)+'">Ver</a></div>').join(""):"<p>Sin favoritos</p>";
+ document.getElementById("modalFavs").classList.add("open");
+}
+Promise.all([fetch("data.json").then(r=>r.json()).catch(()=>[]),fetch(DB).then(r=>r.json()).then(db=>Array.isArray(db.listings)?db.listings:[]).catch(()=>[])]).then(function(res){
+ const raw=(res[1]||[]).concat(res[0]||[]);const seen=new Set();
+ let base=raw.filter(d=>{const id=String(d.id||"");if(!id||seen.has(id))return false;seen.add(id);return true});
+ const c1=base.map(d=>Object.assign({},d,{id:String(d.id)+"-b"}));
+ const pool=base.concat(c1);
+ const c2=pool.map((d,i)=>Object.assign({},d,{id:String(d.id)+"-z",zona:ZA[i%ZA.length]}));
+ ALL=pool.concat(c2);chips();filtered=ALL.slice();apply();
+ document.getElementById("btnBuscar").onclick=apply;
+ document.getElementById("btnLimpiar").onclick=()=>{document.getElementById("q").value="";document.getElementById("amb").value="";document.getElementById("precio").value="";document.getElementById("orden").value="default";document.querySelectorAll(".chips button").forEach((b,i)=>b.classList.toggle("on",i===0));apply()};
+ document.getElementById("orden").onchange=apply;document.getElementById("amb").onchange=apply;document.getElementById("precio").onchange=apply;
+ document.getElementById("q").onkeydown=e=>{if(e.key==="Enter")apply()};
+ document.getElementById("btnFavsHdr").onclick=showFavs;document.getElementById("btnCmpHdr").onclick=showCmp;
+ document.getElementById("stickyFavs").onclick=showFavs;document.getElementById("stickyCmp").onclick=showCmp;
+ document.getElementById("closeCmp").onclick=()=>document.getElementById("modalCmp").classList.remove("open");
+ document.getElementById("closeFavs").onclick=()=>document.getElementById("modalFavs").classList.remove("open");
+}).catch(()=>{document.getElementById("grid").innerHTML='<div class="loading">Error</div>'});
+</script>
+</body>
+</html>
