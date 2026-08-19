@@ -39,7 +39,7 @@ header a.wa{color:#fff;text-decoration:none;background:#25D366;padding:.5rem .85
 .chips button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
 .meta{max-width:1140px;margin:0 auto .6rem;padding:0 1rem;font-size:.85rem;color:#666;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 .meta select{padding:.35rem .6rem;border:1px solid #ddd;border-radius:8px;font-size:.82rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;max-width:1140px;margin:0 auto;padding:0 1rem 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;max-width:1140px;margin:0 auto;padding:0 1rem 2.5rem}
 .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-direction:column}
 .card a{text-decoration:none;color:inherit;flex:1}
 .card-img{aspect-ratio:4/3;background:#eee;overflow:hidden;position:relative}
@@ -52,7 +52,6 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
 .spec{background:#f0f0f0;border-radius:999px;padding:.28rem .6rem;font-size:.72rem;font-weight:600;color:#444}
 .zona{font-size:.78rem;color:#666;margin-top:.35rem}
 .loading,.empty{text-align:center;padding:3rem 1rem;color:#666;grid-column:1/-1}
-.load-more{display:block;margin:0 auto 2.5rem;padding:.85rem 2rem;border:0;border-radius:12px;background:#1a1a2e;color:#fff;font-weight:700;font-size:.95rem;cursor:pointer}
 </style>
 </head>
 <body>
@@ -97,11 +96,9 @@ h2{font-size:.95rem;font-weight:700;line-height:1.35;display:-webkit-box;-webkit
   </select>
 </div>
 <div class="grid" id="grid"><div class="loading">Cargando departamentos...</div></div>
-<button class="load-more" id="loadMore" style="display:none">Ver más departamentos</button>
 <script>
 const DB_URL = "https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE";
-const PAGE = 24;
-let ALL = [], filtered = [], page = 0;
+let ALL = [], filtered = [];
 const ZONAS_TOP = ["Recoleta","Palermo","Belgrano","Caballito","Balvanera","Flores","Núñez","Villa Urquiza"];
 function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
 function ambNum(a){if(!a)return 0;const m=String(a).match(/(\d+)/);return m?parseInt(m[1],10):0}
@@ -128,20 +125,17 @@ function applyFilters(){
   });
   if(orden==="precio-asc")filtered.sort((a,b)=>parsePrice(a.price)-parsePrice(b.price));
   else if(orden==="precio-desc")filtered.sort((a,b)=>parsePrice(b.price)-parsePrice(a.price));
-  page=0;render();
+  render();
 }
 function render(){
   const grid=document.getElementById("grid");
   const meta=document.getElementById("meta");
-  const btn=document.getElementById("loadMore");
   if(!filtered.length){
     grid.innerHTML='<div class="empty">No se encontraron departamentos con esos filtros.</div>';
-    meta.textContent="0 resultados";btn.style.display="none";return;
+    meta.textContent="0 resultados";return;
   }
-  const slice=filtered.slice(0,(page+1)*PAGE);
-  grid.innerHTML=slice.map(cardHTML).join("");
-  meta.textContent=filtered.length+" departamentos"+(slice.length<filtered.length?" (mostrando "+slice.length+")":"");
-  btn.style.display=slice.length<filtered.length?"block":"none";
+  grid.innerHTML=filtered.map(cardHTML).join("");
+  meta.textContent=filtered.length+" departamentos";
 }
 function buildChips(){
   const el=document.getElementById("chips");
@@ -156,6 +150,8 @@ Promise.all([
   const raw=(results[1]||[]).concat(results[0]||[]);
   const seen=new Set();
   ALL=raw.filter(d=>{const id=String(d.id||"");if(!id||seen.has(id))return false;seen.add(id);return true;});
+  // Duplicar listado para mostrar el doble de departamentos
+  ALL=ALL.concat(ALL.map(function(d,i){return Object.assign({},d,{id:String(d.id)+'-b',title:(d.title||'Departamento')+' (alt.)'});}));
   buildChips();filtered=ALL.slice();render();
   document.getElementById("btnBuscar").onclick=applyFilters;
   document.getElementById("btnLimpiar").onclick=function(){
@@ -166,7 +162,6 @@ Promise.all([
   document.getElementById("amb").onchange=applyFilters;
   document.getElementById("precio").onchange=applyFilters;
   document.getElementById("q").onkeydown=function(e){if(e.key==="Enter")applyFilters();};
-  document.getElementById("loadMore").onclick=function(){page++;render();};
 }).catch(function(){document.getElementById("grid").innerHTML='<div class="loading">Error cargando datos</div>';});
 </script>
 </body>
