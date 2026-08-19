@@ -2,14 +2,241 @@
 <html lang="es-AR">
 <head>
 <meta charset="UTF-8"/>
-<meta http-equiv="refresh" content="0;url=https://zonaprop.github.io/depto.html"/>
-<link rel="canonical" href="https://zonaprop.github.io/depto.html"/>
-<meta name="robots" content="noindex"/>
-<title>Redirigiendo…</title>
-<script>
-const q = location.search || '';
-location.replace('https://zonaprop.github.io/depto.html' + q + (location.hash||''));
-</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
+<title>Departamento en alquiler Buenos Aires · ZonaProp Premium</title>
+<meta name="description" content="Departamento en alquiler en Buenos Aires. Consultá por WhatsApp 11 2607-0920."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ZonaProp Premium"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:url" content="https://zonaprop.github.io/premium/depto.html"/>
+<meta property="og:title" content="Departamento · ZonaProp Premium" id="ogTitle"/>
+<meta property="og:description" content="Departamento en alquiler en Buenos Aires." id="ogDesc"/>
+<meta property="og:image" content="https://zonaprop.github.io/premium/logo.svg" id="ogImage"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f0f0f0;color:#222;padding-bottom:72px}
+.header{background:#1a1a2e;color:#fff;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.header a{color:#fff;text-decoration:none;font-size:1.2rem}
+.header .share-btn{background:rgba(255,255,255,.15);border:0;color:#fff;padding:.4rem .75rem;border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:none}
+.gallery{position:relative;background:#111}
+.gallery img.main{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.g-nav{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.g-nav button{background:rgba(0,0,0,.6);border:0;color:#fff;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
+.counter{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.65);color:#fff;padding:4px 10px;border-radius:999px;font-size:.8rem}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px;background:#fff}
+.thumbs img{width:70px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.65;flex-shrink:0}
+.thumbs img.on{opacity:1;outline:2px solid #ff5500}
+.box{background:#fff;margin-top:8px;padding:1.1rem 1.2rem}
+.price{font-size:1.55rem;font-weight:800;color:#ff5500}
+.h2{font-size:1.15rem;font-weight:700;margin:.3rem 0 .15rem;line-height:1.3}
+.zona{font-size:.88rem;color:#666;margin-top:.15rem}
+.specs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.spec{background:#f3f3f3;border-radius:999px;padding:.4rem .75rem;font-size:.82rem;font-weight:600}
+.section{background:#fff;margin-top:8px;padding:1.15rem 1.2rem}
+.section h3{font-size:1rem;margin-bottom:.7rem}
+.steps{display:grid;gap:.6rem}
+.step{display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;line-height:1.4}
+.step .n{width:24px;height:24px;border-radius:50%;background:#ff5500;color:#fff;font-weight:800;font-size:.75rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.desc{font-size:.9rem;line-height:1.55;color:#333;white-space:pre-wrap}
+.feats{display:flex;flex-wrap:wrap;gap:.4rem}
+.feat{background:#f5f5f5;border-radius:8px;padding:.35rem .65rem;font-size:.8rem}
+.cta-row{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+.cta-row button,.cta-row a{flex:1;min-width:140px;text-align:center;padding:.75rem;border-radius:12px;font-weight:700;font-size:.92rem;border:0;cursor:pointer;text-decoration:none;color:#fff;font-family:inherit}
+.btn-wa{background:#25D366}
+.btn-res{background:#ff5500}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e0e0;padding:.7rem 1rem;display:flex;gap:.6rem;z-index:100;box-shadow:0 -4px 16px rgba(0,0,0,.08)}
+.sticky-cta a,.sticky-cta button{flex:1;padding:.75rem;border-radius:12px;font-weight:700;border:0;cursor:pointer;font-family:inherit;font-size:.9rem;text-align:center;text-decoration:none;color:#fff}
+.s-wa{background:#25D366}
+.s-res{background:#ff5500}
+.loading{text-align:center;padding:3rem;color:#888}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;padding:1.3rem;max-width:420px;width:100%;max-height:90vh;overflow-y:auto}
+.modal h3{margin-bottom:.6rem}
+.modal p{font-size:.88rem;line-height:1.45;color:#444;margin-bottom:.5rem}
+.modal input{width:100%;padding:.65rem;border:1.5px solid #ddd;border-radius:10px;margin:.4rem 0;font-size:.9rem}
+.modal .btn-aceptar{width:100%;padding:.8rem;border:0;border-radius:12px;background:#ff5500;color:#fff;font-weight:800;cursor:pointer;margin-top:.5rem}
+.modal .btn-cancelar{width:100%;padding:.7rem;border:0;border-radius:12px;background:#eee;color:#333;font-weight:600;cursor:pointer;margin-top:.4rem}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:.6rem 1.2rem;border-radius:999px;font-size:.85rem;display:none;z-index:300}
+#pagoSection{display:none;margin-top:1rem;padding:1rem;background:#f8f8f8;border-radius:12px}
+.contacto{background:#e8f5e9;margin-top:8px;padding:1rem 1.2rem;font-size:.9rem}
+.contacto a{color:#128C7E;font-weight:800;text-decoration:none}
+</style>
 </head>
-<body><p style="font-family:system-ui;text-align:center;padding:2rem">Redirigiendo a ZonaProp…</p></body>
+<body>
+<div class="header">
+  <a href="index.html">← Volver</a>
+  <div style="display:flex;gap:.5rem;align-items:center">
+    <a class="share-btn" href="https://wa.me/5491126070920" id="headerWa" target="_blank" rel="noopener" style="background:#25D366">WhatsApp</a>
+    <button class="share-btn" id="btnShare" type="button">Compartir</button>
+  </div>
+</div>
+<div id="content"><div class="loading">Cargando...</div></div>
+
+<div class="sticky-cta" id="stickyCta" style="display:none">
+  <a class="s-wa" id="stickyWa" href="https://wa.me/5491126070920" target="_blank" rel="noopener">WhatsApp</a>
+  <button type="button" class="s-res" id="stickyRes">Reservar</button>
+</div>
+
+<div class="modal-overlay" id="modalCondiciones" role="dialog">
+  <div class="modal">
+    <h3>Condiciones de reserva</h3>
+    <p>La reserva es del <strong>30%</strong> del valor del alquiler mensual.</p>
+    <p><span id="modalMontoTexto">Monto de la reserva: se calculará según el departamento.</span></p>
+    <p>Pago a <strong>Leonela8.mp</strong><br>Titular: <strong>Leonela Giselle López</strong></p>
+    <p>Enviá el comprobante por WhatsApp al <strong>11 2607-0920</strong>.</p>
+    <label style="font-size:.8rem;font-weight:600">Fecha de ingreso deseada</label>
+    <input type="date" id="fechaIngreso"/>
+    <button type="button" class="btn-aceptar" id="btnAceptarCond">Acepto y deseo continuar</button>
+    <button type="button" class="btn-cancelar" id="btnCancelarCond">Cancelar</button>
+  </div>
+</div>
+
+<div class="toast" id="toast">Link copiado</div>
+
+<script>
+const DB_URL = 'https://jsonbin-zeta.vercel.app/api/bins/KHR_lRKYwE';
+const WA = 'https://wa.me/5491126070920';
+const params = new URLSearchParams(location.search);
+const id = params.get('id');
+function parsePrice(p){if(!p)return 0;const n=String(p).replace(/[^0-9]/g,'');return n?parseInt(n,10):0}
+function formatARS(n){return '$' + Number(n).toLocaleString('es-AR')}
+
+Promise.all([
+  fetch('data.json').then(r=>r.json()).catch(()=>[]),
+  fetch(DB_URL).then(r=>r.json()).then(db=>Array.isArray(db.listings)?db.listings:[]).catch(()=>[])
+]).then(function(results){
+  const ALL = (results[1]||[]).concat(results[0]||[]);
+  const d = ALL.find(x => String(x.id) === String(id));
+  if (!d) {
+    document.getElementById('content').innerHTML = '<div class="loading">Departamento no encontrado. <a href="index.html">Volver al listado</a></div>';
+    return;
+  }
+  let fullDesc = (d.desc || '').trim();
+  if (!fullDesc || fullDesc.length < 15) {
+    const parts = [];
+    if (d.zona) parts.push('Ubicado en ' + d.zona);
+    if (d.ambientes) parts.push(d.ambientes);
+    if (d.dormitorios) parts.push(d.dormitorios);
+    if (d.m2) parts.push(d.m2);
+    if (d.banos) parts.push(d.banos);
+    if (d.features && d.features.length) parts.push('Características: ' + d.features.join(', '));
+    fullDesc = parts.length ? parts.join(' · ') + '.' : 'Departamento en alquiler. Consultá por WhatsApp.';
+  }
+  const zonaTxt = (d.zona || 'Buenos Aires').trim();
+  const ambTxt = (d.ambientes || '').toString().trim();
+  const titleCore = ambTxt ? ('Alquiler ' + ambTxt + ' en ' + zonaTxt) : ((d.title || 'Departamento en alquiler') + ' en ' + zonaTxt);
+  const title = titleCore + (d.price ? ' · ' + d.price : '') + ' | ZonaProp';
+  const ogDesc = fullDesc.slice(0, 160);
+  const img = (d.photos && d.photos[0]) || d.main || 'https://zonaprop.github.io/premium/logo.svg';
+  const pageUrl = 'https://zonaprop.github.io/premium/depto.html?id=' + encodeURIComponent(d.id);
+  document.title = title;
+  document.querySelector('meta[name="description"]').setAttribute('content', ogDesc);
+  document.getElementById('ogTitle').setAttribute('content', title);
+  document.getElementById('ogDesc').setAttribute('content', ogDesc);
+  document.getElementById('ogImage').setAttribute('content', img);
+
+  const photos = (d.photos && d.photos.length) ? d.photos : (d.main ? [d.main] : []);
+  window.photos = photos; window.cur = 0;
+  const specs = [d.ambientes, d.dormitorios, d.banos, d.m2].filter(Boolean);
+  const feats = d.features || [];
+  const precioMensual = parsePrice(d.price);
+  const montoReserva = precioMensual > 0 ? Math.round(precioMensual * 0.30) : 50000;
+  const montoReservaFmt = formatARS(montoReserva);
+  const waMsg = encodeURIComponent('Hola! Me interesa: ' + (d.title || 'este departamento') + ' (ID ' + d.id + ') en ZonaProp Premium. ' + pageUrl);
+  const waUrl = WA + '?text=' + waMsg;
+
+  document.getElementById('content').innerHTML = `
+    <div class="gallery">
+      <img class="main" id="mainImg" src="${photos[0]||''}" alt="${(d.title||'Departamento').replace(/"/g,'')} en alquiler ${zonaTxt}">
+      <div class="counter" id="counter">1 / ${photos.length || 1}</div>
+      <div class="g-nav"><button type="button" onclick="show(cur-1)">‹</button><button type="button" onclick="show(cur+1)">›</button></div>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="box">
+      <div class="price">${d.price || 'Consultar'}</div>
+      <div class="h2">${d.title || 'Departamento'}</div>
+      ${d.zona ? `<div class="zona">📍 ${d.zona}${d.community ? ' · Comunidad' : ''}</div>` : ''}
+      <div class="specs">${specs.map(s => `<span class="spec">${s}</span>`).join('')}</div>
+    </div>
+    <div class="contacto">📱 Contacto WhatsApp: <a href="${waUrl}" target="_blank" rel="noopener">11 2607-0920</a></div>
+    <div class="section">
+      <h3>Cómo funciona</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div>Consultás por WhatsApp al 11 2607-0920</div></div>
+        <div class="step"><div class="n">2</div><div>Reservás el 30% a Leonela8.mp (Leonela Giselle López)</div></div>
+        <div class="step"><div class="n">3</div><div>Enviás el comprobante por WhatsApp</div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn-wa" href="${waUrl}" target="_blank" rel="noopener">WhatsApp</a>
+        <button type="button" class="btn-res" id="btnAbrirCondiciones">Reservar</button>
+      </div>
+      <div id="pagoSection">
+        <strong>Datos de pago</strong>
+        <p>Mercado Pago: <strong>Leonela8.mp</strong><br>Titular: Leonela Giselle López<br>Monto reserva: <strong>${montoReservaFmt}</strong></p>
+        <p style="font-size:.85rem;color:#555">Cuando pagues, enviá el comprobante por WhatsApp al 11 2607-0920.</p>
+        <a class="btn-wa" href="${waUrl}" target="_blank" rel="noopener" style="display:block;margin-top:.5rem">Enviar comprobante por WhatsApp</a>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Descripción</h3>
+      <div class="desc">${fullDesc.replace(/</g,'<')}</div>
+      ${feats.length ? `<div class="feats" style="margin-top:.8rem">${feats.map(f=>`<span class="feat">${f}</span>`).join('')}</div>` : ''}
+    </div>
+  `;
+
+  document.getElementById('stickyCta').style.display = 'flex';
+  document.getElementById('stickyWa').href = waUrl;
+  document.getElementById('headerWa').href = waUrl;
+  document.getElementById('modalMontoTexto').innerHTML = 'Monto de la reserva: <strong>' + montoReservaFmt + '</strong>';
+
+  const modal = document.getElementById('modalCondiciones');
+  const pagoSection = document.getElementById('pagoSection');
+  document.getElementById('btnAbrirCondiciones').onclick = function() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  document.getElementById('btnCancelarCond').onclick = function() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  document.getElementById('btnAceptarCond').onclick = function() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    pagoSection.style.display = 'block';
+    pagoSection.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  document.getElementById('stickyRes').onclick = function(){ document.getElementById('btnAbrirCondiciones').click(); };
+
+  document.getElementById('btnShare').onclick = async function() {
+    const shareData = { title: d.title || 'Departamento', text: (d.price || '') + ' · ' + (d.zona || ''), url: pageUrl };
+    try {
+      if (navigator.share) await navigator.share(shareData);
+      else { await navigator.clipboard.writeText(pageUrl); const t=document.getElementById('toast'); t.style.display='block'; setTimeout(()=>t.style.display='none',2000); }
+    } catch(e){}
+  };
+
+  const t = document.getElementById('thumbs');
+  photos.forEach((src, i) => {
+    const imgEl = document.createElement('img');
+    imgEl.src = src; imgEl.className = i===0?'on':'';
+    imgEl.onclick = function(){ show(i); };
+    t.appendChild(imgEl);
+  });
+}).catch(function(){
+  document.getElementById('content').innerHTML = '<div class="loading">Error cargando</div>';
+});
+
+function show(i){
+  if (!window.photos || !window.photos.length) return;
+  if (i < 0) i = window.photos.length - 1;
+  if (i >= window.photos.length) i = 0;
+  window.cur = i;
+  document.getElementById('mainImg').src = window.photos[i];
+  document.getElementById('counter').textContent = (i+1) + ' / ' + window.photos.length;
+  document.querySelectorAll('#thumbs img').forEach((el, idx) => el.classList.toggle('on', idx === i));
+}
+</script>
+</body>
 </html>
