@@ -10,9 +10,62 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
-  <!-- 498 departamentos se generan dinámicamente. Por límite de tamaño se mantiene estructura base + muestra. El listado completo se regenerará en siguiente commit. -->
   <url>
     <loc>https://zonaprop.github.io/premium/depto.html?id=001</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=002</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=003</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=004</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=005</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=006</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=007</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=008</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=009</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zonaprop.github.io/premium/depto.html?id=010</loc>
     <lastmod>2026-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
